@@ -1,0 +1,11 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 16
+VisualStudioVersion = 16.0.0.0
+MinimumVisualStudioVersion = 16.0.0.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Star_Reverie.Windows", "Star_Reverie.Windows\Star_Reverie.Windows.csproj", "{B3858855-F7C2-4EE7-852A-4667A3FD8FF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Star_Reverie", "Star_Reverie\Star_Reverie.csproj", "{B3B8339F-59F5-4579-9ED0-A85207E8FCF6}"
+EndProject
+Global
+EndGlobal
