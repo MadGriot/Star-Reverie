@@ -10,9 +10,9 @@ Defaults:
     - !Stride.Assets.EditorSettings,Stride.Assets
         RenderingMode: HDR
     - !Stride.Graphics.RenderingSettings,Stride.Graphics
-        DefaultBackBufferWidth: 1280
-        DefaultBackBufferHeight: 720
-        AdaptBackBufferToScreen: false
+        DefaultBackBufferWidth: 1920
+        DefaultBackBufferHeight: 1080
+        AdaptBackBufferToScreen: true
         DefaultGraphicsProfile: Level_10_0
         ColorSpace: Linear
         DisplayOrientation: LandscapeRight

@@ -980,6 +980,7 @@ Hierarchy:
                     3153c6eb483c9f26e02b68cc46d87b15: !StackPanel ref!! fe75648c-729f-4845-870a-8cb7719b7774
                     61a86c8f5ec732c068280ca8179c9df9: !StackPanel ref!! 76df2eda-64cc-4dc7-b9b9-777f14cae227
                     98ca6d818d69d1b8b5cc7c5e7d4d7a5b: !StackPanel ref!! a101c666-1e65-4b6a-a332-bd504423839e
+                    1d6c9a4bea20b131a6e9fc4e7522c446: !StackPanel ref!! f4fc811e-3ff6-4e89-96e4-89a7516bc80f
                 Orientation: Horizontal
         -   UIElement: !TextBlock
                 Id: b53f0438-51b1-4775-aba6-ecaa942e1686
@@ -1638,6 +1639,17 @@ Hierarchy:
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
                 OutlineColor: {R: 0, G: 0, B: 0, A: 255}
                 OutlineThickness: 0.0
+        -   UIElement: !StackPanel
+                Id: f4fc811e-3ff6-4e89-96e4-89a7516bc80f
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: CharacterPoints
+                Children:
+                    af1158ff864d3801a5ab24cf3424dab3: !TextBlock ref!! fa0c6de5-05ef-4655-9163-0524e2f9e037
         -   UIElement: !Button
                 Id: f55f9a3a-089f-4b51-b3a7-9e9d97c82123
                 DependencyProperties: {}
@@ -1659,6 +1671,19 @@ Hierarchy:
                     CurrentFrame: 1
                 MouseOverImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+        -   UIElement: !TextBlock
+                Id: fa0c6de5-05ef-4655-9163-0524e2f9e037
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
         -   UIElement: !TextBlock
                 Id: fbd485e5-555c-4a2e-9dcc-734b8da70723
                 DependencyProperties: {}

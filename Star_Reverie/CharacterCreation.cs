@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Stride.Core.Mathematics;
-using Stride.Input;
+﻿using Stride.Input;
 using Stride.Engine;
 
 namespace Star_Reverie
@@ -12,15 +6,29 @@ namespace Star_Reverie
     public class CharacterCreation : SyncScript
     {
         public UIPage CharacterCreationMain;
+        private Entity uiEntity;
+        private UIComponent uIComponent;
+        private bool OnScreen = false;
 
         public override void Start()
         {
-            // Initialization of the script.
+            uiEntity = new();
+            uIComponent = new();
+            uIComponent.Page = CharacterCreationMain;
+            uiEntity.Add(uIComponent);
         }
 
         public override void Update()
         {
-            // Do stuff every new frame
+            if (Input.IsKeyPressed(Keys.C))
+            {
+                if (!OnScreen)
+                {
+                    SceneSystem.SceneInstance.RootScene.Entities.Add(uiEntity);
+                    OnScreen = true;
+                }
+
+            }
         }
     }
 }
