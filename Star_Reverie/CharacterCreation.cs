@@ -89,7 +89,7 @@ namespace Star_Reverie
             switch (attribute)
             {
                 case "Strength":
-                    if (currentCharacterPoints > 0 && add)
+                    if (currentCharacterPoints >= 10 && add)
                     {
                         currentStrength += 1;
                         currentHitPoints += 1;
@@ -98,7 +98,7 @@ namespace Star_Reverie
                         
 
                     }
-                    else if (currentCharacterPoints > 0 && !add && currentStrength > 1)
+                    else if (currentCharacterPoints >= 10 && !add && currentStrength > 3)
                     {
                         currentStrength -= 1;
                         currentHitPoints -= 1;
@@ -109,6 +109,13 @@ namespace Star_Reverie
                     characterPoints.Text = currentCharacterPoints.ToString();
                     hitPointsNumber.Text = currentHitPoints.ToString();
                     basicLiftNumber.Text = currentBasicLift.ToString();
+                    break;
+
+                case "Dexterity":
+                    if (currentCharacterPoints >= 20)
+                    {
+
+                    }
                     break;
             }
         }
