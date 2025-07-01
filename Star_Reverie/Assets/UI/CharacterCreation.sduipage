@@ -19,6 +19,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: AddConstitution
                 Content: !TextBlock ref!! 7c58b29e-72b3-4ec7-a21d-687e5ce6de7e
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -55,6 +56,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: Stamina
                 Children:
                     ad875790f5058d4fb175e0f8a19632b0: !Button ref!! 9c2007b5-f39b-496e-ba60-5d87b965828d
                     b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! f0f4603e-db52-4237-9656-3a7b4291904c
@@ -86,6 +88,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: AgeNumber
                 Text: 21
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
@@ -150,6 +153,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: SubtractWill
                 Content: !TextBlock ref!! 039bd1c5-0720-4c71-bede-c83ab842d1de
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -167,6 +171,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: DodgeNumber
                 Text: 8
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
@@ -245,6 +250,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: AddMove
                 Content: !TextBlock ref!! e6586f4f-2d6f-41bb-955d-38e717bbb738
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -265,6 +271,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: Dexterity
                 Children:
                     ad875790f5058d4fb175e0f8a19632b0: !Button ref!! c3bb64e8-3972-4030-8d06-6800979639c8
                     b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! fbd485e5-555c-4a2e-9dcc-734b8da70723
@@ -282,6 +289,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: SubtractConstitution
                 Content: !TextBlock ref!! caa48bb5-3332-4ff7-899d-b13796727bdc
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -334,6 +342,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: AddStrength
                 Content: !TextBlock ref!! 5aff5edf-c71b-40a8-b5bd-f92f3e029e43
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -352,6 +361,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: IntelligenceNumber
                 Text: 10
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
@@ -366,6 +376,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: Dodge
                 Children:
                     7128877a757cc05803aafca9d7b5bcfb: !TextBlock ref!! b53f0438-51b1-4775-aba6-ecaa942e1686
                     97a173fec8c5573542cda0a5807cf5d3: !TextBlock ref!! 16488a5e-0083-4a2d-835e-ed16614a1526
@@ -427,6 +438,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: Strength
                 Children:
                     ad875790f5058d4fb175e0f8a19632b0: !Button ref!! c67612ca-66fb-413e-97fb-08f91874f820
                     b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! d2a256c3-0dd5-4c6d-8b61-cf7f1e0998ba
@@ -458,6 +470,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: DexterityNumber
                 Text: 10
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
@@ -473,6 +486,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: WillNumber
                 Text: 10
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
@@ -505,6 +519,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: Constitution
                 Children:
                     ad875790f5058d4fb175e0f8a19632b0: !Button ref!! 326c4752-6fa8-4c6e-a6f0-afbbea7f2c98
                     b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! 4fc5475a-9947-4f89-aa03-d8beb11d1b7e
@@ -520,6 +535,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: SpeedNumber
                 Text: 5
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
@@ -580,6 +596,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: EncumbranceStatus
                 Text: None
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
@@ -594,6 +611,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: LastName
                 Children:
                     d42a615aca57b7ae5f5f5755502cfaba: !TextBlock ref!! 0e9b1669-7563-4161-9626-7b505b4b24f9
                     65b7134fe42c196a2898080f8892f9c0: !EditText ref!! cd723cd7-b334-4368-8a3c-de9606429222
@@ -607,6 +625,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: StrengthNumber
                 Text: 10
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
@@ -672,6 +691,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: SubtractSpeed
                 Content: !TextBlock ref!! 51a44c13-c2dc-489e-b5ed-ff1a2cf565ca
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -690,6 +710,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: HitPointsNumber
                 Text: 10
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
@@ -707,6 +728,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: SubtractHitPoints
                 Content: !TextBlock ref!! 1fef869e-4c4a-42e3-b0c9-4b6135fcd282
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -727,6 +749,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: HitPoints
                 Children:
                     ad875790f5058d4fb175e0f8a19632b0: !Button ref!! 9427900c-caa3-45f8-9d76-0ef7cc8a29ee
                     b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! 1da13c3f-fae3-4852-9128-1be8d236c8c0
@@ -744,6 +767,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: AddHitPoints
                 Content: !TextBlock ref!! 855bc0fa-92c2-4e06-ad3f-ddf6533863ad
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -764,6 +788,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: Perception
                 Children:
                     ad875790f5058d4fb175e0f8a19632b0: !Button ref!! e57bc7dd-f214-4583-b4ee-c88d550ab06a
                     b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! ed2a2169-4d6f-4c9a-8e58-5f2085112dc0
@@ -781,6 +806,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: AddAge
                 Content: !TextBlock ref!! e50232dd-3f61-4ddb-a3ee-6526025f9d6c
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -801,6 +827,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: SubtractStamina
                 Content: !TextBlock ref!! 329b2545-0e25-4c99-8490-8658aec2b103
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -849,6 +876,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: Age
                 Children:
                     ad875790f5058d4fb175e0f8a19632b0: !Button ref!! d276352f-94a5-4b3d-ba1a-e18bcf98f919
                     b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! 0bae82eb-ca07-43c8-95b5-24966d48288b
@@ -866,6 +894,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: AddStamina
                 Content: !TextBlock ref!! 39b9404f-1e0d-40ea-9a9f-2295b3ca5573
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -899,6 +928,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: BasicLiftNumber
                 Text: 20
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
@@ -976,6 +1006,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: AddIntelligence
                 Content: !TextBlock ref!! d26cfe34-72a8-4aba-a6d9-170f312421b1
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -996,6 +1027,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: AddSpeed
                 Content: !TextBlock ref!! bc3a960b-ca5c-4998-be32-b3cdf0acd8a2
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -1016,6 +1048,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: AddWill
                 Content: !TextBlock ref!! 6a731447-25c9-4787-b122-1e12342a31ca
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -1052,6 +1085,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: SubtractDexterity
                 Content: !TextBlock ref!! 9f4f0e32-e49f-40e5-baed-46f182d5509a
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -1072,6 +1106,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: SubtractStrength
                 Content: !TextBlock ref!! a62dea43-3d6e-4b38-891c-c1548a3581a2
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -1092,6 +1127,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: Intelligence
                 Children:
                     ad875790f5058d4fb175e0f8a19632b0: !Button ref!! deee55ea-ce23-4fd7-b07c-c597a5606e36
                     b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! ea25c946-6b6e-443d-af19-370205e6cae8
@@ -1106,6 +1142,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: BasicLift
                 Children:
                     e01739ba51c673da43a91c69d702c9d8: !TextBlock ref!! ee9fa9db-1ae0-4292-88c7-82b3061072a4
                     dbe712ecbb20517461ca4bae15e4a91b: !TextBlock ref!! a8a61f63-097b-4d63-b5b1-70a073413996
@@ -1119,6 +1156,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: ConstitutionNumber
                 Text: 10
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
@@ -1197,6 +1235,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: Speed
                 Children:
                     ad875790f5058d4fb175e0f8a19632b0: !Button ref!! 8c07afbf-11c7-423f-87cb-423f630b0844
                     b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! fe32be61-ab7b-4b04-88b7-5411c423c45f
@@ -1230,6 +1269,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: SubtractAge
                 Content: !TextBlock ref!! d3430d28-08f3-4236-a3a0-1166b0d44bf0
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -1263,6 +1303,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: MoveNumber
                 Text: 5
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
@@ -1317,6 +1358,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: StaminaNumber
                 Text: 10
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
@@ -1334,6 +1376,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: SubtractIntelligence
                 Content: !TextBlock ref!! 212e414b-9130-48cb-ab0f-762730b8798a
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -1354,6 +1397,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: Move
                 Children:
                     ad875790f5058d4fb175e0f8a19632b0: !Button ref!! f55f9a3a-089f-4b51-b3a7-9e9d97c82123
                     b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! add97f1e-8974-4f3e-b6df-256251586b67
@@ -1387,6 +1431,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: AddDexterity
                 Content: !TextBlock ref!! 0734bfdf-6632-4623-b522-85ee44fe93e6
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -1423,6 +1468,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: Will
                 Children:
                     ad875790f5058d4fb175e0f8a19632b0: !Button ref!! 1217f47e-1633-4bd6-9915-3d1442bb520d
                     b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! 6047d4f1-ceab-4202-b850-23571978e59a
@@ -1440,6 +1486,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: SubtractPerception
                 Content: !TextBlock ref!! f45fec6a-9579-40c7-804c-e5325b5cd9ba
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -1476,6 +1523,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: AddPerception
                 Content: !TextBlock ref!! e2848cc1-1fac-4e0b-86b9-36cf088dd7d9
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -1601,6 +1649,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: SubtractMove
                 Content: !TextBlock ref!! 8100b477-4cc3-47b3-bab9-2708683c6dd3
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -1648,6 +1697,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: FirstName
                 Children:
                     d42a615aca57b7ae5f5f5755502cfaba: !TextBlock ref!! 71304eca-cb8e-42e0-a75f-0a3605904ec2
                     65b7134fe42c196a2898080f8892f9c0: !EditText ref!! ef09193c-b782-4138-a5bc-1ca074d9da74
