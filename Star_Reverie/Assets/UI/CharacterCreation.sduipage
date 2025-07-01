@@ -178,6 +178,21 @@ Hierarchy:
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
                 OutlineColor: {R: 0, G: 0, B: 0, A: 255}
                 OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 1747482d-05a6-4b0f-b77a-b7fab0a0c8c6
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: CharacterPointsNumber
+                Text: 150
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
         -   UIElement: !StackPanel
                 Id: 17a07683-b4bb-4924-b962-d2280a0d0b05
                 DependencyProperties:
@@ -1643,13 +1658,17 @@ Hierarchy:
                 Id: f4fc811e-3ff6-4e89-96e4-89a7516bc80f
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                Margin: {}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {Left: 20.0}
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
                 Name: CharacterPoints
                 Children:
                     af1158ff864d3801a5ab24cf3424dab3: !TextBlock ref!! fa0c6de5-05ef-4655-9163-0524e2f9e037
+                    cd226f69db66551c1130a97ab51f7297: !TextBlock ref!! 1747482d-05a6-4b0f-b77a-b7fab0a0c8c6
+                Orientation: Horizontal
         -   UIElement: !Button
                 Id: f55f9a3a-089f-4b51-b3a7-9e9d97c82123
                 DependencyProperties: {}
@@ -1679,6 +1698,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Text: 'Character Points:'
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
