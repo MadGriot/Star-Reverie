@@ -18,8 +18,16 @@ namespace Star_Reverie
         TextBlock characterPoints;
         TextBlock ageNumber;
         TextBlock strengthNumber;
+        TextBlock dexterityNumber;
+        TextBlock intelligenceNumber;
+        TextBlock constitutionNumber;
         TextBlock hitPointsNumber;
+        TextBlock willNumber;
+        TextBlock perceptionNumber;
+        TextBlock staminaNumber;
         TextBlock basicLiftNumber;
+        TextBlock speedNumber;
+        TextBlock moveNumber;
         public override void Start()
         {
             uiEntity = new();
@@ -47,8 +55,13 @@ namespace Star_Reverie
             characterPoints = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("CharacterPointsNumber");
             ageNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("AgeNumber");
             strengthNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("StrengthNumber");
+            dexterityNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("DexterityNumber");
+            intelligenceNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("IntelligenceNumber");
+            constitutionNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("ConstitutionNumber");
             hitPointsNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("HitPointsNumber");
             basicLiftNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("BasicLiftNumber");
+            speedNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("SpeedNumber");
+            moveNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("MoveNumber");
         }
         private void ButtonEventMapping()
         {
@@ -56,11 +69,15 @@ namespace Star_Reverie
             Button subtractAge = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("SubtractAge");
             Button addStrength = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("AddStrength");
             Button subtractStrength = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("SubtractStrength");
+            Button addDexterity = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("AddDexterity");
+            Button subtractDexterity = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("SubtractDexterity");
 
             addAge.Click += (object sender, RoutedEventArgs e) => ChangeAge(true);
             subtractAge.Click += (object sender, RoutedEventArgs e) => ChangeAge(false);
             addStrength.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Strength", true);
             subtractStrength.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Strength", false);
+            addDexterity.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Dexterity", true);
+            subtractDexterity.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Dexterity", false);
             
         }
 
@@ -84,8 +101,12 @@ namespace Star_Reverie
         {
             int currentCharacterPoints = int.Parse(characterPoints.Text);
             int currentStrength = int.Parse(strengthNumber.Text);
+            int currentDexterity = int.Parse(dexterityNumber.Text);
+            int currentConstitution = int.Parse(constitutionNumber.Text);
             int currentHitPoints = int.Parse(hitPointsNumber.Text);
             int currentBasicLift = int.Parse(basicLiftNumber.Text);
+            decimal currentSpeed = int.Parse(speedNumber.Text);
+            int currentMove = int.Parse(moveNumber.Text);
             switch (attribute)
             {
                 case "Strength":
@@ -112,10 +133,24 @@ namespace Star_Reverie
                     break;
 
                 case "Dexterity":
-                    if (currentCharacterPoints >= 20)
+                    if (currentCharacterPoints >= 20 && add)
                     {
-
+                        currentDexterity += 1;
+                        currentSpeed = (currentDexterity + currentConstitution) / 4;
+                        currentMove = (int)Math.Round(currentSpeed);
+                        currentCharacterPoints -= 20;
                     }
+                    else if (currentCharacterPoints >= 20 && !add && currentDexterity > 3)
+                    {
+                        currentDexterity -= 1;
+                        currentSpeed = (currentDexterity + currentConstitution) / 4;
+                        currentMove = (int)Math.Round(currentSpeed);
+                        currentCharacterPoints += 20;
+                    }
+                    dexterityNumber.Text = currentDexterity.ToString();
+                    characterPoints.Text = currentCharacterPoints.ToString();
+                    speedNumber.Text = currentSpeed.ToString();
+                    moveNumber.Text = currentMove.ToString();
                     break;
             }
         }
