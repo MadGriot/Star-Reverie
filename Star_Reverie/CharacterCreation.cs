@@ -30,6 +30,7 @@ namespace Star_Reverie
         TextBlock speedNumber;
         TextBlock moveNumber;
         TextBlock dodgeNumber;
+
         public override void Start()
         {
             uiEntity = new();
@@ -81,6 +82,12 @@ namespace Star_Reverie
             Button subtractIntelligence = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("SubtractIntelligence");
             Button addConstitution = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("AddConstitution");
             Button subtractConstitution = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("SubtractConstitution");
+            Button addHitPoints = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("AddHitPoints");
+            Button subtractHitPoints = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("SubtractHitPoints");
+            Button addWill = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("AddWill");
+            Button subtractWill = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("SubtractWill");
+            Button addPerception = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("AddPerception");
+            Button subtractPerception = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("SubtractPerception");
 
             addAge.Click += (object sender, RoutedEventArgs e) => ChangeAge(true);
             subtractAge.Click += (object sender, RoutedEventArgs e) => ChangeAge(false);
@@ -92,6 +99,12 @@ namespace Star_Reverie
             subtractIntelligence.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Intelligence", false);
             addConstitution.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Constitution", true);
             subtractConstitution.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Constitution", false);
+            addHitPoints.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("HitPoints", true);
+            subtractHitPoints.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("HitPoints", false);
+            addWill.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Will", true);
+            subtractWill.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Will", false);
+            addPerception.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Perception", true);
+            subtractPerception.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Perception", false);
             
         }
 
@@ -139,7 +152,7 @@ namespace Star_Reverie
                         
 
                     }
-                    else if (currentCharacterPoints >= 0 && !add && currentStrength > AttributeMin)
+                    else if (currentCharacterPoints >= 0 && !add && currentStrength > AttributeMin && currentHitPoints > AttributeMin)
                     {
                         currentStrength -= 1;
                         currentHitPoints -= 1;
@@ -183,7 +196,7 @@ namespace Star_Reverie
                         currentPerception += 1;
                         currentCharacterPoints -= 20;
                     }
-                    else if (currentCharacterPoints >= 0 && !add && currentIntelligence > 6)
+                    else if (currentCharacterPoints >= 0 && !add && currentIntelligence > 6 && currentWill > 6 && currentPerception > 6)
                     {
                         currentIntelligence -= 1;
                         currentWill -= 1;
@@ -205,7 +218,7 @@ namespace Star_Reverie
                         currentDodge = currentMove + 3;
                         currentCharacterPoints -= 10;
                     }
-                    else if (currentCharacterPoints >= 0 && !add && currentConstitution > AttributeMin)
+                    else if (currentCharacterPoints >= 0 && !add && currentConstitution > AttributeMin && currentStamina > AttributeMin)
                     {
                         currentConstitution -= 1;
                         currentStamina -= 1;
@@ -222,7 +235,49 @@ namespace Star_Reverie
                     dodgeNumber.Text = currentDodge.ToString();
                     characterPoints.Text = currentCharacterPoints.ToString();
                     break;
+                case "HitPoints":
+                    if (currentCharacterPoints >= 2 && add)
+                    {
+                        currentHitPoints += 1;
+                        currentCharacterPoints -= 2;
+                    }
+                    else if (currentCharacterPoints >= 0 && !add && currentHitPoints > currentStrength)
+                    {
+                        currentHitPoints -= 1;
+                        currentCharacterPoints += 2;
+                    }
+                    hitPointsNumber.Text = currentHitPoints.ToString();
+                    characterPoints.Text = currentCharacterPoints.ToString();
+                    break;
+                case "Will":
+                    if (currentCharacterPoints >= 5 && add)
+                    {
+                        currentWill += 1;
+                        currentCharacterPoints -= 5;
+                    }
+                    else if (currentCharacterPoints >= 0 && !add && currentWill > currentIntelligence)
+                    {
+                        currentWill -= 1;
+                        currentCharacterPoints += 5;
+                    }
+                    willNumber.Text = currentWill.ToString();
+                    characterPoints.Text = currentCharacterPoints.ToString();
+                    break;
 
+                case "Perception":
+                    if (currentCharacterPoints >= 5 && add)
+                    {
+                        currentPerception += 1;
+                        currentCharacterPoints -= 5;
+                    }
+                    else if (currentCharacterPoints >= 0 && !add && currentPerception > currentIntelligence)
+                    {
+                        currentPerception -= 1;
+                        currentCharacterPoints += 5;
+                    }
+                    perceptionNumber.Text = currentPerception.ToString();
+                    characterPoints.Text = currentCharacterPoints.ToString();
+                    break;
             }
         }
     }
