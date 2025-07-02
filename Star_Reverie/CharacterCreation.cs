@@ -10,6 +10,7 @@ namespace Star_Reverie
     public class CharacterCreation : SyncScript
     {
         public UIPage CharacterCreationMain;
+        public int AttributeMin = 3;
         private Entity uiEntity;
         private UIComponent uIComponent;
         private bool OnScreen = false;
@@ -76,6 +77,8 @@ namespace Star_Reverie
             Button subtractDexterity = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("SubtractDexterity");
             Button addIntelligence = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("AddIntelligence");
             Button subtractIntelligence = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("SubtractIntelligence");
+            Button addConstitution = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("AddConstitution");
+            Button subtractConstitution = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("SubtractConstitution");
 
             addAge.Click += (object sender, RoutedEventArgs e) => ChangeAge(true);
             subtractAge.Click += (object sender, RoutedEventArgs e) => ChangeAge(false);
@@ -85,6 +88,8 @@ namespace Star_Reverie
             subtractDexterity.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Dexterity", false);
             addIntelligence.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Intelligence", true);
             subtractIntelligence.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Intelligence", false);
+            addConstitution.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Constitution", true);
+            subtractConstitution.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Constitution", false);
             
         }
 
@@ -114,6 +119,7 @@ namespace Star_Reverie
             int currentHitPoints = int.Parse(hitPointsNumber.Text);
             int currentWill = int.Parse(willNumber.Text);
             int currentPerception = int.Parse(perceptionNumber.Text);
+            int currentStamina = int.Parse(staminaNumber.Text);
             int currentBasicLift = int.Parse(basicLiftNumber.Text);
             decimal currentSpeed = int.Parse(speedNumber.Text);
             int currentMove = int.Parse(moveNumber.Text);
@@ -129,7 +135,7 @@ namespace Star_Reverie
                         
 
                     }
-                    else if (currentCharacterPoints >= 10 && !add && currentStrength > 3)
+                    else if (currentCharacterPoints >= 0 && !add && currentStrength > AttributeMin)
                     {
                         currentStrength -= 1;
                         currentHitPoints -= 1;
@@ -150,7 +156,7 @@ namespace Star_Reverie
                         currentMove = (int)Math.Round(currentSpeed);
                         currentCharacterPoints -= 20;
                     }
-                    else if (currentCharacterPoints >= 20 && !add && currentDexterity > 3)
+                    else if (currentCharacterPoints >= 0 && !add && currentDexterity > AttributeMin)
                     {
                         currentDexterity -= 1;
                         currentSpeed = (currentDexterity + currentConstitution) / 4;
@@ -170,11 +176,43 @@ namespace Star_Reverie
                         currentPerception += 1;
                         currentCharacterPoints -= 20;
                     }
+                    else if (currentCharacterPoints >= 0 && !add && currentIntelligence > 6)
+                    {
+                        currentIntelligence -= 1;
+                        currentWill -= 1;
+                        currentPerception -= 1;
+                        currentCharacterPoints += 20;
+                    }
                     intelligenceNumber.Text = currentIntelligence.ToString();
                     characterPoints.Text = currentCharacterPoints.ToString();
                     willNumber.Text = currentWill.ToString();
                     perceptionNumber.Text = currentPerception.ToString();
                     break;
+                case "Constitution":
+                    if (currentCharacterPoints >= 10 && add)
+                    {
+                        currentConstitution += 1;
+                        currentStamina += 1;
+                        currentSpeed = (currentDexterity + currentConstitution) / 4;
+                        currentMove = (int)Math.Round(currentSpeed);
+                        currentCharacterPoints -= 10;
+                    }
+                    else if (currentCharacterPoints >= 0 && !add && currentConstitution > AttributeMin)
+                    {
+                        currentConstitution -= 1;
+                        currentStamina -= 1;
+                        currentSpeed = (currentDexterity + currentConstitution) / 4;
+                        currentMove = (int)Math.Round(currentSpeed);
+                        currentCharacterPoints += 10;
+                    }
+                    constitutionNumber.Text = currentConstitution.ToString();
+                    characterPoints.Text = currentCharacterPoints.ToString();
+                    staminaNumber.Text = currentStamina.ToString();
+                    speedNumber.Text = currentSpeed.ToString();
+                    moveNumber.Text = currentMove.ToString();
+                    characterPoints.Text = currentCharacterPoints.ToString();
+                    break;
+
             }
         }
     }

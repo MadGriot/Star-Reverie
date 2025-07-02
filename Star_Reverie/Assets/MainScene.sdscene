@@ -121,3 +121,4 @@ Hierarchy:
                     ece2b4947773f1a88cfde27ce4b5fa99: !Star_Reverie.CharacterCreation,Star_Reverie
                         Id: b2e5fefe-941f-4465-96f4-6ce1003551d5
                         CharacterCreationMain: 5d96f708-94b2-4f97-ae1b-1453e89511f0:UI/CharacterCreation
+                        AttributeMin: 3
