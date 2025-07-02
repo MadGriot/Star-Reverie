@@ -29,6 +29,7 @@ namespace Star_Reverie
         TextBlock basicLiftNumber;
         TextBlock speedNumber;
         TextBlock moveNumber;
+        TextBlock dodgeNumber;
         public override void Start()
         {
             uiEntity = new();
@@ -66,6 +67,7 @@ namespace Star_Reverie
             basicLiftNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("BasicLiftNumber");
             speedNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("SpeedNumber");
             moveNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("MoveNumber");
+            dodgeNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("DodgeNumber");
         }
         private void ButtonEventMapping()
         {
@@ -121,8 +123,10 @@ namespace Star_Reverie
             int currentPerception = int.Parse(perceptionNumber.Text);
             int currentStamina = int.Parse(staminaNumber.Text);
             int currentBasicLift = int.Parse(basicLiftNumber.Text);
-            decimal currentSpeed = int.Parse(speedNumber.Text);
+            decimal currentSpeed = decimal.Parse(speedNumber.Text);
             int currentMove = int.Parse(moveNumber.Text);
+            int currentDodge = int.Parse(dodgeNumber.Text);
+
             switch (attribute)
             {
                 case "Strength":
@@ -152,20 +156,23 @@ namespace Star_Reverie
                     if (currentCharacterPoints >= 20 && add)
                     {
                         currentDexterity += 1;
-                        currentSpeed = (currentDexterity + currentConstitution) / 4;
+                        currentSpeed = (decimal)(currentDexterity + currentConstitution) / 4;
                         currentMove = (int)Math.Round(currentSpeed);
+                        currentDodge = currentMove + 3;
                         currentCharacterPoints -= 20;
                     }
                     else if (currentCharacterPoints >= 0 && !add && currentDexterity > AttributeMin)
                     {
                         currentDexterity -= 1;
-                        currentSpeed = (currentDexterity + currentConstitution) / 4;
+                        currentSpeed = (decimal)(currentDexterity + currentConstitution) / 4;
                         currentMove = (int)Math.Round(currentSpeed);
+                        currentDodge = currentMove + 3;
                         currentCharacterPoints += 20;
                     }
                     dexterityNumber.Text = currentDexterity.ToString();
                     characterPoints.Text = currentCharacterPoints.ToString();
-                    speedNumber.Text = currentSpeed.ToString();
+                    dodgeNumber.Text = currentDodge.ToString();
+                    speedNumber.Text = currentSpeed.ToString("F2");
                     moveNumber.Text = currentMove.ToString();
                     break;
                 case "Intelligence":
@@ -193,23 +200,26 @@ namespace Star_Reverie
                     {
                         currentConstitution += 1;
                         currentStamina += 1;
-                        currentSpeed = (currentDexterity + currentConstitution) / 4;
+                        currentSpeed = (decimal)(currentDexterity + currentConstitution) / 4;
                         currentMove = (int)Math.Round(currentSpeed);
+                        currentDodge = currentMove + 3;
                         currentCharacterPoints -= 10;
                     }
                     else if (currentCharacterPoints >= 0 && !add && currentConstitution > AttributeMin)
                     {
                         currentConstitution -= 1;
                         currentStamina -= 1;
-                        currentSpeed = (currentDexterity + currentConstitution) / 4;
+                        currentSpeed = (decimal)(currentDexterity + currentConstitution) / 4;
                         currentMove = (int)Math.Round(currentSpeed);
+                        currentDodge = currentMove + 3;
                         currentCharacterPoints += 10;
                     }
                     constitutionNumber.Text = currentConstitution.ToString();
                     characterPoints.Text = currentCharacterPoints.ToString();
                     staminaNumber.Text = currentStamina.ToString();
-                    speedNumber.Text = currentSpeed.ToString();
+                    speedNumber.Text = currentSpeed.ToString("F2");
                     moveNumber.Text = currentMove.ToString();
+                    dodgeNumber.Text = currentDodge.ToString();
                     characterPoints.Text = currentCharacterPoints.ToString();
                     break;
 
