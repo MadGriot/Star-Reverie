@@ -187,7 +187,7 @@ Hierarchy:
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
                 Name: CharacterPointsNumber
-                Text: 150
+                Text: 100
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
@@ -258,7 +258,10 @@ Hierarchy:
                 Id: 26e6e9e4-4476-43b8-ac3c-3a91fd071df3
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Visibility: Hidden
                 DrawLayerNumber: 2
+                IsEnabled: false
+                CanBeHitByUser: false
                 HorizontalAlignment: Center
                 VerticalAlignment: Center
                 Margin: {}
@@ -700,7 +703,10 @@ Hierarchy:
                 Id: 8c07afbf-11c7-423f-87cb-423f630b0844
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Visibility: Hidden
                 DrawLayerNumber: 2
+                IsEnabled: false
+                CanBeHitByUser: false
                 HorizontalAlignment: Center
                 VerticalAlignment: Center
                 Margin: {}
@@ -1037,7 +1043,10 @@ Hierarchy:
                 Id: baf75eba-fa4c-469a-af1d-536927028dd6
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Visibility: Hidden
                 DrawLayerNumber: 2
+                IsEnabled: false
+                CanBeHitByUser: false
                 HorizontalAlignment: Center
                 VerticalAlignment: Center
                 Margin: {}
@@ -1674,7 +1683,10 @@ Hierarchy:
                 Id: f55f9a3a-089f-4b51-b3a7-9e9d97c82123
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Visibility: Hidden
                 DrawLayerNumber: 2
+                IsEnabled: false
+                CanBeHitByUser: false
                 HorizontalAlignment: Center
                 VerticalAlignment: Center
                 Margin: {}

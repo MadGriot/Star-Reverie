@@ -88,6 +88,12 @@ namespace Star_Reverie
             Button subtractWill = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("SubtractWill");
             Button addPerception = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("AddPerception");
             Button subtractPerception = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("SubtractPerception");
+            Button addStamina = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("AddStamina");
+            Button subtractStamina = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("SubtractStamina");
+            //Button addSpeed = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("AddSpeed");
+            //Button subtractSpeed = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("SubtractSpeed");
+            //Button addMove = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("AddMove");
+            //Button subtractMove = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("SubtractMove");
 
             addAge.Click += (object sender, RoutedEventArgs e) => ChangeAge(true);
             subtractAge.Click += (object sender, RoutedEventArgs e) => ChangeAge(false);
@@ -105,6 +111,12 @@ namespace Star_Reverie
             subtractWill.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Will", false);
             addPerception.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Perception", true);
             subtractPerception.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Perception", false);
+            addStamina.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Stamina", true);
+            subtractStamina.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Stamina", false);
+            //addSpeed.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Speed", true);
+            //subtractSpeed.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Speed", false);
+            //addMove.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Move", true);
+            //subtractMove.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Move", false);
             
         }
 
@@ -278,6 +290,37 @@ namespace Star_Reverie
                     perceptionNumber.Text = currentPerception.ToString();
                     characterPoints.Text = currentCharacterPoints.ToString();
                     break;
+
+                case "Stamina":
+                    if (currentCharacterPoints >= 3 && add)
+                    {
+                        currentStamina += 1;
+                        currentCharacterPoints -= 3;
+                    }
+                    else if (currentCharacterPoints >= 0 && !add && currentStamina > currentConstitution)
+                    {
+                        currentStamina -= 1;
+                        currentCharacterPoints += 3;
+                    }
+                    staminaNumber.Text = currentStamina.ToString();
+                    characterPoints.Text = currentCharacterPoints.ToString();
+                    break;
+
+                //case "Speed":
+                //    if (currentCharacterPoints >= 5 && add)
+                //    {
+                //        currentSpeed += 0.25m;
+                //        currentCharacterPoints -= 5;
+                //    }
+                //    else if (currentCharacterPoints >= 0 && !add && currentSpeed >
+                //        (decimal)(currentDexterity + currentConstitution) / 4)
+                //    {
+                //        currentSpeed -= 0.25m;
+                //        currentCharacterPoints += 5;
+                //    }
+                //    speedNumber.Text = currentSpeed.ToString();
+                //    characterPoints.Text = currentCharacterPoints.ToString();
+                //    break;
             }
         }
     }
