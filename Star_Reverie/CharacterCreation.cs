@@ -59,6 +59,9 @@ namespace Star_Reverie
             intelligenceNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("IntelligenceNumber");
             constitutionNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("ConstitutionNumber");
             hitPointsNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("HitPointsNumber");
+            willNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("WillNumber");
+            perceptionNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("PerceptionNumber");
+            staminaNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("StaminaNumber");
             basicLiftNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("BasicLiftNumber");
             speedNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("SpeedNumber");
             moveNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("MoveNumber");
@@ -71,6 +74,8 @@ namespace Star_Reverie
             Button subtractStrength = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("SubtractStrength");
             Button addDexterity = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("AddDexterity");
             Button subtractDexterity = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("SubtractDexterity");
+            Button addIntelligence = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("AddIntelligence");
+            Button subtractIntelligence = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("SubtractIntelligence");
 
             addAge.Click += (object sender, RoutedEventArgs e) => ChangeAge(true);
             subtractAge.Click += (object sender, RoutedEventArgs e) => ChangeAge(false);
@@ -78,6 +83,8 @@ namespace Star_Reverie
             subtractStrength.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Strength", false);
             addDexterity.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Dexterity", true);
             subtractDexterity.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Dexterity", false);
+            addIntelligence.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Intelligence", true);
+            subtractIntelligence.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Intelligence", false);
             
         }
 
@@ -103,7 +110,10 @@ namespace Star_Reverie
             int currentStrength = int.Parse(strengthNumber.Text);
             int currentDexterity = int.Parse(dexterityNumber.Text);
             int currentConstitution = int.Parse(constitutionNumber.Text);
+            int currentIntelligence = int.Parse(intelligenceNumber.Text);
             int currentHitPoints = int.Parse(hitPointsNumber.Text);
+            int currentWill = int.Parse(willNumber.Text);
+            int currentPerception = int.Parse(perceptionNumber.Text);
             int currentBasicLift = int.Parse(basicLiftNumber.Text);
             decimal currentSpeed = int.Parse(speedNumber.Text);
             int currentMove = int.Parse(moveNumber.Text);
@@ -151,6 +161,19 @@ namespace Star_Reverie
                     characterPoints.Text = currentCharacterPoints.ToString();
                     speedNumber.Text = currentSpeed.ToString();
                     moveNumber.Text = currentMove.ToString();
+                    break;
+                case "Intelligence":
+                    if (currentCharacterPoints >= 20 && add)
+                    {
+                        currentIntelligence += 1;
+                        currentWill += 1;
+                        currentPerception += 1;
+                        currentCharacterPoints -= 20;
+                    }
+                    intelligenceNumber.Text = currentIntelligence.ToString();
+                    characterPoints.Text = currentCharacterPoints.ToString();
+                    willNumber.Text = currentWill.ToString();
+                    perceptionNumber.Text = currentPerception.ToString();
                     break;
             }
         }
