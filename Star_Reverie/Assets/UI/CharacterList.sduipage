@@ -1,0 +1,56 @@
+!UIPageAsset
+Id: ba4f5374-f988-4366-8fed-f09b1bd631e7
+SerializedVersion: {Stride: 2.1.0.1}
+Tags: []
+Design:
+    Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+Hierarchy:
+    RootParts:
+        - !Grid ref!! 2e80abc0-7ebb-4308-8870-9c2c70562403
+    Parts:
+        -   UIElement: !TextBlock
+                Id: 0273edb2-edfd-4ec4-af38-e4aa39ee8371
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: CharacterListTitle
+                Text: Character List
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 80.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !Grid
+                Id: 2e80abc0-7ebb-4308-8870-9c2c70562403
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Children:
+                    d1705dd35d6f0ac2b969d0029649a8b6: !TextBlock ref!! 0273edb2-edfd-4ec4-af38-e4aa39ee8371
+                    698225e9a04778953854431f99dd04b8: !StackPanel ref!! f1a3dcb0-9bed-4d12-916d-29f5c2b3afc3
+                RowDefinitions:
+                    879259a9fea403b737f70b26c8b63605: {}
+                    893cafacddcd5aaf0763dd362fe54ac8: {}
+                    172271951a99d051765c70ec2a3b1c63: {}
+                    e5a697eec9fc5dbf9cbe89ebba58090a: {}
+                ColumnDefinitions: {}
+                LayerDefinitions: {}
+        -   UIElement: !StackPanel
+                Id: f1a3dcb0-9bed-4d12-916d-29f5c2b3afc3
+                DependencyProperties:
+                    a2e0401ab2c5bb302efa5ca3325c1bb6~GridBase.RowPropertyKey: 1
+                    3eaecd1a8fdd8210bc979f495b399950~GridBase.RowSpanPropertyKey: 2
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: CharacterList
+                Children: {}

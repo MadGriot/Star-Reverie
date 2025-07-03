@@ -20,7 +20,7 @@ namespace Star_Reverie
         //TextBlocks
         TextBlock characterPoints;
         EditText firstName;
-        EditText middleName;
+        //EditText middleName;
         EditText lastName;
         TextBlock ageNumber;
         TextBlock strengthNumber;
@@ -101,6 +101,7 @@ namespace Star_Reverie
             //Button subtractSpeed = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("SubtractSpeed");
             //Button addMove = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("AddMove");
             //Button subtractMove = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("SubtractMove");
+            Button saveButton = CharacterCreationMain.RootElement.FindVisualChildOfType<Button>("Save");
 
             addAge.Click += (object sender, RoutedEventArgs e) => ChangeAge(true);
             subtractAge.Click += (object sender, RoutedEventArgs e) => ChangeAge(false);
@@ -124,6 +125,7 @@ namespace Star_Reverie
             //subtractSpeed.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Speed", false);
             //addMove.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Move", true);
             //subtractMove.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Move", false);
+            saveButton.Click += (object sender, RoutedEventArgs e) => SaveCharacter();
             
         }
 
@@ -338,6 +340,7 @@ namespace Star_Reverie
             {
                 FirstName = firstName.Text,
                 LastName = lastName.Text,
+                Age = int.Parse(ageNumber.Text),
                 Level = 1,
                 PowerLevel = 100,
             };
@@ -363,6 +366,12 @@ namespace Star_Reverie
 
             starReverieDbContext.AttributeScores.Add(attributeScore);
             starReverieDbContext.SaveChanges();
+
+            if (OnScreen)
+            {
+                SceneSystem.SceneInstance.RootScene.Entities.Remove(uiEntity);
+                OnScreen = false;
+            }
         }
     }
 }

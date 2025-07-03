@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35806.99 d17.13
@@ -6,6 +6,8 @@ MinimumVisualStudioVersion = 16.0.0.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Star_Reverie.Windows", "Star_Reverie.Windows\Star_Reverie.Windows.csproj", "{B3858855-F7C2-4EE7-852A-4667A3FD8FF8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Star_Reverie", "Star_Reverie\Star_Reverie.csproj", "{B3B8339F-59F5-4579-9ED0-A85207E8FCF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarReverieCore", "..\..\..\..\source\repos\Sandbox\StarReverieCore\StarReverieCore.csproj", "{CC394C83-1298-4954-A946-5781C91F19AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

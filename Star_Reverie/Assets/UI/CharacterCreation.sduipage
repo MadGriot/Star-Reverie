@@ -193,6 +193,22 @@ Hierarchy:
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
                 OutlineColor: {R: 0, G: 0, B: 0, A: 255}
                 OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 176b9574-2d76-4fb3-a9ec-efe10a35f0ec
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Save
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
         -   UIElement: !StackPanel
                 Id: 17a07683-b4bb-4924-b962-d2280a0d0b05
                 DependencyProperties:
@@ -1220,6 +1236,27 @@ Hierarchy:
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
                 OutlineColor: {R: 0, G: 0, B: 0, A: 255}
                 OutlineThickness: 0.0
+        -   UIElement: !Button
+                Id: cbaca326-05c8-4679-ae01-2af9595b9da3
+                DependencyProperties:
+                    4aa97bf2ff0e8aafc46ea86156e67bc5~GridBase.RowPropertyKey: 3
+                    0b0d2c54ea62accb314b0ada2e24b9e7~GridBase.ColumnPropertyKey: 1
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Save
+                Content: !TextBlock ref!! 176b9574-2d76-4fb3-a9ec-efe10a35f0ec
+                PressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
         -   UIElement: !EditText
                 Id: cd723cd7-b334-4368-8a3c-de9606429222
                 DependencyProperties: {}
@@ -1367,6 +1404,7 @@ Hierarchy:
                     52f7c3fe1a600127b9e649c2a131f8ff: !StackPanel ref!! 0b578880-40cb-464a-a3bb-d6f1154b5ecc
                     4cdfd38d4c8ff7b34807d3bbf18ec47b: !StackPanel ref!! c9d03c1a-d8f3-4039-9a26-74132a470c6b
                     98acec9d2ff3ea75afecb318131b63bc: !StackPanel ref!! 17a07683-b4bb-4924-b962-d2280a0d0b05
+                    b690b6a7b1eb0379104007d25672bf84: !Button ref!! cbaca326-05c8-4679-ae01-2af9595b9da3
                 RowDefinitions:
                     999b564b52636c4ff29fae62e4abd3de: {}
                     6e440b323e1ab6008e52fe7d5e5d701c: {}
