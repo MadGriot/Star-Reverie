@@ -4,6 +4,8 @@ using Stride.UI.Controls;
 using Stride.UI;
 using Stride.UI.Events;
 using System;
+using StarReverieCore.Models;
+using StarReverieCore;
 
 namespace Star_Reverie
 {
@@ -17,6 +19,9 @@ namespace Star_Reverie
 
         //TextBlocks
         TextBlock characterPoints;
+        EditText firstName;
+        EditText middleName;
+        EditText lastName;
         TextBlock ageNumber;
         TextBlock strengthNumber;
         TextBlock dexterityNumber;
@@ -56,6 +61,8 @@ namespace Star_Reverie
         private void StatNumberMapping()
         {
             characterPoints = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("CharacterPointsNumber");
+            firstName = CharacterCreationMain.RootElement.FindVisualChildOfType<EditText>("FirstName");
+            lastName = CharacterCreationMain.RootElement.FindVisualChildOfType<EditText>("LastName");
             ageNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("AgeNumber");
             strengthNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("StrengthNumber");
             dexterityNumber = CharacterCreationMain.RootElement.FindVisualChildOfType<TextBlock>("DexterityNumber");
@@ -322,6 +329,40 @@ namespace Star_Reverie
                 //    characterPoints.Text = currentCharacterPoints.ToString();
                 //    break;
             }
+        }
+
+        private void SaveCharacter()
+        {
+            StarReverieDbContext starReverieDbContext = new StarReverieDbContext();
+            Character character = new Character
+            {
+                FirstName = firstName.Text,
+                LastName = lastName.Text,
+                Level = 1,
+                PowerLevel = 100,
+            };
+
+            starReverieDbContext.Characters.Add(character);
+            starReverieDbContext.SaveChanges();
+
+            AttributeScore attributeScore = new AttributeScore
+            {
+                Strength = int.Parse(strengthNumber.Text),
+                Dexterity = int.Parse(dexterityNumber.Text),
+                Intelligence = int.Parse(intelligenceNumber.Text),
+                Constitution = int.Parse(constitutionNumber.Text),
+                HP = int.Parse(hitPointsNumber.Text),
+                Will = int.Parse(willNumber.Text),
+                Perception = int.Parse(perceptionNumber.Text),
+                Stamina = int.Parse(staminaNumber.Text),
+                Speed = decimal.Parse(speedNumber.Text),
+                BasicMove = int.Parse(moveNumber.Text),
+                XP = 1000,
+                CharacterId = character.Id
+            };
+
+            starReverieDbContext.AttributeScores.Add(attributeScore);
+            starReverieDbContext.SaveChanges();
         }
     }
 }

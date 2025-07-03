@@ -1231,6 +1231,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: LastName
                 Padding: {Left: 8.0, Top: 4.0, Right: 8.0, Bottom: 8.0}
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
@@ -1614,6 +1615,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: FirstName
                 Padding: {Left: 8.0, Top: 4.0, Right: 8.0, Bottom: 8.0}
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
