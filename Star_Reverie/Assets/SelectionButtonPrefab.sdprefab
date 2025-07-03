@@ -1,0 +1,23 @@
+!PrefabAsset
+Id: 2e60d39c-a09e-439d-b843-dc17382a1a09
+SerializedVersion: {Stride: 3.1.0.1}
+Tags: []
+Hierarchy:
+    RootParts:
+        - ref!! cf83cf55-f37a-41fc-8743-5a9e100c55d2
+    Parts:
+        -   Entity:
+                Id: cf83cf55-f37a-41fc-8743-5a9e100c55d2
+                Name: SelectionButton
+                Components:
+                    16fec1f313540660f44377b54a5daa2e: !TransformComponent
+                        Id: 4e5c0e97-bc8f-4c54-b197-6d4151d5bf30
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    0b0f7b157b46f5319591a1846d8a04f9: !UIComponent
+                        Id: 48a2d48c-898e-4ffb-86ac-fc34d81e7b7a
+                        Page: b47a7e48-0aa2-49b3-92e0-5774309f58ed:UI/SelectionButton
+                        Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+                        Size: {X: 1.28, Y: 0.72, Z: 1.0}

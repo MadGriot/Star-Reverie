@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Stride.Core.Mathematics;
 using Stride.Input;
 using Stride.Engine;
@@ -12,16 +9,17 @@ using StarReverieCore.Models;
 using Stride.UI;
 using Stride.UI.Panels;
 using Stride.Graphics;
+using Stride.Core.Shaders.Ast;
 
 namespace Star_Reverie
 {
     public class CharacterSelection : SyncScript
     {
         public UIPage CharacterSelectionPage;
+        public Prefab CharacterSelectionButton;
         private Entity uiEntity;
         private UIComponent uIComponent;
         StarReverieDbContext starReverieDbContext = new StarReverieDbContext();
-
 
         private bool OnScreen;
         private List<Character> characters;
@@ -37,18 +35,15 @@ namespace Star_Reverie
             characterList = CharacterSelectionPage.RootElement.FindVisualChildOfType<StackPanel>("CharacterList");
             foreach (Character character in characters)
             {
-                TextBlock textBlock = new TextBlock
-                {
-                    Name = character.FirstName,
-
-                        Text = $"{character.FirstName} {character.LastName}",
-                        Font = Content.Load<SpriteFont>("StrideDefaultFont"),
-                        TextSize = 20,
-                        TextColor = Color.White,
-                        OutlineColor = Color.Black,
-                    HorizontalAlignment = HorizontalAlignment.Center,
-                };
-                characterList.Children.Add(textBlock);
+                Button button = (Button)CharacterSelectionButton
+                    .Instantiate()
+                    .First()
+                    .Get<UIComponent>().Page
+                    .RootElement;
+                button.Name = character.FirstName;
+                button.FindVisualChildOfType<TextBlock>().Text = $"{character.FirstName} {character.LastName}";
+                button.HorizontalAlignment = HorizontalAlignment.Center;
+                characterList.Children.Add(button);
             }
   
         }

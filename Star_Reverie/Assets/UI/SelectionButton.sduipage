@@ -15,6 +15,9 @@ Hierarchy:
                 HorizontalAlignment: Center
                 VerticalAlignment: Center
                 Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
                 Text: Click me!
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
@@ -30,6 +33,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: Selection
                 Content: !TextBlock ref!! 21cc0e1d-2fbb-4d13-812f-0f28bf37111c
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
