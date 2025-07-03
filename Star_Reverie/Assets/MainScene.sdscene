@@ -12,6 +12,7 @@ Hierarchy:
         - ref!! bc2a7ee7-a61b-468a-acef-436b4718de2b
         - ref!! 89309f44-ee21-4fc2-af72-f128ef3f1b98
         - ref!! d0e1b886-d936-4907-ac4e-3e5d44afd1eb
+        - ref!! 7693025f-9023-44bd-ac9a-9cce30b9a9ba
     Parts:
         -   Entity:
                 Id: 5dcce55f-fcee-40ec-81ee-6b3ff3c0ea10
@@ -38,6 +39,20 @@ Hierarchy:
                                 ComputeTransmittance: false
                                 BiasParameters: {}
                         Intensity: 20.0
+        -   Folder: Code
+            Entity:
+                Id: 7693025f-9023-44bd-ac9a-9cce30b9a9ba
+                Name: CharacterSelection
+                Components:
+                    c9ad96b73aad9a33d2378366fe070a8a: !TransformComponent
+                        Id: e9a3f98c-02b6-4334-9b32-c55e89034d48
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    168b34e54e1d17c8c5d343e156256c50: !Star_Reverie.CharacterSelection,Star_Reverie
+                        Id: 7d169e79-3acd-44b4-b29d-bd8638a87c28
+                        CharacterSelectionPage: ba4f5374-f988-4366-8fed-f09b1bd631e7:UI/CharacterList
         -   Entity:
                 Id: 89309f44-ee21-4fc2-af72-f128ef3f1b98
                 Name: Sphere
