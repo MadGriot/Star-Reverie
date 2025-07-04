@@ -36,6 +36,38 @@ Hierarchy:
                 OutlineColor: {R: 0, G: 0, B: 0, A: 255}
                 OutlineThickness: 0.0
         -   UIElement: !TextBlock
+                Id: 07f5a6a5-c91f-4e91-96f6-30e447da5b30
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: 
+                Text: Level Up
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 0928bcb8-2890-4737-a2aa-288e2f010d6b
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: LEVEL
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
                 Id: 0c4ed72c-1d62-4823-a939-8b5a1e6251db
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
@@ -46,6 +78,22 @@ Hierarchy:
                 MaximumDepth: 3.4028235E+38
                 Name: HitPointsNumber
                 Text: 10
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 0f614d44-cb3f-4a33-a211-a35b96662bda
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: LevelNumber
+                Text: 1
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
@@ -171,16 +219,16 @@ Hierarchy:
                 OutlineColor: {R: 0, G: 0, B: 0, A: 255}
                 OutlineThickness: 0.0
         -   UIElement: !TextBlock
-                Id: 3896c426-539e-4eb4-a648-01a3742cd443
+                Id: 2d6d4c1c-973d-4cc6-a941-1ced31cd8360
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                HorizontalAlignment: Center
                 VerticalAlignment: Center
-                Margin: {Left: 20.0}
+                Margin: {}
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
-                Text: 'Last Name:'
+                Name: XPNumber
+                Text: 1000
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
@@ -257,6 +305,38 @@ Hierarchy:
                 OutlineColor: {R: 0, G: 0, B: 0, A: 255}
                 OutlineThickness: 0.0
         -   UIElement: !TextBlock
+                Id: 4afe4d68-872e-4b4b-9273-1e99632f29c3
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: 'XP: '
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 4bdb78d7-a264-4f2b-9cc3-65c13ece7acd
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: 
+                Text: Delete
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
                 Id: 4f8a74c9-eb47-45b5-afd0-7b775c554d63
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
@@ -271,6 +351,41 @@ Hierarchy:
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
                 OutlineColor: {R: 0, G: 0, B: 0, A: 255}
                 OutlineThickness: 0.0
+        -   UIElement: !StackPanel
+                Id: 510f12ce-6d54-4e9f-9917-24ef18904805
+                DependencyProperties:
+                    ef1742fb1d366c953a859cab7d6b9ce4~GridBase.RowPropertyKey: 1
+                    656b618196e4fc9032f2234b77c1ab80~GridBase.ColumnSpanPropertyKey: 1
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                Margin: {Left: 10.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Level
+                Children:
+                    b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! 0928bcb8-2890-4737-a2aa-288e2f010d6b
+                    c77b1e39daa9d7376bbcafaaffd4932f: !TextBlock ref!! 0f614d44-cb3f-4a33-a211-a35b96662bda
+                Orientation: Horizontal
+        -   UIElement: !Button
+                Id: 52396d77-6c7a-42d9-bc58-7db68f825d07
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: LevelUp
+                Content: !TextBlock ref!! 07f5a6a5-c91f-4e91-96f6-30e447da5b30
+                PressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
         -   UIElement: !StackPanel
                 Id: 526ea934-a140-4d4c-9cde-3493156845a9
                 DependencyProperties:
@@ -359,22 +474,6 @@ Hierarchy:
                     b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! 9763238c-caed-43af-860b-115360a52b30
                     c77b1e39daa9d7376bbcafaaffd4932f: !TextBlock ref!! 1b887981-9167-4153-bd33-e6b0ce9ee1b4
                 Orientation: Horizontal
-        -   UIElement: !TextBlock
-                Id: 62f68ea5-2827-4e72-a007-eaf7ebe500aa
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                HorizontalAlignment: Center
-                VerticalAlignment: Center
-                Margin: {}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Text: 'First Name:'
-                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
-                TextSize: 20.0
-                TextColor: {R: 240, G: 240, B: 240, A: 255}
-                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
-                OutlineThickness: 0.0
         -   UIElement: !TextBlock
                 Id: 685aff4b-71d1-4cc8-bacb-efed7a9e41b5
                 DependencyProperties: {}
@@ -525,8 +624,23 @@ Hierarchy:
                 MaximumDepth: 3.4028235E+38
                 Name: LastName
                 Children:
-                    d42a615aca57b7ae5f5f5755502cfaba: !TextBlock ref!! 3896c426-539e-4eb4-a648-01a3742cd443
                     4195f493b8054c2ec563f62564d6c57b: !TextBlock ref!! 906463ec-0ac3-45b6-b02c-7852f68db70d
+                Orientation: Horizontal
+        -   UIElement: !StackPanel
+                Id: 8055a024-473d-44aa-9d33-1e2ea7bb1e57
+                DependencyProperties:
+                    ef1742fb1d366c953a859cab7d6b9ce4~GridBase.RowPropertyKey: 1
+                    656b618196e4fc9032f2234b77c1ab80~GridBase.ColumnSpanPropertyKey: 1
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                Margin: {Left: 10.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: XP
+                Children:
+                    b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! 4afe4d68-872e-4b4b-9273-1e99632f29c3
+                    c77b1e39daa9d7376bbcafaaffd4932f: !TextBlock ref!! 2d6d4c1c-973d-4cc6-a941-1ced31cd8360
                 Orientation: Horizontal
         -   UIElement: !TextBlock
                 Id: 80b7b062-9edd-4f7a-b324-9fe9ccedad75
@@ -544,6 +658,20 @@ Hierarchy:
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
                 OutlineColor: {R: 0, G: 0, B: 0, A: 255}
                 OutlineThickness: 0.0
+        -   UIElement: !StackPanel
+                Id: 84992ded-b9fe-4b86-a957-32513cf454c9
+                DependencyProperties:
+                    4f56aa0f72905908cfa1273f0d6de99a~GridBase.RowPropertyKey: 3
+                    ea2d1c2e48356ff97fceac3dbb8c8a0c~GridBase.ColumnPropertyKey: 1
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: ActionPanel
+                Children:
+                    0523e60487e9cfb64c8659d4d8b4ba7a: !Button ref!! 52396d77-6c7a-42d9-bc58-7db68f825d07
+                    7dfdeab39ae90248b3be59ac4606299d: !Button ref!! e013e556-34c2-4429-b8fd-73dc55f18b28
         -   UIElement: !TextBlock
                 Id: 8b2e9458-cf25-49c9-8029-fd5b556704d3
                 DependencyProperties: {}
@@ -580,7 +708,7 @@ Hierarchy:
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 VerticalAlignment: Center
-                Margin: {}
+                Margin: {Left: 10.0}
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
@@ -859,18 +987,19 @@ Hierarchy:
                     3153c6eb483c9f26e02b68cc46d87b15: !StackPanel ref!! da74290d-0a7e-43c8-98d4-7fb799864b7e
                     61a86c8f5ec732c068280ca8179c9df9: !StackPanel ref!! 7c41c1c3-bd7c-4620-9bc3-1966884acb29
                     98ca6d818d69d1b8b5cc7c5e7d4d7a5b: !StackPanel ref!! 5c48042f-b9bd-4eeb-bb92-2826f1c8ca54
+                    d8028e6630e47308c726a3b323694da2: !StackPanel ref!! 510f12ce-6d54-4e9f-9917-24ef18904805
+                    d602c32d34d14ca63cc6dd8e6a7ec6e0: !StackPanel ref!! 8055a024-473d-44aa-9d33-1e2ea7bb1e57
                 Orientation: Horizontal
         -   UIElement: !StackPanel
                 Id: da74290d-0a7e-43c8-98d4-7fb799864b7e
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                Margin: {}
+                Margin: {Left: 10.0}
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
                 Name: FirstName
                 Children:
-                    d42a615aca57b7ae5f5f5755502cfaba: !TextBlock ref!! 62f68ea5-2827-4e72-a007-eaf7ebe500aa
                     c1c3364b43b9bac1dbb222ddece94aeb: !TextBlock ref!! a4761db2-0977-4890-9636-6fd283009e1d
                 Orientation: Horizontal
         -   UIElement: !TextBlock
@@ -888,6 +1017,25 @@ Hierarchy:
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
                 OutlineColor: {R: 0, G: 0, B: 0, A: 255}
                 OutlineThickness: 0.0
+        -   UIElement: !Button
+                Id: e013e556-34c2-4429-b8fd-73dc55f18b28
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Delete
+                Content: !TextBlock ref!! 4bdb78d7-a264-4f2b-9cc3-65c13ece7acd
+                PressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
         -   UIElement: !TextBlock
                 Id: e1d8ed05-6a6a-4435-89f2-3a2e7603bbd6
                 DependencyProperties: {}
@@ -980,6 +1128,7 @@ Hierarchy:
                     52f7c3fe1a600127b9e649c2a131f8ff: !StackPanel ref!! c794619a-4020-4888-8794-bd6d149c6a06
                     4cdfd38d4c8ff7b34807d3bbf18ec47b: !StackPanel ref!! f9ff6f9b-f862-418f-8460-e8b0c61bdde9
                     98acec9d2ff3ea75afecb318131b63bc: !StackPanel ref!! b3930d67-ac91-4f99-a742-d64ae0a8d088
+                    91d7608ed193156d70261b9d2d9af4e5: !StackPanel ref!! 84992ded-b9fe-4b86-a957-32513cf454c9
                 RowDefinitions:
                     999b564b52636c4ff29fae62e4abd3de: {}
                     6e440b323e1ab6008e52fe7d5e5d701c: {}
