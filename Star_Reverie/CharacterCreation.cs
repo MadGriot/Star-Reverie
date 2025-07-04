@@ -370,6 +370,7 @@ namespace Star_Reverie
             if (OnScreen)
             {
                 SceneSystem.SceneInstance.RootScene.Entities.Remove(uiEntity);
+                uiEntity.Dispose();
                 OnScreen = false;
             }
         }

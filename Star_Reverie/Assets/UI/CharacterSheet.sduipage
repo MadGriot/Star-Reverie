@@ -1,0 +1,1006 @@
+!UIPageAsset
+Id: 0585b6e2-9fe7-4a76-9d1b-87d001db8357
+SerializedVersion: {Stride: 2.1.0.1}
+Tags: []
+Design:
+    Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+Hierarchy:
+    RootParts:
+        - !Grid ref!! fe0f2858-433e-4a3b-8874-60dac254d43a
+    Parts:
+        -   UIElement: !StackPanel
+                Id: 01304957-773e-4535-b2d6-2c2c2904f588
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Children:
+                    7128877a757cc05803aafca9d7b5bcfb: !TextBlock ref!! 6862a417-a745-4260-9389-f94aa0f213bb
+                    97a173fec8c5573542cda0a5807cf5d3: !TextBlock ref!! 9e0b1a18-a253-4049-b339-f763965941d3
+                Orientation: Horizontal
+        -   UIElement: !TextBlock
+                Id: 034783d5-b8a6-4618-a75e-07713571a433
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: 'Move:'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 0c4ed72c-1d62-4823-a939-8b5a1e6251db
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: HitPointsNumber
+                Text: 10
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !StackPanel
+                Id: 10494184-4576-4ad9-bdfe-86488fae80ed
+                DependencyProperties:
+                    ef1742fb1d366c953a859cab7d6b9ce4~GridBase.RowPropertyKey: 1
+                    656b618196e4fc9032f2234b77c1ab80~GridBase.ColumnSpanPropertyKey: 1
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Top
+                Margin: {Left: 10.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Speed
+                Children:
+                    ad875790f5058d4fb175e0f8a19632b0: !Button ref!! a7a1b17d-3d05-4665-90a1-f7cb5ec4e808
+                    b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! ff9ef793-a488-4474-8b3e-f5f0e502852c
+                    c77b1e39daa9d7376bbcafaaffd4932f: !TextBlock ref!! 549c3c63-9809-405a-8418-c8c8a9923531
+                    56eebf77096d482a7965c2e5960bd63c: !Button ref!! 3c0584ed-8346-426d-8929-90ce80494500
+                Orientation: Horizontal
+        -   UIElement: !TextBlock
+                Id: 1b887981-9167-4153-bd33-e6b0ce9ee1b4
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: AgeNumber
+                Text: 21
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 20a72020-5b9d-4a65-9246-789ef4e17a59
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: HP
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !Button
+                Id: 22fcd813-6150-46ee-a557-3d6e64fb0e65
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Visibility: Hidden
+                DrawLayerNumber: 2
+                IsEnabled: false
+                CanBeHitByUser: false
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: AddMove
+                Content: !TextBlock ref!! 93576510-267c-4f31-a997-f922630fbb35
+                PressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+        -   UIElement: !TextBlock
+                Id: 26210a2a-998a-460a-a83a-9f09d1072567
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: BasicLiftNumber
+                Text: 20
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 284132c6-0b62-4561-a5b1-fdc0a48d6596
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: WILL
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 291c97c4-cafa-4bbb-a72c-c264890163e7
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: '-'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 3896c426-539e-4eb4-a648-01a3742cd443
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {Left: 20.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: 'Last Name:'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !Button
+                Id: 3c0584ed-8346-426d-8929-90ce80494500
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Visibility: Hidden
+                DrawLayerNumber: 2
+                IsEnabled: false
+                CanBeHitByUser: false
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: AddSpeed
+                Content: !TextBlock ref!! 755534e1-1c38-4d54-a8b3-ee91dd6cf15c
+                PressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+        -   UIElement: !TextBlock
+                Id: 40a0ea81-6d19-4b97-b29c-c869d61f0a66
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: WillNumber
+                Text: 10
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 41a744fd-8a5f-4c0d-9d24-09131bdc3f75
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: 'Basic Lift:'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 4630beb5-80b9-4834-bdc4-b4c3a54b0785
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: IntelligenceNumber
+                Text: 10
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 4f8a74c9-eb47-45b5-afd0-7b775c554d63
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: CON
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !StackPanel
+                Id: 526ea934-a140-4d4c-9cde-3493156845a9
+                DependencyProperties:
+                    ef1742fb1d366c953a859cab7d6b9ce4~GridBase.RowPropertyKey: 1
+                    656b618196e4fc9032f2234b77c1ab80~GridBase.ColumnSpanPropertyKey: 1
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Constitution
+                Children:
+                    b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! 4f8a74c9-eb47-45b5-afd0-7b775c554d63
+                    c77b1e39daa9d7376bbcafaaffd4932f: !TextBlock ref!! a264d862-7fab-4acd-88c5-85d64f39e6f0
+                Orientation: Horizontal
+        -   UIElement: !Button
+                Id: 53e4557c-d188-4a24-a621-95dd56917154
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Visibility: Hidden
+                DrawLayerNumber: 2
+                IsEnabled: false
+                CanBeHitByUser: false
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: SubtractMove
+                Content: !TextBlock ref!! 80b7b062-9edd-4f7a-b324-9fe9ccedad75
+                PressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+        -   UIElement: !TextBlock
+                Id: 549c3c63-9809-405a-8418-c8c8a9923531
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: SpeedNumber
+                Text: 5
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 57b7350b-460b-49f8-a3c5-dd0bbd1293e3
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: MoveNumber
+                Text: 5
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !StackPanel
+                Id: 5c48042f-b9bd-4eeb-bb92-2826f1c8ca54
+                DependencyProperties:
+                    ef1742fb1d366c953a859cab7d6b9ce4~GridBase.RowPropertyKey: 1
+                    656b618196e4fc9032f2234b77c1ab80~GridBase.ColumnSpanPropertyKey: 1
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                Margin: {Left: 10.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Age
+                Children:
+                    b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! 9763238c-caed-43af-860b-115360a52b30
+                    c77b1e39daa9d7376bbcafaaffd4932f: !TextBlock ref!! 1b887981-9167-4153-bd33-e6b0ce9ee1b4
+                Orientation: Horizontal
+        -   UIElement: !TextBlock
+                Id: 62f68ea5-2827-4e72-a007-eaf7ebe500aa
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: 'First Name:'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 685aff4b-71d1-4cc8-bacb-efed7a9e41b5
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: PerceptionNumber
+                Text: 10
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 6862a417-a745-4260-9389-f94aa0f213bb
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: 'Encumbrance:'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 6913681c-7e0e-4c64-8946-7f50800233b6
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: StrengthNumber
+                Text: 10
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !StackPanel
+                Id: 6dbc0124-7cdc-48ab-8eec-a9e2fed802c4
+                DependencyProperties:
+                    ef1742fb1d366c953a859cab7d6b9ce4~GridBase.RowPropertyKey: 1
+                    656b618196e4fc9032f2234b77c1ab80~GridBase.ColumnSpanPropertyKey: 1
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Perception
+                Children:
+                    b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! 9e98304f-0f5b-4d8f-9b5f-975357041c6c
+                    c77b1e39daa9d7376bbcafaaffd4932f: !TextBlock ref!! 685aff4b-71d1-4cc8-bacb-efed7a9e41b5
+                Orientation: Horizontal
+        -   UIElement: !TextBlock
+                Id: 708f9df5-ee94-4ffd-8e2c-52c58425f59f
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: INT
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !StackPanel
+                Id: 7160282b-3ce6-4cfc-ba15-e4bd7fe7880a
+                DependencyProperties:
+                    ef1742fb1d366c953a859cab7d6b9ce4~GridBase.RowPropertyKey: 1
+                    656b618196e4fc9032f2234b77c1ab80~GridBase.ColumnSpanPropertyKey: 1
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Dexterity
+                Children:
+                    b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! 90db399a-6d8b-4aed-8c14-56c419f0e901
+                    c77b1e39daa9d7376bbcafaaffd4932f: !TextBlock ref!! 77663251-9daa-4dce-a201-f1fcebd6a1e1
+                Orientation: Horizontal
+        -   UIElement: !TextBlock
+                Id: 755534e1-1c38-4d54-a8b3-ee91dd6cf15c
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: +
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 76b6a03e-31a9-4f6a-8e4f-a44b5ff3eb5e
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: STR
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 77663251-9daa-4dce-a201-f1fcebd6a1e1
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: DexterityNumber
+                Text: 10
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !StackPanel
+                Id: 7c41c1c3-bd7c-4620-9bc3-1966884acb29
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: LastName
+                Children:
+                    d42a615aca57b7ae5f5f5755502cfaba: !TextBlock ref!! 3896c426-539e-4eb4-a648-01a3742cd443
+                    4195f493b8054c2ec563f62564d6c57b: !TextBlock ref!! 906463ec-0ac3-45b6-b02c-7852f68db70d
+                Orientation: Horizontal
+        -   UIElement: !TextBlock
+                Id: 80b7b062-9edd-4f7a-b324-9fe9ccedad75
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: '-'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 8b2e9458-cf25-49c9-8029-fd5b556704d3
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: STM
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !StackPanel
+                Id: 8f0ed659-87e7-43b9-b80e-efddbb9731cd
+                DependencyProperties:
+                    ef1742fb1d366c953a859cab7d6b9ce4~GridBase.RowPropertyKey: 1
+                    656b618196e4fc9032f2234b77c1ab80~GridBase.ColumnSpanPropertyKey: 1
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Strength
+                Children:
+                    b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! 76b6a03e-31a9-4f6a-8e4f-a44b5ff3eb5e
+                    c77b1e39daa9d7376bbcafaaffd4932f: !TextBlock ref!! 6913681c-7e0e-4c64-8946-7f50800233b6
+                Orientation: Horizontal
+        -   UIElement: !TextBlock
+                Id: 906463ec-0ac3-45b6-b02c-7852f68db70d
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: LastName
+                Text: Person
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 90db399a-6d8b-4aed-8c14-56c419f0e901
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: DEX
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 93576510-267c-4f31-a997-f922630fbb35
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: +
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 959c6b0f-85b3-4f59-8e0c-ccc3d071e910
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: 'Dodge:'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 9763238c-caed-43af-860b-115360a52b30
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: AGE
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 9e0b1a18-a253-4049-b339-f763965941d3
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: EncumbranceStatus
+                Text: None
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 9e98304f-0f5b-4d8f-9b5f-975357041c6c
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: PER
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: a264d862-7fab-4acd-88c5-85d64f39e6f0
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: ConstitutionNumber
+                Text: 10
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: a4761db2-0977-4890-9636-6fd283009e1d
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: FirstName
+                Text: Unknown
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !Button
+                Id: a7a1b17d-3d05-4665-90a1-f7cb5ec4e808
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Visibility: Hidden
+                DrawLayerNumber: 2
+                IsEnabled: false
+                CanBeHitByUser: false
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: SubtractSpeed
+                Content: !TextBlock ref!! 291c97c4-cafa-4bbb-a72c-c264890163e7
+                PressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+        -   UIElement: !StackPanel
+                Id: b3930d67-ac91-4f99-a742-d64ae0a8d088
+                DependencyProperties:
+                    d85a3d460fc158c2509f9628e3b0e105~GridBase.RowPropertyKey: 3
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Encumbrance
+                Children:
+                    9a301767ef7e8626401de06e1613c0e5: !StackPanel ref!! 01304957-773e-4535-b2d6-2c2c2904f588
+                    85747d734bbad19bcfde5e358daac851: !StackPanel ref!! fd3b8af6-7dd5-47d8-96ad-bc30c68819ea
+                Orientation: Horizontal
+        -   UIElement: !StackPanel
+                Id: b51c0e8d-9a31-43f3-ab77-7b088020adee
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: BasicLift
+                Children:
+                    e01739ba51c673da43a91c69d702c9d8: !TextBlock ref!! 41a744fd-8a5f-4c0d-9d24-09131bdc3f75
+                    dbe712ecbb20517461ca4bae15e4a91b: !TextBlock ref!! 26210a2a-998a-460a-a83a-9f09d1072567
+                Orientation: Horizontal
+        -   UIElement: !StackPanel
+                Id: b678fafc-404a-421b-bc77-a106b14f454a
+                DependencyProperties:
+                    ef1742fb1d366c953a859cab7d6b9ce4~GridBase.RowPropertyKey: 1
+                    656b618196e4fc9032f2234b77c1ab80~GridBase.ColumnSpanPropertyKey: 1
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Will
+                Children:
+                    b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! 284132c6-0b62-4561-a5b1-fdc0a48d6596
+                    c77b1e39daa9d7376bbcafaaffd4932f: !TextBlock ref!! 40a0ea81-6d19-4b97-b29c-c869d61f0a66
+                Orientation: Horizontal
+        -   UIElement: !StackPanel
+                Id: bad0c17e-0b5e-453f-8a5c-98bac0dfef31
+                DependencyProperties:
+                    efa04b517a8505415ed08226ee6ed594~GridBase.ColumnPropertyKey: 0
+                    a0dcc5fb774550b98525df9b8aa51114~GridBase.RowPropertyKey: 1
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Primary
+                Children:
+                    0ca6bd8823871ba3a62d2e57fc2a031c: !StackPanel ref!! 8f0ed659-87e7-43b9-b80e-efddbb9731cd
+                    1e601ab5dac867d7af7f01ad51242940: !StackPanel ref!! 7160282b-3ce6-4cfc-ba15-e4bd7fe7880a
+                    8c72309acb5e39d87a5b63d3a4a8fa4b: !StackPanel ref!! fda825e7-6320-4c7e-a7d6-8038d3605b46
+                    dadcfc5a647d49d2e52679984e749e63: !StackPanel ref!! 526ea934-a140-4d4c-9cde-3493156845a9
+        -   UIElement: !StackPanel
+                Id: c794619a-4020-4888-8794-bd6d149c6a06
+                DependencyProperties:
+                    f9308e9b6b7ba8227ac099d20b42255f~GridBase.ColumnPropertyKey: 1
+                    5a1f0052c49df73fb8b4a6c95378c65f~GridBase.RowPropertyKey: 1
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Secondary
+                Children:
+                    4eb7040e500e47472918bc8d83b785c9: !StackPanel ref!! d0374fb5-f884-4305-b280-edcd02dbc5c6
+                    7b771d9677fcaff79fbc7c07ca3c07b3: !StackPanel ref!! b678fafc-404a-421b-bc77-a106b14f454a
+                    1755691df2ff34bbbfd8d376b3424941: !StackPanel ref!! 6dbc0124-7cdc-48ab-8eec-a9e2fed802c4
+                    66211f85ad0a8747c07f9c763a129c3f: !StackPanel ref!! c9bb62e2-01d2-492a-bcbe-24a6f981cbc2
+        -   UIElement: !StackPanel
+                Id: c9bb62e2-01d2-492a-bcbe-24a6f981cbc2
+                DependencyProperties:
+                    ef1742fb1d366c953a859cab7d6b9ce4~GridBase.RowPropertyKey: 1
+                    656b618196e4fc9032f2234b77c1ab80~GridBase.ColumnSpanPropertyKey: 1
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Stamina
+                Children:
+                    b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! 8b2e9458-cf25-49c9-8029-fd5b556704d3
+                    c77b1e39daa9d7376bbcafaaffd4932f: !TextBlock ref!! e1d8ed05-6a6a-4435-89f2-3a2e7603bbd6
+                Orientation: Horizontal
+        -   UIElement: !StackPanel
+                Id: d0374fb5-f884-4305-b280-edcd02dbc5c6
+                DependencyProperties:
+                    ef1742fb1d366c953a859cab7d6b9ce4~GridBase.RowPropertyKey: 1
+                    656b618196e4fc9032f2234b77c1ab80~GridBase.ColumnSpanPropertyKey: 1
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: HitPoints
+                Children:
+                    b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! 20a72020-5b9d-4a65-9246-789ef4e17a59
+                    c77b1e39daa9d7376bbcafaaffd4932f: !TextBlock ref!! 0c4ed72c-1d62-4823-a939-8b5a1e6251db
+                Orientation: Horizontal
+        -   UIElement: !StackPanel
+                Id: d5662f94-f581-4a62-8b48-c22ae4502b32
+                DependencyProperties:
+                    a219f8b6c7b4657232d51708f0fa3a50~GridBase.ColumnSpanPropertyKey: 2
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: CharacterName
+                Children:
+                    3153c6eb483c9f26e02b68cc46d87b15: !StackPanel ref!! da74290d-0a7e-43c8-98d4-7fb799864b7e
+                    61a86c8f5ec732c068280ca8179c9df9: !StackPanel ref!! 7c41c1c3-bd7c-4620-9bc3-1966884acb29
+                    98ca6d818d69d1b8b5cc7c5e7d4d7a5b: !StackPanel ref!! 5c48042f-b9bd-4eeb-bb92-2826f1c8ca54
+                Orientation: Horizontal
+        -   UIElement: !StackPanel
+                Id: da74290d-0a7e-43c8-98d4-7fb799864b7e
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: FirstName
+                Children:
+                    d42a615aca57b7ae5f5f5755502cfaba: !TextBlock ref!! 62f68ea5-2827-4e72-a007-eaf7ebe500aa
+                    c1c3364b43b9bac1dbb222ddece94aeb: !TextBlock ref!! a4761db2-0977-4890-9636-6fd283009e1d
+                Orientation: Horizontal
+        -   UIElement: !TextBlock
+                Id: db9681ff-4d66-4858-bdb9-5ceea5a97872
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: DodgeNumber
+                Text: 8
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: e1d8ed05-6a6a-4435-89f2-3a2e7603bbd6
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: StaminaNumber
+                Text: 10
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !StackPanel
+                Id: f9ff6f9b-f862-418f-8460-e8b0c61bdde9
+                DependencyProperties:
+                    ba415365be31a72e040cca0de1ff10ad~GridBase.RowPropertyKey: 2
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Movement
+                Children:
+                    3102cd4ab3382a3c318d0ad86f1fd824: !StackPanel ref!! b51c0e8d-9a31-43f3-ab77-7b088020adee
+                    90041fc519ac362f066b54dadc59b745: !StackPanel ref!! 10494184-4576-4ad9-bdfe-86488fae80ed
+                    8687e6c1285dda5b64d7062ded857da7: !StackPanel ref!! fb65d8da-bbd3-4221-b7e4-f9c2a9a376e9
+                Orientation: Horizontal
+        -   UIElement: !StackPanel
+                Id: fb65d8da-bbd3-4221-b7e4-f9c2a9a376e9
+                DependencyProperties:
+                    ef1742fb1d366c953a859cab7d6b9ce4~GridBase.RowPropertyKey: 1
+                    656b618196e4fc9032f2234b77c1ab80~GridBase.ColumnSpanPropertyKey: 1
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Top
+                Margin: {Left: 10.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Move
+                Children:
+                    ad875790f5058d4fb175e0f8a19632b0: !Button ref!! 53e4557c-d188-4a24-a621-95dd56917154
+                    b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! 034783d5-b8a6-4618-a75e-07713571a433
+                    c77b1e39daa9d7376bbcafaaffd4932f: !TextBlock ref!! 57b7350b-460b-49f8-a3c5-dd0bbd1293e3
+                    56eebf77096d482a7965c2e5960bd63c: !Button ref!! 22fcd813-6150-46ee-a557-3d6e64fb0e65
+                Orientation: Horizontal
+        -   UIElement: !StackPanel
+                Id: fd3b8af6-7dd5-47d8-96ad-bc30c68819ea
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {Left: 10.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Dodge
+                Children:
+                    7128877a757cc05803aafca9d7b5bcfb: !TextBlock ref!! 959c6b0f-85b3-4f59-8e0c-ccc3d071e910
+                    97a173fec8c5573542cda0a5807cf5d3: !TextBlock ref!! db9681ff-4d66-4858-bdb9-5ceea5a97872
+                Orientation: Horizontal
+        -   UIElement: !StackPanel
+                Id: fda825e7-6320-4c7e-a7d6-8038d3605b46
+                DependencyProperties:
+                    ef1742fb1d366c953a859cab7d6b9ce4~GridBase.RowPropertyKey: 1
+                    656b618196e4fc9032f2234b77c1ab80~GridBase.ColumnSpanPropertyKey: 1
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Intelligence
+                Children:
+                    b2976ab414b5456e1b0be4cfe33c1d35: !TextBlock ref!! 708f9df5-ee94-4ffd-8e2c-52c58425f59f
+                    c77b1e39daa9d7376bbcafaaffd4932f: !TextBlock ref!! 4630beb5-80b9-4834-bdc4-b4c3a54b0785
+                Orientation: Horizontal
+        -   UIElement: !Grid
+                Id: fe0f2858-433e-4a3b-8874-60dac254d43a
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Children:
+                    d27518d7a0184410bd25955c409a9591: !StackPanel ref!! d5662f94-f581-4a62-8b48-c22ae4502b32
+                    2c3cf1b7410e98232939160064771a10: !StackPanel ref!! bad0c17e-0b5e-453f-8a5c-98bac0dfef31
+                    52f7c3fe1a600127b9e649c2a131f8ff: !StackPanel ref!! c794619a-4020-4888-8794-bd6d149c6a06
+                    4cdfd38d4c8ff7b34807d3bbf18ec47b: !StackPanel ref!! f9ff6f9b-f862-418f-8460-e8b0c61bdde9
+                    98acec9d2ff3ea75afecb318131b63bc: !StackPanel ref!! b3930d67-ac91-4f99-a742-d64ae0a8d088
+                RowDefinitions:
+                    999b564b52636c4ff29fae62e4abd3de: {}
+                    6e440b323e1ab6008e52fe7d5e5d701c: {}
+                    a1f00e8fa4e5b8b96e0eff8644a46492: {}
+                    c1116508fe1d68a8b4d3130f6e5ea0b4: {}
+                ColumnDefinitions:
+                    d9bc5fb1bafea20435e3497f7fc3aefe: {}
+                    b12273549106bd2595680cc8fc257eb0: {}
+                LayerDefinitions: {}
+        -   UIElement: !TextBlock
+                Id: ff9ef793-a488-4474-8b3e-f5f0e502852c
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: 'Speed:'
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
