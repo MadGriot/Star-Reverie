@@ -54,6 +54,7 @@ Hierarchy:
                         Id: 7d169e79-3acd-44b4-b29d-bd8638a87c28
                         CharacterSelectionPage: ba4f5374-f988-4366-8fed-f09b1bd631e7:UI/CharacterList
                         CharacterSelectionButton: 2e60d39c-a09e-439d-b843-dc17382a1a09:SelectionButtonPrefab
+                        CharacterSheet: 0585b6e2-9fe7-4a76-9d1b-87d001db8357:UI/CharacterSheet
         -   Entity:
                 Id: 89309f44-ee21-4fc2-af72-f128ef3f1b98
                 Name: Sphere
