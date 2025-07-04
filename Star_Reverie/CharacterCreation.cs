@@ -358,8 +358,10 @@ namespace Star_Reverie
                 Will = int.Parse(willNumber.Text),
                 Perception = int.Parse(perceptionNumber.Text),
                 Stamina = int.Parse(staminaNumber.Text),
+                BasicLift = int.Parse(basicLiftNumber.Text),
                 Speed = decimal.Parse(speedNumber.Text),
                 BasicMove = int.Parse(moveNumber.Text),
+                Dodge = int.Parse(dodgeNumber.Text),
                 XP = 1000,
                 CharacterId = character.Id
             };

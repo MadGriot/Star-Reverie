@@ -10,7 +10,6 @@ Hierarchy:
         - ref!! 5dcce55f-fcee-40ec-81ee-6b3ff3c0ea10
         - ref!! afae736e-43c1-4c16-b395-38870ecb6966
         - ref!! bc2a7ee7-a61b-468a-acef-436b4718de2b
-        - ref!! 89309f44-ee21-4fc2-af72-f128ef3f1b98
         - ref!! d0e1b886-d936-4907-ac4e-3e5d44afd1eb
         - ref!! 7693025f-9023-44bd-ac9a-9cce30b9a9ba
     Parts:
@@ -56,20 +55,6 @@ Hierarchy:
                         CharacterSelectionButton: 2e60d39c-a09e-439d-b843-dc17382a1a09:SelectionButtonPrefab
                         CharacterSheet: 0585b6e2-9fe7-4a76-9d1b-87d001db8357:UI/CharacterSheet
         -   Entity:
-                Id: 89309f44-ee21-4fc2-af72-f128ef3f1b98
-                Name: Sphere
-                Components:
-                    bc94d57f730334241c4b47d3da7ba8e3: !TransformComponent
-                        Id: a263b54a-ba63-4a83-8a24-e8a2bf7253b3
-                        Position: {X: 0.0, Y: 0.5, Z: 0.0}
-                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                        Children: {}
-                    4ea8e60869940994a61d5061483bb26f: !ModelComponent
-                        Id: ff2bb952-435a-45ad-b015-9eae0db2a2f6
-                        Model: 84217cb5-3e6d-4dec-835b-eb82a6e58831:Sphere
-                        Materials: {}
-        -   Entity:
                 Id: afae736e-43c1-4c16-b395-38870ecb6966
                 Name: Skybox
                 Components:
@@ -92,8 +77,8 @@ Hierarchy:
                 Components:
                     477f29ae1e1869da547ad3fd3de876da: !TransformComponent
                         Id: 2996e45c-95f5-459f-a22e-e88d0c1da08a
-                        Position: {X: 2.6, Y: 0.6, Z: -1.0}
-                        Rotation: {X: 0.0, Y: 0.82903755, Z: 0.0, W: 0.5591929}
+                        Position: {X: 2.7659078, Y: 2.8999195, Z: -3.440666}
+                        Rotation: {X: -0.0, Y: -1.0, Z: 0.0, W: -4.371139E-08}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
                     51fb47dd17ef676175975a7dd751a17a: !CameraComponent
@@ -116,14 +101,15 @@ Hierarchy:
                 Components:
                     d2f884907426465fc05466dc99f849e1: !TransformComponent
                         Id: f3d6dffe-ea95-42d0-a2b8-8b40ee6afd59
-                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Position: {X: 5.0, Y: 0.0, Z: 5.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
                     ef1eb41c20c2264316f451a385b90bf5: !ModelComponent
                         Id: b56b8d23-8cfb-4416-a5c6-b5b501d3df64
                         Model: 5c927351-4ebd-4896-ad6b-3d68600ec390:Ground
-                        Materials: {}
+                        Materials:
+                            6e63855a0b499aff54488f3cebce991c~0: ad74e5da-cb10-46b7-9c34-3d65a478df12:Materials/GridMTHazard
         -   Folder: Code
             Entity:
                 Id: d0e1b886-d936-4907-ac4e-3e5d44afd1eb
