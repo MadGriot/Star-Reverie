@@ -6,13 +6,39 @@ ChildrenIds: []
 Offset: {X: 0.0, Y: 0.0, Z: 0.0}
 Hierarchy:
     RootParts:
-        - ref!! b64a6374-cd8c-46b4-b17d-2a944ce5dcaf
         - ref!! 5dcce55f-fcee-40ec-81ee-6b3ff3c0ea10
         - ref!! afae736e-43c1-4c16-b395-38870ecb6966
         - ref!! bc2a7ee7-a61b-468a-acef-436b4718de2b
         - ref!! d0e1b886-d936-4907-ac4e-3e5d44afd1eb
         - ref!! 7693025f-9023-44bd-ac9a-9cce30b9a9ba
+        - ref!! 32936748-6a8e-46ed-a933-c1a7c863815b
     Parts:
+        -   Entity:
+                Id: 32936748-6a8e-46ed-a933-c1a7c863815b
+                Name: Actor
+                Components:
+                    334bb7a56af39dd66967992abfc2ba59: !TransformComponent
+                        Id: 7ea62252-9374-4f4b-86db-b736e9d0b1f4
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children:
+                            304fa331491111163841a4d24b6ee806: ref!! ab7878d4-d633-46e0-936b-90b0212b433c
+                            75edee0024cbcc18041a312cf82f616b: ref!! f51f15d4-7bc4-47ab-9e5a-fc1686c62e06
+        -   Entity:
+                Id: 53338284-ef41-4e2c-af09-a5a8642baf33
+                Name: Model
+                Components:
+                    7c92942c2ad23921e0f003bdae2ca953: !TransformComponent
+                        Id: f51f15d4-7bc4-47ab-9e5a-fc1686c62e06
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    6a386b75eb6a43977b23bf4895626ed5: !ModelComponent
+                        Id: be0bad7c-c9cb-47f4-a7ed-7927bcc2dadd
+                        Model: f68ea240-695a-4de5-9884-60d77544fcd6:Models/mannequinModel
+                        Materials: {}
         -   Entity:
                 Id: 5dcce55f-fcee-40ec-81ee-6b3ff3c0ea10
                 Name: Directional light
@@ -55,6 +81,17 @@ Hierarchy:
                         CharacterSelectionButton: 2e60d39c-a09e-439d-b843-dc17382a1a09:SelectionButtonPrefab
                         CharacterSheet: 0585b6e2-9fe7-4a76-9d1b-87d001db8357:UI/CharacterSheet
         -   Entity:
+                Id: 95495b38-a41b-4ea4-bf8e-7710a5140843
+                Name: CameraTarget
+                Components:
+                    2f840e98a801b56c3b0459c99afe9737: !TransformComponent
+                        Id: ab7878d4-d633-46e0-936b-90b0212b433c
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children:
+                            ecf8f0c44aee124f7aad8a90feb4fb7b: ref!! 2996e45c-95f5-459f-a22e-e88d0c1da08a
+        -   Entity:
                 Id: afae736e-43c1-4c16-b395-38870ecb6966
                 Name: Skybox
                 Components:
@@ -77,8 +114,8 @@ Hierarchy:
                 Components:
                     477f29ae1e1869da547ad3fd3de876da: !TransformComponent
                         Id: 2996e45c-95f5-459f-a22e-e88d0c1da08a
-                        Position: {X: 2.7659078, Y: 2.8999195, Z: -3.440666}
-                        Rotation: {X: -0.0, Y: -1.0, Z: 0.0, W: -4.371139E-08}
+                        Position: {X: 0.0, Y: 2.5, Z: -2.0}
+                        Rotation: {X: -1.3110073E-08, Y: -0.9848077, Z: -0.17364818, W: 7.4350915E-08}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
                     51fb47dd17ef676175975a7dd751a17a: !CameraComponent
@@ -86,22 +123,19 @@ Hierarchy:
                         Name: null
                         Projection: Perspective
                         Slot: 4d3975fd-ec2c-43e5-af81-d0629cac5d34
-                    06f9b31f8bb36d8f94ec00237d944cfb: !Star_Reverie.BasicCameraController,Star_Reverie
-                        Id: 919b9677-4188-4242-8181-fb9d36828efb
-                        Gamepad: false
-                        KeyboardMovementSpeed: {X: 5.0, Y: 5.0, Z: 5.0}
-                        TouchMovementSpeed: {X: 0.7, Y: 0.7, Z: 0.3}
-                        SpeedFactor: 5.0
-                        KeyboardRotationSpeed: {X: 3.0, Y: 3.0}
-                        MouseRotationSpeed: {X: 1.0, Y: 1.0}
-                        TouchRotationSpeed: {X: 1.0, Y: 0.7}
+                    efe9c4f671e7deeb2e71e94c75b540a7: !Star_Reverie.ThirdPersonCamera,Star_Reverie
+                        Id: 0f86068e-614c-4c60-9443-87cb7866d90f
+                        DeadZone: 0.25
+                        CameraSensitivity: 2.0
+                        MinVerticalAngle: -20.0
+                        MaxVerticalAngle: 70.0
         -   Entity:
                 Id: bc2a7ee7-a61b-468a-acef-436b4718de2b
                 Name: Ground
                 Components:
                     d2f884907426465fc05466dc99f849e1: !TransformComponent
                         Id: f3d6dffe-ea95-42d0-a2b8-8b40ee6afd59
-                        Position: {X: 5.0, Y: 0.0, Z: 5.0}
+                        Position: {X: 4.0, Y: 0.0, Z: 4.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
