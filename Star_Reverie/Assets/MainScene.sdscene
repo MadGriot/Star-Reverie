@@ -25,6 +25,28 @@ Hierarchy:
                         Children:
                             304fa331491111163841a4d24b6ee806: ref!! ab7878d4-d633-46e0-936b-90b0212b433c
                             75edee0024cbcc18041a312cf82f616b: ref!! f51f15d4-7bc4-47ab-9e5a-fc1686c62e06
+                    b7b6899d032998a4cdf1abe85cec66b0: !CharacterComponent
+                        Id: 55d012c9-00ed-443e-b101-a5859e43630e
+                        CanSleep: false
+                        Restitution: 0.0
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        FallSpeed: 10.0
+                        MaxSlope: {Radians: 0.7853982}
+                        JumpSpeed: 5.0
+                        Gravity: {X: 0.0, Y: -10.0, Z: 0.0}
+                        ColliderShapes:
+                            484491625a11ad78fa529c9730eaceb3: !CapsuleColliderShapeDesc
+                                Length: 1.5
+                                LocalOffset: {X: 0.0, Y: 0.95, Z: 0.0}
+                                LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                    bb6849e1c16322b09ef000798d27f876: !Star_Reverie.PlayerMovement,Star_Reverie
+                        Id: 573d81a2-63e0-45df-90ac-be76d5b566b8
+                        AnimationSpeed: 1.0
+                        DeadZone: 0.25
+                        MoveSpeed: 1.0
         -   Entity:
                 Id: 53338284-ef41-4e2c-af09-a5a8642baf33
                 Name: Model
@@ -39,6 +61,12 @@ Hierarchy:
                         Id: be0bad7c-c9cb-47f4-a7ed-7927bcc2dadd
                         Model: f68ea240-695a-4de5-9884-60d77544fcd6:Models/mannequinModel
                         Materials: {}
+                    4ef15ce2166849622031195fc19d3c23: !AnimationComponent
+                        Id: 7b06504e-cd9c-45b4-b3aa-1eb2e7f8a0d6
+                        Animations:
+                            6ea1c59cf6e984636462f115bbb6570a~Idle: 5f286f7e-7d38-44cf-9bc1-3aad7be4f0fa:Animations/Idle
+                            2db25b0b3c8ee4401dc85a27b817afc8~Running: 448ca260-c8b7-4f63-9bf6-e58a5970a830:Animations/Run
+                            d7793b3c7af40d4b7d2dede43bc90b86~Walking: 9d61b261-66aa-40ed-88ed-3cc448f890c0:Animations/Walk
         -   Entity:
                 Id: 5dcce55f-fcee-40ec-81ee-6b3ff3c0ea10
                 Name: Directional light
@@ -144,6 +172,20 @@ Hierarchy:
                         Model: 5c927351-4ebd-4896-ad6b-3d68600ec390:Ground
                         Materials:
                             6e63855a0b499aff54488f3cebce991c~0: ad74e5da-cb10-46b7-9c34-3d65a478df12:Materials/GridMTHazard
+                    e6a97c821e2c48b94ed8427f299acd1d: !StaticColliderComponent
+                        Id: e05546b9-6a50-4f47-bbcc-56a76a14d289
+                        CanSleep: false
+                        Restitution: 0.0
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        IsTrigger: false
+                        AlwaysUpdateNaviMeshCache: false
+                        ColliderShapes:
+                            a8c05941ba89c10f1ae64cdb99eefab9: !StaticPlaneColliderShapeDesc
+                                Normal: {X: 0.0, Y: 1.0, Z: 0.0}
+                                Offset: 0.0
         -   Folder: Code
             Entity:
                 Id: d0e1b886-d936-4907-ac4e-3e5d44afd1eb
