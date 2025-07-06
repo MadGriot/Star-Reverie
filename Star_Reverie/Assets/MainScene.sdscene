@@ -107,6 +107,8 @@ Hierarchy:
                     bf9c69f3c046647ead7b252acf2c2100: !Star_Reverie.DialogueCreation,Star_Reverie
                         Id: 868f4057-1435-4c09-94de-cf60aa1e88eb
                         DialogueCreationMain: 9e28b92e-70c1-46d0-98b9-4dbe8f851c46:UI/DialogueCreation
+                        DialogueCreationRead: null
+                        DialogueCreationResponse: 84aaa6f6-cf01-4449-92c4-1eb56ce0d157:UI/DialogueCreationResponse
         -   Folder: Code
             Entity:
                 Id: 7693025f-9023-44bd-ac9a-9cce30b9a9ba

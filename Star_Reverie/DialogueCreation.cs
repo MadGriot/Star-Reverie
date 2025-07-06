@@ -5,16 +5,20 @@ using StarReverieCore.Models;
 using Stride.UI;
 using Stride.UI.Controls;
 using Stride.UI.Events;
+using Star_Reverie.Globals;
 
 namespace Star_Reverie
 {
     public class DialogueCreation : SyncScript
     {
         public UIPage DialogueCreationMain;
+        public UIPage DialogueCreationRead;
+        public UIPage DialogueCreationResponse;
         private Entity UIEntity;
         private UIComponent UIComponent;
 
         private bool DialogueCreationOnScreen;
+        private bool DialgoueResponseOnScreen;
 
         public override void Start()
         {
@@ -27,6 +31,7 @@ namespace Star_Reverie
             {
                 if (!DialogueCreationOnScreen)
                 {
+                    CurrentGameState.GameState = GameState.Dialogue;
                     UIEntity = new();
                     UIComponent = new UIComponent { Page = DialogueCreationMain };
                     UIEntity.Add(UIComponent);
@@ -40,6 +45,7 @@ namespace Star_Reverie
         {
             DialogueCreationMain.RootElement.FindVisualChildOfType<Button>("Save").Click +=
                 (object sender, RoutedEventArgs e) => SaveDialogue();
+
         }
         private void SaveDialogue()
         {
@@ -59,9 +65,31 @@ namespace Star_Reverie
                 SceneSystem.SceneInstance.RootScene.Entities.Remove(UIEntity);
                 UIEntity.Dispose();
                 DialogueCreationOnScreen = false;
+                CurrentGameState.GameState = GameState.Exploration;
 
             }
 
+        }
+
+        private void ShowResponseEditor()
+        {
+            if (!DialgoueResponseOnScreen)
+            {
+                if (DialogueCreationOnScreen)
+                {
+                    SceneSystem.SceneInstance.RootScene.Entities.Remove(UIEntity);
+                    UIEntity.Dispose();
+                    DialogueCreationOnScreen = false;
+
+
+                }
+                UIEntity = new();
+                UIComponent = new UIComponent { Page = DialogueCreationResponse };
+                UIEntity.Add(UIComponent);
+                SceneSystem.SceneInstance.RootScene.Entities.Add(UIEntity);
+                DialogueCreationOnScreen = true;
+
+            }
         }
     }
 }

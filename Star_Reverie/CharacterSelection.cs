@@ -9,6 +9,7 @@ using Stride.UI;
 using Stride.UI.Panels;
 using Stride.UI.Events;
 using Microsoft.EntityFrameworkCore;
+using Star_Reverie.Globals;
 
 namespace Star_Reverie
 {
@@ -45,7 +46,7 @@ namespace Star_Reverie
         {
             if (Input.IsKeyPressed(Keys.L))
             {
-                if (!CharacterListOnScreen)
+                if (!CharacterListOnScreen && CurrentGameState.GameState != GameState.Dialogue)
                 {
                     SceneSystem.SceneInstance.RootScene.Entities.Add(uiEntity);
                     CharacterListOnScreen = true;

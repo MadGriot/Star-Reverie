@@ -1,0 +1,56 @@
+!UIPageAsset
+Id: 9887ba61-aa8a-4341-958f-cd773330fc86
+SerializedVersion: {Stride: 2.1.0.1}
+Tags: []
+Design:
+    Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+Hierarchy:
+    RootParts:
+        - !Grid ref!! 003c3c64-1aa0-4b10-bfb4-fe8ac8ef0012
+    Parts:
+        -   UIElement: !Grid
+                Id: 003c3c64-1aa0-4b10-bfb4-fe8ac8ef0012
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Children:
+                    d1705dd35d6f0ac2b969d0029649a8b6: !TextBlock ref!! 3e520a4e-98ce-4602-8b6e-5ab6a32fa7ee
+                    698225e9a04778953854431f99dd04b8: !StackPanel ref!! 01a08cfa-eec6-444f-8f85-8e9c053c813f
+                RowDefinitions:
+                    879259a9fea403b737f70b26c8b63605: {}
+                    893cafacddcd5aaf0763dd362fe54ac8: {}
+                    172271951a99d051765c70ec2a3b1c63: {}
+                    e5a697eec9fc5dbf9cbe89ebba58090a: {}
+                ColumnDefinitions: {}
+                LayerDefinitions: {}
+        -   UIElement: !StackPanel
+                Id: 01a08cfa-eec6-444f-8f85-8e9c053c813f
+                DependencyProperties:
+                    a2e0401ab2c5bb302efa5ca3325c1bb6~GridBase.RowPropertyKey: 1
+                    3eaecd1a8fdd8210bc979f495b399950~GridBase.RowSpanPropertyKey: 2
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: CharacterList
+                Children: {}
+        -   UIElement: !TextBlock
+                Id: 3e520a4e-98ce-4602-8b6e-5ab6a32fa7ee
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: CharacterListTitle
+                Text: Dialogue List
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 80.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
