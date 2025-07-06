@@ -12,6 +12,7 @@ Hierarchy:
         - ref!! d0e1b886-d936-4907-ac4e-3e5d44afd1eb
         - ref!! 7693025f-9023-44bd-ac9a-9cce30b9a9ba
         - ref!! 32936748-6a8e-46ed-a933-c1a7c863815b
+        - ref!! 6a333a09-5239-49a6-a464-d5ff98e773e2
     Parts:
         -   Entity:
                 Id: 32936748-6a8e-46ed-a933-c1a7c863815b
@@ -92,6 +93,20 @@ Hierarchy:
                                 ComputeTransmittance: false
                                 BiasParameters: {}
                         Intensity: 20.0
+        -   Folder: Code
+            Entity:
+                Id: 6a333a09-5239-49a6-a464-d5ff98e773e2
+                Name: DialogueCreation
+                Components:
+                    2309a9b6fa5048d42e7290fad53ee4ac: !TransformComponent
+                        Id: ecd20316-a30c-4ce8-a699-626959a25e20
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    bf9c69f3c046647ead7b252acf2c2100: !Star_Reverie.DialogueCreation,Star_Reverie
+                        Id: 868f4057-1435-4c09-94de-cf60aa1e88eb
+                        DialogueCreationMain: 9e28b92e-70c1-46d0-98b9-4dbe8f851c46:UI/DialogueCreation
         -   Folder: Code
             Entity:
                 Id: 7693025f-9023-44bd-ac9a-9cce30b9a9ba
