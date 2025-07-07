@@ -151,7 +151,7 @@ Hierarchy:
                         Id: db10ee5a-13f3-4de4-803f-e991e123d86d
                         DialogueSelectionPage: 9887ba61-aa8a-4341-958f-cd773330fc86:UI/DialogueList
                         DialogueSelectionButton: 2e60d39c-a09e-439d-b843-dc17382a1a09:SelectionButtonPrefab
-                        DialoguePage: null
+                        DialoguePage: db2b0dcf-c773-42cb-bfee-1bb57f1bdb65:UI/DialoguePage
                         DialogueResponsePage: null
         -   Entity:
                 Id: afae736e-43c1-4c16-b395-38870ecb6966

@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 using Stride.Core.Mathematics;
 using Stride.Input;
 using Stride.Engine;
-using System.Security.Principal;
 using Star_Reverie.Globals;
 using StarReverieCore.Models;
 using StarReverieCore;
-using System.Windows.Media.TextFormatting;
 using Stride.UI.Panels;
 using Stride.UI;
 using Stride.UI.Controls;
@@ -69,9 +67,9 @@ namespace Star_Reverie
                     button.Name = dialgoue.SpeakerFirstName;
                     button.FindVisualChildOfType<TextBlock>().Text = $"{dialgoue.SpeakerFirstName} {dialgoue.SpeakerLastName}";
                     button.HorizontalAlignment = HorizontalAlignment.Center;
+                    button.Click += (object sender, RoutedEventArgs e) => ReadDialogue(dialgoue);
                     dialgoueList.Children.Add(button);
 
-                   button.Click += (object sender, RoutedEventArgs e) => ReadDialogue(dialgoue);
                 }
                 CurrentGameState.GameState = GameState.Dialogue;
                 DialoguePageOnScreen = true;
@@ -90,7 +88,18 @@ namespace Star_Reverie
                     SceneSystem.SceneInstance.RootScene.Entities.Remove(UIEntity);
                     UIEntity.Dispose();
                     DialoguePageOnScreen = false;
+
                 }
+                StarReverieDbContext starReverieDbContext = new StarReverieDbContext();
+                UIEntity = new();
+                UIComponent = new UIComponent { Page = DialoguePage };
+                UIEntity.Add(UIComponent);
+
+
+                CurrentGameState.GameState = GameState.Dialogue;
+                DialogueDetailsPageOnScreen = true;
+                SceneSystem.SceneInstance.RootScene.Entities.Add(UIEntity);
+
             }
         }
         private void ShowResponseEditor()
