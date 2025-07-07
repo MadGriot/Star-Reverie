@@ -36,7 +36,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
-                Name: CharacterList
+                Name: DialogueList
                 Children: {}
         -   UIElement: !TextBlock
                 Id: 3e520a4e-98ce-4602-8b6e-5ab6a32fa7ee
@@ -46,7 +46,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
-                Name: CharacterListTitle
+                Name: DialogueListTitle
                 Text: Dialogue List
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 80.0
