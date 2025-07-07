@@ -1,0 +1,23 @@
+!PrefabAsset
+Id: 5fa2bca1-d3fd-42b1-be26-70b75827bee2
+SerializedVersion: {Stride: 3.1.0.1}
+Tags: []
+Hierarchy:
+    RootParts:
+        - ref!! c6b2032d-7f84-4976-a0b4-20b69a307e63
+    Parts:
+        -   Entity:
+                Id: c6b2032d-7f84-4976-a0b4-20b69a307e63
+                Name: ResponseTextbox
+                Components:
+                    1b98420337baad80d3eb2e33a5ca3ebb: !TransformComponent
+                        Id: de6b0344-57bb-48b2-b198-9d2ac00e6d64
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    4b87bdac11ac4f0b4f50e8bde3e17231: !UIComponent
+                        Id: 75a99902-9207-49ec-9703-12d35dafc347
+                        Page: c83cf556-9fd8-45d7-948a-59c4ace6f31c:UI/ResponseTextbox
+                        Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+                        Size: {X: 1.28, Y: 0.72, Z: 1.0}

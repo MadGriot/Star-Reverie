@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Stride.Core.Mathematics;
 using Stride.Input;
 using Stride.Engine;
@@ -20,6 +18,7 @@ namespace Star_Reverie
     {
         public UIPage DialogueSelectionPage;
         public Prefab DialogueSelectionButton;
+        public Prefab ResponseTextBox;
         public UIPage DialoguePage;
         public UIPage DialogueResponsePage;
 
@@ -96,7 +95,7 @@ namespace Star_Reverie
                 UIComponent.Page.RootElement.FindVisualChildOfType<TextBlock>("SpeakerLastName").Text = dialogue.SpeakerLastName;
                 UIComponent.Page.RootElement.FindVisualChildOfType<TextBlock>("SpeakerDialogue").Text = dialogue.SpeakerDialogue;
                 UIComponent.Page.RootElement.FindVisualChildOfType<Button>("AddResponse").Click += 
-                    (object sender, RoutedEventArgs e) => ShowResponseEditor();
+                    (object sender, RoutedEventArgs e) => ShowResponseEditor(dialogue);
                 UIEntity.Add(UIComponent);
 
 
@@ -106,7 +105,7 @@ namespace Star_Reverie
 
             }
         }
-        private void ShowResponseEditor()
+        private void ShowResponseEditor(DialogueModel dialogue)
         {
             if (!DialgoueResponseOnScreen)
             {
@@ -116,16 +115,43 @@ namespace Star_Reverie
                     UIEntity.Dispose();
                     DialoguePageOnScreen = false;
                     DialogueDetailsPageOnScreen = false;
+
                 }
 
 
                 UIEntity = new();
                 UIComponent = new UIComponent { Page = DialogueResponsePage };
+                UIComponent.Page.RootElement.FindVisualChildOfType<TextBlock>("SpeakerFirstName").Text = dialogue.SpeakerFirstName;
+                UIComponent.Page.RootElement.FindVisualChildOfType<TextBlock>("SpeakerLastName").Text = dialogue.SpeakerLastName;
+                UIComponent.Page.RootElement.FindVisualChildOfType<TextBlock>("SpeakerDialogue").Text = dialogue.SpeakerDialogue;
+                UIComponent.Page.RootElement.FindVisualChildOfType<Button>("Save")
+                    .Click += (object sender, RoutedEventArgs e) => AddResponse(dialogue);
                 UIEntity.Add(UIComponent);
                 SceneSystem.SceneInstance.RootScene.Entities.Add(UIEntity);
                 DialoguePageOnScreen = true;
 
             }
+        }
+
+        private void AddResponse(DialogueModel dialogue)
+        {
+            StarReverieDbContext starReverieDbContext = new StarReverieDbContext();
+            DialogueModel response = new DialogueModel
+            {
+                SpeakerFirstName = UIComponent.Page.RootElement.FindVisualChildOfType<EditText>("ResponderFirstName").Text,
+                SpeakerLastName = UIComponent.Page.RootElement.FindVisualChildOfType<EditText>("ResponderLastName").Text,
+                SpeakerDialogue = UIComponent.Page.RootElement.FindVisualChildOfType<EditText>("ResponderDialogue").Text,
+                ParentDialogueId = dialogue.Id,
+
+            };
+            starReverieDbContext.Add(response);
+            starReverieDbContext.SaveChanges();
+
+            SceneSystem.SceneInstance.RootScene.Entities.Remove(UIEntity);
+            UIEntity.Dispose();
+            DialgoueResponseOnScreen = false;
+            CurrentGameState.GameState = GameState.Exploration;
+
         }
     }
 }

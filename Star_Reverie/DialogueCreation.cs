@@ -28,7 +28,7 @@ namespace Star_Reverie
         {
             if (Input.IsKeyPressed(Keys.P))
             {
-                if (!DialogueCreationOnScreen)
+                if (!DialogueCreationOnScreen && CurrentGameState.GameState != GameState.Dialogue)
                 {
                     CurrentGameState.GameState = GameState.Dialogue;
                     UIEntity = new();
