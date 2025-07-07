@@ -114,6 +114,8 @@ namespace Star_Reverie
 
                 UIComponent.Page.RootElement.FindVisualChildOfType<Button>("AddResponse").Click += 
                     (object sender, RoutedEventArgs e) => ShowResponseEditor(dialogue);
+                UIComponent.Page.RootElement.FindVisualChildOfType<Button>("Delete")
+                    .Click += (object sender, RoutedEventArgs e) => DeleteDialogue(dialogue);
                 UIEntity.Add(UIComponent);
 
 
@@ -170,6 +172,20 @@ namespace Star_Reverie
             DialgoueResponseOnScreen = false;
             CurrentGameState.GameState = GameState.Exploration;
 
+        }
+
+        private void DeleteDialogue(DialogueModel dialogue)
+        {
+            StarReverieDbContext starReverieDbContext = new StarReverieDbContext();
+
+
+            SceneSystem.SceneInstance.RootScene.Entities.Remove(UIEntity);
+            UIEntity.Dispose();
+            DialgoueResponseOnScreen = false;
+            CurrentGameState.GameState = GameState.Exploration;
+
+            starReverieDbContext.Remove(dialogue);
+            starReverieDbContext.SaveChanges();
         }
     }
 }
