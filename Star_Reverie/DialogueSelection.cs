@@ -11,6 +11,7 @@ using Stride.UI.Panels;
 using Stride.UI;
 using Stride.UI.Controls;
 using Stride.UI.Events;
+using Stride.Core.Extensions;
 
 namespace Star_Reverie
 {
@@ -18,7 +19,7 @@ namespace Star_Reverie
     {
         public UIPage DialogueSelectionPage;
         public Prefab DialogueSelectionButton;
-        public Prefab ResponseTextBox;
+        public Prefab ResponseTextBlock;
         public UIPage DialoguePage;
         public UIPage DialogueResponsePage;
 
@@ -94,6 +95,23 @@ namespace Star_Reverie
                 UIComponent.Page.RootElement.FindVisualChildOfType<TextBlock>("SpeakerFirstName").Text = dialogue.SpeakerFirstName;
                 UIComponent.Page.RootElement.FindVisualChildOfType<TextBlock>("SpeakerLastName").Text = dialogue.SpeakerLastName;
                 UIComponent.Page.RootElement.FindVisualChildOfType<TextBlock>("SpeakerDialogue").Text = dialogue.SpeakerDialogue;
+
+                if (!dialogue.Responses.IsNullOrEmpty())
+                {
+                    foreach (DialogueModel response in dialogue.Responses)
+                    {
+                        TextBlock textBlock = (TextBlock)ResponseTextBlock
+                            .Instantiate()
+                            .First()
+                            .Get<UIComponent>().Page
+                            .RootElement;
+                        textBlock.Text = response.SpeakerDialogue;
+                        UIComponent.Page.RootElement.FindVisualChildOfType<StackPanel>("Responses")
+                            .Children.Add(textBlock);
+
+                    }
+                }
+
                 UIComponent.Page.RootElement.FindVisualChildOfType<Button>("AddResponse").Click += 
                     (object sender, RoutedEventArgs e) => ShowResponseEditor(dialogue);
                 UIEntity.Add(UIComponent);

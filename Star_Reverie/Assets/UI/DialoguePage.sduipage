@@ -81,6 +81,7 @@ Hierarchy:
                 Children:
                     fc3ba3ebd6bbe964de5b54bae9ce9718: !StackPanel ref!! 7b25549a-9efd-4d0e-82fc-c000b5f33aad
                     27f14a40463175e364e00278e4f880a2: !TextBlock ref!! 86b059e5-bbe7-4c27-97ab-e0b2c844f76c
+                    8d9ed9813cdb179d02368172ca4d7062: !StackPanel ref!! ddb9716d-4510-4423-acb1-bfa03012aefe
                 RowDefinitions:
                     eb355917132a2571daf7ef97486ec246: {}
                     b78e1385fc87567ac35711036a920577: {}
@@ -209,3 +210,16 @@ Hierarchy:
                     CurrentFrame: 1
                 MouseOverImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+        -   UIElement: !StackPanel
+                Id: ddb9716d-4510-4423-acb1-bfa03012aefe
+                DependencyProperties:
+                    64c0942a24acbbfefb0dbc5f8ecbe93c~GridBase.RowPropertyKey: 2
+                    48a54fdbc2af75ce716141631f9cc653~GridBase.ColumnPropertyKey: 0
+                    80c2adfb9e0281f31d2a798efd2aa285~GridBase.ColumnSpanPropertyKey: 4
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Responses
+                Children: {}
