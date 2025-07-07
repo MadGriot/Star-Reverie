@@ -90,9 +90,13 @@ namespace Star_Reverie
                     DialoguePageOnScreen = false;
 
                 }
-                StarReverieDbContext starReverieDbContext = new StarReverieDbContext();
                 UIEntity = new();
                 UIComponent = new UIComponent { Page = DialoguePage };
+                UIComponent.Page.RootElement.FindVisualChildOfType<TextBlock>("SpeakerFirstName").Text = dialogue.SpeakerFirstName;
+                UIComponent.Page.RootElement.FindVisualChildOfType<TextBlock>("SpeakerLastName").Text = dialogue.SpeakerLastName;
+                UIComponent.Page.RootElement.FindVisualChildOfType<TextBlock>("SpeakerDialogue").Text = dialogue.SpeakerDialogue;
+                UIComponent.Page.RootElement.FindVisualChildOfType<Button>("AddResponse").Click += 
+                    (object sender, RoutedEventArgs e) => ShowResponseEditor();
                 UIEntity.Add(UIComponent);
 
 
@@ -106,14 +110,15 @@ namespace Star_Reverie
         {
             if (!DialgoueResponseOnScreen)
             {
-                if (DialoguePageOnScreen)
+                if (DialoguePageOnScreen || DialogueDetailsPageOnScreen)
                 {
                     SceneSystem.SceneInstance.RootScene.Entities.Remove(UIEntity);
                     UIEntity.Dispose();
                     DialoguePageOnScreen = false;
-
-
+                    DialogueDetailsPageOnScreen = false;
                 }
+
+
                 UIEntity = new();
                 UIComponent = new UIComponent { Page = DialogueResponsePage };
                 UIEntity.Add(UIComponent);

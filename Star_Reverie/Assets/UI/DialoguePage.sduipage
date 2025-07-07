@@ -108,6 +108,9 @@ Hierarchy:
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
                 Name: SpeakerFirstName
                 Text: Unknown
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
