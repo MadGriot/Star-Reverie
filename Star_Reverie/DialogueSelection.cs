@@ -28,6 +28,7 @@ namespace Star_Reverie
         private Entity UIEntity;
         private UIComponent UIComponent;
         private bool DialoguePageOnScreen;
+        private bool DialogueDetailsPageOnScreen;
         private bool DialgoueResponseOnScreen;
         private List<DialogueModel> dialogues;
         private StackPanel dialgoueList;
@@ -70,7 +71,7 @@ namespace Star_Reverie
                     button.HorizontalAlignment = HorizontalAlignment.Center;
                     dialgoueList.Children.Add(button);
 
-                   // button.Click += (object sender, RoutedEventArgs e) => ReadCharacter(character);
+                   button.Click += (object sender, RoutedEventArgs e) => ReadDialogue(dialgoue);
                 }
                 CurrentGameState.GameState = GameState.Dialogue;
                 DialoguePageOnScreen = true;
@@ -78,6 +79,20 @@ namespace Star_Reverie
             }
         }
 
+        private void ReadDialogue(DialogueModel dialogue)
+        {
+
+
+            if (!DialogueDetailsPageOnScreen)
+            {
+                if (DialoguePageOnScreen)
+                {
+                    SceneSystem.SceneInstance.RootScene.Entities.Remove(UIEntity);
+                    UIEntity.Dispose();
+                    DialoguePageOnScreen = false;
+                }
+            }
+        }
         private void ShowResponseEditor()
         {
             if (!DialgoueResponseOnScreen)

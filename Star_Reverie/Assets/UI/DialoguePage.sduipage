@@ -1,0 +1,208 @@
+!UIPageAsset
+Id: db2b0dcf-c773-42cb-bfee-1bb57f1bdb65
+SerializedVersion: {Stride: 2.1.0.1}
+Tags: []
+Design:
+    Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+Hierarchy:
+    RootParts:
+        - !Grid ref!! 4f2219c9-4e50-46dd-b673-21f2374b67dc
+    Parts:
+        -   UIElement: !TextBlock
+                Id: 08c257c6-ab94-4f59-bd77-689fd8ba1029
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Delete Dialogue
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 0c0aae50-9905-49a7-8639-ef65becbf7a2
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: 
+                Text: 'SpeakerLastName: '
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 394c379d-c630-4cb2-84c8-15679f4e6149
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                Name: SpeakerLastName
+                Text: Person
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !Button
+                Id: 3c832716-e2a8-46dd-8b92-db360888aa04
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Delete
+                Content: !TextBlock ref!! 08c257c6-ab94-4f59-bd77-689fd8ba1029
+                PressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+        -   UIElement: !Grid
+                Id: 4f2219c9-4e50-46dd-b673-21f2374b67dc
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Children:
+                    fc3ba3ebd6bbe964de5b54bae9ce9718: !StackPanel ref!! 7b25549a-9efd-4d0e-82fc-c000b5f33aad
+                    27f14a40463175e364e00278e4f880a2: !TextBlock ref!! 86b059e5-bbe7-4c27-97ab-e0b2c844f76c
+                RowDefinitions:
+                    eb355917132a2571daf7ef97486ec246: {}
+                    b78e1385fc87567ac35711036a920577: {}
+                    427706d1275fd82ea014f1f68c3a4c50: {}
+                ColumnDefinitions:
+                    9026628715f1c1beac70b3a1e288d553: {}
+                    e761c56656f917202fdd0594fdcb16db: {}
+                    ee4a1df58be1ace7b15bea7527472b1f: {}
+                    74642cf9fdbaf1b39c476143186d536f: {}
+                LayerDefinitions: {}
+        -   UIElement: !StackPanel
+                Id: 606aa8bf-e8e5-46e0-9d8d-3f86d9c6dd0e
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Children:
+                    d6086fd90e4bb6b52cc32c7dacc1ef04: !TextBlock ref!! 0c0aae50-9905-49a7-8639-ef65becbf7a2
+                    86b5650daaee76af0e3658dcc4a0035f: !TextBlock ref!! 394c379d-c630-4cb2-84c8-15679f4e6149
+                Orientation: Horizontal
+        -   UIElement: !TextBlock
+                Id: 63e5bfa7-2f9f-46b9-8f90-3f9035389da7
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                Name: SpeakerFirstName
+                Text: Unknown
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !StackPanel
+                Id: 6833d9a6-2a66-4780-94f0-c72c74c0890a
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Children:
+                    d6086fd90e4bb6b52cc32c7dacc1ef04: !TextBlock ref!! ad94b254-bcb3-4249-8999-2877498ff8b0
+                    dd2fa52f43627cf9360d97e906cd2f70: !TextBlock ref!! 63e5bfa7-2f9f-46b9-8f90-3f9035389da7
+                Orientation: Horizontal
+        -   UIElement: !StackPanel
+                Id: 7b25549a-9efd-4d0e-82fc-c000b5f33aad
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Children:
+                    d743624c1bcd328aad26bf12c8b9c970: !StackPanel ref!! 6833d9a6-2a66-4780-94f0-c72c74c0890a
+                    3d9aa7d7bebb96246f82a25da82a83cf: !StackPanel ref!! 606aa8bf-e8e5-46e0-9d8d-3f86d9c6dd0e
+                    ba90160b09828d61f3886cd2636fcdb3: !Button ref!! ba99e594-b883-4f64-a445-a9473219805c
+                    7e5d7ccd5adbb8e51fb18b136cb54595: !Button ref!! 3c832716-e2a8-46dd-8b92-db360888aa04
+        -   UIElement: !TextBlock
+                Id: 86b059e5-bbe7-4c27-97ab-e0b2c844f76c
+                DependencyProperties:
+                    1fe5ae2833afb1a113e80c2f82a3fd47~GridBase.ColumnPropertyKey: 1
+                    76c63e54581feab9dc3c4365a4f23196~GridBase.ColumnSpanPropertyKey: 3
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: SpeakerDialogue
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: a77c9c1c-9da1-4bba-b7ec-bc9346762682
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Add Response
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: ad94b254-bcb3-4249-8999-2877498ff8b0
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: 
+                Text: 'SpeakerFirstName: '
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !Button
+                Id: ba99e594-b883-4f64-a445-a9473219805c
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: AddResponse
+                Content: !TextBlock ref!! a77c9c1c-9da1-4bba-b7ec-bc9346762682
+                PressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
