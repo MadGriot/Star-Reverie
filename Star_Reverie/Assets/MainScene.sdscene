@@ -236,3 +236,6 @@ Hierarchy:
                         Id: b2e5fefe-941f-4465-96f4-6ce1003551d5
                         CharacterCreationMain: 5d96f708-94b2-4f97-ae1b-1453e89511f0:UI/CharacterCreation
                         AttributeMin: 3
+                        TextBlockPrefab: 5fa2bca1-d3fd-42b1-be26-70b75827bee2:ResponseTextboxPrefab
+                        SkillListPrefab: 50d9353c-4b72-40d9-a1ea-eddaacaa5441:StackPanelListPrefab
+                        SelectionButton: 2e60d39c-a09e-439d-b843-dc17382a1a09:SelectionButtonPrefab

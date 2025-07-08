@@ -1,0 +1,21 @@
+!UIPageAsset
+Id: c60a3fad-f0b5-4997-b2fa-453dbf559f3f
+SerializedVersion: {Stride: 2.1.0.1}
+Tags: []
+Design:
+    Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+Hierarchy:
+    RootParts:
+        - !StackPanel ref!! cb89ee0a-d4fa-43da-9e2a-1fc9f03643b4
+    Parts:
+        -   UIElement: !StackPanel
+                Id: cb89ee0a-d4fa-43da-9e2a-1fc9f03643b4
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: List
+                Children: {}
+                Orientation: Horizontal

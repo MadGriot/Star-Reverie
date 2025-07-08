@@ -7,6 +7,9 @@ using System;
 using StarReverieCore.Models;
 using StarReverieCore;
 using Star_Reverie.Globals;
+using Stride.UI.Panels;
+using StarReverieCore.Mechanics;
+using System.Linq;
 
 namespace Star_Reverie
 {
@@ -14,6 +17,9 @@ namespace Star_Reverie
     {
         public UIPage CharacterCreationMain;
         public int AttributeMin = 3;
+        public Prefab TextBlockPrefab;
+        public Prefab SkillListPrefab;
+        public Prefab SelectionButton;
         private Entity uiEntity;
         private UIComponent uIComponent;
         private bool OnScreen = false;
@@ -45,6 +51,7 @@ namespace Star_Reverie
             uiEntity.Add(uIComponent);
             StatNumberMapping();
             ButtonEventMapping();
+            SkillList();
         }
 
         public override void Update()
@@ -127,6 +134,46 @@ namespace Star_Reverie
             //addMove.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Move", true);
             //subtractMove.Click += (object sender, RoutedEventArgs e) => ChangeAttribute("Move", false);
             saveButton.Click += (object sender, RoutedEventArgs e) => SaveCharacter();
+            
+        }
+
+        private void SkillList()
+        {
+            StackPanel skillList = CharacterCreationMain
+                .RootElement
+                .FindVisualChildOfType<StackPanel>("SkillList");
+
+
+            foreach (string skill in Enum.GetNames(typeof(Skill)))
+            {
+                StackPanel skillListPanel = (StackPanel)SkillListPrefab
+                            .Instantiate()
+                            .First()
+                            .Get<UIComponent>().Page
+                            .RootElement;
+                TextBlock textBlock = (TextBlock)TextBlockPrefab
+                            .Instantiate()
+                            .First()
+                            .Get<UIComponent>().Page
+                            .RootElement;
+                Button minusButton = (Button)SelectionButton
+                    .Instantiate()
+                    .First()
+                    .Get<UIComponent>().Page
+                    .RootElement;
+                minusButton.FindVisualChildOfType<TextBlock>().Text = "-";
+                Button plusButton = (Button)SelectionButton
+                    .Instantiate()
+                    .First()
+                    .Get<UIComponent>().Page
+                    .RootElement;
+                plusButton.FindVisualChildOfType<TextBlock>().Text = "+";
+                textBlock.Text = skill;
+                skillListPanel.Children.Add(minusButton);
+                skillListPanel.Children.Add(textBlock);
+                skillListPanel.Children.Add(plusButton);
+                skillList.Children.Add(skillListPanel);
+            }
             
         }
 

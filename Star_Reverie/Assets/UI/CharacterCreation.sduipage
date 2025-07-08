@@ -1405,6 +1405,7 @@ Hierarchy:
                     4cdfd38d4c8ff7b34807d3bbf18ec47b: !StackPanel ref!! c9d03c1a-d8f3-4039-9a26-74132a470c6b
                     98acec9d2ff3ea75afecb318131b63bc: !StackPanel ref!! 17a07683-b4bb-4924-b962-d2280a0d0b05
                     b690b6a7b1eb0379104007d25672bf84: !Button ref!! cbaca326-05c8-4679-ae01-2af9595b9da3
+                    97a8a11b3885688841eb6cd4a24cf49b: !StackPanel ref!! fea77ef2-7404-4355-9787-891febf7fc34
                 RowDefinitions:
                     999b564b52636c4ff29fae62e4abd3de: {}
                     6e440b323e1ab6008e52fe7d5e5d701c: {}
@@ -1413,6 +1414,7 @@ Hierarchy:
                 ColumnDefinitions:
                     d9bc5fb1bafea20435e3497f7fc3aefe: {}
                     b12273549106bd2595680cc8fc257eb0: {}
+                    b3f2af895d77264730152010872004f3: {}
                 LayerDefinitions: {}
         -   UIElement: !TextBlock
                 Id: d6668d1f-08a6-43b0-b2b0-5411be3a22a2
@@ -1800,3 +1802,16 @@ Hierarchy:
                     d42a615aca57b7ae5f5f5755502cfaba: !TextBlock ref!! 71304eca-cb8e-42e0-a75f-0a3605904ec2
                     65b7134fe42c196a2898080f8892f9c0: !EditText ref!! ef09193c-b782-4138-a5bc-1ca074d9da74
                 Orientation: Horizontal
+        -   UIElement: !StackPanel
+                Id: fea77ef2-7404-4355-9787-891febf7fc34
+                DependencyProperties:
+                    137a001d0a581ec57950d988545caa48~GridBase.ColumnPropertyKey: 2
+                    33ce6977afb270a15b5f10d87a72f207~GridBase.ColumnSpanPropertyKey: 1
+                    b4ebd4ed3efe22b9c498bf3ef1370ff7~GridBase.RowSpanPropertyKey: 4
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: SkillList
+                Children: {}
