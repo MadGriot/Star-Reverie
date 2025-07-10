@@ -146,6 +146,7 @@ namespace Star_Reverie
 
             foreach (string skill in Enum.GetNames(typeof(Skill)))
             {
+                Enum.TryParse(skill, out Skill result);
                 StackPanel skillListPanel = (StackPanel)SkillListPrefab
                             .Instantiate()
                             .First()
@@ -162,6 +163,7 @@ namespace Star_Reverie
                     .Get<UIComponent>().Page
                     .RootElement;
                 minusButton.FindVisualChildOfType<TextBlock>().Text = "-";
+
                 Button plusButton = (Button)SelectionButton
                     .Instantiate()
                     .First()
@@ -174,7 +176,8 @@ namespace Star_Reverie
                             .Get<UIComponent>().Page
                             .RootElement;
                 textBlock.Text = skill;
-                //Enum.TryParse(skill, out Skill result);
+                plusButton.Click += (object sender, RoutedEventArgs e) => ChangeSkill(numBlock, result, true);
+                minusButton.Click += (object sender, RoutedEventArgs e) => ChangeSkill(numBlock, result, false);
                 //starReverieDbContext.Skills.First(x => result == x.Skill).Level.ToString();
                 numBlock.Text = "0";
                 skillListPanel.Children.Add(minusButton);
@@ -186,6 +189,25 @@ namespace Star_Reverie
             
         }
 
+        private void ChangeSkill(TextBlock textBlock, Skill skill, bool add)
+        {
+            int currentCharacterPoints = int.Parse(characterPoints.Text);
+            int currentSkillLevel = int.Parse(textBlock.Text);
+            int skillCost = SkillMechanics.GetSkillCost(currentSkillLevel);
+            if (currentCharacterPoints >= skillCost  && add)
+            {
+                textBlock.Text = (currentSkillLevel + 1).ToString();
+                currentCharacterPoints -= skillCost;
+                characterPoints.Text = currentCharacterPoints.ToString();
+            }
+            else if (!add && int.Parse(textBlock.Text) > 0)
+            {
+                skillCost = SkillMechanics.GetSkillCost(currentSkillLevel-1);
+                textBlock.Text = (currentSkillLevel - 1).ToString();
+                currentCharacterPoints += skillCost;
+                characterPoints.Text = currentCharacterPoints.ToString();
+            }
+        }
 
         private void ChangeAge(bool add)
         {
