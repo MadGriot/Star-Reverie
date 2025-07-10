@@ -142,7 +142,7 @@ namespace Star_Reverie
             StackPanel skillList = CharacterCreationMain
                 .RootElement
                 .FindVisualChildOfType<StackPanel>("SkillList");
-
+            StarReverieDbContext starReverieDbContext = new StarReverieDbContext();
 
             foreach (string skill in Enum.GetNames(typeof(Skill)))
             {
@@ -168,10 +168,19 @@ namespace Star_Reverie
                     .Get<UIComponent>().Page
                     .RootElement;
                 plusButton.FindVisualChildOfType<TextBlock>().Text = "+";
+                TextBlock numBlock = (TextBlock)TextBlockPrefab
+                            .Instantiate()
+                            .First()
+                            .Get<UIComponent>().Page
+                            .RootElement;
                 textBlock.Text = skill;
+                //Enum.TryParse(skill, out Skill result);
+                //starReverieDbContext.Skills.First(x => result == x.Skill).Level.ToString();
+                numBlock.Text = "0";
                 skillListPanel.Children.Add(minusButton);
                 skillListPanel.Children.Add(textBlock);
                 skillListPanel.Children.Add(plusButton);
+                skillListPanel.Children.Add(numBlock);
                 skillList.Children.Add(skillListPanel);
             }
             
