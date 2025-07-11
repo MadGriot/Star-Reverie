@@ -176,6 +176,7 @@ namespace Star_Reverie
                             .Get<UIComponent>().Page
                             .RootElement;
                 textBlock.Text = skill;
+                numBlock.Name = skill + "Number";
                 plusButton.Click += (object sender, RoutedEventArgs e) => ChangeSkill(numBlock, result, true);
                 minusButton.Click += (object sender, RoutedEventArgs e) => ChangeSkill(numBlock, result, false);
                 //starReverieDbContext.Skills.First(x => result == x.Skill).Level.ToString();
@@ -448,7 +449,30 @@ namespace Star_Reverie
             starReverieDbContext.AttributeScores.Add(attributeScore);
             starReverieDbContext.SaveChanges();
 
-            if (OnScreen)
+            StackPanel skillNumber = CharacterCreationMain
+                .RootElement
+                .FindVisualChildOfType<StackPanel>("SkillList");
+            foreach (string skill in Enum.GetNames(typeof(Skill)))
+            {
+                TextBlock skillLevel = CharacterCreationMain
+                    .RootElement
+                    .FindVisualChildOfType<TextBlock>(skill + "Number");
+                
+                if (int.Parse(skillLevel.Text) > 0)
+                {
+                    Enum.TryParse(skill, out Skill result);
+                    SkillModel skillModel = new SkillModel
+                    {
+                        Level = int.Parse(skillLevel.Text),
+                        Skill = result,
+                        CharacterId = character.Id
+                    };
+                    starReverieDbContext.Skills.Add(skillModel);
+                    starReverieDbContext.SaveChanges();
+                }
+
+            }
+                if (OnScreen)
             {
                 SceneSystem.SceneInstance.RootScene.Entities.Remove(uiEntity);
                 uiEntity.Dispose();
