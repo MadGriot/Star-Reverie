@@ -615,6 +615,18 @@ Hierarchy:
                 OutlineColor: {R: 0, G: 0, B: 0, A: 255}
                 OutlineThickness: 0.0
         -   UIElement: !StackPanel
+                Id: 79091fff-20c3-44de-9690-e30752d235f4
+                DependencyProperties:
+                    9cf3d696d91f3ec86b43d78cfe170420~GridBase.ColumnPropertyKey: 2
+                    be3c614c4b06a3dae7d38cc967351001~GridBase.RowSpanPropertyKey: 4
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: SkillList
+                Children: {}
+        -   UIElement: !StackPanel
                 Id: 7c41c1c3-bd7c-4620-9bc3-1966884acb29
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
@@ -1126,6 +1138,7 @@ Hierarchy:
                     d27518d7a0184410bd25955c409a9591: !StackPanel ref!! d5662f94-f581-4a62-8b48-c22ae4502b32
                     2c3cf1b7410e98232939160064771a10: !StackPanel ref!! bad0c17e-0b5e-453f-8a5c-98bac0dfef31
                     52f7c3fe1a600127b9e649c2a131f8ff: !StackPanel ref!! c794619a-4020-4888-8794-bd6d149c6a06
+                    7c41a9f4c8dde9b923937d017a3f4a1d: !StackPanel ref!! 79091fff-20c3-44de-9690-e30752d235f4
                     4cdfd38d4c8ff7b34807d3bbf18ec47b: !StackPanel ref!! f9ff6f9b-f862-418f-8460-e8b0c61bdde9
                     98acec9d2ff3ea75afecb318131b63bc: !StackPanel ref!! b3930d67-ac91-4f99-a742-d64ae0a8d088
                     91d7608ed193156d70261b9d2d9af4e5: !StackPanel ref!! 84992ded-b9fe-4b86-a957-32513cf454c9
@@ -1137,6 +1150,7 @@ Hierarchy:
                 ColumnDefinitions:
                     d9bc5fb1bafea20435e3497f7fc3aefe: {}
                     b12273549106bd2595680cc8fc257eb0: {}
+                    4cf1bf8d3c8857c943814bdb8e86f93a: {}
                 LayerDefinitions: {}
         -   UIElement: !TextBlock
                 Id: ff9ef793-a488-4474-8b3e-f5f0e502852c

@@ -1,15 +1,17 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Stride.Input;
-using Stride.Engine;
-using Stride.UI.Controls;
-using StarReverieCore;
-using StarReverieCore.Models;
-using Stride.UI;
-using Stride.UI.Panels;
-using Stride.UI.Events;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Star_Reverie.Globals;
+using StarReverieCore;
+using StarReverieCore.Mechanics;
+using StarReverieCore.Models;
+using Stride.Core.Extensions;
+using Stride.Engine;
+using Stride.Input;
+using Stride.UI;
+using Stride.UI.Controls;
+using Stride.UI.Events;
+using Stride.UI.Panels;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Star_Reverie
 {
@@ -17,6 +19,8 @@ namespace Star_Reverie
     {
         public UIPage CharacterSelectionPage;
         public Prefab CharacterSelectionButton;
+        public Prefab TextBlockPrefab;
+        public Prefab SkillListPrefab;
         public UIPage CharacterSheet;
         private Entity uiEntity;
         private UIComponent uIComponent;
@@ -80,6 +84,39 @@ namespace Star_Reverie
                 characterSheetComponent.Page.RootElement.FindVisualChildOfType<TextBlock>("DodgeNumber").Text = character.AttributeScore.Dodge.ToString();
                 characterSheetComponent.Page.RootElement.FindVisualChildOfType<TextBlock>("EncumbranceStatus").Text = character.AttributeScore.Encumbrance.ToString();
                 characterSheetComponent.Page.RootElement.FindVisualChildOfType<Button>("Delete").Click += (object sender, RoutedEventArgs e) => DeleteCharacter(character);
+
+                StackPanel skillList = characterSheetComponent.Page.RootElement.FindVisualChildOfType<StackPanel>("SkillList");
+
+                if (!character.Skills.IsNullOrEmpty())
+                {
+                    foreach (SkillModel skill in character.Skills)
+                    {
+                        StackPanel skillListPanel = (StackPanel)SkillListPrefab
+                                    .Instantiate()
+                                    .First()
+                                    .Get<UIComponent>().Page
+                                    .RootElement;
+                        TextBlock textBlock = (TextBlock)TextBlockPrefab
+                                        .Instantiate()
+                                        .First()
+                                        .Get<UIComponent>().Page
+                                        .RootElement;
+                        TextBlock numBlock = (TextBlock)TextBlockPrefab
+                                    .Instantiate()
+                                    .First()
+                                    .Get<UIComponent>().Page
+                                    .RootElement;
+                        textBlock.Text = skill.Skill.ToString();
+                        numBlock.Text = SkillMechanics.GetSkillNumber(character.AttributeScore, skill).ToString();
+                        skillListPanel.Children.Add(textBlock);
+                        skillListPanel.Children.Add(numBlock);
+                        skillList.Children.Add(skillListPanel);
+
+                    }
+                }
+
+
+
                 SceneSystem.SceneInstance.RootScene.Entities.Add(charaterSheetEntity);
                 CharacterSheetOnScreen = true;
             }
@@ -105,6 +142,7 @@ namespace Star_Reverie
         {
             characters = starReverieDbContext.Characters
                         .Include(c => c.AttributeScore)
+                        .Include(s => s.Skills)
                         .ToList();
 
             characterList = CharacterSelectionPage.RootElement.FindVisualChildOfType<StackPanel>("CharacterList");

@@ -44,6 +44,11 @@ Hierarchy:
                                 Length: 1.5
                                 LocalOffset: {X: 0.0, Y: 0.95, Z: 0.0}
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                    bb6849e1c16322b09ef000798d27f876: !Star_Reverie.PlayerMovement,Star_Reverie
+                        Id: 573d81a2-63e0-45df-90ac-be76d5b566b8
+                        AnimationSpeed: 1.0
+                        DeadZone: 0.25
+                        MoveSpeed: 1.0
         -   Entity:
                 Id: 53338284-ef41-4e2c-af09-a5a8642baf33
                 Name: Model
@@ -100,6 +105,10 @@ Hierarchy:
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
+                    bf9c69f3c046647ead7b252acf2c2100: !Star_Reverie.DialogueCreation,Star_Reverie
+                        Id: 868f4057-1435-4c09-94de-cf60aa1e88eb
+                        DialogueCreationMain: 9e28b92e-70c1-46d0-98b9-4dbe8f851c46:UI/DialogueCreation
+                        DialogueCreationResponse: 84aaa6f6-cf01-4449-92c4-1eb56ce0d157:UI/DialogueCreationResponse
         -   Folder: Code
             Entity:
                 Id: 7693025f-9023-44bd-ac9a-9cce30b9a9ba
@@ -111,6 +120,13 @@ Hierarchy:
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
+                    168b34e54e1d17c8c5d343e156256c50: !Star_Reverie.CharacterSelection,Star_Reverie
+                        Id: 7d169e79-3acd-44b4-b29d-bd8638a87c28
+                        CharacterSelectionPage: ba4f5374-f988-4366-8fed-f09b1bd631e7:UI/CharacterList
+                        CharacterSelectionButton: 2e60d39c-a09e-439d-b843-dc17382a1a09:SelectionButtonPrefab
+                        TextBlockPrefab: 5fa2bca1-d3fd-42b1-be26-70b75827bee2:ResponseTextboxPrefab
+                        SkillListPrefab: 50d9353c-4b72-40d9-a1ea-eddaacaa5441:StackPanelListPrefab
+                        CharacterSheet: 0585b6e2-9fe7-4a76-9d1b-87d001db8357:UI/CharacterSheet
         -   Entity:
                 Id: 95495b38-a41b-4ea4-bf8e-7710a5140843
                 Name: CameraTarget
@@ -133,6 +149,13 @@ Hierarchy:
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
+                    c26ea8ed5efb04996ffda8e033f85c37: !Star_Reverie.DialogueSelection,Star_Reverie
+                        Id: db10ee5a-13f3-4de4-803f-e991e123d86d
+                        DialogueSelectionPage: 9887ba61-aa8a-4341-958f-cd773330fc86:UI/DialogueList
+                        DialogueSelectionButton: 2e60d39c-a09e-439d-b843-dc17382a1a09:SelectionButtonPrefab
+                        ResponseTextBlock: 5fa2bca1-d3fd-42b1-be26-70b75827bee2:ResponseTextboxPrefab
+                        DialoguePage: db2b0dcf-c773-42cb-bfee-1bb57f1bdb65:UI/DialoguePage
+                        DialogueResponsePage: 84aaa6f6-cf01-4449-92c4-1eb56ce0d157:UI/DialogueCreationResponse
         -   Entity:
                 Id: afae736e-43c1-4c16-b395-38870ecb6966
                 Name: Skybox
@@ -165,6 +188,12 @@ Hierarchy:
                         Name: null
                         Projection: Perspective
                         Slot: 4d3975fd-ec2c-43e5-af81-d0629cac5d34
+                    efe9c4f671e7deeb2e71e94c75b540a7: !Star_Reverie.ThirdPersonCamera,Star_Reverie
+                        Id: 0f86068e-614c-4c60-9443-87cb7866d90f
+                        DeadZone: 0.25
+                        CameraSensitivity: 2.0
+                        MinVerticalAngle: -20.0
+                        MaxVerticalAngle: 70.0
         -   Entity:
                 Id: bc2a7ee7-a61b-468a-acef-436b4718de2b
                 Name: Ground
@@ -205,3 +234,10 @@ Hierarchy:
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
+                    ece2b4947773f1a88cfde27ce4b5fa99: !Star_Reverie.CharacterCreation,Star_Reverie
+                        Id: b2e5fefe-941f-4465-96f4-6ce1003551d5
+                        CharacterCreationMain: 5d96f708-94b2-4f97-ae1b-1453e89511f0:UI/CharacterCreation
+                        AttributeMin: 3
+                        TextBlockPrefab: 5fa2bca1-d3fd-42b1-be26-70b75827bee2:ResponseTextboxPrefab
+                        SkillListPrefab: 50d9353c-4b72-40d9-a1ea-eddaacaa5441:StackPanelListPrefab
+                        SelectionButton: 2e60d39c-a09e-439d-b843-dc17382a1a09:SelectionButtonPrefab
