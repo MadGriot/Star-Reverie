@@ -13,7 +13,7 @@ namespace Star_Reverie
     {
         public float AnimationSpeed = 1.0f;
         private AnimationComponent animationComponent;
-        private AnimationState animationState;
+        public AnimationState animationState;
         public CameraComponent camera;
         private Simulation simulation;
         private Vector3 targetPosition;
@@ -73,7 +73,7 @@ namespace Star_Reverie
             return hitResult.Point;
         }
 
-        private void Move(Vector3 targetPosition)
+        public void Move(Vector3 targetPosition)
         {
             this.targetPosition = targetPosition;
         }
@@ -87,7 +87,7 @@ namespace Star_Reverie
                 animationComponent.Play("Idle");
             }
         }
-        private void PlayAnimation(AnimationState animationState)
+        public void PlayAnimation(AnimationState animationState)
         {
             switch (animationState)
             {
