@@ -11,24 +11,25 @@ Hierarchy:
         - ref!! bc2a7ee7-a61b-468a-acef-436b4718de2b
         - ref!! d0e1b886-d936-4907-ac4e-3e5d44afd1eb
         - ref!! 7693025f-9023-44bd-ac9a-9cce30b9a9ba
-        - ref!! 32936748-6a8e-46ed-a933-c1a7c863815b
         - ref!! 6a333a09-5239-49a6-a464-d5ff98e773e2
         - ref!! adff6eef-cdf4-476e-be82-9d51d6b999e8
+        - ref!! 356ea86c-e8f8-440d-8143-f859dd2d2bfd
+        - ref!! 07fb582c-a3d5-4a7e-80a3-0142737aeff6
     Parts:
         -   Entity:
-                Id: 32936748-6a8e-46ed-a933-c1a7c863815b
+                Id: 07fb582c-a3d5-4a7e-80a3-0142737aeff6
                 Name: Actor
                 Components:
                     334bb7a56af39dd66967992abfc2ba59: !TransformComponent
-                        Id: 7ea62252-9374-4f4b-86db-b736e9d0b1f4
+                        Id: 41cc347a-7641-4346-a839-8d53900aa936
                         Position: {X: 0.0, Y: 0.0, Z: 0.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children:
-                            304fa331491111163841a4d24b6ee806: ref!! ab7878d4-d633-46e0-936b-90b0212b433c
-                            75edee0024cbcc18041a312cf82f616b: ref!! f51f15d4-7bc4-47ab-9e5a-fc1686c62e06
+                            304fa331491111163841a4d24b6ee806: ref!! 4cd084fb-5e1c-43ec-a83e-07b435da46ef
+                            75edee0024cbcc18041a312cf82f616b: ref!! e5195e61-6733-4b90-822e-fa2400abcc04
                     b7b6899d032998a4cdf1abe85cec66b0: !CharacterComponent
-                        Id: 55d012c9-00ed-443e-b101-a5859e43630e
+                        Id: f4899569-c5f4-40d6-ba7f-ca3bc1e32c1c
                         CanSleep: false
                         Restitution: 0.0
                         Friction: 0.5
@@ -45,30 +46,28 @@ Hierarchy:
                                 LocalOffset: {X: 0.0, Y: 0.95, Z: 0.0}
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                     bb6849e1c16322b09ef000798d27f876: !Star_Reverie.PlayerMovement,Star_Reverie
-                        Id: 573d81a2-63e0-45df-90ac-be76d5b566b8
+                        Id: a961d84c-bb05-4921-a865-a0a61da1951f
                         AnimationSpeed: 1.0
                         DeadZone: 0.25
                         MoveSpeed: 1.0
+            Base:
+                BasePartAsset: eb0b69d1-e912-4921-8b3c-f3d48a6c970f:Actor
+                BasePartId: ed7b10c7-6c4b-45b6-965a-e14f68a384b3
+                InstanceId: ba6c9485-876f-4832-b256-b97c8c3be7d9
         -   Entity:
-                Id: 53338284-ef41-4e2c-af09-a5a8642baf33
-                Name: Model
+                Id: 356ea86c-e8f8-440d-8143-f859dd2d2bfd
+                Name: box
                 Components:
-                    7c92942c2ad23921e0f003bdae2ca953: !TransformComponent
-                        Id: f51f15d4-7bc4-47ab-9e5a-fc1686c62e06
-                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                    753978ced777ec8e677c91677462b3f2: !TransformComponent
+                        Id: fbe4c5ea-3056-4379-9fcb-ced6093c24e6
+                        Position: {X: 6.3618655, Y: 0.0, Z: 2.8765607}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
-                    6a386b75eb6a43977b23bf4895626ed5: !ModelComponent
-                        Id: be0bad7c-c9cb-47f4-a7ed-7927bcc2dadd
-                        Model: f68ea240-695a-4de5-9884-60d77544fcd6:Models/mannequinModel
+                    c732babe430706a3e3f54a3e0507854c: !ModelComponent
+                        Id: 470a6bc4-df11-4fc0-a6af-29e7fc93eb61
+                        Model: efeb72e3-bc54-454f-8c0f-e6bf359fe4bb:box
                         Materials: {}
-                    4ef15ce2166849622031195fc19d3c23: !AnimationComponent
-                        Id: 7b06504e-cd9c-45b4-b3aa-1eb2e7f8a0d6
-                        Animations:
-                            6ea1c59cf6e984636462f115bbb6570a~Idle: 5f286f7e-7d38-44cf-9bc1-3aad7be4f0fa:Animations/Idle
-                            2db25b0b3c8ee4401dc85a27b817afc8~Running: 448ca260-c8b7-4f63-9bf6-e58a5970a830:Animations/Run
-                            d7793b3c7af40d4b7d2dede43bc90b86~Walking: 9d61b261-66aa-40ed-88ed-3cc448f890c0:Animations/Walk
         -   Entity:
                 Id: 5dcce55f-fcee-40ec-81ee-6b3ff3c0ea10
                 Name: Directional light
@@ -94,6 +93,31 @@ Hierarchy:
                                 ComputeTransmittance: false
                                 BiasParameters: {}
                         Intensity: 20.0
+        -   Entity:
+                Id: 5f6a5370-b7aa-4e61-93b0-a4de0873f79b
+                Name: Camera
+                Components:
+                    477f29ae1e1869da547ad3fd3de876da: !TransformComponent
+                        Id: c1f5a120-95fa-43dc-9281-418bf9fa6dd9
+                        Position: {X: 0.0, Y: 2.5, Z: -2.0}
+                        Rotation: {X: -1.3110073E-08, Y: -0.9848077, Z: -0.17364818, W: 7.4350915E-08}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    51fb47dd17ef676175975a7dd751a17a: !CameraComponent
+                        Id: 0c125ff5-2d5c-446a-ad47-5d2a414bb03f
+                        Name: null
+                        Projection: Perspective
+                        Slot: 4d3975fd-ec2c-43e5-af81-d0629cac5d34
+                    efe9c4f671e7deeb2e71e94c75b540a7: !Star_Reverie.ThirdPersonCamera,Star_Reverie
+                        Id: 30cdf6ef-a8ef-4941-8ba2-ee6ebf8c9184
+                        DeadZone: 0.25
+                        CameraSensitivity: 2.0
+                        MinVerticalAngle: -20.0
+                        MaxVerticalAngle: 70.0
+            Base:
+                BasePartAsset: eb0b69d1-e912-4921-8b3c-f3d48a6c970f:Actor
+                BasePartId: 232e0cab-dc43-411e-b6c4-cd005bf47d67
+                InstanceId: ba6c9485-876f-4832-b256-b97c8c3be7d9
         -   Folder: Code
             Entity:
                 Id: 6a333a09-5239-49a6-a464-d5ff98e773e2
@@ -128,16 +152,29 @@ Hierarchy:
                         SkillListPrefab: 50d9353c-4b72-40d9-a1ea-eddaacaa5441:StackPanelListPrefab
                         CharacterSheet: 0585b6e2-9fe7-4a76-9d1b-87d001db8357:UI/CharacterSheet
         -   Entity:
-                Id: 95495b38-a41b-4ea4-bf8e-7710a5140843
-                Name: CameraTarget
+                Id: 7e8dbf41-fefa-448e-996f-0aa95cf026cc
+                Name: Model
                 Components:
-                    2f840e98a801b56c3b0459c99afe9737: !TransformComponent
-                        Id: ab7878d4-d633-46e0-936b-90b0212b433c
+                    7c92942c2ad23921e0f003bdae2ca953: !TransformComponent
+                        Id: e5195e61-6733-4b90-822e-fa2400abcc04
                         Position: {X: 0.0, Y: 0.0, Z: 0.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                        Children:
-                            ecf8f0c44aee124f7aad8a90feb4fb7b: ref!! 2996e45c-95f5-459f-a22e-e88d0c1da08a
+                        Children: {}
+                    6a386b75eb6a43977b23bf4895626ed5: !ModelComponent
+                        Id: cb741972-0869-4aba-b043-f33b166e048a
+                        Model: f68ea240-695a-4de5-9884-60d77544fcd6:Models/mannequinModel
+                        Materials: {}
+                    4ef15ce2166849622031195fc19d3c23: !AnimationComponent
+                        Id: e11f3f5c-945d-416c-8d5e-3a3b668cc854
+                        Animations:
+                            6ea1c59cf6e984636462f115bbb6570a~Idle: 5f286f7e-7d38-44cf-9bc1-3aad7be4f0fa:Animations/Idle
+                            2db25b0b3c8ee4401dc85a27b817afc8~Running: 448ca260-c8b7-4f63-9bf6-e58a5970a830:Animations/Run
+                            d7793b3c7af40d4b7d2dede43bc90b86~Walking: 9d61b261-66aa-40ed-88ed-3cc448f890c0:Animations/Walk
+            Base:
+                BasePartAsset: eb0b69d1-e912-4921-8b3c-f3d48a6c970f:Actor
+                BasePartId: da4fad79-e9dc-47e2-992b-d7d77eb77ae5
+                InstanceId: ba6c9485-876f-4832-b256-b97c8c3be7d9
         -   Folder: Code
             Entity:
                 Id: adff6eef-cdf4-476e-be82-9d51d6b999e8
@@ -173,27 +210,6 @@ Hierarchy:
                         Id: daf29e38-4019-436c-9d52-9b64729ccb22
                         Type: !LightSkybox
                             Skybox: e369e27d-d391-4b00-a3d2-ab980ad9d94e:Skybox
-        -   Entity:
-                Id: b64a6374-cd8c-46b4-b17d-2a944ce5dcaf
-                Name: Camera
-                Components:
-                    477f29ae1e1869da547ad3fd3de876da: !TransformComponent
-                        Id: 2996e45c-95f5-459f-a22e-e88d0c1da08a
-                        Position: {X: 0.0, Y: 2.5, Z: -2.0}
-                        Rotation: {X: -1.3110073E-08, Y: -0.9848077, Z: -0.17364818, W: 7.4350915E-08}
-                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                        Children: {}
-                    51fb47dd17ef676175975a7dd751a17a: !CameraComponent
-                        Id: ced3ee98-be8f-41e2-8492-1c59be15776b
-                        Name: null
-                        Projection: Perspective
-                        Slot: 4d3975fd-ec2c-43e5-af81-d0629cac5d34
-                    efe9c4f671e7deeb2e71e94c75b540a7: !Star_Reverie.ThirdPersonCamera,Star_Reverie
-                        Id: 0f86068e-614c-4c60-9443-87cb7866d90f
-                        DeadZone: 0.25
-                        CameraSensitivity: 2.0
-                        MinVerticalAngle: -20.0
-                        MaxVerticalAngle: 70.0
         -   Entity:
                 Id: bc2a7ee7-a61b-468a-acef-436b4718de2b
                 Name: Ground
@@ -241,3 +257,18 @@ Hierarchy:
                         TextBlockPrefab: 5fa2bca1-d3fd-42b1-be26-70b75827bee2:ResponseTextboxPrefab
                         SkillListPrefab: 50d9353c-4b72-40d9-a1ea-eddaacaa5441:StackPanelListPrefab
                         SelectionButton: 2e60d39c-a09e-439d-b843-dc17382a1a09:SelectionButtonPrefab
+        -   Entity:
+                Id: edd98651-9727-493a-86db-00c442aa0fce
+                Name: CameraTarget
+                Components:
+                    2f840e98a801b56c3b0459c99afe9737: !TransformComponent
+                        Id: 4cd084fb-5e1c-43ec-a83e-07b435da46ef
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children:
+                            ecf8f0c44aee124f7aad8a90feb4fb7b: ref!! c1f5a120-95fa-43dc-9281-418bf9fa6dd9
+            Base:
+                BasePartAsset: eb0b69d1-e912-4921-8b3c-f3d48a6c970f:Actor
+                BasePartId: d6a5b44c-c905-40e1-90d7-48c51799ddd5
+                InstanceId: ba6c9485-876f-4832-b256-b97c8c3be7d9
