@@ -96,4 +96,5 @@ Hierarchy:
                         Id: 2fcaa509-9b0e-4113-b5b6-f2ca74e5a767
                     d8b5051209cc836838301a3d7bc9c308: !Star_Reverie.MouseWorld,Star_Reverie
                         Id: 6b4cd357-adf4-4673-8136-c32bae539328
+                        AnimationSpeed: 1.0
                         camera: ref!! e3757421-4618-4b0b-9416-29a411d948ed

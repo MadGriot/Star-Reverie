@@ -14,12 +14,7 @@ namespace Star_Reverie
 {
     public class PlayerMovement : SyncScript
     {
-        private enum AnimationState
-        {
-            Idle,
-            Walking,
-            Running
-        }
+
         public float AnimationSpeed = 1.0f;
         private AnimationComponent animationComponent;
         public float DeadZone = 0.25f;

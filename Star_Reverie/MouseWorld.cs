@@ -1,14 +1,20 @@
 ﻿using Star_Reverie.Globals;
+using Stride.Animations;
 using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Graphics;
 using Stride.Input;
 using Stride.Physics;
+using System.Windows.Automation.Text;
 
 namespace Star_Reverie
 {
     public class MouseWorld : SyncScript
     {
+        public float AnimationSpeed = 1.0f;
+        private AnimationComponent animationComponent;
+        private AnimationState animationState;
+        private PlayingAnimation currentAnimation;
         public CameraComponent camera;
         private Simulation simulation;
         private Vector3 targetPosition;
@@ -17,7 +23,9 @@ namespace Star_Reverie
         public override void Start()
         {
             characterComponent = Entity.Get<CharacterComponent>();
+            animationComponent = Entity.GetChild(1).Get<AnimationComponent>();
             simulation = this.GetSimulation();
+
         }
 
         public override void Update()
@@ -36,11 +44,13 @@ namespace Star_Reverie
             }
             else
             {
-                characterComponent.SetVelocity(Vector3.Zero);
+                StopMovement();
             }
             if (Input.IsMouseButtonPressed(MouseButton.Left))
             {
                 Move(GetPosition());
+                animationState = AnimationState.Running;
+                PlayAnimation(animationState);
             }
         }
 
@@ -63,6 +73,31 @@ namespace Star_Reverie
         private void Move(Vector3 targetPosition)
         {
             this.targetPosition = targetPosition;
+        }
+
+        private void StopMovement()
+        {
+            Entity.Get<CharacterComponent>().SetVelocity(Vector3.Zero);
+            if (animationState != AnimationState.Idle)
+            {
+                animationState = AnimationState.Idle;
+                currentAnimation = animationComponent.Play("Idle");
+            }
+        }
+        private void PlayAnimation(AnimationState animationState)
+        {
+            switch (animationState)
+            {
+                case AnimationState.Idle:
+                    currentAnimation = animationComponent.Play("Idle");
+                    break;
+                case AnimationState.Running:
+                    currentAnimation = animationComponent.Play("Running");
+                    break;
+                case AnimationState.Walking:
+                    currentAnimation = animationComponent.Play("Walking");
+                    break;
+            }
         }
     }
 }
