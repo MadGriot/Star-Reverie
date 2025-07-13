@@ -5,7 +5,7 @@ using Stride.Engine;
 using Stride.Graphics;
 using Stride.Input;
 using Stride.Physics;
-using System.Windows.Automation.Text;
+using System;
 
 namespace Star_Reverie
 {
@@ -14,7 +14,6 @@ namespace Star_Reverie
         public float AnimationSpeed = 1.0f;
         private AnimationComponent animationComponent;
         private AnimationState animationState;
-        private PlayingAnimation currentAnimation;
         public CameraComponent camera;
         private Simulation simulation;
         private Vector3 targetPosition;
@@ -38,9 +37,13 @@ namespace Star_Reverie
             if (Vector3.Distance(currentPosition, targetPosition) > stoppingDistance)
             {
                 Vector3 velocity = Vector3.Normalize(targetPosition - currentPosition);
-                float moveSpeed = 4f;
+                float moveSpeed = 6f;
                 float deltaTime = (float)Game.UpdateTime.Elapsed.TotalSeconds;
                 characterComponent.SetVelocity(velocity * moveSpeed);
+
+                float targetYaw = (float)Math.Atan2(velocity.X, velocity.Z); // returns radians
+
+                Entity.GetChild(1).Transform.RotationEulerXYZ = new Vector3(0, targetYaw, 0);
             }
             else
             {
@@ -81,7 +84,7 @@ namespace Star_Reverie
             if (animationState != AnimationState.Idle)
             {
                 animationState = AnimationState.Idle;
-                currentAnimation = animationComponent.Play("Idle");
+                animationComponent.Play("Idle");
             }
         }
         private void PlayAnimation(AnimationState animationState)
@@ -89,13 +92,13 @@ namespace Star_Reverie
             switch (animationState)
             {
                 case AnimationState.Idle:
-                    currentAnimation = animationComponent.Play("Idle");
+                    animationComponent.Play("Idle");
                     break;
                 case AnimationState.Running:
-                    currentAnimation = animationComponent.Play("Running");
+                    animationComponent.Play("Running");
                     break;
                 case AnimationState.Walking:
-                    currentAnimation = animationComponent.Play("Walking");
+                    animationComponent.Play("Walking");
                     break;
             }
         }
