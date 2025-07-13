@@ -50,6 +50,8 @@ Hierarchy:
                         AnimationSpeed: 1.0
                         DeadZone: 0.25
                         MoveSpeed: 1.0
+                    9c85d4a5e587f74907ebd59985a0cbeb: !Star_Reverie.Actor,Star_Reverie
+                        Id: fa2b07f8-ad90-4a71-a187-06236e6c1e17
             Base:
                 BasePartAsset: eb0b69d1-e912-4921-8b3c-f3d48a6c970f:Actor
                 BasePartId: ed7b10c7-6c4b-45b6-965a-e14f68a384b3
