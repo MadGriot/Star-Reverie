@@ -64,7 +64,7 @@ namespace Star_Reverie
             MaxVerticalAngle = MathUtil.Lerp(maxAngleFar, maxAngleClose, zoomT);
 
             // --- Apply vertical and horizontal rotation ---
-            targetRotationXYZ.X += -rightThumbMovement.Y;
+            targetRotationXYZ.X += rightThumbMovement.Y;
             targetRotationXYZ.X = MathUtil.Clamp(
                 targetRotationXYZ.X,
                 MathUtil.DegreesToRadians(MinVerticalAngle),

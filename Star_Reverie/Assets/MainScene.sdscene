@@ -52,6 +52,9 @@ Hierarchy:
                         MoveSpeed: 1.0
                     9c85d4a5e587f74907ebd59985a0cbeb: !Star_Reverie.Actor,Star_Reverie
                         Id: fa2b07f8-ad90-4a71-a187-06236e6c1e17
+                    d8b5051209cc836838301a3d7bc9c308: !Star_Reverie.MouseWorld,Star_Reverie
+                        Id: 4e06f4d3-47c9-4e47-9954-f8fd1990200e
+                        camera: ref!! 0c125ff5-2d5c-446a-ad47-5d2a414bb03f
             Base:
                 BasePartAsset: eb0b69d1-e912-4921-8b3c-f3d48a6c970f:Actor
                 BasePartId: ed7b10c7-6c4b-45b6-965a-e14f68a384b3
