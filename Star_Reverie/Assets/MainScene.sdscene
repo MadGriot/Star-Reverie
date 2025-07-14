@@ -30,6 +30,7 @@ Hierarchy:
                         Children:
                             304fa331491111163841a4d24b6ee806: ref!! 4cd084fb-5e1c-43ec-a83e-07b435da46ef
                             75edee0024cbcc18041a312cf82f616b: ref!! e5195e61-6733-4b90-822e-fa2400abcc04
+                            1b60c7d4ce56b32d2833cc5b1d4071a1: ref!! 8c25be22-f15c-4037-951e-4c317dc6687c
                     b7b6899d032998a4cdf1abe85cec66b0: !CharacterComponent
                         Id: f4899569-c5f4-40d6-ba7f-ca3bc1e32c1c
                         CollisionGroup*: CustomFilter1
@@ -67,6 +68,31 @@ Hierarchy:
             Base:
                 BasePartAsset: eb0b69d1-e912-4921-8b3c-f3d48a6c970f:Actor
                 BasePartId: ed7b10c7-6c4b-45b6-965a-e14f68a384b3
+                InstanceId: ba6c9485-876f-4832-b256-b97c8c3be7d9
+        -   Entity:
+                Id: 12b9fc54-48a3-4d82-8148-fdb43c73b552
+                Name: ActorSelectionAsset
+                Components:
+                    3a990811fcd006376a4f38619a5d2495: !TransformComponent
+                        Id: 8c25be22-f15c-4037-951e-4c317dc6687c
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    568cc0d461864246c8208cc0b14ca84a: !ModelComponent
+                        Id: 3d1d92a6-ef12-4fa6-8cb5-e8d810e43796
+                        Model: 57effdd9-704e-4243-8a23-992337403f76:ActorSelectionAsset
+                        Materials: {}
+                    01abf7c6e953915536802687aa0367e5: !Star_Reverie.ActorSelectedVisual,Star_Reverie
+                        Id: 51ec0115-3c96-40b9-83cf-f0b390e5e1a7
+                        Actor: ref!! 07fb582c-a3d5-4a7e-80a3-0142737aeff6
+                        SelectionAsset: ref!! 12b9fc54-48a3-4d82-8148-fdb43c73b552
+                        BlankMaterial: 1dd76ca6-d48b-4760-81d5-452468bf8cf4:BlankMaterial
+                        Material: 238e2d5d-1e12-47e0-b886-c1af4b67849f:Glass
+                        ActionSystem*: ref!! 85eb818d-66af-4e1b-8b25-2fc80e8a94d3
+            Base:
+                BasePartAsset: eb0b69d1-e912-4921-8b3c-f3d48a6c970f:Actor
+                BasePartId: 1189d25a-ba09-486e-80d5-f89d1c121a38
                 InstanceId: ba6c9485-876f-4832-b256-b97c8c3be7d9
         -   Folder: Code
             Entity:
@@ -350,6 +376,31 @@ Hierarchy:
                         SkillListPrefab: 50d9353c-4b72-40d9-a1ea-eddaacaa5441:StackPanelListPrefab
                         SelectionButton: 2e60d39c-a09e-439d-b843-dc17382a1a09:SelectionButtonPrefab
         -   Entity:
+                Id: d89499ed-663d-4e1b-a3d2-5fe762b9d2f1
+                Name: ActorSelectionAsset
+                Components:
+                    3a990811fcd006376a4f38619a5d2495: !TransformComponent
+                        Id: fa50481f-294b-460e-b02d-1e51017e860f
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    568cc0d461864246c8208cc0b14ca84a: !ModelComponent
+                        Id: 84b5c770-d232-4126-b0c0-1ba80ac05ac4
+                        Model: 57effdd9-704e-4243-8a23-992337403f76:ActorSelectionAsset
+                        Materials: {}
+                    01abf7c6e953915536802687aa0367e5: !Star_Reverie.ActorSelectedVisual,Star_Reverie
+                        Id: 778f3b8d-9316-4ef6-86fe-e462cca9465d
+                        Actor: ref!! fe7807da-6036-4c07-875e-ae294ce7b944
+                        SelectionAsset: ref!! d89499ed-663d-4e1b-a3d2-5fe762b9d2f1
+                        BlankMaterial: 1dd76ca6-d48b-4760-81d5-452468bf8cf4:BlankMaterial
+                        Material: 238e2d5d-1e12-47e0-b886-c1af4b67849f:Glass
+                        ActionSystem*: ref!! 85eb818d-66af-4e1b-8b25-2fc80e8a94d3
+            Base:
+                BasePartAsset: eb0b69d1-e912-4921-8b3c-f3d48a6c970f:Actor
+                BasePartId: 1189d25a-ba09-486e-80d5-f89d1c121a38
+                InstanceId: 8bbcafdf-1248-45b5-a436-43328d736ab0
+        -   Entity:
                 Id: edd98651-9727-493a-86db-00c442aa0fce
                 Name: CameraTarget
                 Components:
@@ -376,6 +427,7 @@ Hierarchy:
                         Children:
                             304fa331491111163841a4d24b6ee806: ref!! ea3b29a5-c527-4dc6-ba97-4ff87ecbbe83
                             75edee0024cbcc18041a312cf82f616b: ref!! 058a625b-fb54-43f4-a12f-f30bb22cc863
+                            ec698bbfe2596b44cb4798b446f2dcda: ref!! fa50481f-294b-460e-b02d-1e51017e860f
                     b7b6899d032998a4cdf1abe85cec66b0: !CharacterComponent
                         Id: a64c38b3-befb-401b-b720-26bff419b708
                         CollisionGroup*: CustomFilter1

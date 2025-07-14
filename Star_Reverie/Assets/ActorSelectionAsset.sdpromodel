@@ -1,0 +1,13 @@
+!ProceduralModelAsset
+Id: 57effdd9-704e-4243-8a23-992337403f76
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Type: !TorusProceduralModel
+    Radius: 0.6
+    Thickness: 0.07
+    Scale: {X: 1.0, Y: 0.1, Z: 1.0}
+    UvScale: {X: 1.0, Y: 1.0}
+    LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
+    NumberOfTextureCoordinates: 10
+    MaterialInstance:
+        Material: 238e2d5d-1e12-47e0-b886-c1af4b67849f:Glass

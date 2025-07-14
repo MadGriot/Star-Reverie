@@ -4,6 +4,7 @@ using Stride.Graphics;
 using Stride.Input;
 using Stride.Physics;
 using Stride.Rendering.Compositing;
+using System;
 
 namespace Star_Reverie
 {
@@ -12,6 +13,7 @@ namespace Star_Reverie
         // Declared public member fields and properties will show in the game studio
         public Entity Actor { get; set; }
         internal MouseWorld MouseWorld { get; set; }
+        public event EventHandler OnSelectedActorChanged;
         public override void Start()
         {
             MouseWorld = Actor.Get<MouseWorld>();
@@ -61,6 +63,7 @@ namespace Star_Reverie
 
                 MouseWorld.actorSelected = true;
                 Actor.Get<PlayerMovement>().actorSelected = !Actor.Get<PlayerMovement>().actorSelected;
+                OnSelectedActorChanged?.Invoke(this, EventArgs.Empty);
             }
         }
     }

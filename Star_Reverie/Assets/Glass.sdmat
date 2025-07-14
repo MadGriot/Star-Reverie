@@ -1,0 +1,23 @@
+!MaterialAsset
+Id: 238e2d5d-1e12-47e0-b886-c1af4b67849f
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Attributes:
+    MicroSurface: !MaterialGlossinessMapFeature
+        GlossinessMap: !ComputeFloat
+            Value: 0.95
+    Diffuse: !MaterialDiffuseMapFeature
+        DiffuseMap: !ComputeColor
+            Value: {R: 0.65882355, G: 0.007843138, B: 0.6784314, A: 1.0}
+    Specular: !MaterialMetalnessMapFeature
+        MetalnessMap: !ComputeFloat
+            Value: 0.0
+    SpecularModel: !MaterialSpecularThinGlassModelFeature
+        RefractiveIndex: 1.52
+        Fresnel: !MaterialSpecularMicrofacetFresnelThinGlass {}
+        Visibility: !MaterialSpecularMicrofacetVisibilitySmithSchlickGGX {}
+        NormalDistribution: !MaterialSpecularMicrofacetNormalDistributionGGX {}
+        Environment: !MaterialSpecularMicrofacetEnvironmentThinGlass {}
+    Overrides:
+        UVScale: {X: 1.0, Y: 1.0}
+Layers: {}
