@@ -15,15 +15,19 @@ namespace Star_Reverie
         private AnimationComponent animationComponent;
         public AnimationState animationState;
         public CameraComponent camera;
-        private Simulation simulation;
+        internal Simulation simulation;
+        public CollisionFilterGroupFlags CollideWith;
+        public bool CollideWithTriggers;
         private Vector3 targetPosition;
         private Vector3 currentPosition;
+        public bool actorSelected;
         private CharacterComponent characterComponent;
         public override void Start()
         {
             characterComponent = Entity.Get<CharacterComponent>();
             animationComponent = Entity.GetChild(1).Get<AnimationComponent>();
             simulation = this.GetSimulation();
+            targetPosition = Entity.Transform.Position;
 
         }
 
@@ -31,7 +35,8 @@ namespace Star_Reverie
         {
             if (CurrentGameState.GameState != GameState.Encounter)
                 return;
-
+            if (!actorSelected)
+                return;
             float stoppingDistance = 0.1f;
             currentPosition = Entity.Transform.Position;
             if (Vector3.Distance(currentPosition, targetPosition) > stoppingDistance)

@@ -20,7 +20,7 @@ Hierarchy:
                         Id: e3757421-4618-4b0b-9416-29a411d948ed
                         Name: null
                         Projection: Perspective
-                        Slot: 4d3975fd-ec2c-43e5-af81-d0629cac5d34
+                        Slot: 00000000-0000-0000-0000-000000000000
                     efe9c4f671e7deeb2e71e94c75b540a7: !Star_Reverie.ThirdPersonCamera,Star_Reverie
                         Id: 78663490-4df4-441e-87f7-f25751c60137
                         DeadZone: 0.25
@@ -99,3 +99,6 @@ Hierarchy:
                         AnimationSpeed: 1.0
                         animationState: Idle
                         camera: ref!! e3757421-4618-4b0b-9416-29a411d948ed
+                        CollideWith: CustomFilter1
+                        CollideWithTriggers: false
+                        actorSelected: false
