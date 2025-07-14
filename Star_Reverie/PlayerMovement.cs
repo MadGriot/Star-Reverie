@@ -20,17 +20,15 @@ namespace Star_Reverie
         public float DeadZone = 0.25f;
         public float MoveSpeed = 1.0f;
         public bool actorSelected;
-        private Vector3 playerRotation;
         private AnimationState animationState;
         private AnimationState animationMovementState;
         private Entity cameraEntity;
-        private PlayingAnimation currentAnimation = null;
 
         public override void Start()
         {
             animationComponent = Entity.GetChild(1).Get<AnimationComponent>();
             cameraEntity = Entity.GetChild(0);
-            currentAnimation = animationComponent.Play("Idle");
+            animationComponent.Play("Idle");
             animationMovementState = AnimationState.Walking;
             animationState = AnimationState.Idle;
         }
@@ -130,7 +128,7 @@ namespace Star_Reverie
             if (animationState != AnimationState.Idle)
             {
                 animationState = AnimationState.Idle;
-                currentAnimation = animationComponent.Play("Idle");
+                animationComponent.Play("Idle");
             }
         }
         private void PlayAnimation(AnimationState animationState)
@@ -138,13 +136,13 @@ namespace Star_Reverie
             switch (animationState)
             {
                 case AnimationState.Idle:
-                    currentAnimation = animationComponent.Play("Idle");
+                    animationComponent.Play("Idle");
                     break;
                 case AnimationState.Running:
-                    currentAnimation = animationComponent.Play("Running");
+                    animationComponent.Play("Running");
                     break;
                 case AnimationState.Walking:
-                    currentAnimation = animationComponent.Play("Walking");
+                    animationComponent.Play("Walking");
                     break;
             }
         }

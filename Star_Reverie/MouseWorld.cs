@@ -41,7 +41,11 @@ namespace Star_Reverie
             if (CurrentGameState.GameState != GameState.Encounter)
                 return;
             if (!actorSelected)
+            {
+                StopMovement();
+                currentPosition = Entity.Transform.Position;
                 return;
+            }
             DebugText.Print($"{targetPosition}", new Int2(700, 800));
 
             float stoppingDistance = 0.1f;
@@ -100,6 +104,12 @@ namespace Star_Reverie
                 animationState = AnimationState.Idle;
                 animationComponent.Play("Idle");
             }
+        }
+
+        public void ResetTarget()
+        {
+            targetPosition = Entity.Transform.Position;
+            StopMovement();
         }
         public void PlayAnimation(AnimationState animationState)
         {

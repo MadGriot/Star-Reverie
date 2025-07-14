@@ -47,6 +47,7 @@ namespace Star_Reverie
             if (hitResult.Succeeded)
             {
                 MouseWorld.actorSelected = false;
+                MouseWorld.ResetTarget();
                 CameraComponent mainCamera = MouseWorld.camera;
                 Actor.Get<PlayerMovement>().actorSelected = !Actor.Get<PlayerMovement>().actorSelected;
                 Actor = hitResult.Collider.Entity;
