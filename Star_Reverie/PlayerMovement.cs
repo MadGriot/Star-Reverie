@@ -19,6 +19,7 @@ namespace Star_Reverie
         private AnimationComponent animationComponent;
         public float DeadZone = 0.25f;
         public float MoveSpeed = 1.0f;
+        public bool actorSelected;
         private Vector3 playerRotation;
         private AnimationState animationState;
         private AnimationState animationMovementState;
@@ -36,6 +37,8 @@ namespace Star_Reverie
 
         public override void Update()
         {
+            if (!actorSelected)
+                return;
             if (Input.IsKeyPressed(Keys.Escape)) // Replace Start button for pause
             {
                 CurrentGameState.GameState = (CurrentGameState.GameState == GameState.Paused)

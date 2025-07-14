@@ -63,9 +63,9 @@ namespace Star_Reverie
             }
             if (Input.IsMouseButtonPressed(MouseButton.Left))
             {
-                Move(GetPosition());
-                animationState = AnimationState.Running;
-                PlayAnimation(animationState);
+                if (actorSelected)
+                    Move(GetPosition());
+
             }
         }
 
@@ -88,6 +88,8 @@ namespace Star_Reverie
         public void Move(Vector3 targetPosition)
         {
             this.targetPosition = targetPosition;
+            animationState = AnimationState.Running;
+            PlayAnimation(animationState);
         }
 
         private void StopMovement()

@@ -23,11 +23,6 @@ namespace Star_Reverie
             if (Input.IsMouseButtonPressed(MouseButton.Left))
             {
                 HandleActorSelection();
-                MouseWorld.Move(MouseWorld.GetPosition());
-                MouseWorld.animationState = AnimationState.Running;
-                MouseWorld.PlayAnimation(MouseWorld.animationState);
-
-
             }
 
             DebugText.Print($"{Actor.Name}", new Int2(700, 600));
@@ -53,6 +48,7 @@ namespace Star_Reverie
             {
                 MouseWorld.actorSelected = false;
                 CameraComponent mainCamera = MouseWorld.camera;
+                Actor.Get<PlayerMovement>().actorSelected = !Actor.Get<PlayerMovement>().actorSelected;
                 Actor = hitResult.Collider.Entity;
                 MouseWorld = Actor.Get<MouseWorld>();
 
@@ -63,6 +59,7 @@ namespace Star_Reverie
 
 
                 MouseWorld.actorSelected = true;
+                Actor.Get<PlayerMovement>().actorSelected = !Actor.Get<PlayerMovement>().actorSelected;
             }
         }
     }
