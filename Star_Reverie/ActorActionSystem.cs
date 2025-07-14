@@ -3,6 +3,7 @@ using Stride.Engine;
 using Stride.Graphics;
 using Stride.Input;
 using Stride.Physics;
+using Stride.Rendering.Compositing;
 
 namespace Star_Reverie
 {
@@ -11,10 +12,10 @@ namespace Star_Reverie
         // Declared public member fields and properties will show in the game studio
         public Entity Actor { get; set; }
         internal MouseWorld MouseWorld { get; set; }
-
         public override void Start()
         {
             MouseWorld = Actor.Get<MouseWorld>();
+
         }
 
         public override void Update()
@@ -30,6 +31,7 @@ namespace Star_Reverie
             }
 
             DebugText.Print($"{Actor.Name}", new Int2(700, 600));
+
         }
 
         public void HandleActorSelection()
@@ -46,11 +48,20 @@ namespace Star_Reverie
             MouseWorld.simulation.Raycast(nearPosition, farPosition,
                 out HitResult hitResult, CollisionFilterGroups.CustomFilter1, MouseWorld.CollideWith, MouseWorld.CollideWithTriggers);
 
+
             if (hitResult.Succeeded)
             {
                 MouseWorld.actorSelected = false;
+                CameraComponent mainCamera = MouseWorld.camera;
                 Actor = hitResult.Collider.Entity;
                 MouseWorld = Actor.Get<MouseWorld>();
+
+                //Camera Swapping
+                CameraComponent targetCamera = MouseWorld.camera;
+                targetCamera.Enabled = !targetCamera.Enabled;
+                mainCamera.Enabled = !mainCamera.Enabled;
+
+
                 MouseWorld.actorSelected = true;
             }
         }

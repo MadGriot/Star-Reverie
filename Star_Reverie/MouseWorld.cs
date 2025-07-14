@@ -27,6 +27,11 @@ namespace Star_Reverie
             characterComponent = Entity.Get<CharacterComponent>();
             animationComponent = Entity.GetChild(1).Get<AnimationComponent>();
             simulation = this.GetSimulation();
+            if (camera.Slot != SceneSystem.GraphicsCompositor.Cameras[0].ToSlotId())
+            {
+                camera.Slot = SceneSystem.GraphicsCompositor.Cameras[0].ToSlotId();
+                camera.Enabled = false;
+            }
             targetPosition = Entity.Transform.Position;
 
         }
@@ -37,6 +42,8 @@ namespace Star_Reverie
                 return;
             if (!actorSelected)
                 return;
+            DebugText.Print($"{targetPosition}", new Int2(700, 800));
+
             float stoppingDistance = 0.1f;
             currentPosition = Entity.Transform.Position;
             if (Vector3.Distance(currentPosition, targetPosition) > stoppingDistance)
