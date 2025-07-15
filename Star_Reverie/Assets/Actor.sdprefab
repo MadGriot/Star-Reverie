@@ -26,7 +26,7 @@ Hierarchy:
                         SelectionAsset: ref!! 1189d25a-ba09-486e-80d5-f89d1c121a38
                         BlankMaterial: 1dd76ca6-d48b-4760-81d5-452468bf8cf4:BlankMaterial
                         Material: 238e2d5d-1e12-47e0-b886-c1af4b67849f:Glass
-                        ActionSystem: ref!! 85eb818d-66af-4e1b-8b25-2fc80e8a94d3
+                        ActionSystem: null
         -   Entity:
                 Id: 232e0cab-dc43-411e-b6c4-cd005bf47d67
                 Name: Camera
