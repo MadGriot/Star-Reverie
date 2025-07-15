@@ -18,7 +18,6 @@ namespace Star_Reverie
 
         public override void Update()
         {
-
             if (CurrentGameState.GameState != GameState.Encounter)
             {
                 if (Input.IsKeyPressed(Keys.Q))

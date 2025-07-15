@@ -1,0 +1,27 @@
+!PrefabAsset
+Id: 50365806-1982-4179-88a1-deca7436346c
+SerializedVersion: {Stride: 3.1.0.1}
+Tags: []
+Hierarchy:
+    RootParts:
+        - ref!! 9d0cc593-5d22-4524-b339-911867c89b41
+    Parts:
+        -   Entity:
+                Id: 9d0cc593-5d22-4524-b339-911867c89b41
+                Name: Cell
+                Components:
+                    9ab4259ff56e965d3a87dddda02c8ccd: !TransformComponent
+                        Id: aa523a43-a94e-4ece-a42e-1ec925141cc8
+                        Position: {X: 0.0, Y: 0.01, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 2.0, Y: 1.0, Z: 2.0}
+                        Children: {}
+                    4f0e5b3d9ca38c4e59b09fc41622f27c: !ModelComponent
+                        Id: 05d656ea-7fe2-445c-924b-b75eda990957
+                        Model: 2887adba-5424-4404-85fc-04035c8fe382:Plane
+                        Materials: {}
+                    b9c431a591b41c94645b0105a211bacb: !Star_Reverie.GridSystemVisualSingle,Star_Reverie
+                        Id: 4a804f30-af2e-4e2d-b57e-351c8a5d8885
+                        BlankMaterial: 1dd76ca6-d48b-4760-81d5-452468bf8cf4:BlankMaterial
+                        Material: 327543ef-7ad1-4765-9877-15f4f96d4a89:Materials/CellMaterial
+                        Cell: ref!! 9d0cc593-5d22-4524-b339-911867c89b41

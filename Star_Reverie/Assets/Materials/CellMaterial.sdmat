@@ -1,0 +1,28 @@
+!MaterialAsset
+Id: 327543ef-7ad1-4765-9877-15f4f96d4a89
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Attributes:
+    Diffuse: !MaterialDiffuseMapFeature
+        DiffuseMap: !ComputeColor
+            Value: {R: 0.654902, G: 0.654902, B: 0.654902, A: 1.0}
+    DiffuseModel: !MaterialDiffuseLambertModelFeature {}
+    Specular: !MaterialSpecularMapFeature
+        SpecularMap: !ComputeColor
+            Value: {R: 0.654902, G: 0.654902, B: 0.654902, A: 1.0}
+        Intensity: !ComputeFloat
+            Value: 1.0
+    SpecularModel: !MaterialSpecularMicrofacetModelFeature
+        Fresnel: !MaterialSpecularMicrofacetFresnelSchlick {}
+        Visibility: !MaterialSpecularMicrofacetVisibilitySmithSchlickGGX {}
+        NormalDistribution: !MaterialSpecularMicrofacetNormalDistributionGGX {}
+        Environment: !MaterialSpecularMicrofacetEnvironmentGGXLUT {}
+    Transparency: !MaterialTransparencyAdditiveFeature
+        Alpha: !ComputeFloat
+            Value: 0.6
+        Tint: !ComputeColor
+            Value: {R: 0.078431375, G: 0.078431375, B: 0.9607843, A: 1.0}
+        DitheredShadows: true
+    Overrides:
+        UVScale: {X: 1.0, Y: 1.0}
+Layers: {}
