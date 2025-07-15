@@ -1,5 +1,6 @@
 ﻿using StarReverieCore.Grid;
 using Stride.Core.Mathematics;
+using Stride.Engine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace Star_Reverie
         private int height;
         private int length;
         private float cellSize;
+        private GridObject[,,] gridObjectArray;
 
         public GridSystem(int width, int height, int length, float cellSize)
         {
@@ -21,11 +23,24 @@ namespace Star_Reverie
             this.height = height;
             this.length = length;
             this.cellSize = cellSize;
+
+            gridObjectArray = new GridObject[width, height, length];
+            for (int x = 0; x < width; x++)
+            {
+                for (int y = 0; y < height; y++)
+                {
+                    for (int z = 0; z < length; z++)
+                    {
+                        GridPosition gridPosition = new GridPosition(x, y, z);
+                        gridObjectArray[x,y,z] = new GridObject(this, gridPosition);
+                    }
+                }
+            }
         }
 
-        public Vector3 GetWorldPosition(int x, int y, int z)
+        public Vector3 GetWorldPosition(GridPosition gridPosition)
         {
-            return new Vector3(x, y, z) * cellSize;
+            return new Vector3(gridPosition.x, gridPosition.y, gridPosition.z) * cellSize;
         }
 
         public GridPosition GetGridPosition(Vector3 worldPosition)
@@ -36,6 +51,22 @@ namespace Star_Reverie
                 Convert.ToInt32(worldPosition.Y / cellSize),
                 Convert.ToInt32(worldPosition.Z / cellSize)
                 );
+        }
+
+        public void CreateDebugObjects(Entity debugObject)
+        {
+            for (int x = 0; x < width; x++)
+            {
+                for (int y = 0; y < height; y++)
+                {
+                    for (int z = 0; z < length; z++)
+                    {
+                        Entity clone = debugObject.Clone();
+                        clone.Transform.Position = GetWorldPosition(new GridPosition(x, y, z));
+                        debugObject.Scene.Entities.Add(clone);
+                    }
+                }
+            }
         }
     }
 }

@@ -17,6 +17,8 @@ Hierarchy:
         - ref!! 07fb582c-a3d5-4a7e-80a3-0142737aeff6
         - ref!! fe7807da-6036-4c07-875e-ae294ce7b944
         - ref!! 2a38fe14-86ff-44c3-abb5-f6d4bc5af9f2
+        - ref!! 15480917-6088-4fda-8c29-25ab878c88d8
+        - ref!! 649fc464-2d55-4881-95fa-2fe665c9cb19
     Parts:
         -   Entity:
                 Id: 07fb582c-a3d5-4a7e-80a3-0142737aeff6
@@ -94,6 +96,20 @@ Hierarchy:
                 BasePartAsset: eb0b69d1-e912-4921-8b3c-f3d48a6c970f:Actor
                 BasePartId: 1189d25a-ba09-486e-80d5-f89d1c121a38
                 InstanceId: ba6c9485-876f-4832-b256-b97c8c3be7d9
+        -   Entity:
+                Id: 15480917-6088-4fda-8c29-25ab878c88d8
+                Name: CoinA
+                Components:
+                    9eb1b626e7c57f64b072b4c6f96444db: !TransformComponent
+                        Id: 92ba4ad4-c904-4e97-9c9a-4ab8059bfa63
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    e444ea568d2db9abc5132ed756848f11: !ModelComponent
+                        Id: e3e7e1a9-74c5-446b-ac4c-54f0e516327e
+                        Model: 9a1283b0-1d34-439a-976b-9efe9eeb00f6:Models/CoinA
+                        Materials: {}
         -   Folder: Code
             Entity:
                 Id: 2a38fe14-86ff-44c3-abb5-f6d4bc5af9f2
@@ -197,6 +213,20 @@ Hierarchy:
                 BasePartAsset: eb0b69d1-e912-4921-8b3c-f3d48a6c970f:Actor
                 BasePartId: 232e0cab-dc43-411e-b6c4-cd005bf47d67
                 InstanceId: ba6c9485-876f-4832-b256-b97c8c3be7d9
+        -   Folder: Code
+            Entity:
+                Id: 649fc464-2d55-4881-95fa-2fe665c9cb19
+                Name: TestScript
+                Components:
+                    c6840af90f63c18a13558abf0ddddeb8: !TransformComponent
+                        Id: 30870323-42eb-4afb-97f8-71ce47d85724
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    7ff81f3f3477638a27065bf4e545294b: !Star_Reverie.Testing,Star_Reverie
+                        Id: baa21e84-b712-49a2-8050-26277af427c8
+                        GridDebugObject: ref!! 15480917-6088-4fda-8c29-25ab878c88d8
         -   Folder: Code
             Entity:
                 Id: 6a333a09-5239-49a6-a464-d5ff98e773e2
