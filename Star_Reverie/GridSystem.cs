@@ -7,17 +7,17 @@ namespace Star_Reverie
 {
     public class GridSystem
     {
-        private int width;
-        private int height;
-        private int length;
+        public int Width { get; private set; }
+        public int Height { get; private set; }
+        public int Length { get; private set; }
         private float cellSize;
         private GridObject[,,] gridObjectArray;
 
         public GridSystem(int width, int height, int length, float cellSize)
         {
-            this.width = width;
-            this.height = height;
-            this.length = length;
+            Width = width;
+            Height = height;
+            Length = length;
             this.cellSize = cellSize;
 
             gridObjectArray = new GridObject[width, height, length];
@@ -50,11 +50,11 @@ namespace Star_Reverie
 
         public void CreateDebugObjects(Entity debugObject)
         {
-            for (int x = 0; x < width; x++)
+            for (int x = 0; x < Width; x++)
             {
-                for (int y = 0; y < height; y++)
+                for (int y = 0; y < Height; y++)
                 {
-                    for (int z = 0; z < length; z++)
+                    for (int z = 0; z < Length; z++)
                     {
                         Entity clone = debugObject.Clone();
                         clone.Transform.Position = GetWorldPosition(new GridPosition(x, y, z));

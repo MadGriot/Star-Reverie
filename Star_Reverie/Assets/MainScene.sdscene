@@ -20,7 +20,24 @@ Hierarchy:
         - ref!! 15480917-6088-4fda-8c29-25ab878c88d8
         - ref!! 649fc464-2d55-4881-95fa-2fe665c9cb19
         - ref!! b94950f3-7504-4bb7-bf29-2793e55514ee
+        - ref!! 02a156bc-1e09-4005-908c-072e8f09d2e1
     Parts:
+        -   Folder: Code
+            Entity:
+                Id: 02a156bc-1e09-4005-908c-072e8f09d2e1
+                Name: GridSystemVisual
+                Components:
+                    63e3f65d932114e22adee9c5d69e64c6: !TransformComponent
+                        Id: 8ad619f6-992f-4c25-b57f-d8c14761a041
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    d1c74b8cb438dcb46dbe44c72c05d21d: !Star_Reverie.GridSystemVisual,Star_Reverie
+                        Id: 43d7a9a3-83f2-42af-ab94-c948f0265980
+                        GridSystemVisualSinglePrefab: 50365806-1982-4179-88a1-deca7436346c:Cell
+                        LevelGrid: ref!! 5520f15b-3e7f-497c-b13b-c639cd8bdf07
+                        ActorActionSystem: ref!! 85eb818d-66af-4e1b-8b25-2fc80e8a94d3
         -   Entity:
                 Id: 07fb582c-a3d5-4a7e-80a3-0142737aeff6
                 Name: Actor
