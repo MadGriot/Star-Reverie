@@ -9,10 +9,11 @@ namespace Star_Reverie
     public class Actor : SyncScript
     {
 
-
+        public LevelGrid LevelGrid;
         public override void Start()
         {
-
+            LevelGrid.AddActorAtGridPosition
+                (LevelGrid.GridSystem.GetGridPosition(Entity.Transform.Position), this);
         }
 
         public override void Update()

@@ -2,10 +2,6 @@
 using Stride.Core.Mathematics;
 using Stride.Engine;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Star_Reverie
 {
@@ -38,10 +34,8 @@ namespace Star_Reverie
             }
         }
 
-        public Vector3 GetWorldPosition(GridPosition gridPosition)
-        {
-            return new Vector3(gridPosition.x, gridPosition.y, gridPosition.z) * cellSize;
-        }
+        public Vector3 GetWorldPosition(GridPosition gridPosition) =>
+            new Vector3(gridPosition.x, gridPosition.y, gridPosition.z) * cellSize;
 
         public GridPosition GetGridPosition(Vector3 worldPosition)
         {
@@ -49,9 +43,10 @@ namespace Star_Reverie
             (
                 Convert.ToInt32(worldPosition.X / cellSize),
                 Convert.ToInt32(worldPosition.Y / cellSize),
-                Convert.ToInt32(worldPosition.Z / cellSize)
-                );
+                Convert.ToInt32(worldPosition.Z / cellSize));
         }
+        public GridObject GetGridObject(GridPosition gridPosition) =>
+            gridObjectArray[gridPosition.x, gridPosition.y, gridPosition.z];
 
         public void CreateDebugObjects(Entity debugObject)
         {
@@ -68,5 +63,6 @@ namespace Star_Reverie
                 }
             }
         }
+
     }
 }

@@ -117,6 +117,8 @@ Hierarchy:
                         actorSelected: false
                     9c85d4a5e587f74907ebd59985a0cbeb: !Star_Reverie.Actor,Star_Reverie
                         Id: 2fcaa509-9b0e-4113-b5b6-f2ca74e5a767
+                        Priority: 1
+                        LevelGrid: null
                     d8b5051209cc836838301a3d7bc9c308: !Star_Reverie.MouseWorld,Star_Reverie
                         Id: 6b4cd357-adf4-4673-8136-c32bae539328
                         AnimationSpeed: 1.0

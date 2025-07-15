@@ -19,6 +19,7 @@ Hierarchy:
         - ref!! 2a38fe14-86ff-44c3-abb5-f6d4bc5af9f2
         - ref!! 15480917-6088-4fda-8c29-25ab878c88d8
         - ref!! 649fc464-2d55-4881-95fa-2fe665c9cb19
+        - ref!! b94950f3-7504-4bb7-bf29-2793e55514ee
     Parts:
         -   Entity:
                 Id: 07fb582c-a3d5-4a7e-80a3-0142737aeff6
@@ -59,6 +60,8 @@ Hierarchy:
                         actorSelected*: true
                     9c85d4a5e587f74907ebd59985a0cbeb: !Star_Reverie.Actor,Star_Reverie
                         Id: fa2b07f8-ad90-4a71-a187-06236e6c1e17
+                        Priority: 1
+                        LevelGrid*: ref!! 5520f15b-3e7f-497c-b13b-c639cd8bdf07
                     d8b5051209cc836838301a3d7bc9c308: !Star_Reverie.MouseWorld,Star_Reverie
                         Id: 4e06f4d3-47c9-4e47-9954-f8fd1990200e
                         AnimationSpeed: 1.0
@@ -226,7 +229,6 @@ Hierarchy:
                         Children: {}
                     7ff81f3f3477638a27065bf4e545294b: !Star_Reverie.Testing,Star_Reverie
                         Id: baa21e84-b712-49a2-8050-26277af427c8
-                        GridDebugObject: ref!! 15480917-6088-4fda-8c29-25ab878c88d8
         -   Folder: Code
             Entity:
                 Id: 6a333a09-5239-49a6-a464-d5ff98e773e2
@@ -358,6 +360,20 @@ Hierarchy:
                         Id: daf29e38-4019-436c-9d52-9b64729ccb22
                         Type: !LightSkybox
                             Skybox: e369e27d-d391-4b00-a3d2-ab980ad9d94e:Skybox
+        -   Folder: Code
+            Entity:
+                Id: b94950f3-7504-4bb7-bf29-2793e55514ee
+                Name: LevelGrid
+                Components:
+                    3372bc1d103085c12611f20e198d4065: !TransformComponent
+                        Id: a52a4ee2-780e-4373-936f-05345d5d7061
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    c68212e5e561d1299d2954679a6b9953: !Star_Reverie.LevelGrid,Star_Reverie
+                        Id: 5520f15b-3e7f-497c-b13b-c639cd8bdf07
+                        GridDebugObject: ref!! 15480917-6088-4fda-8c29-25ab878c88d8
         -   Entity:
                 Id: bc2a7ee7-a61b-468a-acef-436b4718de2b
                 Name: Ground
@@ -484,6 +500,8 @@ Hierarchy:
                         actorSelected: false
                     9c85d4a5e587f74907ebd59985a0cbeb: !Star_Reverie.Actor,Star_Reverie
                         Id: 79b4e1b0-708e-4823-b0a4-6a1aa884f3bf
+                        Priority: 1
+                        LevelGrid*: ref!! 5520f15b-3e7f-497c-b13b-c639cd8bdf07
                     d8b5051209cc836838301a3d7bc9c308: !Star_Reverie.MouseWorld,Star_Reverie
                         Id: e80ace59-c90f-4a1d-be94-510782188737
                         AnimationSpeed: 1.0

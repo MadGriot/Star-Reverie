@@ -12,10 +12,12 @@ namespace Star_Reverie
         private GridSystem gridSystem;
         private GridPosition gridPosition;
 
+        public List<Actor> ActorList { get; set; }
         public GridObject(GridSystem gridSystem, GridPosition gridPosition)
         {
             this.gridSystem = gridSystem;
             this.gridPosition = gridPosition;
+            ActorList = new List<Actor>();
         }
     }
 }
