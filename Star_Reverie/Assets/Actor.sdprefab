@@ -118,11 +118,6 @@ Hierarchy:
                         Priority: 1
                         LevelGrid: null
                         actorSelected: false
-                    d8b5051209cc836838301a3d7bc9c308: !Star_Reverie.MouseWorld,Star_Reverie
-                        Id: 6b4cd357-adf4-4673-8136-c32bae539328
-                        camera: ref!! e3757421-4618-4b0b-9416-29a411d948ed
-                        CollideWith: CustomFilter1
-                        CollideWithTriggers: false
                     bb8caf9a778c22dc635c9a19e0c95c0d: !Star_Reverie.Maneuvers.MoveManeuver,Star_Reverie
                         Id: 441147cc-08cc-497a-9444-2ee08989d0f3
                         Priority: 2

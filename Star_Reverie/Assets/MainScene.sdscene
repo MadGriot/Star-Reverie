@@ -21,6 +21,7 @@ Hierarchy:
         - ref!! 649fc464-2d55-4881-95fa-2fe665c9cb19
         - ref!! b94950f3-7504-4bb7-bf29-2793e55514ee
         - ref!! 02a156bc-1e09-4005-908c-072e8f09d2e1
+        - ref!! ae993fa4-599b-4cf1-87ef-0a82b6975bfa
     Parts:
         -   Folder: Code
             Entity:
@@ -78,11 +79,6 @@ Hierarchy:
                         Priority: 1
                         LevelGrid*: ref!! 5520f15b-3e7f-497c-b13b-c639cd8bdf07
                         actorSelected*: true
-                    d8b5051209cc836838301a3d7bc9c308: !Star_Reverie.MouseWorld,Star_Reverie
-                        Id: 4e06f4d3-47c9-4e47-9954-f8fd1990200e
-                        camera: ref!! 0c125ff5-2d5c-446a-ad47-5d2a414bb03f
-                        CollideWith: CustomFilter1
-                        CollideWithTriggers: false
                     bb8caf9a778c22dc635c9a19e0c95c0d: !Star_Reverie.Maneuvers.MoveManeuver,Star_Reverie
                         Id: 6f30d677-3f3a-4b0c-9d27-b4b823fd9636
                         Priority: 2
@@ -151,6 +147,7 @@ Hierarchy:
                         Id: 85eb818d-66af-4e1b-8b25-2fc80e8a94d3
                         Actor: ref!! 07fb582c-a3d5-4a7e-80a3-0142737aeff6
                         LevelGrid: ref!! 5520f15b-3e7f-497c-b13b-c639cd8bdf07
+                        MouseWorld: ref!! fdf4e328-da1c-47c6-8bd0-ca117ca80ba4
         -   Entity:
                 Id: 356ea86c-e8f8-440d-8143-f859dd2d2bfd
                 Name: box
@@ -367,6 +364,22 @@ Hierarchy:
                         ResponseTextBlock: 5fa2bca1-d3fd-42b1-be26-70b75827bee2:ResponseTextboxPrefab
                         DialoguePage: db2b0dcf-c773-42cb-bfee-1bb57f1bdb65:UI/DialoguePage
                         DialogueResponsePage: 84aaa6f6-cf01-4449-92c4-1eb56ce0d157:UI/DialogueCreationResponse
+        -   Folder: Code
+            Entity:
+                Id: ae993fa4-599b-4cf1-87ef-0a82b6975bfa
+                Name: MouseWorld
+                Components:
+                    669c5d6bb205de8073c19dce0c11c612: !TransformComponent
+                        Id: 20d440fe-cf52-488c-a689-3aaf3175144c
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    5ed2a1acf5e334f6d15961d02bb39231: !Star_Reverie.MouseWorld,Star_Reverie
+                        Id: fdf4e328-da1c-47c6-8bd0-ca117ca80ba4
+                        Camera: ref!! 0c125ff5-2d5c-446a-ad47-5d2a414bb03f
+                        CollideWith: CustomFilter1
+                        CollideWithTriggers: false
         -   Entity:
                 Id: afae736e-43c1-4c16-b395-38870ecb6966
                 Name: Skybox
@@ -525,11 +538,6 @@ Hierarchy:
                         Priority: 1
                         LevelGrid*: ref!! 5520f15b-3e7f-497c-b13b-c639cd8bdf07
                         actorSelected: false
-                    d8b5051209cc836838301a3d7bc9c308: !Star_Reverie.MouseWorld,Star_Reverie
-                        Id: e80ace59-c90f-4a1d-be94-510782188737
-                        camera: ref!! 79b62c97-9630-4701-a984-f5e43a713390
-                        CollideWith: CustomFilter1
-                        CollideWithTriggers: false
                     bb8caf9a778c22dc635c9a19e0c95c0d: !Star_Reverie.Maneuvers.MoveManeuver,Star_Reverie
                         Id: 056db7e7-9027-48d9-8400-2d47602ac804
                         Priority: 2

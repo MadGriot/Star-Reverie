@@ -1,14 +1,14 @@
-﻿using System;
+﻿using Star_Reverie.Globals;
+using Stride.Animations;
+using Stride.Core.Mathematics;
+using Stride.Engine;
+using Stride.Input;
+using Stride.Physics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Stride.Core.Mathematics;
-using Stride.Input;
-using Stride.Engine;
-using Star_Reverie.Globals;
-using Stride.Animations;
-using Stride.Physics;
 
 namespace Star_Reverie
 {
@@ -22,6 +22,12 @@ namespace Star_Reverie
         {
             AnimationController = Entity.Get<AnimationController>();
             cameraEntity = Entity.GetChild(0);
+            CameraComponent camera = cameraEntity.GetChild(0).Get<CameraComponent>();
+            if (camera.Slot != SceneSystem.GraphicsCompositor.Cameras[0].ToSlotId())
+            {
+                camera.Slot = SceneSystem.GraphicsCompositor.Cameras[0].ToSlotId();
+                camera.Enabled = false;
+            }
         }
 
         public override void Update()

@@ -15,11 +15,10 @@ namespace Star_Reverie
         // Declared public member fields and properties will show in the game studio
         public Entity Actor { get; set; }
         public LevelGrid LevelGrid { get; set; }
-        internal MouseWorld MouseWorld { get; set; }
+        public MouseWorld MouseWorld { get; set; }
         public event EventHandler OnSelectedActorChanged;
         public override void Start()
         {
-            MouseWorld = Actor.Get<MouseWorld>();
 
         }
 
@@ -29,7 +28,7 @@ namespace Star_Reverie
                 return;
             if (Input.IsMouseButtonPressed(MouseButton.Left))
             {
-                HandleActorSelection();
+                TryHandleActorSelection();
                 GridPosition mouseGridPosition = LevelGrid.GridSystem.GetGridPosition(MouseWorld.GetPosition());
                 if (Actor.Get<Actor>().actorSelected && Actor.Get<MoveManeuver>().IsValidManeuverGridPosition(mouseGridPosition))
                 {
@@ -41,16 +40,16 @@ namespace Star_Reverie
 
         }
 
-        public void HandleActorSelection()
+        public bool TryHandleActorSelection()
         {
             Texture backbuffer = GraphicsDevice.Presenter.BackBuffer;
             Viewport viewport = new Viewport(0, 0, backbuffer.Width, backbuffer.Height);
 
             Vector3 nearPosition = viewport.Unproject(new Vector3(Input.AbsoluteMousePosition, 0),
-                MouseWorld.camera.ProjectionMatrix, MouseWorld.camera.ViewMatrix, Matrix.Identity);
+                MouseWorld.Camera.ProjectionMatrix, MouseWorld.Camera.ViewMatrix, Matrix.Identity);
 
             Vector3 farPosition = viewport.Unproject(new Vector3(Input.AbsoluteMousePosition, 1.0f),
-                MouseWorld.camera.ProjectionMatrix, MouseWorld.camera.ViewMatrix, Matrix.Identity);
+                MouseWorld.Camera.ProjectionMatrix, MouseWorld.Camera.ViewMatrix, Matrix.Identity);
 
             MouseWorld.simulation.Raycast(nearPosition, farPosition,
                 out HitResult hitResult, CollisionFilterGroups.CustomFilter1, MouseWorld.CollideWith, MouseWorld.CollideWithTriggers);
@@ -59,20 +58,21 @@ namespace Star_Reverie
             if (hitResult.Succeeded)
             {
                 Actor.Get<Actor>().actorSelected = false;
-                //MouseWorld.ResetTarget();
-                CameraComponent mainCamera = MouseWorld.camera;
+                CameraComponent mainCamera = Actor.GetChild(0).GetChild(0).Get<CameraComponent>();
                 Actor = hitResult.Collider.Entity;
-                MouseWorld = Actor.Get<MouseWorld>();
 
                 //Camera Swapping
-                CameraComponent targetCamera = MouseWorld.camera;
+                CameraComponent targetCamera = Actor.GetChild(0).GetChild(0).Get<CameraComponent>();
                 targetCamera.Enabled = !targetCamera.Enabled;
+                MouseWorld.Camera = targetCamera;
                 mainCamera.Enabled = !mainCamera.Enabled;
 
 
                 Actor.Get<Actor>().actorSelected = true;
                 OnSelectedActorChanged?.Invoke(this, EventArgs.Empty);
+                return true;
             }
+            return false;
         }
     }
 }

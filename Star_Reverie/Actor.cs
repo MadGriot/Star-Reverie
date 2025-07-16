@@ -29,14 +29,16 @@ namespace Star_Reverie
             {
                 DebugText.Print($" Current Position {Entity.Transform.Position}", new Int2(1000, 800));
                 DebugText.Print($" Current Grid Position {GridPosition}", new Int2(1000, 900));
+                GridPosition newGridPosition = LevelGrid.GridSystem.GetGridPosition(Entity.Transform.Position);
+                if (newGridPosition != GridPosition)
+                {
+                    LevelGrid.ActorMovedGridPosition(this, GridPosition, newGridPosition);
+                    GridPosition = newGridPosition;
+                }
 
             }
 
-            GridPosition newGridPosition = LevelGrid.GridSystem.GetGridPosition(Entity.Transform.Position);
-            if (newGridPosition != GridPosition)
-            {
-                LevelGrid.ActorMovedGridPosition(this, GridPosition, newGridPosition);
-            }
+
             if (CurrentGameState.GameState != GameState.Encounter)
             {
                 if (Input.IsKeyPressed(Keys.Q))

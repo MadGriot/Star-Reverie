@@ -23,21 +23,17 @@ namespace Star_Reverie.Maneuvers
             AnimationController = Entity.Get<AnimationController>();
             characterComponent = Entity.Get<CharacterComponent>();
             targetPosition = Entity.Transform.Position;
-            ActionSystem.OnSelectedActorChanged += ActorActionSytem_OnSelectedActorChanged;
         }
 
         public override void Update()
         {
             if (CurrentGameState.GameState != GameState.Encounter)
                 return;
+            if (!Actor.Get<Actor>().actorSelected) return;
+            else
+                DebugText.Print($"Target Position: {targetPosition}", new Int2(700, 800));
             if (!isActive) return;
-            if (!Actor.Get<Actor>().actorSelected)
-            {
-                AnimationController.StopMovement();
-                currentPosition = Entity.Transform.Position;
-                return;
-            }
-            DebugText.Print($"{targetPosition}", new Int2(700, 800));
+
 
             float stoppingDistance = 0.1f;
             currentPosition = Entity.Transform.Position;
@@ -56,7 +52,9 @@ namespace Star_Reverie.Maneuvers
             else
             {
                 AnimationController.animationMovementState = AnimationState.Idle;
+                ResetTarget();
                 Entity.Get<CharacterComponent>().SetVelocity(Vector3.Zero);
+
                 isActive = false;
             }
         }
@@ -102,11 +100,6 @@ namespace Star_Reverie.Maneuvers
         {
             targetPosition = Entity.Transform.Position;
             AnimationController.StopMovement();
-        }
-
-        private void ActorActionSytem_OnSelectedActorChanged(object sender, EventArgs empty)
-        {
-            ResetTarget();
         }
     }
 }
