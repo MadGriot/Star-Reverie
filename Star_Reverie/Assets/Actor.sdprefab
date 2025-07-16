@@ -116,7 +116,7 @@ Hierarchy:
                     9c85d4a5e587f74907ebd59985a0cbeb: !Star_Reverie.Actor,Star_Reverie
                         Id: 2fcaa509-9b0e-4113-b5b6-f2ca74e5a767
                         Priority: 1
-                        LevelGrid: null
+                        LevelGrid: ref!! 5520f15b-3e7f-497c-b13b-c639cd8bdf07
                         actorSelected: false
                     d8b5051209cc836838301a3d7bc9c308: !Star_Reverie.MouseWorld,Star_Reverie
                         Id: 6b4cd357-adf4-4673-8136-c32bae539328
@@ -126,7 +126,9 @@ Hierarchy:
                     bb8caf9a778c22dc635c9a19e0c95c0d: !Star_Reverie.Maneuvers.MoveManeuver,Star_Reverie
                         Id: 441147cc-08cc-497a-9444-2ee08989d0f3
                         Actor: ref!! ed7b10c7-6c4b-45b6-965a-e14f68a384b3
-                        ActionSystem: null
+                        ActionSystem: ref!! 85eb818d-66af-4e1b-8b25-2fc80e8a94d3
+                        LevelGrid: ref!! 5520f15b-3e7f-497c-b13b-c639cd8bdf07
+                        MaxMoveDistance: 3
                     7e07df2cba7c5b5842355969ee34392d: !Star_Reverie.AnimationController,Star_Reverie
                         Id: e03d8ae9-2a44-4793-8066-45d6ecd47f70
                         AnimationSpeed: 1.0

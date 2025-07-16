@@ -11,6 +11,7 @@ namespace Star_Reverie.Maneuvers
     {
         public Entity Actor { get; set; }
         public ActorActionSystem ActionSystem { get; set; }
+        public LevelGrid LevelGrid { get; set; }
         public string Name { get; protected set; } = "Maneuver";
         internal bool isActive;
         protected Action onActionComplete;

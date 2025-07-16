@@ -48,6 +48,15 @@ namespace Star_Reverie
         public GridObject GetGridObject(GridPosition gridPosition) =>
             gridObjectArray[gridPosition.x, gridPosition.y, gridPosition.z];
 
+        public bool IsValidGridPosition(GridPosition gridPosition)
+        {
+            return gridPosition.x >= 0 &&
+                gridPosition.y >= 0 &&
+                gridPosition.z >= 0 &&
+                gridPosition.x < Width &&
+                gridPosition.y < Height &&
+                gridPosition.z < Length;
+        }
         public void CreateDebugObjects(Entity debugObject)
         {
             for (int x = 0; x < Width; x++)

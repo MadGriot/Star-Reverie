@@ -2,6 +2,7 @@
 using System.Linq;
 using Stride.Engine;
 using StarReverieCore.Grid;
+using Star_Reverie.Maneuvers;
 
 namespace Star_Reverie
 {
@@ -37,7 +38,7 @@ namespace Star_Reverie
 
         public override void Update()
         {
-            // Do stuff every new frame
+            UpdateGridVisual();
         }
 
         public void HideAllGridPositions()
@@ -57,6 +58,14 @@ namespace Star_Reverie
             {
                 gridSystemVisualSingleArray[gridPosition.x, gridPosition.z].Show();
             }
+        }
+
+        private void UpdateGridVisual()
+        {
+            HideAllGridPositions();
+            Entity selectedActor = ActorActionSystem.Actor;
+            ShowGridPositionList(
+                selectedActor.Get<MoveManeuver>().GetValidManeuverGridPositionList());
         }
     }
 }

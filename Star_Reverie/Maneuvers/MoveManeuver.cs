@@ -1,11 +1,11 @@
-﻿
-using Star_Reverie.Globals;
+﻿using Star_Reverie.Globals;
+using StarReverieCore.Grid;
 using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Input;
 using Stride.Physics;
 using System;
-using System.Windows.Automation.Text;
+using System.Collections.Generic;
 
 namespace Star_Reverie.Maneuvers
 {
@@ -16,6 +16,7 @@ namespace Star_Reverie.Maneuvers
         private MouseWorld mouseWorld;
         private AnimationController AnimationController;
         private CharacterComponent characterComponent;
+        public int MaxMoveDistance = 3;
         public override void Start()
         {
             mouseWorld = Entity.Get<MouseWorld>();
@@ -60,12 +61,29 @@ namespace Star_Reverie.Maneuvers
             {
                 if (Actor.Get<Actor>().actorSelected)
                     Move(mouseWorld.GetPosition());
-
             }
-
-
         }
+        public List<GridPosition> GetValidManeuverGridPositionList()
+        {
+            List<GridPosition> validGridPositionList = new();
 
+            GridPosition actorGridPosition = LevelGrid.GridSystem.GetGridPosition(Entity.Transform.Position);
+            for (int x = -MaxMoveDistance; x <= MaxMoveDistance; x++)
+            {
+                for (int z = -MaxMoveDistance; z <= MaxMoveDistance; z++)
+                {
+                    GridPosition offsetGridPosition = new GridPosition(x, 0, z);
+                    GridPosition testGridPosition = actorGridPosition + offsetGridPosition;
+
+                    if (!LevelGrid.GridSystem.IsValidGridPosition(testGridPosition)) continue;
+                    if (actorGridPosition ==testGridPosition) continue;
+                    if (LevelGrid.HasAnyActorOnGridPosition(testGridPosition)) continue;
+
+                    validGridPositionList.Add(testGridPosition);
+                }
+            }
+            return validGridPositionList;
+        }
         public void Move(Vector3 targetPosition)
         {
             this.targetPosition = targetPosition;
