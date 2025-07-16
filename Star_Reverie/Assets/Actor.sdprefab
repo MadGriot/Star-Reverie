@@ -114,7 +114,6 @@ Hierarchy:
                         AnimationSpeed: 1.0
                         DeadZone: 0.25
                         MoveSpeed: 1.0
-                        actorSelected: false
                     9c85d4a5e587f74907ebd59985a0cbeb: !Star_Reverie.Actor,Star_Reverie
                         Id: 2fcaa509-9b0e-4113-b5b6-f2ca74e5a767
                         Priority: 1
@@ -125,3 +124,9 @@ Hierarchy:
                         camera: ref!! e3757421-4618-4b0b-9416-29a411d948ed
                         CollideWith: CustomFilter1
                         CollideWithTriggers: false
+                    bb8caf9a778c22dc635c9a19e0c95c0d: !Star_Reverie.Maneuvers.MoveManeuver,Star_Reverie
+                        Id: 441147cc-08cc-497a-9444-2ee08989d0f3
+                        Actor: ref!! ed7b10c7-6c4b-45b6-965a-e14f68a384b3
+                        ActionSystem: ref!! 85eb818d-66af-4e1b-8b25-2fc80e8a94d3
+                        animationState: Idle
+                        AnimationSpeed: 1.0

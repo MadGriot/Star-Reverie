@@ -13,16 +13,18 @@ namespace Star_Reverie.Maneuvers
     {
         private Vector3 targetPosition;
         private Vector3 currentPosition;
-        public MouseWorld MouseWorld;
+        private MouseWorld mouseWorld;
         public AnimationState animationState;
         public float AnimationSpeed = 1.0f;
         private AnimationComponent animationComponent;
         private CharacterComponent characterComponent;
         public override void Start()
         {
+            mouseWorld = Entity.Get<MouseWorld>();
             characterComponent = Entity.Get<CharacterComponent>();
             animationComponent = Entity.GetChild(1).Get<AnimationComponent>();
             targetPosition = Entity.Transform.Position;
+            ActionSystem.OnSelectedActorChanged += ActorActionSytem_OnSelectedActorChanged;
         }
 
         public override void Update()
@@ -57,7 +59,7 @@ namespace Star_Reverie.Maneuvers
             if (Input.IsMouseButtonPressed(MouseButton.Left))
             {
                 if (Actor.Get<Actor>().actorSelected)
-                    Move(MouseWorld.GetPosition());
+                    Move(mouseWorld.GetPosition());
 
             }
 
@@ -100,6 +102,11 @@ namespace Star_Reverie.Maneuvers
                     animationComponent.Play("Walking");
                     break;
             }
+        }
+
+        private void ActorActionSytem_OnSelectedActorChanged(object sender, EventArgs empty)
+        {
+            ResetTarget();
         }
     }
 }

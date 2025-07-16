@@ -10,7 +10,7 @@ namespace Star_Reverie.Maneuvers
     public abstract class BaseManeuver : SyncScript
     {
         public Entity Actor { get; set; }
-
+        public ActorActionSystem ActionSystem { get; set; }
         public string Name { get; protected set; } = "Maneuver";
         internal bool isActive;
         protected Action onActionComplete;

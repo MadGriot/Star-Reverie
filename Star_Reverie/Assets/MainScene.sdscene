@@ -74,7 +74,6 @@ Hierarchy:
                         AnimationSpeed: 1.0
                         DeadZone: 0.25
                         MoveSpeed: 1.0
-                        actorSelected*: true
                     9c85d4a5e587f74907ebd59985a0cbeb: !Star_Reverie.Actor,Star_Reverie
                         Id: fa2b07f8-ad90-4a71-a187-06236e6c1e17
                         Priority: 1
@@ -85,6 +84,12 @@ Hierarchy:
                         camera: ref!! 0c125ff5-2d5c-446a-ad47-5d2a414bb03f
                         CollideWith: CustomFilter1
                         CollideWithTriggers: false
+                    bb8caf9a778c22dc635c9a19e0c95c0d: !Star_Reverie.Maneuvers.MoveManeuver,Star_Reverie
+                        Id: 6f30d677-3f3a-4b0c-9d27-b4b823fd9636
+                        Actor: ref!! 07fb582c-a3d5-4a7e-80a3-0142737aeff6
+                        ActionSystem*: ref!! 85eb818d-66af-4e1b-8b25-2fc80e8a94d3
+                        animationState: Idle
+                        AnimationSpeed: 1.0
             Base:
                 BasePartAsset: eb0b69d1-e912-4921-8b3c-f3d48a6c970f:Actor
                 BasePartId: ed7b10c7-6c4b-45b6-965a-e14f68a384b3
@@ -512,7 +517,6 @@ Hierarchy:
                         AnimationSpeed: 1.0
                         DeadZone: 0.25
                         MoveSpeed: 1.0
-                        actorSelected: false
                     9c85d4a5e587f74907ebd59985a0cbeb: !Star_Reverie.Actor,Star_Reverie
                         Id: 79b4e1b0-708e-4823-b0a4-6a1aa884f3bf
                         Priority: 1
@@ -523,6 +527,12 @@ Hierarchy:
                         camera: ref!! 79b62c97-9630-4701-a984-f5e43a713390
                         CollideWith: CustomFilter1
                         CollideWithTriggers: false
+                    bb8caf9a778c22dc635c9a19e0c95c0d: !Star_Reverie.Maneuvers.MoveManeuver,Star_Reverie
+                        Id: 056db7e7-9027-48d9-8400-2d47602ac804
+                        Actor: ref!! fe7807da-6036-4c07-875e-ae294ce7b944
+                        ActionSystem*: ref!! 85eb818d-66af-4e1b-8b25-2fc80e8a94d3
+                        animationState: Idle
+                        AnimationSpeed: 1.0
             Base:
                 BasePartAsset: eb0b69d1-e912-4921-8b3c-f3d48a6c970f:Actor
                 BasePartId: ed7b10c7-6c4b-45b6-965a-e14f68a384b3

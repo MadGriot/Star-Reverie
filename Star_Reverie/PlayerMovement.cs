@@ -19,7 +19,6 @@ namespace Star_Reverie
         private AnimationComponent animationComponent;
         public float DeadZone = 0.25f;
         public float MoveSpeed = 1.0f;
-        public bool actorSelected;
         private AnimationState animationState;
         private AnimationState animationMovementState;
         private Entity cameraEntity;
@@ -35,7 +34,7 @@ namespace Star_Reverie
 
         public override void Update()
         {
-            if (!actorSelected)
+            if (!Entity.Get<Actor>().actorSelected)
                 return;
             if (Input.IsKeyPressed(Keys.Escape)) // Replace Start button for pause
             {
