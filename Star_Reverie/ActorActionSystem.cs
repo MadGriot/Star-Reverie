@@ -29,15 +29,16 @@ namespace Star_Reverie
                 return;
             if (Input.IsMouseButtonPressed(MouseButton.Left))
             {
-                TryHandleActorSelection();
-                GridPosition mouseGridPosition = LevelGrid.GridSystem.GetGridPosition(MouseWorld.GetPosition());
-                if (Actor.Get<Actor>().actorSelected && Actor.Get<MoveManeuver>().IsValidManeuverGridPosition(mouseGridPosition))
+                bool selectionChanged = TryHandleActorSelection();
+                if (Actor.Get<Actor>().actorSelected)
                 {
-                    Actor.Get<MoveManeuver>().Move(mouseGridPosition);
+                    GridPosition mouseGridPosition = LevelGrid.GridSystem.GetGridPosition(MouseWorld.GetPosition());
+                    if (!selectionChanged && Actor.Get<MoveManeuver>().IsValidManeuverGridPosition(mouseGridPosition))
+                        Actor.Get<MoveManeuver>().Move(mouseGridPosition);
                 }
             }
 
-            if (Input.IsMouseButtonPressed(MouseButton.Right))
+            if (Input.IsMouseButtonPressed(MouseButton.Middle))
             {
                 if (Actor.Get<Actor>().actorSelected)
                 {
@@ -68,20 +69,24 @@ namespace Star_Reverie
 
             if (hitResult.Succeeded)
             {
-                Actor.Get<Actor>().actorSelected = false;
-                CameraComponent mainCamera = Actor.GetChild(0).GetChild(0).Get<CameraComponent>();
-                Actor = hitResult.Collider.Entity;
+                Entity clickedEntity = hitResult.Collider.Entity;
+                if (clickedEntity != Actor)
+                {
+                    Actor.Get<Actor>().actorSelected = false;
+                    CameraComponent mainCamera = Actor.GetChild(0).GetChild(0).Get<CameraComponent>();
+                    Actor = hitResult.Collider.Entity;
 
-                //Camera Swapping
-                CameraComponent targetCamera = Actor.GetChild(0).GetChild(0).Get<CameraComponent>();
-                targetCamera.Enabled = !targetCamera.Enabled;
-                MouseWorld.Camera = targetCamera;
-                mainCamera.Enabled = !mainCamera.Enabled;
+                    //Camera Swapping
+                    CameraComponent targetCamera = Actor.GetChild(0).GetChild(0).Get<CameraComponent>();
+                    targetCamera.Enabled = !targetCamera.Enabled;
+                    MouseWorld.Camera = targetCamera;
+                    mainCamera.Enabled = !mainCamera.Enabled;
 
 
-                Actor.Get<Actor>().actorSelected = true;
-                OnSelectedActorChanged?.Invoke(this, EventArgs.Empty);
-                return true;
+                    Actor.Get<Actor>().actorSelected = true;
+                    OnSelectedActorChanged?.Invoke(this, EventArgs.Empty);
+                    return true;
+                }
             }
             return false;
         }

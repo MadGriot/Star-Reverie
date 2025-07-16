@@ -13,20 +13,29 @@ namespace Star_Reverie.Maneuvers
     {
         private Vector3 targetPosition;
         private Vector3 currentPosition;
-        private MouseWorld mouseWorld;
         private AnimationController AnimationController;
         private CharacterComponent characterComponent;
         public int MaxMoveDistance = 3;
+
+
+        //Debugging
+        private float debugTimer = 0f;
+        private string debugMessage = "";
         public override void Start()
         {
-            mouseWorld = Entity.Get<MouseWorld>();
-            AnimationController = Entity.Get<AnimationController>();
-            characterComponent = Entity.Get<CharacterComponent>();
-            targetPosition = Entity.Transform.Position;
+            AnimationController = Actor.Get<AnimationController>();
+            characterComponent = Actor.Get<CharacterComponent>();
+            targetPosition = Actor.Transform.Position;
         }
 
         public override void Update()
         {
+            float debugDeltaTime = (float)Game.UpdateTime.Elapsed.TotalSeconds;
+            if (debugTimer > 0f)
+            {
+                DebugText.Print(debugMessage, new Int2(200, 600), new Color4(Color.Beige));
+                debugTimer -= debugDeltaTime;
+            }
             if (CurrentGameState.GameState != GameState.Encounter)
                 return;
             if (!Actor.Get<Actor>().actorSelected) return;
@@ -36,7 +45,7 @@ namespace Star_Reverie.Maneuvers
 
 
             float stoppingDistance = 0.1f;
-            currentPosition = Entity.Transform.Position;
+            currentPosition = Actor.Transform.Position;
             if (Vector3.Distance(currentPosition, targetPosition) > stoppingDistance)
             {
                 AnimationController.animationMovementState = AnimationState.Running;
@@ -47,13 +56,13 @@ namespace Star_Reverie.Maneuvers
 
                 float targetYaw = (float)Math.Atan2(velocity.X, velocity.Z); // returns radians
 
-                Entity.GetChild(1).Transform.RotationEulerXYZ = new Vector3(0, targetYaw, 0);
+                Actor.GetChild(1).Transform.RotationEulerXYZ = new Vector3(0, targetYaw, 0);
             }
             else
             {
                 AnimationController.animationMovementState = AnimationState.Idle;
                 ResetTarget();
-                Entity.Get<CharacterComponent>().SetVelocity(Vector3.Zero);
+                Actor.Get<CharacterComponent>().SetVelocity(Vector3.Zero);
 
                 isActive = false;
             }
@@ -90,6 +99,9 @@ namespace Star_Reverie.Maneuvers
         }
         public void Move(GridPosition gridPosition)
         {
+            debugMessage = $"Moving {Actor.Name} to {gridPosition}\nWorld Target Position: {LevelGrid.GridSystem.GetWorldPosition(gridPosition)}";
+            debugTimer = 3f;
+
             isActive = true;
             targetPosition = LevelGrid.GridSystem.GetWorldPosition(gridPosition);
             AnimationController.animationState = AnimationState.Running;
@@ -98,7 +110,6 @@ namespace Star_Reverie.Maneuvers
 
         public void ResetTarget()
         {
-            targetPosition = Entity.Transform.Position;
             AnimationController.StopMovement();
         }
     }
