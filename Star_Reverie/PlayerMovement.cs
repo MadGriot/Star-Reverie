@@ -14,22 +14,14 @@ namespace Star_Reverie
 {
     public class PlayerMovement : SyncScript
     {
-
-        public float AnimationSpeed = 1.0f;
-        private AnimationComponent animationComponent;
         public float DeadZone = 0.25f;
         public float MoveSpeed = 1.0f;
-        private AnimationState animationState;
-        private AnimationState animationMovementState;
         private Entity cameraEntity;
-
+        private AnimationController AnimationController;
         public override void Start()
         {
-            animationComponent = Entity.GetChild(1).Get<AnimationComponent>();
+            AnimationController = Entity.Get<AnimationController>();
             cameraEntity = Entity.GetChild(0);
-            animationComponent.Play("Idle");
-            animationMovementState = AnimationState.Walking;
-            animationState = AnimationState.Idle;
         }
 
         public override void Update()
@@ -40,7 +32,7 @@ namespace Star_Reverie
             {
                 CurrentGameState.GameState = (CurrentGameState.GameState == GameState.Paused)
                     ? GameState.Exploration : GameState.Paused;
-                StopMovement();
+                AnimationController.StopMovement();
             }
 
             if (CurrentGameState.GameState == GameState.Paused)
@@ -63,25 +55,14 @@ namespace Star_Reverie
 
                     // Shift = run, otherwise walk
                     bool isRunning = Input.IsKeyDown(Keys.LeftShift) || Input.IsKeyDown(Keys.RightShift);
-                    animationMovementState = isRunning ? AnimationState.Running : AnimationState.Walking;
+                    AnimationController.animationMovementState = isRunning ? AnimationState.Running : AnimationState.Walking;
                     MoveSpeed = isRunning ? 5f : 1.0f;
 
                     Move(moveInput);
-
-                    if (animationState != animationMovementState)
-                    {
-                        animationState = animationMovementState;
-                        PlayAnimation(animationState);
-                    }
                 }
                 else
                 {
                     // No input — stop
-                    if (animationState != AnimationState.Idle)
-                    {
-                        animationState = AnimationState.Idle;
-                        PlayAnimation(animationState);
-                    }
 
                     Entity.Get<CharacterComponent>().SetVelocity(Vector3.Zero);
                 }
@@ -119,31 +100,6 @@ namespace Star_Reverie
 
             Entity.GetChild(1).Transform.RotationEulerXYZ = new Vector3(0, targetYaw, 0);
 
-        }
-
-        private void StopMovement()
-        {
-            Entity.Get<CharacterComponent>().SetVelocity(Vector3.Zero);
-            if (animationState != AnimationState.Idle)
-            {
-                animationState = AnimationState.Idle;
-                animationComponent.Play("Idle");
-            }
-        }
-        private void PlayAnimation(AnimationState animationState)
-        {
-            switch (animationState)
-            {
-                case AnimationState.Idle:
-                    animationComponent.Play("Idle");
-                    break;
-                case AnimationState.Running:
-                    animationComponent.Play("Running");
-                    break;
-                case AnimationState.Walking:
-                    animationComponent.Play("Walking");
-                    break;
-            }
         }
     }
 }

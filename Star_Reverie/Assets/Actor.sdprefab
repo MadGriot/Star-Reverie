@@ -111,7 +111,6 @@ Hierarchy:
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                     bb6849e1c16322b09ef000798d27f876: !Star_Reverie.PlayerMovement,Star_Reverie
                         Id: 4fb54e74-9be5-4c06-8d90-0160f33320d1
-                        AnimationSpeed: 1.0
                         DeadZone: 0.25
                         MoveSpeed: 1.0
                     9c85d4a5e587f74907ebd59985a0cbeb: !Star_Reverie.Actor,Star_Reverie
@@ -128,5 +127,6 @@ Hierarchy:
                         Id: 441147cc-08cc-497a-9444-2ee08989d0f3
                         Actor: ref!! ed7b10c7-6c4b-45b6-965a-e14f68a384b3
                         ActionSystem: ref!! 85eb818d-66af-4e1b-8b25-2fc80e8a94d3
-                        animationState: Idle
+                    7e07df2cba7c5b5842355969ee34392d: !Star_Reverie.AnimationController,Star_Reverie
+                        Id: e03d8ae9-2a44-4793-8066-45d6ecd47f70
                         AnimationSpeed: 1.0

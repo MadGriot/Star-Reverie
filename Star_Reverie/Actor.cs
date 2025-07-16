@@ -11,8 +11,12 @@ namespace Star_Reverie
 
         public LevelGrid LevelGrid;
         public bool actorSelected;
+        private AnimationController AnimationController;
         public override void Start()
         {
+            AnimationController = Entity.Get<AnimationController>();
+            AnimationController.animationComponent = Entity.GetChild(1).Get<AnimationComponent>();
+            AnimationController.animationComponent.Play("Idle");
             LevelGrid.AddActorAtGridPosition
                 (LevelGrid.GridSystem.GetGridPosition(Entity.Transform.Position), this);
         }

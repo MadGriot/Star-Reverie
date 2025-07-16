@@ -14,15 +14,13 @@ namespace Star_Reverie.Maneuvers
         private Vector3 targetPosition;
         private Vector3 currentPosition;
         private MouseWorld mouseWorld;
-        public AnimationState animationState;
-        public float AnimationSpeed = 1.0f;
-        private AnimationComponent animationComponent;
+        private AnimationController AnimationController;
         private CharacterComponent characterComponent;
         public override void Start()
         {
             mouseWorld = Entity.Get<MouseWorld>();
+            AnimationController = Entity.Get<AnimationController>();
             characterComponent = Entity.Get<CharacterComponent>();
-            animationComponent = Entity.GetChild(1).Get<AnimationComponent>();
             targetPosition = Entity.Transform.Position;
             ActionSystem.OnSelectedActorChanged += ActorActionSytem_OnSelectedActorChanged;
         }
@@ -33,7 +31,7 @@ namespace Star_Reverie.Maneuvers
                 return;
             if (!Actor.Get<Actor>().actorSelected)
             {
-                StopMovement();
+                AnimationController.StopMovement();
                 currentPosition = Entity.Transform.Position;
                 return;
             }
@@ -54,7 +52,7 @@ namespace Star_Reverie.Maneuvers
             }
             else
             {
-                StopMovement();
+                AnimationController.StopMovement();
             }
             if (Input.IsMouseButtonPressed(MouseButton.Left))
             {
@@ -69,39 +67,14 @@ namespace Star_Reverie.Maneuvers
         public void Move(Vector3 targetPosition)
         {
             this.targetPosition = targetPosition;
-            animationState = AnimationState.Running;
-            PlayAnimation(animationState);
-        }
-
-        private void StopMovement()
-        {
-            Entity.Get<CharacterComponent>().SetVelocity(Vector3.Zero);
-            if (animationState != AnimationState.Idle)
-            {
-                animationState = AnimationState.Idle;
-                animationComponent.Play("Idle");
-            }
+            AnimationController.animationState = AnimationState.Running;
+            AnimationController.PlayAnimation(AnimationState.Running);
         }
 
         public void ResetTarget()
         {
             targetPosition = Entity.Transform.Position;
-            StopMovement();
-        }
-        public void PlayAnimation(AnimationState animationState)
-        {
-            switch (animationState)
-            {
-                case AnimationState.Idle:
-                    animationComponent.Play("Idle");
-                    break;
-                case AnimationState.Running:
-                    animationComponent.Play("Running");
-                    break;
-                case AnimationState.Walking:
-                    animationComponent.Play("Walking");
-                    break;
-            }
+            AnimationController.StopMovement();
         }
 
         private void ActorActionSytem_OnSelectedActorChanged(object sender, EventArgs empty)
