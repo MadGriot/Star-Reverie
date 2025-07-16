@@ -48,8 +48,8 @@ namespace Star_Reverie
 
             if (hitResult.Succeeded)
             {
-                MouseWorld.actorSelected = false;
-                MouseWorld.ResetTarget();
+                Actor.Get<Actor>().actorSelected = false;
+                //MouseWorld.ResetTarget();
                 CameraComponent mainCamera = MouseWorld.camera;
                 Actor.Get<PlayerMovement>().actorSelected = !Actor.Get<PlayerMovement>().actorSelected;
                 Actor = hitResult.Collider.Entity;
@@ -61,7 +61,7 @@ namespace Star_Reverie
                 mainCamera.Enabled = !mainCamera.Enabled;
 
 
-                MouseWorld.actorSelected = true;
+                Actor.Get<Actor>().actorSelected = true;
                 Actor.Get<PlayerMovement>().actorSelected = !Actor.Get<PlayerMovement>().actorSelected;
                 OnSelectedActorChanged?.Invoke(this, EventArgs.Empty);
             }

@@ -10,6 +10,7 @@ namespace Star_Reverie
     {
 
         public LevelGrid LevelGrid;
+        public bool actorSelected;
         public override void Start()
         {
             LevelGrid.AddActorAtGridPosition
