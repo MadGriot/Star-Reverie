@@ -128,3 +128,8 @@ Hierarchy:
                     7e07df2cba7c5b5842355969ee34392d: !Star_Reverie.AnimationController,Star_Reverie
                         Id: e03d8ae9-2a44-4793-8066-45d6ecd47f70
                         AnimationSpeed: 1.0
+                    678d31f8e9dee6b3f8824cb1098c6eb1: !Star_Reverie.Maneuvers.SpinManeuver,Star_Reverie
+                        Id: d0759fdd-a78b-4ef7-bc62-53953044cad0
+                        Actor: ref!! ed7b10c7-6c4b-45b6-965a-e14f68a384b3
+                        ActionSystem: null
+                        LevelGrid: null

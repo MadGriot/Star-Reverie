@@ -14,7 +14,7 @@ namespace Star_Reverie.Maneuvers
         public LevelGrid LevelGrid { get; set; }
         public string Name { get; protected set; } = "Maneuver";
         internal bool isActive;
-        protected Action onActionComplete;
+        protected Action OnActionComplete;
 
         public BaseManeuver()
         {
@@ -22,7 +22,7 @@ namespace Star_Reverie.Maneuvers
         }
         public override void Update()
         {
-            throw new NotImplementedException();
+
         }
     }
 }

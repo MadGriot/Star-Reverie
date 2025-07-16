@@ -17,6 +17,7 @@ namespace Star_Reverie
         public LevelGrid LevelGrid { get; set; }
         public MouseWorld MouseWorld { get; set; }
         public event EventHandler OnSelectedActorChanged;
+        internal bool isBusy { get; set; }
         public override void Start()
         {
 
@@ -36,9 +37,19 @@ namespace Star_Reverie
                 }
             }
 
+            if (Input.IsMouseButtonPressed(MouseButton.Right))
+            {
+                if (Actor.Get<Actor>().actorSelected)
+                {
+                    Actor.Get<SpinManeuver>().Spin(ClearBusy);
+                }
+            }
+
             DebugText.Print($"{Actor.Name}", new Int2(700, 600));
 
         }
+        private void SetBusy() => isBusy = true;
+        private void ClearBusy() => isBusy = false;
 
         public bool TryHandleActorSelection()
         {

@@ -89,6 +89,11 @@ Hierarchy:
                     7e07df2cba7c5b5842355969ee34392d: !Star_Reverie.AnimationController,Star_Reverie
                         Id: 550738c5-172a-4f94-aaee-f39e4da64148
                         AnimationSpeed: 1.0
+                    678d31f8e9dee6b3f8824cb1098c6eb1: !Star_Reverie.Maneuvers.SpinManeuver,Star_Reverie
+                        Id: 21980fe9-f359-42f2-afb4-c253f0af1634
+                        Actor: ref!! 07fb582c-a3d5-4a7e-80a3-0142737aeff6
+                        ActionSystem*: ref!! 85eb818d-66af-4e1b-8b25-2fc80e8a94d3
+                        LevelGrid*: ref!! 5520f15b-3e7f-497c-b13b-c639cd8bdf07
             Base:
                 BasePartAsset: eb0b69d1-e912-4921-8b3c-f3d48a6c970f:Actor
                 BasePartId: ed7b10c7-6c4b-45b6-965a-e14f68a384b3
@@ -548,6 +553,11 @@ Hierarchy:
                     7e07df2cba7c5b5842355969ee34392d: !Star_Reverie.AnimationController,Star_Reverie
                         Id: 0a060a8e-2167-4796-a166-4c8170cd1b86
                         AnimationSpeed: 1.0
+                    678d31f8e9dee6b3f8824cb1098c6eb1: !Star_Reverie.Maneuvers.SpinManeuver,Star_Reverie
+                        Id: 6cca8dec-9ae3-43e3-9f12-19034e573831
+                        Actor: ref!! fe7807da-6036-4c07-875e-ae294ce7b944
+                        ActionSystem*: ref!! 85eb818d-66af-4e1b-8b25-2fc80e8a94d3
+                        LevelGrid*: ref!! 5520f15b-3e7f-497c-b13b-c639cd8bdf07
             Base:
                 BasePartAsset: eb0b69d1-e912-4921-8b3c-f3d48a6c970f:Actor
                 BasePartId: ed7b10c7-6c4b-45b6-965a-e14f68a384b3

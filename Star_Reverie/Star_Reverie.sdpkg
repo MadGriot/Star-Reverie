@@ -100,6 +100,16 @@ AssetFolders:
     -   Path: !dir Assets
     -   Path: !dir Assets
     -   Path: !dir Assets
+    -   Path: !dir Assets
+    -   Path: !dir Assets
+    -   Path: !dir Assets
+    -   Path: !dir Assets
+    -   Path: !dir Assets
+    -   Path: !dir Assets
+    -   Path: !dir Assets
+    -   Path: !dir Assets
+    -   Path: !dir Assets
+    -   Path: !dir Assets
     -   Path: !dir C:/Users/Insan/OneDrive/Documents/Stride Projects/Star Reverie/Star_Reverie/Assets
 ResourceFolders:
     - !dir Resources
