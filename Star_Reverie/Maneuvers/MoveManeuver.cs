@@ -41,6 +41,7 @@ namespace Star_Reverie.Maneuvers
             currentPosition = Entity.Transform.Position;
             if (Vector3.Distance(currentPosition, targetPosition) > stoppingDistance)
             {
+                AnimationController.animationMovementState = AnimationState.Running;
                 Vector3 velocity = Vector3.Normalize(targetPosition - currentPosition);
                 float moveSpeed = 6f;
                 float deltaTime = (float)Game.UpdateTime.Elapsed.TotalSeconds;
@@ -52,7 +53,8 @@ namespace Star_Reverie.Maneuvers
             }
             else
             {
-                AnimationController.StopMovement();
+                AnimationController.animationMovementState = AnimationState.Idle;
+                Entity.Get<CharacterComponent>().SetVelocity(Vector3.Zero);
             }
             if (Input.IsMouseButtonPressed(MouseButton.Left))
             {

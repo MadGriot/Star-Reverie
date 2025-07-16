@@ -19,7 +19,6 @@ namespace Star_Reverie
 
         public override void Start()
         {
-            animationMovementState = AnimationState.Walking;
             animationState = AnimationState.Idle;
         }
 
@@ -30,16 +29,9 @@ namespace Star_Reverie
                 animationState = animationMovementState;
                 PlayAnimation(animationState);
             }
-            // No input — stop
-            else if (animationState != AnimationState.Idle)
-            {
-                animationState = AnimationState.Idle;
-                PlayAnimation(animationState);
-            }
         }
         public void StopMovement()
         {
-            Entity.Get<CharacterComponent>().SetVelocity(Vector3.Zero);
             if (animationState != AnimationState.Idle)
             {
                 animationState = AnimationState.Idle;

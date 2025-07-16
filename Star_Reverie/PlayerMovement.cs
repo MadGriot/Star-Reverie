@@ -63,7 +63,7 @@ namespace Star_Reverie
                 else
                 {
                     // No input — stop
-
+                    AnimationController.animationMovementState = AnimationState.Idle;
                     Entity.Get<CharacterComponent>().SetVelocity(Vector3.Zero);
                 }
             }
