@@ -57,11 +57,11 @@ namespace Star_Reverie.Maneuvers
                 AnimationController.animationMovementState = AnimationState.Idle;
                 Entity.Get<CharacterComponent>().SetVelocity(Vector3.Zero);
             }
-            if (Input.IsMouseButtonPressed(MouseButton.Left))
-            {
-                if (Actor.Get<Actor>().actorSelected)
-                    Move(mouseWorld.GetPosition());
-            }
+        }
+        public bool IsValidManeuverGridPosition(GridPosition gridPosition)
+        {
+            List<GridPosition> validGridPositionList = GetValidManeuverGridPositionList();
+            return validGridPositionList.Contains(gridPosition);
         }
         public List<GridPosition> GetValidManeuverGridPositionList()
         {
@@ -70,16 +70,19 @@ namespace Star_Reverie.Maneuvers
             GridPosition actorGridPosition = LevelGrid.GridSystem.GetGridPosition(Entity.Transform.Position);
             for (int x = -MaxMoveDistance; x <= MaxMoveDistance; x++)
             {
-                for (int z = -MaxMoveDistance; z <= MaxMoveDistance; z++)
+                for (int y = -MaxMoveDistance; y <= MaxMoveDistance; y++)
                 {
-                    GridPosition offsetGridPosition = new GridPosition(x, 0, z);
-                    GridPosition testGridPosition = actorGridPosition + offsetGridPosition;
+                    for (int z = -MaxMoveDistance; z <= MaxMoveDistance; z++)
+                    {
+                        GridPosition offsetGridPosition = new GridPosition(x, y, z);
+                        GridPosition testGridPosition = actorGridPosition + offsetGridPosition;
 
-                    if (!LevelGrid.GridSystem.IsValidGridPosition(testGridPosition)) continue;
-                    if (actorGridPosition ==testGridPosition) continue;
-                    if (LevelGrid.HasAnyActorOnGridPosition(testGridPosition)) continue;
+                        if (!LevelGrid.GridSystem.IsValidGridPosition(testGridPosition)) continue;
+                        if (actorGridPosition == testGridPosition) continue;
+                        if (LevelGrid.HasAnyActorOnGridPosition(testGridPosition)) continue;
 
-                    validGridPositionList.Add(testGridPosition);
+                        validGridPositionList.Add(testGridPosition);
+                    }
                 }
             }
             return validGridPositionList;

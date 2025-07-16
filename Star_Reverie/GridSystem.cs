@@ -42,7 +42,7 @@ namespace Star_Reverie
             return new GridPosition
             (
                 Convert.ToInt32(worldPosition.X / cellSize),
-                Convert.ToInt32(worldPosition.Y / cellSize),
+                (int)Math.Floor(worldPosition.Y / cellSize),
                 Convert.ToInt32(worldPosition.Z / cellSize));
         }
         public GridObject GetGridObject(GridPosition gridPosition) =>

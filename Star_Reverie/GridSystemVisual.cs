@@ -12,28 +12,33 @@ namespace Star_Reverie
         public LevelGrid LevelGrid;
         public ActorActionSystem ActorActionSystem;
 
-        private GridSystemVisualSingle[,] gridSystemVisualSingleArray;
+        private GridSystemVisualSingle[,,] gridSystemVisualSingleArray;
         private float gridCellOffset = 0.01f;
 
         public override void Start()
         {
             gridSystemVisualSingleArray = new GridSystemVisualSingle[
-                 LevelGrid.GridSystem.Width, LevelGrid.GridSystem.Length];
+                 LevelGrid.GridSystem.Width,LevelGrid.GridSystem.Height, LevelGrid.GridSystem.Length];
 
             for (int x = 0; x < LevelGrid.GridSystem.Width; x++)
             {
-                for (int z = 0; z < LevelGrid.GridSystem.Length; z++)
+                for (int y = 0; y < LevelGrid.GridSystem.Height; y++)
                 {
-                    Entity gridSystemVisualSingleTransform =
-                        GridSystemVisualSinglePrefab.Instantiate().First();
-                    gridSystemVisualSingleTransform.Transform.Position = LevelGrid.GridSystem
-                        .GetWorldPosition(new GridPosition(x, 0, z));
-                    gridSystemVisualSingleTransform.Transform.Position.Y += gridCellOffset;
-                    Entity.Scene.Entities.Add(gridSystemVisualSingleTransform);
+                    for (int z = 0; z < LevelGrid.GridSystem.Length; z++)
+                    {
+                        Entity gridSystemVisualSingleTransform =
+                            GridSystemVisualSinglePrefab.Instantiate().First();
+                        gridSystemVisualSingleTransform.Transform.Position = LevelGrid.GridSystem
+                            .GetWorldPosition(new GridPosition(x, y, z));
+                        gridSystemVisualSingleTransform.Transform.Position.Y += gridCellOffset;
+                        Entity.Scene.Entities.Add(gridSystemVisualSingleTransform);
 
-                    gridSystemVisualSingleArray[x, z] = gridSystemVisualSingleTransform.Get<GridSystemVisualSingle>();
+                        gridSystemVisualSingleArray[x,y,z] = gridSystemVisualSingleTransform.Get<GridSystemVisualSingle>();
+                    }
                 }
+  
             }
+            HideAllGridPositions();
         }
 
         public override void Update()
@@ -45,10 +50,14 @@ namespace Star_Reverie
         {
             for (int x = 0; x < LevelGrid.GridSystem.Width;x++)
             {
-                for (int z = 0; z < LevelGrid.GridSystem.Length;z++)
+                for (int y = 0; y < LevelGrid.GridSystem.Height;y++)
                 {
-                    gridSystemVisualSingleArray[x, z].Hide();
+                    for (int z = 0; z < LevelGrid.GridSystem.Length; z++)
+                    {
+                        gridSystemVisualSingleArray[x,y, z].Hide();
+                    }
                 }
+
             }
         }
 
@@ -56,7 +65,7 @@ namespace Star_Reverie
         {
             foreach (GridPosition gridPosition in gridPositionList)
             {
-                gridSystemVisualSingleArray[gridPosition.x, gridPosition.z].Show();
+                gridSystemVisualSingleArray[gridPosition.x, gridPosition.y, gridPosition.z].Show();
             }
         }
 

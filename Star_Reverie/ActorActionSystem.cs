@@ -1,9 +1,9 @@
-﻿using Stride.Core.Mathematics;
+﻿using Star_Reverie.Maneuvers;
+using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Graphics;
 using Stride.Input;
 using Stride.Physics;
-using Stride.Rendering.Compositing;
 using System;
 
 namespace Star_Reverie
@@ -25,6 +25,8 @@ namespace Star_Reverie
             if (Input.IsMouseButtonPressed(MouseButton.Left))
             {
                 HandleActorSelection();
+                if (Actor.Get<Actor>().actorSelected)
+                    Actor.Get<MoveManeuver>().Move(MouseWorld.GetPosition());
             }
 
             DebugText.Print($"{Actor.Name}", new Int2(700, 600));
