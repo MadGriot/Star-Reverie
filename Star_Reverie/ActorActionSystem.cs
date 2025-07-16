@@ -1,4 +1,6 @@
-﻿using Star_Reverie.Maneuvers;
+﻿using Star_Reverie.Globals;
+using Star_Reverie.Maneuvers;
+using StarReverieCore.Grid;
 using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Graphics;
@@ -12,6 +14,7 @@ namespace Star_Reverie
     {
         // Declared public member fields and properties will show in the game studio
         public Entity Actor { get; set; }
+        public LevelGrid LevelGrid { get; set; }
         internal MouseWorld MouseWorld { get; set; }
         public event EventHandler OnSelectedActorChanged;
         public override void Start()
@@ -22,11 +25,16 @@ namespace Star_Reverie
 
         public override void Update()
         {
+            if (CurrentGameState.GameState != GameState.Encounter)
+                return;
             if (Input.IsMouseButtonPressed(MouseButton.Left))
             {
                 HandleActorSelection();
-                if (Actor.Get<Actor>().actorSelected)
-                    Actor.Get<MoveManeuver>().Move(MouseWorld.GetPosition());
+                GridPosition mouseGridPosition = LevelGrid.GridSystem.GetGridPosition(MouseWorld.GetPosition());
+                if (Actor.Get<Actor>().actorSelected && Actor.Get<MoveManeuver>().IsValidManeuverGridPosition(mouseGridPosition))
+                {
+                    Actor.Get<MoveManeuver>().Move(mouseGridPosition);
+                }
             }
 
             DebugText.Print($"{Actor.Name}", new Int2(700, 600));

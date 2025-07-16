@@ -85,6 +85,7 @@ Hierarchy:
                         CollideWithTriggers: false
                     bb8caf9a778c22dc635c9a19e0c95c0d: !Star_Reverie.Maneuvers.MoveManeuver,Star_Reverie
                         Id: 6f30d677-3f3a-4b0c-9d27-b4b823fd9636
+                        Priority: 2
                         Actor: ref!! 07fb582c-a3d5-4a7e-80a3-0142737aeff6
                         ActionSystem*: ref!! 85eb818d-66af-4e1b-8b25-2fc80e8a94d3
                         LevelGrid*: ref!! 5520f15b-3e7f-497c-b13b-c639cd8bdf07
@@ -149,6 +150,7 @@ Hierarchy:
                     356cd3da5941b151cb19a833894f8104: !Star_Reverie.ActorActionSystem,Star_Reverie
                         Id: 85eb818d-66af-4e1b-8b25-2fc80e8a94d3
                         Actor: ref!! 07fb582c-a3d5-4a7e-80a3-0142737aeff6
+                        LevelGrid: ref!! 5520f15b-3e7f-497c-b13b-c639cd8bdf07
         -   Entity:
                 Id: 356ea86c-e8f8-440d-8143-f859dd2d2bfd
                 Name: box
@@ -530,6 +532,7 @@ Hierarchy:
                         CollideWithTriggers: false
                     bb8caf9a778c22dc635c9a19e0c95c0d: !Star_Reverie.Maneuvers.MoveManeuver,Star_Reverie
                         Id: 056db7e7-9027-48d9-8400-2d47602ac804
+                        Priority: 2
                         Actor: ref!! fe7807da-6036-4c07-875e-ae294ce7b944
                         ActionSystem*: ref!! 85eb818d-66af-4e1b-8b25-2fc80e8a94d3
                         LevelGrid*: ref!! 5520f15b-3e7f-497c-b13b-c639cd8bdf07

@@ -27,6 +27,12 @@ namespace Star_Reverie
             gridObject.ActorList.Add(actor);
         }
 
+        public void ActorMovedGridPosition(Actor actor, GridPosition fromGridPosition, GridPosition toGridPosition)
+        {
+            RemoveActorGridPosition(fromGridPosition, actor);
+            AddActorAtGridPosition(toGridPosition, actor);
+        }
+
         public List<Actor> GetActorListAtGridPosition(GridPosition gridPosition, Actor actor)
         {
             GridObject gridObject = GridSystem.GetGridObject(gridPosition);

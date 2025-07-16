@@ -38,7 +38,6 @@ namespace Star_Reverie
                 }
   
             }
-            HideAllGridPositions();
         }
 
         public override void Update()

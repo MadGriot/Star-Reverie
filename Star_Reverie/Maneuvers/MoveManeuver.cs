@@ -30,6 +30,7 @@ namespace Star_Reverie.Maneuvers
         {
             if (CurrentGameState.GameState != GameState.Encounter)
                 return;
+            if (!isActive) return;
             if (!Actor.Get<Actor>().actorSelected)
             {
                 AnimationController.StopMovement();
@@ -56,6 +57,7 @@ namespace Star_Reverie.Maneuvers
             {
                 AnimationController.animationMovementState = AnimationState.Idle;
                 Entity.Get<CharacterComponent>().SetVelocity(Vector3.Zero);
+                isActive = false;
             }
         }
         public bool IsValidManeuverGridPosition(GridPosition gridPosition)
@@ -67,7 +69,8 @@ namespace Star_Reverie.Maneuvers
         {
             List<GridPosition> validGridPositionList = new();
 
-            GridPosition actorGridPosition = LevelGrid.GridSystem.GetGridPosition(Entity.Transform.Position);
+            GridPosition actorGridPosition = Actor.Get<Actor>().GridPosition;
+            DebugText.Print($"{actorGridPosition}", new Int2(500, 100));
             for (int x = -MaxMoveDistance; x <= MaxMoveDistance; x++)
             {
                 for (int y = -MaxMoveDistance; y <= MaxMoveDistance; y++)
@@ -87,9 +90,10 @@ namespace Star_Reverie.Maneuvers
             }
             return validGridPositionList;
         }
-        public void Move(Vector3 targetPosition)
+        public void Move(GridPosition gridPosition)
         {
-            this.targetPosition = targetPosition;
+            isActive = true;
+            targetPosition = LevelGrid.GridSystem.GetWorldPosition(gridPosition);
             AnimationController.animationState = AnimationState.Running;
             AnimationController.PlayAnimation(AnimationState.Running);
         }

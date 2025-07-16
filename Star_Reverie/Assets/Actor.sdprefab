@@ -125,6 +125,7 @@ Hierarchy:
                         CollideWithTriggers: false
                     bb8caf9a778c22dc635c9a19e0c95c0d: !Star_Reverie.Maneuvers.MoveManeuver,Star_Reverie
                         Id: 441147cc-08cc-497a-9444-2ee08989d0f3
+                        Priority: 2
                         Actor: ref!! ed7b10c7-6c4b-45b6-965a-e14f68a384b3
                         ActionSystem: null
                         LevelGrid: null
