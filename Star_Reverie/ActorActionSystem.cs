@@ -32,10 +32,12 @@ namespace Star_Reverie
                 bool selectionChanged = TryHandleActorSelection();
                 if (Actor.Get<Actor>().actorSelected)
                 {
-                    SetBusy();
                     GridPosition mouseGridPosition = LevelGrid.GridSystem.GetGridPosition(MouseWorld.GetPosition());
                     if (!selectionChanged && Actor.Get<MoveManeuver>().IsValidManeuverGridPosition(mouseGridPosition))
+                    {
+                        SetBusy();
                         Actor.Get<MoveManeuver>().Move(mouseGridPosition, ClearBusy);
+                    }
                 }
             }
 
