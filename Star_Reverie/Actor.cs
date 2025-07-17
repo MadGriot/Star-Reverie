@@ -21,6 +21,7 @@ namespace Star_Reverie
             AnimationController.animationComponent.Play("Idle");
             LevelGrid.AddActorAtGridPosition
                 (LevelGrid.GridSystem.GetGridPosition(Entity.Transform.Position), this);
+
         }
 
         public override void Update()
@@ -35,18 +36,15 @@ namespace Star_Reverie
                     LevelGrid.ActorMovedGridPosition(this, GridPosition, newGridPosition);
                     GridPosition = newGridPosition;
                 }
-
-            }
-
-
-            if (CurrentGameState.GameState != GameState.Encounter)
-            {
-                if (Input.IsKeyPressed(Keys.Q))
+                if (CurrentGameState.GameState != GameState.Encounter)
                 {
-                    CurrentGameState.GameState = GameState.Encounter;
-                }
+                    if (Input.IsKeyPressed(Keys.Q))
+                    {
+                        CurrentGameState.GameState = GameState.Encounter;
+                    }
 
-                return;
+                    return;
+                }
             }
 
         }

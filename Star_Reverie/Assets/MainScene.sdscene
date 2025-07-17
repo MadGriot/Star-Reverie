@@ -22,6 +22,7 @@ Hierarchy:
         - ref!! b94950f3-7504-4bb7-bf29-2793e55514ee
         - ref!! 02a156bc-1e09-4005-908c-072e8f09d2e1
         - ref!! ae993fa4-599b-4cf1-87ef-0a82b6975bfa
+        - ref!! 1d7a1fdc-3b27-4ca2-9786-b9d8d86e6bd4
     Parts:
         -   Folder: Code
             Entity:
@@ -137,6 +138,20 @@ Hierarchy:
                         Id: e3e7e1a9-74c5-446b-ac4c-54f0e516327e
                         Model: 9a1283b0-1d34-439a-976b-9efe9eeb00f6:Models/CoinA
                         Materials: {}
+        -   Folder: Code
+            Entity:
+                Id: 1d7a1fdc-3b27-4ca2-9786-b9d8d86e6bd4
+                Name: BattleUI
+                Components:
+                    b5cd2f0f68ae7e3a769f9f9c030c4d0e: !TransformComponent
+                        Id: 8ba0c774-1371-4dfa-9a7f-c7c903fe4332
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    8e42b3a41ca5066a92810409a3606737: !Star_Reverie.BattleUI,Star_Reverie
+                        Id: b560ab7b-960a-40eb-bf7f-d941e4916519
+                        ManeuverUI: 06ea80ef-e2cc-433b-9acb-eb3875951461:UI/ManeuverUI
         -   Folder: Code
             Entity:
                 Id: 2a38fe14-86ff-44c3-abb5-f6d4bc5af9f2
