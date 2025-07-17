@@ -14,16 +14,14 @@ Hierarchy:
                     597aacc4eede46fbac4b661bed4971a4~GridBase.RowSpanPropertyKey: 1
                     92208a0a6344fd9aa4a05a3f3572952f~GridBase.RowPropertyKey: 3
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Visibility: Hidden
                 HorizontalAlignment: Center
                 Margin: {}
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 100.0
                 MaximumDepth: 3.4028235E+38
                 Name: ManeuverList
-                Children:
-                    093ffa13a854bc0b9396065bfe955cb5: !Button ref!! 5e07b0fb-42d0-469a-91fe-11682f890b4a
-                    78f5fc5f5d880e0e5153baf0ef1b3871: !Button ref!! 8e55249d-234e-4489-855d-e1faf6ce587e
-                    3b3c9659674f58abf0e59fc69a11699b: !Button ref!! 29220214-5506-45d1-8f95-b3418d3f7547
+                Children: {}
                 Orientation: Horizontal
         -   UIElement: !Grid
                 Id: 04865f80-0af6-4a01-884f-4a736d5076c4
@@ -33,6 +31,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: Hotbar
                 Children:
                     92f0e3eed8112b75a006afd075654e46: !StackPanel ref!! 033620bf-4907-4840-a273-f42811f67c75
                 RowDefinitions:
@@ -41,108 +40,3 @@ Hierarchy:
                     81b46cde6107f874fb24f2cadf5130d0: {}
                 ColumnDefinitions: {}
                 LayerDefinitions: {}
-        -   UIElement: !Button
-                Id: 29220214-5506-45d1-8f95-b3418d3f7547
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                DrawLayerNumber: 2
-                Margin: {Left: 10.0, Right: 10.0}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Name: Spin
-                Content: !TextBlock ref!! 69e0ee3d-b8df-4245-87a8-3a989065933b
-                PressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 2
-                NotPressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 1
-                MouseOverImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-        -   UIElement: !Button
-                Id: 5e07b0fb-42d0-469a-91fe-11682f890b4a
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                DrawLayerNumber: 2
-                Margin: {Left: 10.0, Right: 10.0}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Name: Attack
-                Content: !TextBlock ref!! 74cd8f95-ffef-4af6-b15c-dab43fd398b4
-                PressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 2
-                NotPressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 1
-                MouseOverImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-        -   UIElement: !TextBlock
-                Id: 69e0ee3d-b8df-4245-87a8-3a989065933b
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                HorizontalAlignment: Center
-                VerticalAlignment: Center
-                Margin: {}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Text: Spin
-                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
-                TextSize: 20.0
-                TextColor: {R: 240, G: 240, B: 240, A: 255}
-                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
-                OutlineThickness: 0.0
-        -   UIElement: !TextBlock
-                Id: 6ecc6b70-73ef-4da1-8f32-c8340c70a4d4
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                HorizontalAlignment: Center
-                VerticalAlignment: Center
-                Margin: {}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Text: Move
-                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
-                TextSize: 20.0
-                TextColor: {R: 240, G: 240, B: 240, A: 255}
-                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
-                OutlineThickness: 0.0
-        -   UIElement: !TextBlock
-                Id: 74cd8f95-ffef-4af6-b15c-dab43fd398b4
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                HorizontalAlignment: Center
-                VerticalAlignment: Center
-                Margin: {}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Text: Attack
-                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
-                TextSize: 20.0
-                TextColor: {R: 240, G: 240, B: 240, A: 255}
-                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
-                OutlineThickness: 0.0
-        -   UIElement: !Button
-                Id: 8e55249d-234e-4489-855d-e1faf6ce587e
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                DrawLayerNumber: 2
-                Margin: {Left: 10.0, Right: 10.0}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Name: Move
-                Content: !TextBlock ref!! 6ecc6b70-73ef-4da1-8f32-c8340c70a4d4
-                PressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 2
-                NotPressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 1
-                MouseOverImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns

@@ -1,9 +1,11 @@
 ﻿using Star_Reverie.Globals;
+using Star_Reverie.Maneuvers;
 using StarReverieCore.Grid;
 using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Input;
 using Stride.Physics;
+using System.Linq;
 
 namespace Star_Reverie
 {
@@ -13,6 +15,7 @@ namespace Star_Reverie
         public LevelGrid LevelGrid;
         public bool actorSelected;
         private AnimationController AnimationController;
+        internal BaseManeuver[] BaseManeuvers;
         public override void Start()
         {
             GridPosition = LevelGrid.GridSystem.GetGridPosition(Entity.Transform.Position);
@@ -22,6 +25,8 @@ namespace Star_Reverie
             LevelGrid.AddActorAtGridPosition
                 (LevelGrid.GridSystem.GetGridPosition(Entity.Transform.Position), this);
 
+            BaseManeuvers = Entity.GetAll<BaseManeuver>().ToArray();
+
         }
 
         public override void Update()
@@ -30,6 +35,7 @@ namespace Star_Reverie
             {
                 DebugText.Print($" Current Position {Entity.Transform.Position}", new Int2(1000, 800));
                 DebugText.Print($" Current Grid Position {GridPosition}", new Int2(1000, 900));
+                DebugText.Print($" Maneuver Count {BaseManeuvers.Count()}", new Int2(1000, 950));
                 GridPosition newGridPosition = LevelGrid.GridSystem.GetGridPosition(Entity.Transform.Position);
                 if (newGridPosition != GridPosition)
                 {
