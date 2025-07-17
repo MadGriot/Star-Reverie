@@ -63,8 +63,8 @@ namespace Star_Reverie.Maneuvers
                 AnimationController.animationMovementState = AnimationState.Idle;
                 ResetTarget();
                 Actor.Get<CharacterComponent>().SetVelocity(Vector3.Zero);
-
                 isActive = false;
+                OnActionComplete();
             }
         }
         public bool IsValidManeuverGridPosition(GridPosition gridPosition)
@@ -97,11 +97,12 @@ namespace Star_Reverie.Maneuvers
             }
             return validGridPositionList;
         }
-        public void Move(GridPosition gridPosition)
+        public void Move(GridPosition gridPosition, Action onActionComplete)
         {
             debugMessage = $"Moving {Actor.Name} to {gridPosition}\nWorld Target Position: {LevelGrid.GridSystem.GetWorldPosition(gridPosition)}";
             debugTimer = 3f;
 
+            OnActionComplete = onActionComplete;
             isActive = true;
             targetPosition = LevelGrid.GridSystem.GetWorldPosition(gridPosition);
             AnimationController.animationState = AnimationState.Running;

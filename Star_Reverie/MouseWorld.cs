@@ -1,4 +1,5 @@
 ﻿using Star_Reverie.Globals;
+using StarReverieCore.Grid;
 using Stride.Animations;
 using Stride.Core.Mathematics;
 using Stride.Engine;
@@ -18,6 +19,10 @@ namespace Star_Reverie
         public CollisionFilterGroupFlags CollideWith;
         public bool CollideWithTriggers;
 
+
+        //Debugging
+        private float debugTimer = 0f;
+        private string debugMessage = "";
         public override void Start()
         {
             simulation = this.GetSimulation();
@@ -25,7 +30,12 @@ namespace Star_Reverie
 
         public override void Update()
         {
-
+            float debugDeltaTime = (float)Game.UpdateTime.Elapsed.TotalSeconds;
+            if (debugTimer > 0f)
+            {
+                DebugText.Print(debugMessage, new Int2(200, 700), new Color4(Color.Beige));
+                debugTimer -= debugDeltaTime;
+            }
         }
 
         public Vector3 GetPosition()
@@ -40,7 +50,10 @@ namespace Star_Reverie
                 Camera.ProjectionMatrix, Camera.ViewMatrix, Matrix.Identity);
 
             HitResult hitResult = simulation.Raycast(nearPosition, farPosition);
+            debugMessage = $"Hit Result: {hitResult.Point}";
 
+            debugTimer = 10f;
+            hitResult.Point.Y = Math.Clamp(hitResult.Point.Y, 0.0f, 5.0f);
             return hitResult.Point;
         }
     }

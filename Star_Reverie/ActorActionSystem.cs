@@ -22,19 +22,20 @@ namespace Star_Reverie
         {
 
         }
-
         public override void Update()
         {
             if (CurrentGameState.GameState != GameState.Encounter)
                 return;
+            if (isBusy) return;
             if (Input.IsMouseButtonPressed(MouseButton.Left))
             {
                 bool selectionChanged = TryHandleActorSelection();
                 if (Actor.Get<Actor>().actorSelected)
                 {
+                    SetBusy();
                     GridPosition mouseGridPosition = LevelGrid.GridSystem.GetGridPosition(MouseWorld.GetPosition());
                     if (!selectionChanged && Actor.Get<MoveManeuver>().IsValidManeuverGridPosition(mouseGridPosition))
-                        Actor.Get<MoveManeuver>().Move(mouseGridPosition);
+                        Actor.Get<MoveManeuver>().Move(mouseGridPosition, ClearBusy);
                 }
             }
 
@@ -42,6 +43,7 @@ namespace Star_Reverie
             {
                 if (Actor.Get<Actor>().actorSelected)
                 {
+                    SetBusy();
                     Actor.Get<SpinManeuver>().Spin(ClearBusy);
                 }
             }
