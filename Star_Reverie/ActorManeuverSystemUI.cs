@@ -1,5 +1,6 @@
 ﻿using Star_Reverie.Globals;
 using Star_Reverie.Maneuvers;
+using Star_Reverie.Utils;
 using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Input;
@@ -48,6 +49,8 @@ namespace Star_Reverie
             }
             if (CurrentGameState.GameState == GameState.Encounter)
             {
+                ActorActionSystem.IsOverUI = UIHelper.IsPointerOverUI(uIComponent);
+
                 if (!OnScreen)
                 {
                     maneuverList.Visibility = Visibility.Visible;

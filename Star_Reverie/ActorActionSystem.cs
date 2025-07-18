@@ -16,6 +16,7 @@ namespace Star_Reverie
         public Entity Actor { get; set; }
         public LevelGrid LevelGrid { get; set; }
         public MouseWorld MouseWorld { get; set; }
+        internal bool IsOverUI;
         public event EventHandler OnSelectedActorChanged;
 
         internal BaseManeuver SelectedManeuver;
@@ -27,9 +28,9 @@ namespace Star_Reverie
         }
         public override void Update()
         {
-            if (CurrentGameState.GameState != GameState.Encounter)
-                return;
+            if (CurrentGameState.GameState != GameState.Encounter) return;
             if (isBusy) return;
+            if (IsOverUI) return;
 
             if (TryHandleActorSelection()) return;
 
