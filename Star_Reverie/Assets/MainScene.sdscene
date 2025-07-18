@@ -80,6 +80,7 @@ Hierarchy:
                         Priority: 1
                         LevelGrid*: ref!! 5520f15b-3e7f-497c-b13b-c639cd8bdf07
                         actorSelected*: true
+                        CharacterId*: 3
                     bb8caf9a778c22dc635c9a19e0c95c0d: !Star_Reverie.Maneuvers.MoveManeuver,Star_Reverie
                         Id: 6f30d677-3f3a-4b0c-9d27-b4b823fd9636
                         Priority: 2
@@ -561,6 +562,7 @@ Hierarchy:
                         Priority: 1
                         LevelGrid*: ref!! 5520f15b-3e7f-497c-b13b-c639cd8bdf07
                         actorSelected: false
+                        CharacterId*: 4
                     bb8caf9a778c22dc635c9a19e0c95c0d: !Star_Reverie.Maneuvers.MoveManeuver,Star_Reverie
                         Id: 056db7e7-9027-48d9-8400-2d47602ac804
                         Priority: 2

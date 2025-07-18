@@ -1,6 +1,7 @@
 ﻿using Star_Reverie.Globals;
 using Star_Reverie.Maneuvers;
 using StarReverieCore.Grid;
+using StarReverieCore.Models;
 using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Input;
@@ -14,6 +15,8 @@ namespace Star_Reverie
         internal GridPosition GridPosition;
         public LevelGrid LevelGrid;
         public bool actorSelected;
+        public int CharacterId;
+        internal Character Character;
         private AnimationController AnimationController;
         internal BaseManeuver[] BaseManeuvers;
         public override void Start()
@@ -26,7 +29,8 @@ namespace Star_Reverie
                 (LevelGrid.GridSystem.GetGridPosition(Entity.Transform.Position), this);
 
             BaseManeuvers = Entity.GetAll<BaseManeuver>().ToArray();
-
+            Character = Database.StarReverieDbContext.Characters.Find(CharacterId);
+            Entity.Name = Character.FirstName;
         }
 
         public override void Update()

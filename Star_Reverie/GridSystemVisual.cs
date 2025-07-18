@@ -71,9 +71,9 @@ namespace Star_Reverie
         private void UpdateGridVisual()
         {
             HideAllGridPositions();
-            Entity selectedActor = ActorActionSystem.Actor;
+            BaseManeuver selectedManeuver = ActorActionSystem.SelectedManeuver;
             ShowGridPositionList(
-                selectedActor.Get<MoveManeuver>().GetValidManeuverGridPositionList());
+                selectedManeuver.GetValidManeuverGridPositionList());
         }
     }
 }

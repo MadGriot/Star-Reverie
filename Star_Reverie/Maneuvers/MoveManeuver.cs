@@ -74,7 +74,6 @@ namespace Star_Reverie.Maneuvers
             List<GridPosition> validGridPositionList = new();
 
             GridPosition actorGridPosition = Actor.Get<Actor>().GridPosition;
-            DebugText.Print($"{actorGridPosition}", new Int2(500, 100));
             for (int x = -MaxMoveDistance; x <= MaxMoveDistance; x++)
             {
                 for (int y = -MaxMoveDistance; y <= MaxMoveDistance; y++)
