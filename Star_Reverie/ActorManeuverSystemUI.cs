@@ -4,6 +4,7 @@ using Star_Reverie.Utils;
 using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Input;
+using System;
 using Stride.UI;
 using Stride.UI.Controls;
 using Stride.UI.Events;
@@ -34,7 +35,9 @@ namespace Star_Reverie
             attackStatusTextBlock = ManeuverUI.RootElement.FindVisualChildOfType<TextBlock>("AttackStatus");
             defendStatusTextBlock = ManeuverUI.RootElement.FindVisualChildOfType<TextBlock>("DefendStatus");
             ActorActionSystem.OnSelectedActorChanged += ActorActionSystem_OnSelectedActorChanged;
+            ActorActionSystem.OnManeuverStarted += ActorActionSystem_OnManeuverStarted;
             CreateActorManeuverButtons();
+            ActorManeuverStatus();
             SceneSystem.SceneInstance.RootScene.Entities.Add(maneuverUIEntity);
 
 
@@ -55,7 +58,6 @@ namespace Star_Reverie
             if (CurrentGameState.GameState == GameState.Encounter)
             {
                 ActorActionSystem.IsOverUI = UIHelper.IsPointerOverUI(uIComponent);
-                ActorManeuverStatus();
                 if (!OnScreen)
                 {
                     maneuverBlock.Visibility = Visibility.Visible;
@@ -80,9 +82,15 @@ namespace Star_Reverie
                 defendStatusTextBlock.Text = actor.DidDefensiveManeuver ? "Can't Defend" : "Can Defend";
             }
         }
-        private void ActorActionSystem_OnSelectedActorChanged(object sender, System.EventArgs e)
+        private void ActorActionSystem_OnSelectedActorChanged(object sender, EventArgs e)
         {
             CreateActorManeuverButtons();
+            ActorManeuverStatus();
+
+        }
+        private void ActorActionSystem_OnManeuverStarted(object sender, EventArgs e)
+        {
+            ActorManeuverStatus();
         }
         private void CreateActorManeuverButtons()
         {

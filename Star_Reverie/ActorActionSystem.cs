@@ -19,6 +19,7 @@ namespace Star_Reverie
         public MouseWorld MouseWorld { get; set; }
         internal bool IsOverUI;
         public event EventHandler OnSelectedActorChanged;
+        public event EventHandler OnManeuverStarted;
 
         internal BaseManeuver SelectedManeuver;
         internal bool isBusy { get; set; }
@@ -53,6 +54,8 @@ namespace Star_Reverie
                     {
                         SetBusy();
                         SelectedManeuver.ActivateManeuver(mouseGridPosition, ClearBusy);
+
+                        OnManeuverStarted?.Invoke(this, EventArgs.Empty);
                     }
 
                 }
