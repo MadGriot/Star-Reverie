@@ -20,14 +20,19 @@ namespace Star_Reverie
         private bool OnScreen = false;
         public ActorActionSystem ActorActionSystem;
         private StackPanel maneuverList;
+        private StackPanel maneuverBlock;
         private Entity maneuverUIEntity;
+        private TextBlock attackStatusTextBlock;
+        private TextBlock defendStatusTextBlock;
         public override void Start()
         {
             maneuverUIEntity = new();
             uIComponent = new UIComponent { Page = ManeuverUI };
             maneuverUIEntity.Add(uIComponent);
             maneuverList = ManeuverUI.RootElement.FindVisualChildOfType<StackPanel>("ManeuverList");
-
+            maneuverBlock = ManeuverUI.RootElement.FindVisualChildOfType<StackPanel>("ManeuverBlock");
+            attackStatusTextBlock = ManeuverUI.RootElement.FindVisualChildOfType<TextBlock>("AttackStatus");
+            defendStatusTextBlock = ManeuverUI.RootElement.FindVisualChildOfType<TextBlock>("DefendStatus");
             ActorActionSystem.OnSelectedActorChanged += ActorActionSystem_OnSelectedActorChanged;
             CreateActorManeuverButtons();
             SceneSystem.SceneInstance.RootScene.Entities.Add(maneuverUIEntity);
@@ -50,14 +55,29 @@ namespace Star_Reverie
             if (CurrentGameState.GameState == GameState.Encounter)
             {
                 ActorActionSystem.IsOverUI = UIHelper.IsPointerOverUI(uIComponent);
-
+                ActorManeuverStatus();
                 if (!OnScreen)
                 {
-                    maneuverList.Visibility = Visibility.Visible;
+                    maneuverBlock.Visibility = Visibility.Visible;
    
                     OnScreen = true;
                 }
 
+            }
+        }
+
+        private void ActorManeuverStatus()
+        {
+            Actor actor = ActorActionSystem.Actor.Get<Actor>();
+
+            if (attackStatusTextBlock != null)
+            {
+                attackStatusTextBlock.Text = actor.DidOffensiveManeuver ? "Can't Attack" : "Can Attack";
+            }
+
+            if (defendStatusTextBlock != null)
+            {
+                defendStatusTextBlock.Text = actor.DidDefensiveManeuver ? "Can't Defend" : "Can Defend";
             }
         }
         private void ActorActionSystem_OnSelectedActorChanged(object sender, System.EventArgs e)

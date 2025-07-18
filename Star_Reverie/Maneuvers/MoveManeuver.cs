@@ -24,6 +24,7 @@ namespace Star_Reverie.Maneuvers
         public override void Start()
         {
             Name = "Move";
+            IsOffensive = true;
             AnimationController = Actor.Get<AnimationController>();
             characterComponent = Actor.Get<CharacterComponent>();
             targetPosition = Actor.Transform.Position;

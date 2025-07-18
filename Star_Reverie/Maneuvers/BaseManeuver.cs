@@ -15,6 +15,7 @@ namespace Star_Reverie.Maneuvers
         public LevelGrid LevelGrid { get; set; }
         public string Name { get; protected set; } = "Maneuver";
         internal bool isActive;
+        internal bool IsOffensive;
         protected Action OnActionComplete;
 
         public BaseManeuver()

@@ -5,7 +5,6 @@ using StarReverieCore.Models;
 using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Input;
-using Stride.Physics;
 using System.Linq;
 
 namespace Star_Reverie
@@ -19,6 +18,8 @@ namespace Star_Reverie
         internal Character Character;
         private AnimationController AnimationController;
         internal BaseManeuver[] BaseManeuvers;
+        internal bool DidOffensiveManeuver;
+        internal bool DidDefensiveManeuver;
         public override void Start()
         {
             GridPosition = LevelGrid.GridSystem.GetGridPosition(Entity.Transform.Position);
@@ -58,7 +59,22 @@ namespace Star_Reverie
             }
 
         }
-
+        public bool TryToDoManeuver(BaseManeuver baseManeuver)
+        {
+            if(CanDoManeuver(baseManeuver))
+            {
+                if (baseManeuver.IsOffensive) DidOffensiveManeuver = true;
+                if (!baseManeuver.IsOffensive) DidDefensiveManeuver = true;
+                return true;
+            }
+            else return false;
+        }
+        public bool CanDoManeuver(BaseManeuver baseManeuver)
+        {
+            if (!DidOffensiveManeuver && baseManeuver.IsOffensive) return true;
+            if (!DidDefensiveManeuver && !baseManeuver.IsOffensive) return true;
+            else return false;
+        }
 
     }
 }

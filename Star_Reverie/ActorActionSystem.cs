@@ -7,6 +7,7 @@ using Stride.Graphics;
 using Stride.Input;
 using Stride.Physics;
 using System;
+using System.Collections.Generic;
 
 namespace Star_Reverie
 {
@@ -48,8 +49,11 @@ namespace Star_Reverie
 
                 if (SelectedManeuver.IsValidManeuverGridPosition(mouseGridPosition))
                 {
-                    SetBusy();
-                    SelectedManeuver.ActivateManeuver(mouseGridPosition, ClearBusy);
+                    if (Actor.Get<Actor>().TryToDoManeuver(SelectedManeuver))
+                    {
+                        SetBusy();
+                        SelectedManeuver.ActivateManeuver(mouseGridPosition, ClearBusy);
+                    }
 
                 }
             }
