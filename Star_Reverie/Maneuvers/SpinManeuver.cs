@@ -11,7 +11,7 @@ namespace Star_Reverie.Maneuvers
 
         public override void Start()
         {
-            // Initialization of the script.
+            Name = "Spin";
         }
 
         public override void Update()

@@ -23,6 +23,7 @@ namespace Star_Reverie.Maneuvers
         private string debugMessage = "";
         public override void Start()
         {
+            Name = "Move";
             AnimationController = Actor.Get<AnimationController>();
             characterComponent = Actor.Get<CharacterComponent>();
             targetPosition = Actor.Transform.Position;

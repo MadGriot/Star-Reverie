@@ -24,10 +24,16 @@ namespace Star_Reverie
             maneuverUIEntity = new();
             uIComponent = new UIComponent { Page = ManeuverUI };
             maneuverUIEntity.Add(uIComponent);
+            maneuverList = ManeuverUI.RootElement.FindVisualChildOfType<StackPanel>("ManeuverList");
+
+            ActorActionSystem.OnSelectedActorChanged += ActorActionSystem_OnSelectedActorChanged;
             CreateActorManeuverButtons();
             SceneSystem.SceneInstance.RootScene.Entities.Add(maneuverUIEntity);
 
+
         }
+
+
 
         public override void Update()
         {
@@ -50,11 +56,14 @@ namespace Star_Reverie
 
             }
         }
-
+        private void ActorActionSystem_OnSelectedActorChanged(object sender, System.EventArgs e)
+        {
+            CreateActorManeuverButtons();
+        }
         private void CreateActorManeuverButtons()
         {
+            maneuverList.Children.Clear();
             Actor selectedActor = ActorActionSystem.Actor.Get<Actor>();
-            maneuverList = ManeuverUI.RootElement.FindVisualChildOfType<StackPanel>("ManeuverList");
             foreach (BaseManeuver baseManeuver in selectedActor.BaseManeuvers)
             {
                 Button currentManeuver = (Button)ManeuverButton
