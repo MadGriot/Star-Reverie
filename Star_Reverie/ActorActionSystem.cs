@@ -1,4 +1,5 @@
-﻿using Star_Reverie.Globals;
+﻿using Silk.NET.Core.Native;
+using Star_Reverie.Globals;
 using Star_Reverie.Maneuvers;
 using StarReverieCore.Grid;
 using Stride.Core.Mathematics;
@@ -17,10 +18,13 @@ namespace Star_Reverie
         public LevelGrid LevelGrid { get; set; }
         public MouseWorld MouseWorld { get; set; }
         public event EventHandler OnSelectedActorChanged;
+
+        internal BaseManeuver SelectedManeuver;
         internal bool isBusy { get; set; }
+
         public override void Start()
         {
-
+            SetSelectedActor(Actor);
         }
         public override void Update()
         {
@@ -53,6 +57,17 @@ namespace Star_Reverie
             DebugText.Print($"{Actor.Name}", new Int2(700, 600));
 
         }
+
+        private void HandleSelectedManeuver()
+        {
+            //if (Input.IsMouseButtonDown(MouseButton.Left))
+            //{
+            //    switch (SelectedManeuver)
+            //    {
+            //        case MoveManeuver mo
+            //    }
+            //}
+        }
         private void SetBusy() => isBusy = true;
         private void ClearBusy() => isBusy = false;
 
@@ -76,23 +91,29 @@ namespace Star_Reverie
                 Entity clickedEntity = hitResult.Collider.Entity;
                 if (clickedEntity != Actor)
                 {
-                    Actor.Get<Actor>().actorSelected = false;
-                    CameraComponent mainCamera = Actor.GetChild(0).GetChild(0).Get<CameraComponent>();
-                    Actor = hitResult.Collider.Entity;
 
-                    //Camera Swapping
-                    CameraComponent targetCamera = Actor.GetChild(0).GetChild(0).Get<CameraComponent>();
-                    targetCamera.Enabled = !targetCamera.Enabled;
-                    MouseWorld.Camera = targetCamera;
-                    mainCamera.Enabled = !mainCamera.Enabled;
-
-
-                    Actor.Get<Actor>().actorSelected = true;
-                    OnSelectedActorChanged?.Invoke(this, EventArgs.Empty);
+                    SetSelectedActor(clickedEntity);
                     return true;
                 }
             }
             return false;
+        }
+
+        private void SetSelectedActor(Entity actor)
+        {
+            Actor.Get<Actor>().actorSelected = false;
+            CameraComponent mainCamera = Actor.GetChild(0).GetChild(0).Get<CameraComponent>();
+            Actor = actor;
+            SelectedManeuver = actor.Get<MoveManeuver>();
+            //Camera Swapping
+            CameraComponent targetCamera = Actor.GetChild(0).GetChild(0).Get<CameraComponent>();
+            targetCamera.Enabled = !targetCamera.Enabled;
+            MouseWorld.Camera = targetCamera;
+            mainCamera.Enabled = !mainCamera.Enabled;
+
+
+            Actor.Get<Actor>().actorSelected = true;
+            OnSelectedActorChanged?.Invoke(this, EventArgs.Empty);
         }
     }
 }

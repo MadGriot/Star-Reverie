@@ -5,6 +5,7 @@ using Stride.Engine;
 using Stride.Input;
 using Stride.UI;
 using Stride.UI.Controls;
+using Stride.UI.Events;
 using Stride.UI.Panels;
 using System.Linq;
 
@@ -71,7 +72,11 @@ namespace Star_Reverie
                     .First()
                     .Get<UIComponent>().Page
                     .RootElement;
+
                 currentManeuver.FindVisualChildOfType<TextBlock>().Text = baseManeuver.Name;
+                currentManeuver.Click += (object sender, RoutedEventArgs e) =>
+                        ActorActionSystem.SelectedManeuver = baseManeuver;
+
                 maneuverList.Children.Add(currentManeuver);
             }
         }
