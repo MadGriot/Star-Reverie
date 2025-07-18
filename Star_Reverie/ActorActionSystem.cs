@@ -1,5 +1,4 @@
-﻿using Silk.NET.Core.Native;
-using Star_Reverie.Globals;
+﻿using Star_Reverie.Globals;
 using Star_Reverie.Maneuvers;
 using StarReverieCore.Grid;
 using Stride.Core.Mathematics;
@@ -31,28 +30,10 @@ namespace Star_Reverie
             if (CurrentGameState.GameState != GameState.Encounter)
                 return;
             if (isBusy) return;
-            if (Input.IsMouseButtonPressed(MouseButton.Left))
-            {
-                bool selectionChanged = TryHandleActorSelection();
-                if (Actor.Get<Actor>().actorSelected)
-                {
-                    GridPosition mouseGridPosition = LevelGrid.GridSystem.GetGridPosition(MouseWorld.GetPosition());
-                    if (!selectionChanged && Actor.Get<MoveManeuver>().IsValidManeuverGridPosition(mouseGridPosition))
-                    {
-                        SetBusy();
-                        Actor.Get<MoveManeuver>().Move(mouseGridPosition, ClearBusy);
-                    }
-                }
-            }
 
-            if (Input.IsMouseButtonPressed(MouseButton.Middle))
-            {
-                if (Actor.Get<Actor>().actorSelected)
-                {
-                    SetBusy();
-                    Actor.Get<SpinManeuver>().Spin(ClearBusy);
-                }
-            }
+            if (TryHandleActorSelection()) return;
+
+            HandleSelectedManeuver();
 
             DebugText.Print($"{Actor.Name}", new Int2(700, 600));
 
@@ -60,40 +41,47 @@ namespace Star_Reverie
 
         private void HandleSelectedManeuver()
         {
-            //if (Input.IsMouseButtonDown(MouseButton.Left))
-            //{
-            //    switch (SelectedManeuver)
-            //    {
-            //        case MoveManeuver mo
-            //    }
-            //}
+            if (Input.IsMouseButtonDown(MouseButton.Left))
+            {
+                GridPosition mouseGridPosition = LevelGrid.GridSystem.GetGridPosition(MouseWorld.GetPosition());
+
+                if (SelectedManeuver.IsValidManeuverGridPosition(mouseGridPosition))
+                {
+                    SetBusy();
+                    SelectedManeuver.ActivateManeuver(mouseGridPosition, ClearBusy);
+
+                }
+            }
         }
         private void SetBusy() => isBusy = true;
         private void ClearBusy() => isBusy = false;
 
         public bool TryHandleActorSelection()
         {
-            Texture backbuffer = GraphicsDevice.Presenter.BackBuffer;
-            Viewport viewport = new Viewport(0, 0, backbuffer.Width, backbuffer.Height);
-
-            Vector3 nearPosition = viewport.Unproject(new Vector3(Input.AbsoluteMousePosition, 0),
-                MouseWorld.Camera.ProjectionMatrix, MouseWorld.Camera.ViewMatrix, Matrix.Identity);
-
-            Vector3 farPosition = viewport.Unproject(new Vector3(Input.AbsoluteMousePosition, 1.0f),
-                MouseWorld.Camera.ProjectionMatrix, MouseWorld.Camera.ViewMatrix, Matrix.Identity);
-
-            MouseWorld.simulation.Raycast(nearPosition, farPosition,
-                out HitResult hitResult, CollisionFilterGroups.CustomFilter1, MouseWorld.CollideWith, MouseWorld.CollideWithTriggers);
-
-
-            if (hitResult.Succeeded)
+            if (Input.IsMouseButtonPressed(MouseButton.Left))
             {
-                Entity clickedEntity = hitResult.Collider.Entity;
-                if (clickedEntity != Actor)
-                {
+                Texture backbuffer = GraphicsDevice.Presenter.BackBuffer;
+                Viewport viewport = new Viewport(0, 0, backbuffer.Width, backbuffer.Height);
 
-                    SetSelectedActor(clickedEntity);
-                    return true;
+                Vector3 nearPosition = viewport.Unproject(new Vector3(Input.AbsoluteMousePosition, 0),
+                    MouseWorld.Camera.ProjectionMatrix, MouseWorld.Camera.ViewMatrix, Matrix.Identity);
+
+                Vector3 farPosition = viewport.Unproject(new Vector3(Input.AbsoluteMousePosition, 1.0f),
+                    MouseWorld.Camera.ProjectionMatrix, MouseWorld.Camera.ViewMatrix, Matrix.Identity);
+
+                MouseWorld.simulation.Raycast(nearPosition, farPosition,
+                    out HitResult hitResult, CollisionFilterGroups.CustomFilter1, MouseWorld.CollideWith, MouseWorld.CollideWithTriggers);
+
+
+                if (hitResult.Succeeded)
+                {
+                    Entity clickedEntity = hitResult.Collider.Entity;
+                    if (clickedEntity != Actor)
+                    {
+
+                        SetSelectedActor(clickedEntity);
+                        return true;
+                    }
                 }
             }
             return false;

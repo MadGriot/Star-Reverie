@@ -68,12 +68,8 @@ namespace Star_Reverie.Maneuvers
                 OnActionComplete();
             }
         }
-        public bool IsValidManeuverGridPosition(GridPosition gridPosition)
-        {
-            List<GridPosition> validGridPositionList = GetValidManeuverGridPositionList();
-            return validGridPositionList.Contains(gridPosition);
-        }
-        public List<GridPosition> GetValidManeuverGridPositionList()
+
+        public override List<GridPosition> GetValidManeuverGridPositionList()
         {
             List<GridPosition> validGridPositionList = new();
 
@@ -98,7 +94,7 @@ namespace Star_Reverie.Maneuvers
             }
             return validGridPositionList;
         }
-        public void Move(GridPosition gridPosition, Action onActionComplete)
+        public override void ActivateManeuver(GridPosition gridPosition, Action onActionComplete)
         {
             debugMessage = $"Moving {Actor.Name} to {gridPosition}\nWorld Target Position: {LevelGrid.GridSystem.GetWorldPosition(gridPosition)}";
             debugTimer = 3f;

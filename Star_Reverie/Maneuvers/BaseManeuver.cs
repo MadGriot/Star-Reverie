@@ -1,4 +1,5 @@
-﻿using Stride.Engine;
+﻿using StarReverieCore.Grid;
+using Stride.Engine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,5 +25,16 @@ namespace Star_Reverie.Maneuvers
         {
 
         }
+
+        public abstract void ActivateManeuver(GridPosition gridPosition, Action onActionComplete);
+
+        public virtual bool IsValidManeuverGridPosition(GridPosition gridPosition)
+        {
+            List<GridPosition> validGridPositionList = GetValidManeuverGridPositionList();
+            return validGridPositionList.Contains(gridPosition);
+        }
+
+        public abstract List<GridPosition> GetValidManeuverGridPositionList();
+
     }
 }

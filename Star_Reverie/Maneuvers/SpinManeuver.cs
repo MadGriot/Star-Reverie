@@ -1,6 +1,8 @@
-﻿using System;
+﻿using StarReverieCore.Grid;
 using Stride.Core.Mathematics;
 using Stride.Physics;
+using System;
+using System.Collections.Generic;
 
 namespace Star_Reverie.Maneuvers
 {
@@ -23,6 +25,7 @@ namespace Star_Reverie.Maneuvers
             Quaternion rotationDelta = Quaternion.RotationY(spinAddAmount);
 
             Actor.Get<CharacterComponent>().Orientation = currentRotation * rotationDelta;
+            currentRotation = currentRotation * rotationDelta;
             totalSpinAmount += spinAddAmount;
             if (totalSpinAmount >= 360f)
             {
@@ -32,11 +35,18 @@ namespace Star_Reverie.Maneuvers
             }
         }
 
-        public void Spin(Action onActionComplete)
+        public override void ActivateManeuver(GridPosition gridPosition, Action onActionComplete)
         {
             OnActionComplete = onActionComplete;
             isActive = true;
             totalSpinAmount = 0f;
+        }
+
+        public override List<GridPosition> GetValidManeuverGridPositionList()
+        {
+            GridPosition actorGridPosition = Actor.Get<Actor>().GridPosition;
+
+            return new List<GridPosition> { actorGridPosition };
         }
     }
 }
