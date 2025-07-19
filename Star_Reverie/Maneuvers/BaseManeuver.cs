@@ -11,8 +11,8 @@ namespace Star_Reverie.Maneuvers
     public abstract class BaseManeuver : SyncScript
     {
         public Entity Actor { get; set; }
-        public ActorActionSystem ActionSystem { get; set; }
-        public LevelGrid LevelGrid { get; set; }
+        internal ActorActionSystem ActionSystem { get; set; }
+        internal LevelGrid LevelGrid { get; set; }
         public string Name { get; protected set; } = "Maneuver";
         internal bool isActive;
         internal bool IsOffensive;
@@ -21,6 +21,17 @@ namespace Star_Reverie.Maneuvers
         public BaseManeuver()
         {
 
+        }
+
+        public override void Start()
+        {
+            LevelGrid = SceneSystem.SceneInstance.RootScene.Entities
+                .First(e => e.Name == "LevelGrid")
+                .Get<LevelGrid>();
+
+            ActionSystem = SceneSystem.SceneInstance.RootScene.Entities
+                .First(e => e.Name == "ActorActionSystem")
+                .Get<ActorActionSystem>();
         }
         public override void Update()
         {

@@ -12,18 +12,22 @@ namespace Star_Reverie
     public class Actor : SyncScript
     {
         internal GridPosition GridPosition;
-        public LevelGrid LevelGrid;
+        internal LevelGrid LevelGrid;
         public bool actorSelected;
         public int CharacterId;
+        public bool IsEnemy;
         internal Character Character;
         private AnimationController AnimationController;
         internal BaseManeuver[] BaseManeuvers;
         internal bool InCombat;
-        internal bool IsEnemy;
+
         internal bool DidOffensiveManeuver;
         internal bool DidDefensiveManeuver;
         public override void Start()
         {
+            LevelGrid = SceneSystem.SceneInstance.RootScene.Entities
+                .First(e => e.Name == "LevelGrid")
+                .Get<LevelGrid>();
             GridPosition = LevelGrid.GridSystem.GetGridPosition(Entity.Transform.Position);
             AnimationController = Entity.Get<AnimationController>();
             AnimationController.animationComponent = Entity.GetChild(1).Get<AnimationComponent>();

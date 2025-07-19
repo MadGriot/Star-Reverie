@@ -23,6 +23,7 @@ namespace Star_Reverie.Maneuvers
         private string debugMessage = "";
         public override void Start()
         {
+            base.Start();
             Name = "Move";
             IsOffensive = true;
             AnimationController = Actor.Get<AnimationController>();
