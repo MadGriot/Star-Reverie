@@ -1,10 +1,12 @@
-﻿using Star_Reverie.Globals;
+﻿using Microsoft.EntityFrameworkCore;
+using Star_Reverie.Globals;
 using Star_Reverie.Maneuvers;
 using StarReverieCore.Grid;
 using StarReverieCore.Models;
 using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Input;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Star_Reverie
@@ -42,7 +44,9 @@ namespace Star_Reverie
                 (LevelGrid.GridSystem.GetGridPosition(Entity.Transform.Position), this);
             
             BaseManeuvers = Entity.GetAll<BaseManeuver>().ToArray();
-            Character = Database.StarReverieDbContext.Characters.Find(CharacterId);
+            Character = Database.StarReverieDbContext.Characters
+                .Include(a => a.AttributeScore)
+                .First(c => c.Id == CharacterId);
             Entity.Name = Character.FirstName;
         }
 
@@ -75,14 +79,16 @@ namespace Star_Reverie
         {
             if (!IsEnemy)
                 InCombat = !InCombat;
-            ActorActionSystem.TurnQueue.Enqueue(Entity.GetParent());
+            ActorActionSystem.TurnQueue.Add(Entity);
         }
 
         private void ToggleCombatIfEnemy()
         {
             if (IsEnemy)
                 InCombat = !InCombat;
-            ActorActionSystem.TurnQueue.Enqueue(Entity);
+            ActorActionSystem.TurnQueue.Add(Entity);
+            ActorActionSystem.TurnQueue = ActorActionSystem.TurnQueue
+                .OrderByDescending(a => a.Get<Actor>().Character.AttributeScore.Speed).ToList();
         }
         public bool TryToDoManeuver(BaseManeuver baseManeuver)
         {

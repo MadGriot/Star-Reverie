@@ -22,7 +22,7 @@ namespace Star_Reverie
         public event EventHandler OnSelectedActorChanged;
         public event EventHandler OnManeuverStarted;
         public event EventHandler OnEncounterStarted;
-        internal Queue<Entity> TurnQueue { get; set; } = new();
+        internal List<Entity> TurnQueue { get; set; } = new();
 
         internal BaseManeuver SelectedManeuver;
         internal bool isBusy { get; set; }
@@ -52,8 +52,12 @@ namespace Star_Reverie
             HandleSelectedManeuver();
 
             DebugText.Print($"{Actor.Name}", new Int2(700, 600));
-            DebugText.Print($"Characters in Combat: {TurnQueue.Count}", new Int2(700, 700));
 
+            for (int i = 0; i < TurnQueue.Count; i++)
+            {
+                DebugText.Print($"Characters in Combat: {TurnQueue.ToArray()[i].Name} Speed: {TurnQueue.ToArray()[i].Get<Actor>().Character.AttributeScore.Speed}", new Int2(700, 700 + (i * 50)));
+
+            }
         }
 
         private void HandleSelectedManeuver()
@@ -124,16 +128,16 @@ namespace Star_Reverie
 
             Actor.Get<Actor>().actorSelected = true;
             OnSelectedActorChanged?.Invoke(this, EventArgs.Empty);
-            TurnQueue.OrderByDescending(a => a.Get<Actor>().Character.AttributeScore.Speed);
         }
 
         public void TurnEnded()
         {
             //if (TurnQueue.First().Equals(Actor)) return;
-            Entity actor = TurnQueue.Dequeue();
+            Entity actor = TurnQueue[0];
+            TurnQueue.RemoveAt(0);
             actor.Get<Actor>().DidDefensiveManeuver = false;
-            Actor.Get<Actor>().DidOffensiveManeuver = false;
-            TurnQueue.Enqueue(actor);
+            actor.Get<Actor>().DidOffensiveManeuver = false;
+            TurnQueue.Add(actor);
             SetSelectedActor(actor);
         }
     }
