@@ -21,7 +21,7 @@ namespace Star_Reverie
         private bool OnScreen = false;
         public ActorActionSystem ActorActionSystem;
         private StackPanel maneuverList;
-        private StackPanel maneuverBlock;
+        private Grid maneuverGrid;
         private Entity maneuverUIEntity;
         private TextBlock attackStatusTextBlock;
         private TextBlock defendStatusTextBlock;
@@ -32,7 +32,7 @@ namespace Star_Reverie
             uIComponent = new UIComponent { Page = ManeuverUI };
             maneuverUIEntity.Add(uIComponent);
             maneuverList = ManeuverUI.RootElement.FindVisualChildOfType<StackPanel>("ManeuverList");
-            maneuverBlock = ManeuverUI.RootElement.FindVisualChildOfType<StackPanel>("ManeuverBlock");
+            maneuverGrid = ManeuverUI.RootElement.FindName("CombatUI") as Grid;
             attackStatusTextBlock = ManeuverUI.RootElement.FindVisualChildOfType<TextBlock>("AttackStatus");
             defendStatusTextBlock = ManeuverUI.RootElement.FindVisualChildOfType<TextBlock>("DefendStatus");
             turnNumber = ManeuverUI.RootElement.FindVisualChildOfType<TextBlock>("TurnNumber");
@@ -65,7 +65,7 @@ namespace Star_Reverie
                 ActorActionSystem.IsOverUI = UIHelper.IsPointerOverUI(uIComponent);
                 if (!OnScreen)
                 {
-                    maneuverBlock.Visibility = Visibility.Visible;
+                    maneuverGrid.Visibility = Visibility.Visible;
    
                     OnScreen = true;
                 }
