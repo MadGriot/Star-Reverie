@@ -23,6 +23,7 @@ Hierarchy:
         - ref!! 02a156bc-1e09-4005-908c-072e8f09d2e1
         - ref!! ae993fa4-599b-4cf1-87ef-0a82b6975bfa
         - ref!! 1d7a1fdc-3b27-4ca2-9786-b9d8d86e6bd4
+        - ref!! 2dca26d4-e353-45a6-9ba2-c4a421fbc153
     Parts:
         -   Folder: Code
             Entity:
@@ -172,6 +173,19 @@ Hierarchy:
                         Actor: ref!! 07fb582c-a3d5-4a7e-80a3-0142737aeff6
                         LevelGrid: ref!! 5520f15b-3e7f-497c-b13b-c639cd8bdf07
                         MouseWorld: ref!! fdf4e328-da1c-47c6-8bd0-ca117ca80ba4
+        -   Folder: Code
+            Entity:
+                Id: 2dca26d4-e353-45a6-9ba2-c4a421fbc153
+                Name: TurnSystem
+                Components:
+                    f50a6a6e1a9fa200a3d0563f4088e5f5: !TransformComponent
+                        Id: 9f3d46f9-49e7-464e-9319-d86c6bc72b14
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    29c1985078f1ce650c407c2aee3cb4da: !Star_Reverie.TurnSystem,Star_Reverie
+                        Id: a7dabd5d-737b-45b1-8fe0-0f2b89da02e0
         -   Entity:
                 Id: 356ea86c-e8f8-440d-8143-f859dd2d2bfd
                 Name: box

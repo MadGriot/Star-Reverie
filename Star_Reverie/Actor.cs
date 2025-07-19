@@ -18,6 +18,8 @@ namespace Star_Reverie
         internal Character Character;
         private AnimationController AnimationController;
         internal BaseManeuver[] BaseManeuvers;
+        internal bool InCombat;
+        internal bool IsEnemy;
         internal bool DidOffensiveManeuver;
         internal bool DidDefensiveManeuver;
         public override void Start()
@@ -47,17 +49,30 @@ namespace Star_Reverie
                     LevelGrid.ActorMovedGridPosition(this, GridPosition, newGridPosition);
                     GridPosition = newGridPosition;
                 }
-                if (CurrentGameState.GameState != GameState.Encounter)
+                if (CurrentGameState.GameState == GameState.Encounter)
                 {
-                    if (Input.IsKeyPressed(Keys.Q))
-                    {
-                        CurrentGameState.GameState = GameState.Encounter;
-                    }
-
                     return;
                 }
+
+                if (Input.IsKeyPressed(Keys.Q))
+                {
+                    ToggleCombatIfNotEnemy();
+                    CurrentGameState.GameState = GameState.Encounter;
+                }
+
             }
 
+        }
+        private void ToggleCombatIfNotEnemy()
+        {
+            if (!IsEnemy)
+                InCombat = !InCombat;
+        }
+
+        private void ToggleCombatIfEnemy()
+        {
+            if (IsEnemy)
+                InCombat = !InCombat;
         }
         public bool TryToDoManeuver(BaseManeuver baseManeuver)
         {

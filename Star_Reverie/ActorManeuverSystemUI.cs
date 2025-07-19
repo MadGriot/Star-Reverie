@@ -25,6 +25,7 @@ namespace Star_Reverie
         private Entity maneuverUIEntity;
         private TextBlock attackStatusTextBlock;
         private TextBlock defendStatusTextBlock;
+        private TextBlock turnNumber;
         public override void Start()
         {
             maneuverUIEntity = new();
@@ -34,6 +35,10 @@ namespace Star_Reverie
             maneuverBlock = ManeuverUI.RootElement.FindVisualChildOfType<StackPanel>("ManeuverBlock");
             attackStatusTextBlock = ManeuverUI.RootElement.FindVisualChildOfType<TextBlock>("AttackStatus");
             defendStatusTextBlock = ManeuverUI.RootElement.FindVisualChildOfType<TextBlock>("DefendStatus");
+            turnNumber = ManeuverUI.RootElement.FindVisualChildOfType<TextBlock>("TurnNumber");
+
+            ManeuverUI.RootElement.FindVisualChildOfType<Button>("EndTurnButton").Click
+                += (object sender, RoutedEventArgs e) => NextTurn();
             ActorActionSystem.OnSelectedActorChanged += ActorActionSystem_OnSelectedActorChanged;
             ActorActionSystem.OnManeuverStarted += ActorActionSystem_OnManeuverStarted;
             CreateActorManeuverButtons();
@@ -110,6 +115,11 @@ namespace Star_Reverie
 
                 maneuverList.Children.Add(currentManeuver);
             }
+        }
+
+        public void NextTurn()
+        {
+            turnNumber.Text = (Convert.ToInt32(turnNumber.Text) + 1).ToString();
         }
     }
 }

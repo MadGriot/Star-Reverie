@@ -33,6 +33,8 @@ Hierarchy:
                 Name: Hotbar
                 Children:
                     bbfa92605de96f705ecfd80d7acdd317: !StackPanel ref!! 7d97a6c3-7366-41a0-ba39-99f2787deccd
+                    238d20168eb094b70f08d291f2220c40: !Button ref!! 3e6e9e6b-43e7-4c15-9120-730be5acb5b6
+                    6d01fae5a4af4b41ea007933a37d29e0: !StackPanel ref!! f326d054-0e2c-421d-abad-a29c3cd323d8
                 RowDefinitions:
                     16bdb589ebfc16fa3aa4ea1ff56f148d: {}
                     ab48f4e3110022a986743e5e51697415: {}
@@ -60,6 +62,42 @@ Hierarchy:
                 OutlineColor: {R: 0, G: 0, B: 0, A: 255}
                 OutlineThickness: 0.0
         -   UIElement: !TextBlock
+                Id: 3b08baa7-0772-414b-8644-675f00a1f61b
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: 'Turn: '
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !Button
+                Id: 3e6e9e6b-43e7-4c15-9120-730be5acb5b6
+                DependencyProperties:
+                    8d009a2d686d19b92caef592663c3e26~GridBase.RowPropertyKey: 1
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                HorizontalAlignment: Center
+                VerticalAlignment: Bottom
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: EndTurnButton
+                Content: !TextBlock ref!! 89804a6e-7b44-4c39-b91d-4671eadee8d2
+                PressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+        -   UIElement: !TextBlock
                 Id: 42108d3f-24de-4b4d-b5a6-3cf41961cd5e
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
@@ -82,7 +120,6 @@ Hierarchy:
                     0caaea5496a11e9e85860d90d2c6612e~GridBase.RowSpanPropertyKey: 1
                     07d0ac3ed14d9e7300a4051558ed12fa~GridBase.RowPropertyKey: 3
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                Visibility: Hidden
                 HorizontalAlignment: Center
                 Margin: {}
                 MaximumWidth: 3.4028235E+38
@@ -93,4 +130,47 @@ Hierarchy:
                     3f5ab9811888ab38a49153189fd4a9a2: !TextBlock ref!! 1383d96c-547f-4e5d-b07b-f7e581320c3a
                     854c619c10aee4eb9d8a13d360981043: !StackPanel ref!! 033620bf-4907-4840-a273-f42811f67c75
                     1b78cfc5645b7e81dcad6859500859ce: !TextBlock ref!! 42108d3f-24de-4b4d-b5a6-3cf41961cd5e
+                Orientation: Horizontal
+        -   UIElement: !TextBlock
+                Id: 89804a6e-7b44-4c39-b91d-4671eadee8d2
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                Text: End Turn
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: c43af995-718d-46dd-af2f-0534dd64ceeb
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: TurnNumber
+                Text: 0
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !StackPanel
+                Id: f326d054-0e2c-421d-abad-a29c3cd323d8
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Top
+                Margin: {Top: 10.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Turn
+                Children:
+                    9bf2a01384b0a0d2aebfa64ba736e980: !TextBlock ref!! 3b08baa7-0772-414b-8644-675f00a1f61b
+                    129a647a24d3c82b701c4a7dc94af4f9: !TextBlock ref!! c43af995-718d-46dd-af2f-0534dd64ceeb
                 Orientation: Horizontal
