@@ -119,6 +119,7 @@ namespace Star_Reverie
 
         public void NextTurn()
         {
+            ActorActionSystem.TurnEnded();
             turnNumber.Text = (Convert.ToInt32(turnNumber.Text) + 1).ToString();
         }
     }

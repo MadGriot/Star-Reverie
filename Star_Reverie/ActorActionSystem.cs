@@ -8,6 +8,7 @@ using Stride.Input;
 using Stride.Physics;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Star_Reverie
 {
@@ -20,6 +21,8 @@ namespace Star_Reverie
         internal bool IsOverUI;
         public event EventHandler OnSelectedActorChanged;
         public event EventHandler OnManeuverStarted;
+        public event EventHandler OnEncounterStarted;
+        internal Queue<Entity> TurnQueue { get; set; } = new();
 
         internal BaseManeuver SelectedManeuver;
         internal bool isBusy { get; set; }
@@ -30,7 +33,17 @@ namespace Star_Reverie
         }
         public override void Update()
         {
-            if (CurrentGameState.GameState != GameState.Encounter) return;
+
+            if (CurrentGameState.GameState != GameState.Encounter)
+            {
+                if (Input.IsKeyPressed(Keys.Q))
+                {
+                    CurrentGameState.GameState = GameState.Encounter;
+                    OnEncounterStarted?.Invoke(this, EventArgs.Empty);
+                }
+                return;
+            }
+
             if (isBusy) return;
             if (IsOverUI) return;
 
@@ -39,6 +52,7 @@ namespace Star_Reverie
             HandleSelectedManeuver();
 
             DebugText.Print($"{Actor.Name}", new Int2(700, 600));
+            DebugText.Print($"Characters in Combat: {TurnQueue.Count}", new Int2(700, 700));
 
         }
 
@@ -110,6 +124,17 @@ namespace Star_Reverie
 
             Actor.Get<Actor>().actorSelected = true;
             OnSelectedActorChanged?.Invoke(this, EventArgs.Empty);
+            TurnQueue.OrderByDescending(a => a.Get<Actor>().Character.AttributeScore.Speed);
+        }
+
+        public void TurnEnded()
+        {
+            //if (TurnQueue.First().Equals(Actor)) return;
+            Entity actor = TurnQueue.Dequeue();
+            actor.Get<Actor>().DidDefensiveManeuver = false;
+            Actor.Get<Actor>().DidOffensiveManeuver = false;
+            TurnQueue.Enqueue(actor);
+            SetSelectedActor(actor);
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Star_Reverie
     {
         internal GridPosition GridPosition;
         internal LevelGrid LevelGrid;
+        internal ActorActionSystem ActorActionSystem;
         public bool actorSelected;
         public int CharacterId;
         public bool IsEnemy;
@@ -28,17 +29,24 @@ namespace Star_Reverie
             LevelGrid = SceneSystem.SceneInstance.RootScene.Entities
                 .First(e => e.Name == "LevelGrid")
                 .Get<LevelGrid>();
+            ActorActionSystem = SceneSystem.SceneInstance.RootScene.Entities
+                .First(e => e.Name == "ActorActionSystem")
+                .Get<ActorActionSystem>();
+
+            ActorActionSystem.OnEncounterStarted += ActorActionSystem_OnEncounterStarted;
             GridPosition = LevelGrid.GridSystem.GetGridPosition(Entity.Transform.Position);
             AnimationController = Entity.Get<AnimationController>();
             AnimationController.animationComponent = Entity.GetChild(1).Get<AnimationComponent>();
             AnimationController.animationComponent.Play("Idle");
             LevelGrid.AddActorAtGridPosition
                 (LevelGrid.GridSystem.GetGridPosition(Entity.Transform.Position), this);
-
+            
             BaseManeuvers = Entity.GetAll<BaseManeuver>().ToArray();
             Character = Database.StarReverieDbContext.Characters.Find(CharacterId);
             Entity.Name = Character.FirstName;
         }
+
+
 
         public override void Update()
         {
@@ -58,11 +66,7 @@ namespace Star_Reverie
                     return;
                 }
 
-                if (Input.IsKeyPressed(Keys.Q))
-                {
-                    ToggleCombatIfNotEnemy();
-                    CurrentGameState.GameState = GameState.Encounter;
-                }
+ 
 
             }
 
@@ -71,12 +75,14 @@ namespace Star_Reverie
         {
             if (!IsEnemy)
                 InCombat = !InCombat;
+            ActorActionSystem.TurnQueue.Enqueue(Entity.GetParent());
         }
 
         private void ToggleCombatIfEnemy()
         {
             if (IsEnemy)
                 InCombat = !InCombat;
+            ActorActionSystem.TurnQueue.Enqueue(Entity);
         }
         public bool TryToDoManeuver(BaseManeuver baseManeuver)
         {
@@ -94,6 +100,9 @@ namespace Star_Reverie
             if (!DidDefensiveManeuver && !baseManeuver.IsOffensive) return true;
             else return false;
         }
-
+        private void ActorActionSystem_OnEncounterStarted(object sender, System.EventArgs e)
+        {
+            ToggleCombatIfEnemy();
+        }
     }
 }
