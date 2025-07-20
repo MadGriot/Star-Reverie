@@ -89,8 +89,15 @@ namespace Star_Reverie
         }
         private void ActorActionSystem_OnSelectedActorChanged(object sender, EventArgs e)
         {
-            CreateActorManeuverButtons();
-            ActorManeuverStatus();
+            if (!ActorActionSystem.Actor.Get<Actor>().IsEnemy)
+            {
+                CreateActorManeuverButtons();
+                ActorManeuverStatus();
+                maneuverGrid.Visibility = Visibility.Visible;
+            }
+            else
+                maneuverGrid.Visibility = Visibility.Hidden;
+
 
         }
         private void ActorActionSystem_OnManeuverStarted(object sender, EventArgs e)

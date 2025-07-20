@@ -54,7 +54,7 @@ namespace Star_Reverie
 
         public override void Update()
         {
-            if (actorSelected)
+            if (actorSelected && !IsEnemy)
             {
                 DebugText.Print($" Current Position {Entity.Transform.Position}", new Int2(1000, 800));
                 DebugText.Print($" Current Grid Position {GridPosition}", new Int2(1000, 900));

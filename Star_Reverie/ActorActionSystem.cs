@@ -26,7 +26,7 @@ namespace Star_Reverie
 
         internal BaseManeuver SelectedManeuver;
         internal bool isBusy { get; set; }
-
+        private bool isPlayerTurn { get; set; } = true;
         public override void Start()
         {
             SetSelectedActor(Actor);
@@ -47,8 +47,11 @@ namespace Star_Reverie
             if (isBusy) return;
             if (IsOverUI) return;
 
-            if (TryHandleActorSelection()) return;
-
+            //if (TryHandleActorSelection()) return;
+            if (Actor.Get<Actor>().IsEnemy)
+            {
+                return;
+            }
             HandleSelectedManeuver();
 
             DebugText.Print($"{Actor.Name}", new Int2(700, 600));
@@ -82,36 +85,37 @@ namespace Star_Reverie
         private void SetBusy() => isBusy = true;
         private void ClearBusy() => isBusy = false;
 
-        public bool TryHandleActorSelection()
-        {
-            if (Input.IsMouseButtonPressed(MouseButton.Left))
-            {
-                Texture backbuffer = GraphicsDevice.Presenter.BackBuffer;
-                Viewport viewport = new Viewport(0, 0, backbuffer.Width, backbuffer.Height);
+        //public bool TryHandleActorSelection()
+        //{
+        //    if (Input.IsMouseButtonPressed(MouseButton.Left))
+        //    {
+        //        Texture backbuffer = GraphicsDevice.Presenter.BackBuffer;
+        //        Viewport viewport = new Viewport(0, 0, backbuffer.Width, backbuffer.Height);
 
-                Vector3 nearPosition = viewport.Unproject(new Vector3(Input.AbsoluteMousePosition, 0),
-                    MouseWorld.Camera.ProjectionMatrix, MouseWorld.Camera.ViewMatrix, Matrix.Identity);
+        //        Vector3 nearPosition = viewport.Unproject(new Vector3(Input.AbsoluteMousePosition, 0),
+        //            MouseWorld.Camera.ProjectionMatrix, MouseWorld.Camera.ViewMatrix, Matrix.Identity);
 
-                Vector3 farPosition = viewport.Unproject(new Vector3(Input.AbsoluteMousePosition, 1.0f),
-                    MouseWorld.Camera.ProjectionMatrix, MouseWorld.Camera.ViewMatrix, Matrix.Identity);
+        //        Vector3 farPosition = viewport.Unproject(new Vector3(Input.AbsoluteMousePosition, 1.0f),
+        //            MouseWorld.Camera.ProjectionMatrix, MouseWorld.Camera.ViewMatrix, Matrix.Identity);
 
-                MouseWorld.simulation.Raycast(nearPosition, farPosition,
-                    out HitResult hitResult, CollisionFilterGroups.CustomFilter1, MouseWorld.CollideWith, MouseWorld.CollideWithTriggers);
+        //        MouseWorld.simulation.Raycast(nearPosition, farPosition,
+        //            out HitResult hitResult, CollisionFilterGroups.CustomFilter1, MouseWorld.CollideWith, MouseWorld.CollideWithTriggers);
 
 
-                if (hitResult.Succeeded)
-                {
-                    Entity clickedEntity = hitResult.Collider.Entity;
-                    if (clickedEntity != Actor)
-                    {
-
-                        SetSelectedActor(clickedEntity);
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
+        //        if (hitResult.Succeeded)
+        //        {
+        //            Entity clickedEntity = hitResult.Collider.Entity;
+        //            if (clickedEntity != Actor)
+        //            {
+        //                if (clickedEntity.Get<Actor>().IsEnemy)
+        //                    return false;
+        //                SetSelectedActor(clickedEntity);
+        //                return true;
+        //            }
+        //        }
+        //    }
+        //    return false;
+        //}
 
         private void SetSelectedActor(Entity actor)
         {
@@ -138,6 +142,7 @@ namespace Star_Reverie
             actor.Get<Actor>().DidDefensiveManeuver = false;
             actor.Get<Actor>().DidOffensiveManeuver = false;
             TurnQueue.Add(actor);
+            if (actor.Get<Actor>().IsEnemy) isPlayerTurn = !isPlayerTurn;
             SetSelectedActor(actor);
         }
     }
