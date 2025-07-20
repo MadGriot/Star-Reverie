@@ -25,6 +25,7 @@ Hierarchy:
         - ref!! ae993fa4-599b-4cf1-87ef-0a82b6975bfa
         - ref!! 1d7a1fdc-3b27-4ca2-9786-b9d8d86e6bd4
         - ref!! 2dca26d4-e353-45a6-9ba2-c4a421fbc153
+        - ref!! eeb59629-54c3-49e7-a3dd-73570e869fd6
     Parts:
         -   Folder: Code
             Entity:
@@ -675,6 +676,20 @@ Hierarchy:
                 BasePartAsset: eb0b69d1-e912-4921-8b3c-f3d48a6c970f:Actor
                 BasePartId: d6a5b44c-c905-40e1-90d7-48c51799ddd5
                 InstanceId: ba6c9485-876f-4832-b256-b97c8c3be7d9
+        -   Folder: Code
+            Entity:
+                Id: eeb59629-54c3-49e7-a3dd-73570e869fd6
+                Name: EnemyAI
+                Components:
+                    686c8b07cdb8bf61cb577e6bd63af3d0: !TransformComponent
+                        Id: cf7a35d0-7863-469f-a351-c2034a498c86
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    a558d981e99bca3975fe66b1e62818f1: !Star_Reverie.EnemyAI,Star_Reverie
+                        Id: 5fba730c-b93d-4ffa-b3a3-44b11e40941d
+                        ActorActionSystem: ref!! 85eb818d-66af-4e1b-8b25-2fc80e8a94d3
         -   Entity:
                 Id: fe7807da-6036-4c07-875e-ae294ce7b944
                 Name*: Actor2

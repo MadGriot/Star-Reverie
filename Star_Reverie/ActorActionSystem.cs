@@ -26,7 +26,7 @@ namespace Star_Reverie
 
         internal BaseManeuver SelectedManeuver;
         internal bool isBusy { get; set; }
-        private bool isPlayerTurn { get; set; } = true;
+        internal bool isPlayerTurn { get; set; } = true;
         public override void Start()
         {
             SetSelectedActor(Actor);
@@ -142,7 +142,7 @@ namespace Star_Reverie
             actor.Get<Actor>().DidDefensiveManeuver = false;
             actor.Get<Actor>().DidOffensiveManeuver = false;
             TurnQueue.Add(actor);
-            if (actor.Get<Actor>().IsEnemy) isPlayerTurn = !isPlayerTurn;
+            isPlayerTurn = !actor.Get<Actor>().IsEnemy;
             SetSelectedActor(actor);
         }
     }
