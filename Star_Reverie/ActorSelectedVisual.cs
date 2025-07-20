@@ -17,14 +17,14 @@ namespace Star_Reverie
         public Material BlankMaterial;
         public Material Material;
 
-        public ActorActionSystem ActionSystem;
+        internal ActorActionSystem ActionSystem;
 
         public override void Start()
         {
-            //ActionSystem = Entity.Scene.Entities
-            //                .SelectMany(e => e.Components)
-            //                .OfType<ActorActionSystem>()
-            //                .FirstOrDefault();
+            ActionSystem = Entity.Scene.Entities
+                            .SelectMany(e => e.Components)
+                            .OfType<ActorActionSystem>()
+                            .FirstOrDefault();
             ActionSystem.OnSelectedActorChanged += ActorActionSytem_OnSelectedActorChanged;
             UpdateVisual();
         }

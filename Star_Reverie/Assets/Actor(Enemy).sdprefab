@@ -1,98 +1,99 @@
 !PrefabAsset
-Id: eb0b69d1-e912-4921-8b3c-f3d48a6c970f
+Id: 8f2d8933-0f22-4c65-abe7-99ab7c2b797b
 SerializedVersion: {Stride: 3.1.0.1}
 Tags: []
 Hierarchy:
     RootParts:
-        - ref!! ed7b10c7-6c4b-45b6-965a-e14f68a384b3
+        - ref!! e53cac7b-8366-4c34-97a7-62979490f621
     Parts:
         -   Entity:
-                Id: 1189d25a-ba09-486e-80d5-f89d1c121a38
+                Id: 434d35c5-2e2e-4eee-9db8-48901153c575
                 Name: ActorSelectionAsset
                 Components:
                     3a990811fcd006376a4f38619a5d2495: !TransformComponent
-                        Id: 2a17381e-0ebd-45e1-9c77-ba97e77ce00f
+                        Id: a20d05b5-37c3-47e8-9d00-9c532050dfc5
                         Position: {X: 0.0, Y: 0.0, Z: 0.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
                     568cc0d461864246c8208cc0b14ca84a: !ModelComponent
-                        Id: e5d39236-9313-475a-8644-db4ed9983918
+                        Id: 042efd75-2e5f-4741-ac1d-94ed7bf1fd8f
                         Model: 57effdd9-704e-4243-8a23-992337403f76:ActorSelectionAsset
                         Materials: {}
                     01abf7c6e953915536802687aa0367e5: !Star_Reverie.ActorSelectedVisual,Star_Reverie
-                        Id: bc9dbb0b-cb42-4752-b792-9d73b8f146c4
-                        Actor: ref!! ed7b10c7-6c4b-45b6-965a-e14f68a384b3
-                        SelectionAsset: ref!! 1189d25a-ba09-486e-80d5-f89d1c121a38
+                        Id: 9c166bd8-07e9-438c-b7ea-2eff99608d63
+                        Actor: ref!! e53cac7b-8366-4c34-97a7-62979490f621
+                        SelectionAsset: ref!! 434d35c5-2e2e-4eee-9db8-48901153c575
                         BlankMaterial: 1dd76ca6-d48b-4760-81d5-452468bf8cf4:BlankMaterial
                         Material: 238e2d5d-1e12-47e0-b886-c1af4b67849f:Glass
         -   Entity:
-                Id: 232e0cab-dc43-411e-b6c4-cd005bf47d67
-                Name: Camera
-                Components:
-                    477f29ae1e1869da547ad3fd3de876da: !TransformComponent
-                        Id: cad4c08d-3248-4777-8d81-5ad3b986cb19
-                        Position: {X: 0.0, Y: 2.5, Z: -2.0}
-                        Rotation: {X: -1.3110073E-08, Y: -0.9848077, Z: -0.17364818, W: 7.4350915E-08}
-                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                        Children: {}
-                    51fb47dd17ef676175975a7dd751a17a: !CameraComponent
-                        Id: e3757421-4618-4b0b-9416-29a411d948ed
-                        Name: null
-                        Projection: Perspective
-                        Slot: 00000000-0000-0000-0000-000000000000
-                    efe9c4f671e7deeb2e71e94c75b540a7: !Star_Reverie.ThirdPersonCamera,Star_Reverie
-                        Id: 78663490-4df4-441e-87f7-f25751c60137
-                        DeadZone: 0.25
-                        CameraSensitivity: 2.0
-                        MinVerticalAngle: -20.0
-                        MaxVerticalAngle: 70.0
-        -   Entity:
-                Id: d6a5b44c-c905-40e1-90d7-48c51799ddd5
-                Name: CameraTarget
-                Components:
-                    2f840e98a801b56c3b0459c99afe9737: !TransformComponent
-                        Id: b7f51e56-07cb-415e-bd73-c68ecdd77cf0
-                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
-                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                        Children:
-                            ecf8f0c44aee124f7aad8a90feb4fb7b: ref!! cad4c08d-3248-4777-8d81-5ad3b986cb19
-        -   Entity:
-                Id: da4fad79-e9dc-47e2-992b-d7d77eb77ae5
+                Id: 622453cc-84e9-4c88-827c-d0018558a556
                 Name: Model
                 Components:
                     7c92942c2ad23921e0f003bdae2ca953: !TransformComponent
-                        Id: a13e11f4-f0cd-45fb-af29-b15cb989bb41
+                        Id: 511a36b4-cc9f-400d-b43c-953cb8a09d68
                         Position: {X: 0.0, Y: 0.0, Z: 0.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
                     6a386b75eb6a43977b23bf4895626ed5: !ModelComponent
-                        Id: fffe60dd-838a-4b8e-9c62-a17e9840b97b
+                        Id: 646a3f7b-7f4f-4fc2-b72a-fb3e25ac1dea
                         Model: f68ea240-695a-4de5-9884-60d77544fcd6:Models/mannequinModel
-                        Materials: {}
+                        Materials:
+                            3ab014e50ac49fb854feebec4eeaf1b2~0: b738f5ce-f46f-4d54-a87c-aaf213c88450:Materials/BodyBlue
                     4ef15ce2166849622031195fc19d3c23: !AnimationComponent
-                        Id: ac9c824a-13e1-4677-8c8a-27d17ff9ba0c
+                        Id: 593035aa-33ea-4a7a-8c4a-d99709665e69
                         Animations:
                             6ea1c59cf6e984636462f115bbb6570a~Idle: 5f286f7e-7d38-44cf-9bc1-3aad7be4f0fa:Animations/Idle
                             2db25b0b3c8ee4401dc85a27b817afc8~Running: 448ca260-c8b7-4f63-9bf6-e58a5970a830:Animations/Run
                             d7793b3c7af40d4b7d2dede43bc90b86~Walking: 9d61b261-66aa-40ed-88ed-3cc448f890c0:Animations/Walk
         -   Entity:
-                Id: ed7b10c7-6c4b-45b6-965a-e14f68a384b3
-                Name: Actor
+                Id: a50fe705-3302-469c-a3d5-3dacb628f232
+                Name: Camera
                 Components:
-                    334bb7a56af39dd66967992abfc2ba59: !TransformComponent
-                        Id: 4719a0c4-222c-4899-a334-dff8a98179ea
+                    477f29ae1e1869da547ad3fd3de876da: !TransformComponent
+                        Id: 367b17a5-5f71-4a8d-b0fc-a45823b02944
+                        Position: {X: 0.0, Y: 2.5, Z: -2.0}
+                        Rotation: {X: -1.3110073E-08, Y: -0.9848077, Z: -0.17364818, W: 7.4350915E-08}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    51fb47dd17ef676175975a7dd751a17a: !CameraComponent
+                        Id: 463c8975-658d-4be8-9aec-bb6c7d22b9d4
+                        Name: null
+                        Projection: Perspective
+                        Slot: 00000000-0000-0000-0000-000000000000
+                    efe9c4f671e7deeb2e71e94c75b540a7: !Star_Reverie.ThirdPersonCamera,Star_Reverie
+                        Id: 3d68621d-4950-4628-87b0-0b061c4c72eb
+                        DeadZone: 0.25
+                        CameraSensitivity: 2.0
+                        MinVerticalAngle: -20.0
+                        MaxVerticalAngle: 70.0
+        -   Entity:
+                Id: df4716d0-48bf-4264-962a-9acce94312d1
+                Name: CameraTarget
+                Components:
+                    2f840e98a801b56c3b0459c99afe9737: !TransformComponent
+                        Id: 29fb0730-daa2-4629-9ceb-cb686e9eba1c
                         Position: {X: 0.0, Y: 0.0, Z: 0.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children:
-                            304fa331491111163841a4d24b6ee806: ref!! b7f51e56-07cb-415e-bd73-c68ecdd77cf0
-                            75edee0024cbcc18041a312cf82f616b: ref!! a13e11f4-f0cd-45fb-af29-b15cb989bb41
-                            b3e61a32c80ae17ce32ea517aa26fc30: ref!! 2a17381e-0ebd-45e1-9c77-ba97e77ce00f
+                            ecf8f0c44aee124f7aad8a90feb4fb7b: ref!! 367b17a5-5f71-4a8d-b0fc-a45823b02944
+        -   Entity:
+                Id: e53cac7b-8366-4c34-97a7-62979490f621
+                Name: Actor
+                Components:
+                    334bb7a56af39dd66967992abfc2ba59: !TransformComponent
+                        Id: f729a41e-7db9-4299-a8e9-64d27f03b2f4
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children:
+                            304fa331491111163841a4d24b6ee806: ref!! 29fb0730-daa2-4629-9ceb-cb686e9eba1c
+                            75edee0024cbcc18041a312cf82f616b: ref!! 511a36b4-cc9f-400d-b43c-953cb8a09d68
+                            b3e61a32c80ae17ce32ea517aa26fc30: ref!! a20d05b5-37c3-47e8-9d00-9c532050dfc5
                     b7b6899d032998a4cdf1abe85cec66b0: !CharacterComponent
-                        Id: 3d9e255f-2b60-4a94-b7cf-ae3ec637378f
+                        Id: 87b8f0a2-3cef-4b31-be1f-2ed58e907251
                         CanSleep: false
                         Restitution: 0.0
                         Friction: 0.5
@@ -109,23 +110,23 @@ Hierarchy:
                                 LocalOffset: {X: 0.0, Y: 0.95, Z: 0.0}
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                     bb6849e1c16322b09ef000798d27f876: !Star_Reverie.PlayerMovement,Star_Reverie
-                        Id: 4fb54e74-9be5-4c06-8d90-0160f33320d1
+                        Id: 565015fb-63c2-4723-911f-83a10ca27107
                         DeadZone: 0.25
                         MoveSpeed: 1.0
                     9c85d4a5e587f74907ebd59985a0cbeb: !Star_Reverie.Actor,Star_Reverie
-                        Id: 2fcaa509-9b0e-4113-b5b6-f2ca74e5a767
+                        Id: 18a78497-ce65-4b28-87b3-94b836f4bf10
                         Priority: 1
                         actorSelected: false
                         CharacterId: 0
-                        IsEnemy: false
+                        IsEnemy: true
                     bb8caf9a778c22dc635c9a19e0c95c0d: !Star_Reverie.Maneuvers.MoveManeuver,Star_Reverie
-                        Id: 441147cc-08cc-497a-9444-2ee08989d0f3
+                        Id: e67d38eb-1916-4a31-99be-608a075ee416
                         Priority: 2
-                        Actor: ref!! ed7b10c7-6c4b-45b6-965a-e14f68a384b3
+                        Actor: ref!! e53cac7b-8366-4c34-97a7-62979490f621
                         MaxMoveDistance: 3
                     7e07df2cba7c5b5842355969ee34392d: !Star_Reverie.AnimationController,Star_Reverie
-                        Id: e03d8ae9-2a44-4793-8066-45d6ecd47f70
+                        Id: acd067d7-ed2f-49cc-a95f-0c8d12d424dc
                         AnimationSpeed: 1.0
                     678d31f8e9dee6b3f8824cb1098c6eb1: !Star_Reverie.Maneuvers.SpinManeuver,Star_Reverie
-                        Id: d0759fdd-a78b-4ef7-bc62-53953044cad0
-                        Actor: ref!! ed7b10c7-6c4b-45b6-965a-e14f68a384b3
+                        Id: 02a19329-0a07-4fc8-bd0f-d0cfe73088cf
+                        Actor: ref!! e53cac7b-8366-4c34-97a7-62979490f621

@@ -72,7 +72,7 @@ namespace Star_Reverie
             );
 
 
-            targetRotationXYZ.Y += rightThumbMovement.X;
+            targetRotationXYZ.Y += -rightThumbMovement.X;
             cameraRotationXYZ = Vector3.Lerp(cameraRotationXYZ, targetRotationXYZ, 0.25f);
             Entity.GetParent().Transform.RotationEulerXYZ = new Vector3(cameraRotationXYZ.X, cameraRotationXYZ.Y, 0);
 

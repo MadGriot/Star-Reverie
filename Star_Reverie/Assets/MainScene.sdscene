@@ -18,6 +18,7 @@ Hierarchy:
         - ref!! fe7807da-6036-4c07-875e-ae294ce7b944
         - ref!! 2a38fe14-86ff-44c3-abb5-f6d4bc5af9f2
         - ref!! 15480917-6088-4fda-8c29-25ab878c88d8
+        - ref!! 8aa32d1b-8a7c-485d-8ccb-9c2ec2910da0
         - ref!! 649fc464-2d55-4881-95fa-2fe665c9cb19
         - ref!! b94950f3-7504-4bb7-bf29-2793e55514ee
         - ref!! 02a156bc-1e09-4005-908c-072e8f09d2e1
@@ -117,7 +118,6 @@ Hierarchy:
                         SelectionAsset: ref!! 12b9fc54-48a3-4d82-8148-fdb43c73b552
                         BlankMaterial: 1dd76ca6-d48b-4760-81d5-452468bf8cf4:BlankMaterial
                         Material: 238e2d5d-1e12-47e0-b886-c1af4b67849f:Glass
-                        ActionSystem*: ref!! 85eb818d-66af-4e1b-8b25-2fc80e8a94d3
             Base:
                 BasePartAsset: eb0b69d1-e912-4921-8b3c-f3d48a6c970f:Actor
                 BasePartId: 1189d25a-ba09-486e-80d5-f89d1c121a38
@@ -196,6 +196,31 @@ Hierarchy:
                         Id: 470a6bc4-df11-4fc0-a6af-29e7fc93eb61
                         Model: efeb72e3-bc54-454f-8c0f-e6bf359fe4bb:box
                         Materials: {}
+        -   Entity:
+                Id: 4ee40d8d-7009-4ec5-8753-242c776ec480
+                Name: Model
+                Components:
+                    7c92942c2ad23921e0f003bdae2ca953: !TransformComponent
+                        Id: dd7fb19f-d28c-4783-8b85-f7a5a31a7f07
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    6a386b75eb6a43977b23bf4895626ed5: !ModelComponent
+                        Id: 89ddd286-d9d5-48f2-bbb2-05e980a28ca8
+                        Model: f68ea240-695a-4de5-9884-60d77544fcd6:Models/mannequinModel
+                        Materials:
+                            3ab014e50ac49fb854feebec4eeaf1b2~0: b738f5ce-f46f-4d54-a87c-aaf213c88450:Materials/BodyBlue
+                    4ef15ce2166849622031195fc19d3c23: !AnimationComponent
+                        Id: 0f45e4ec-f85a-4d80-a170-b0adcc2ce7be
+                        Animations:
+                            6ea1c59cf6e984636462f115bbb6570a~Idle: 5f286f7e-7d38-44cf-9bc1-3aad7be4f0fa:Animations/Idle
+                            2db25b0b3c8ee4401dc85a27b817afc8~Running: 448ca260-c8b7-4f63-9bf6-e58a5970a830:Animations/Run
+                            d7793b3c7af40d4b7d2dede43bc90b86~Walking: 9d61b261-66aa-40ed-88ed-3cc448f890c0:Animations/Walk
+            Base:
+                BasePartAsset: 8f2d8933-0f22-4c65-abe7-99ab7c2b797b:Actor(Enemy)
+                BasePartId: 622453cc-84e9-4c88-827c-d0018558a556
+                InstanceId: c5ccf178-b876-43cd-9ad2-c9861c136bb3
         -   Entity:
                 Id: 58182823-dd95-4f59-af54-46f6cc822b78
                 Name: Camera
@@ -380,6 +405,100 @@ Hierarchy:
                 BasePartAsset: eb0b69d1-e912-4921-8b3c-f3d48a6c970f:Actor
                 BasePartId: d6a5b44c-c905-40e1-90d7-48c51799ddd5
                 InstanceId: 8bbcafdf-1248-45b5-a436-43328d736ab0
+        -   Entity:
+                Id: 8aa32d1b-8a7c-485d-8ccb-9c2ec2910da0
+                Name: Actor
+                Components:
+                    334bb7a56af39dd66967992abfc2ba59: !TransformComponent
+                        Id: 2b32bff3-d862-44a6-abf3-682b44a5d2cf
+                        Position*: {X: 0.0, Y: 0.0, Z: 5.003649}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children:
+                            304fa331491111163841a4d24b6ee806: ref!! cfa1f244-371f-4023-8e13-b7fe3afc4d2f
+                            75edee0024cbcc18041a312cf82f616b: ref!! dd7fb19f-d28c-4783-8b85-f7a5a31a7f07
+                            b3e61a32c80ae17ce32ea517aa26fc30: ref!! 41344cee-43db-4bd9-b416-bfc96a3c3dd8
+                    b7b6899d032998a4cdf1abe85cec66b0: !CharacterComponent
+                        Id: 6a0d6fc3-b4a2-4519-abe9-0ba557f808ac
+                        CanSleep: false
+                        Restitution: 0.0
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        FallSpeed: 10.0
+                        MaxSlope: {Radians: 0.7853982}
+                        JumpSpeed: 5.0
+                        Gravity: {X: 0.0, Y: -10.0, Z: 0.0}
+                        ColliderShapes:
+                            484491625a11ad78fa529c9730eaceb3: !CapsuleColliderShapeDesc
+                                Length: 1.5
+                                LocalOffset: {X: 0.0, Y: 0.95, Z: 0.0}
+                                LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                    bb6849e1c16322b09ef000798d27f876: !Star_Reverie.PlayerMovement,Star_Reverie
+                        Id: a8c7ef32-5a92-4882-a4a7-af14b417d3ad
+                        DeadZone: 0.25
+                        MoveSpeed: 1.0
+                    9c85d4a5e587f74907ebd59985a0cbeb: !Star_Reverie.Actor,Star_Reverie
+                        Id: 4dab2763-6efd-4b65-870c-3d0be49d5744
+                        Priority: 1
+                        actorSelected: false
+                        CharacterId*: 6
+                        IsEnemy: true
+                    bb8caf9a778c22dc635c9a19e0c95c0d: !Star_Reverie.Maneuvers.MoveManeuver,Star_Reverie
+                        Id: 557fd959-3705-4f4d-b7ab-86f070d051ee
+                        Priority: 2
+                        Actor: ref!! 8aa32d1b-8a7c-485d-8ccb-9c2ec2910da0
+                        MaxMoveDistance: 3
+                    7e07df2cba7c5b5842355969ee34392d: !Star_Reverie.AnimationController,Star_Reverie
+                        Id: d6eb1a0e-da88-4c6e-b645-2f5ecfe1d60f
+                        AnimationSpeed: 1.0
+                    678d31f8e9dee6b3f8824cb1098c6eb1: !Star_Reverie.Maneuvers.SpinManeuver,Star_Reverie
+                        Id: c460ef7e-c639-4d00-bd47-f1131f598637
+                        Actor: ref!! 8aa32d1b-8a7c-485d-8ccb-9c2ec2910da0
+            Base:
+                BasePartAsset: 8f2d8933-0f22-4c65-abe7-99ab7c2b797b:Actor(Enemy)
+                BasePartId: e53cac7b-8366-4c34-97a7-62979490f621
+                InstanceId: c5ccf178-b876-43cd-9ad2-c9861c136bb3
+        -   Entity:
+                Id: 97bbbe79-6025-49f5-9c04-50ddd0c3346c
+                Name: CameraTarget
+                Components:
+                    2f840e98a801b56c3b0459c99afe9737: !TransformComponent
+                        Id: cfa1f244-371f-4023-8e13-b7fe3afc4d2f
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children:
+                            ecf8f0c44aee124f7aad8a90feb4fb7b: ref!! e71f7a5c-17bf-42cb-b0de-bdac839bfdf8
+            Base:
+                BasePartAsset: 8f2d8933-0f22-4c65-abe7-99ab7c2b797b:Actor(Enemy)
+                BasePartId: df4716d0-48bf-4264-962a-9acce94312d1
+                InstanceId: c5ccf178-b876-43cd-9ad2-c9861c136bb3
+        -   Entity:
+                Id: a4a8b5e8-3d38-4649-a08c-159a1a49abaa
+                Name: ActorSelectionAsset
+                Components:
+                    3a990811fcd006376a4f38619a5d2495: !TransformComponent
+                        Id: 41344cee-43db-4bd9-b416-bfc96a3c3dd8
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    568cc0d461864246c8208cc0b14ca84a: !ModelComponent
+                        Id: 3e4ee4f2-17cf-43a0-9066-ded432ccd6bb
+                        Model: 57effdd9-704e-4243-8a23-992337403f76:ActorSelectionAsset
+                        Materials: {}
+                    01abf7c6e953915536802687aa0367e5: !Star_Reverie.ActorSelectedVisual,Star_Reverie
+                        Id: 4af116b1-90da-4685-bfa3-3d0872a49554
+                        Actor: ref!! 8aa32d1b-8a7c-485d-8ccb-9c2ec2910da0
+                        SelectionAsset: ref!! a4a8b5e8-3d38-4649-a08c-159a1a49abaa
+                        BlankMaterial: 1dd76ca6-d48b-4760-81d5-452468bf8cf4:BlankMaterial
+                        Material: 238e2d5d-1e12-47e0-b886-c1af4b67849f:Glass
+            Base:
+                BasePartAsset: 8f2d8933-0f22-4c65-abe7-99ab7c2b797b:Actor(Enemy)
+                BasePartId: 434d35c5-2e2e-4eee-9db8-48901153c575
+                InstanceId: c5ccf178-b876-43cd-9ad2-c9861c136bb3
         -   Folder: Code
             Entity:
                 Id: adff6eef-cdf4-476e-be82-9d51d6b999e8
@@ -474,6 +593,31 @@ Hierarchy:
                             a8c05941ba89c10f1ae64cdb99eefab9: !StaticPlaneColliderShapeDesc
                                 Normal: {X: 0.0, Y: 1.0, Z: 0.0}
                                 Offset: 0.0
+        -   Entity:
+                Id: cda30b9c-e1f2-4647-929d-de209822043a
+                Name: Camera
+                Components:
+                    477f29ae1e1869da547ad3fd3de876da: !TransformComponent
+                        Id: e71f7a5c-17bf-42cb-b0de-bdac839bfdf8
+                        Position: {X: 0.0, Y: 2.5, Z: -2.0}
+                        Rotation: {X: -1.3110073E-08, Y: -0.9848077, Z: -0.17364818, W: 7.4350915E-08}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    51fb47dd17ef676175975a7dd751a17a: !CameraComponent
+                        Id: 071e2d4e-391f-4c1d-b0ec-f0b392f1e6a1
+                        Name: null
+                        Projection: Perspective
+                        Slot: 00000000-0000-0000-0000-000000000000
+                    efe9c4f671e7deeb2e71e94c75b540a7: !Star_Reverie.ThirdPersonCamera,Star_Reverie
+                        Id: 4b73491f-01c4-4833-9d93-f34507a23003
+                        DeadZone: 0.25
+                        CameraSensitivity: 2.0
+                        MinVerticalAngle: -20.0
+                        MaxVerticalAngle: 70.0
+            Base:
+                BasePartAsset: 8f2d8933-0f22-4c65-abe7-99ab7c2b797b:Actor(Enemy)
+                BasePartId: a50fe705-3302-469c-a3d5-3dacb628f232
+                InstanceId: c5ccf178-b876-43cd-9ad2-c9861c136bb3
         -   Folder: Code
             Entity:
                 Id: d0e1b886-d936-4907-ac4e-3e5d44afd1eb
@@ -512,7 +656,6 @@ Hierarchy:
                         SelectionAsset: ref!! d89499ed-663d-4e1b-a3d2-5fe762b9d2f1
                         BlankMaterial: 1dd76ca6-d48b-4760-81d5-452468bf8cf4:BlankMaterial
                         Material: 238e2d5d-1e12-47e0-b886-c1af4b67849f:Glass
-                        ActionSystem*: ref!! 85eb818d-66af-4e1b-8b25-2fc80e8a94d3
             Base:
                 BasePartAsset: eb0b69d1-e912-4921-8b3c-f3d48a6c970f:Actor
                 BasePartId: 1189d25a-ba09-486e-80d5-f89d1c121a38
