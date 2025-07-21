@@ -34,9 +34,12 @@ namespace Star_Reverie
             BindNavigationButton("ArmorListButton", Armor);
             BindNavigationButton("ShieldListButton", Shields);
 
-            BindButtons(Weapons, CreateWeapon);
-            BindButtons(Armor, CreateArmor);
-            BindButtons(Shields, CreateShield);
+            BindButtons(Weapons, CreateWeapon, ItemSelection);
+            BindButtons(Armor, CreateArmor, ItemSelection);
+            BindButtons(Shields, CreateShield, ItemSelection);
+            BindButtons(CreateWeapon, Weapons, ItemSelection);
+            BindCreateItemButtons(CreateArmor, Armor);
+            BindCreateItemButtons(CreateShield, Shields);
 
             //Adding UI page
             Entity uiEntity = [new UIComponent { Page = ItemUIPage }];
@@ -62,17 +65,27 @@ namespace Star_Reverie
             button.Click += (object sender, RoutedEventArgs e) => ChangeUI(targetUI);
         }
 
-        private void BindButtons(Grid gridUI, Grid creationUI)
+        private void BindCreateItemButtons(Grid gridUI, Grid creationUI)
         {
             Button backButton = gridUI.FindVisualChildOfType<Button>("BackButton");
             Button createButton = gridUI.FindVisualChildOfType<Button>("Create");
-            backButton.Click += (object sender, RoutedEventArgs e) => GoBackToSelectionList();
+            backButton.Click += (object sender, RoutedEventArgs e) => ChangeUI(creationUI);
+            createButton.Click += (object sender, RoutedEventArgs e) => ChangeUI(creationUI);
+            createButton.Click += (object sender, RoutedEventArgs e) => SaveItem();
+        }
+        private void BindButtons(Grid gridUI, Grid creationUI, Grid backUI)
+        {
+            Button backButton = gridUI.FindVisualChildOfType<Button>("BackButton");
+            Button createButton = gridUI.FindVisualChildOfType<Button>("Create");
+            backButton.Click += (object sender, RoutedEventArgs e) => ChangeUI(backUI);
             createButton.Click += (object sender, RoutedEventArgs e) => ChangeUI(creationUI);
         }
         private void ChangeUI(Grid UI) =>
                 ItemUIPage.RootElement = UI;
 
-        private void GoBackToSelectionList() =>
-            ItemUIPage.RootElement = ItemSelection;
+        private void SaveItem()
+        {
+
+        }
     }
 }
