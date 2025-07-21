@@ -9,13 +9,39 @@ PublicUIElements:
     f2cef446-5f76-473c-a716-89c137255ccd: Weapons
     c9dc100c-4ec9-4ae8-ac9b-5f4cf05677b4: Armor
     8c7e9259-f194-474d-b616-47d759742274: Shields
+    a0acf439-d708-494b-a868-7aec30af1da2: CreateWeapon
+    04ad2455-fc18-4f10-8ab1-d00d86466a70: CreateArmor
+    48eeeecd-3082-436b-bc35-877b1852b2c3: CreateShield
 Hierarchy:
     RootParts:
         - !Grid ref!! 27538e0c-facf-45ff-ac53-aa609aacbf55
         - !Grid ref!! f2cef446-5f76-473c-a716-89c137255ccd
         - !Grid ref!! c9dc100c-4ec9-4ae8-ac9b-5f4cf05677b4
         - !Grid ref!! 8c7e9259-f194-474d-b616-47d759742274
+        - !Grid ref!! a0acf439-d708-494b-a868-7aec30af1da2
+        - !Grid ref!! 04ad2455-fc18-4f10-8ab1-d00d86466a70
+        - !Grid ref!! 48eeeecd-3082-436b-bc35-877b1852b2c3
     Parts:
+        -   UIElement: !Grid
+                Id: 04ad2455-fc18-4f10-8ab1-d00d86466a70
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: CreateArmor
+                Children:
+                    e379c7031c78680f3ca33d50ac2ee9b6: !TextBlock ref!! bc5afea3-ef2a-4279-a501-a9198e27a2b1
+                RowDefinitions:
+                    4eed277344fe2ae45764fac7b3a69aaa: {}
+                    444b60f108b38fb200ae839019ad9f13: {}
+                    c6cafb4e7a170d63f00c0e532eca9612: {}
+                ColumnDefinitions:
+                    29e73e41329b116e6d713cb1b891f62d: {}
+                    ac13e681b698680a095d66e40edba0ad: {}
+                    43dbc46f2826fcea55a32a28c03c6b6c: {}
+                LayerDefinitions: {}
         -   UIElement: !TextBlock
                 Id: 26f2266a-d2a5-4379-b49d-3c93c2194c9f
                 DependencyProperties:
@@ -68,6 +94,49 @@ Hierarchy:
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
                 OutlineColor: {R: 0, G: 0, B: 0, A: 255}
                 OutlineThickness: 0.0
+        -   UIElement: !Grid
+                Id: 48eeeecd-3082-436b-bc35-877b1852b2c3
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: CreateShield
+                Children:
+                    e379c7031c78680f3ca33d50ac2ee9b6: !TextBlock ref!! ef62754b-be81-434a-9760-ca06561e0c06
+                RowDefinitions:
+                    4eed277344fe2ae45764fac7b3a69aaa: {}
+                    444b60f108b38fb200ae839019ad9f13: {}
+                    c6cafb4e7a170d63f00c0e532eca9612: {}
+                ColumnDefinitions:
+                    29e73e41329b116e6d713cb1b891f62d: {}
+                    ac13e681b698680a095d66e40edba0ad: {}
+                    43dbc46f2826fcea55a32a28c03c6b6c: {}
+                LayerDefinitions: {}
+        -   UIElement: !Button
+                Id: 53e2611d-8076-4ff8-9d43-2ea902e43be1
+                DependencyProperties:
+                    2b9f4ce667aed2f926baab5f0632dca2~GridBase.RowPropertyKey: 2
+                    613c1f243fa0cb944c4d349da3e20233~GridBase.ColumnPropertyKey: 2
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Create
+                Content: !TextBlock ref!! b0c36ba4-dc62-4818-abab-069f8a00f329
+                PressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
         -   UIElement: !Button
                 Id: 5adf0e06-d742-4c34-ba2f-2dbbd8195f82
                 DependencyProperties:
@@ -92,6 +161,20 @@ Hierarchy:
                     CurrentFrame: 1
                 MouseOverImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+        -   UIElement: !StackPanel
+                Id: 5c07fb3f-78c8-40f5-99e7-8f1862cc10aa
+                DependencyProperties:
+                    8ce12a7805343c6da82873d193a1b21d~GridBase.ColumnPropertyKey: 1
+                    4cef5dfc3193475f47aa365d1ed92b9d~GridBase.RowPropertyKey: 1
+                    c010b1e21b6f1cbbd6afea2dd11a1051~GridBase.ColumnSpanPropertyKey: 1
+                    db1f62f66409dba3b04da2a3d194f98c~GridBase.RowSpanPropertyKey: 2
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: WeaponListSelection
+                Children: {}
         -   UIElement: !Button
                 Id: 6d9904fe-ffba-4710-9b1f-d56ab58d851b
                 DependencyProperties: {}
@@ -112,6 +195,23 @@ Hierarchy:
                 MouseOverImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
         -   UIElement: !TextBlock
+                Id: 6f954bbf-dc33-49f1-ac7e-296fa4ef961c
+                DependencyProperties:
+                    3b2e48689fa5d73881dd083bf4eb061a~GridBase.ColumnPropertyKey: 0
+                    90265c3f31929b65706ddf7d755c96a1~GridBase.ColumnSpanPropertyKey: 3
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Create Weapon
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 80.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !TextBlock
                 Id: 7d4f10af-09be-4c30-86ba-7e41c041bd68
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
@@ -127,6 +227,29 @@ Hierarchy:
                 OutlineColor: {R: 0, G: 0, B: 0, A: 255}
                 OutlineThickness: 0.0
                 TextAlignment: Center
+        -   UIElement: !Button
+                Id: 8385194d-8003-48a7-b3da-ec56e30bee96
+                DependencyProperties:
+                    2b9f4ce667aed2f926baab5f0632dca2~GridBase.RowPropertyKey: 2
+                    613c1f243fa0cb944c4d349da3e20233~GridBase.ColumnPropertyKey: 2
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Create
+                Content: !TextBlock ref!! a6059edc-dd4c-4a9d-ab80-7c6ff1429c8d
+                PressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
         -   UIElement: !Grid
                 Id: 8c7e9259-f194-474d-b616-47d759742274
                 DependencyProperties: {}
@@ -139,6 +262,8 @@ Hierarchy:
                 Children:
                     0a77c5b7fb02367498507617f74a0e22: !TextBlock ref!! 26f2266a-d2a5-4379-b49d-3c93c2194c9f
                     4b487a09df943557ce04fd4bf1771db2: !Button ref!! fb9d36ed-63db-4700-bc08-cb2534554f61
+                    b7b0df06d25feb7f920df386ea7c1874: !StackPanel ref!! af792d9a-f584-42e2-877c-8a0fab39496b
+                    8547530384eeb18ddb5151253043d08a: !Button ref!! 9136ee91-5407-40e3-9052-c85e6ce41e32
                 RowDefinitions:
                     88fb06060267d8fd843818043cdcb5d9: {}
                     4fda5255c5be57d3570f5caf000d0ddd: {}
@@ -148,6 +273,29 @@ Hierarchy:
                     72f0aeda6e703a003938e1a599a683c1: {}
                     c0b95789c179354d9303c720602bdcfc: {}
                 LayerDefinitions: {}
+        -   UIElement: !Button
+                Id: 9136ee91-5407-40e3-9052-c85e6ce41e32
+                DependencyProperties:
+                    2b9f4ce667aed2f926baab5f0632dca2~GridBase.RowPropertyKey: 2
+                    613c1f243fa0cb944c4d349da3e20233~GridBase.ColumnPropertyKey: 2
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: Create
+                Content: !TextBlock ref!! ebf6d277-7747-4e84-966e-57e93abc7b1d
+                PressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
         -   UIElement: !StackPanel
                 Id: 9bd3d46d-1323-4c62-a034-53ec4a78bc8a
                 DependencyProperties:
@@ -164,6 +312,26 @@ Hierarchy:
                     da1b87c5973a2fe20f494c4716ddf190: !Button ref!! 6d9904fe-ffba-4710-9b1f-d56ab58d851b
                     6399f38878bc4ab6a21929f5f86f400d: !Button ref!! cc7802bc-a608-4c3a-928c-94d3b63a684e
                     fd0fa9ecf9def7f18c6ddadc797f1781: !Button ref!! c0bac2e6-84b0-4096-bb3c-7098a0d3b65b
+        -   UIElement: !Grid
+                Id: a0acf439-d708-494b-a868-7aec30af1da2
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: CreateWeapon
+                Children:
+                    e379c7031c78680f3ca33d50ac2ee9b6: !TextBlock ref!! 6f954bbf-dc33-49f1-ac7e-296fa4ef961c
+                RowDefinitions:
+                    4eed277344fe2ae45764fac7b3a69aaa: {}
+                    444b60f108b38fb200ae839019ad9f13: {}
+                    c6cafb4e7a170d63f00c0e532eca9612: {}
+                ColumnDefinitions:
+                    29e73e41329b116e6d713cb1b891f62d: {}
+                    ac13e681b698680a095d66e40edba0ad: {}
+                    43dbc46f2826fcea55a32a28c03c6b6c: {}
+                LayerDefinitions: {}
         -   UIElement: !TextBlock
                 Id: a1b6cc7d-c142-48f1-8a77-20e57bef3f06
                 DependencyProperties: {}
@@ -205,6 +373,52 @@ Hierarchy:
                 MouseOverImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
         -   UIElement: !TextBlock
+                Id: a6059edc-dd4c-4a9d-ab80-7c6ff1429c8d
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Create
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !StackPanel
+                Id: af792d9a-f584-42e2-877c-8a0fab39496b
+                DependencyProperties:
+                    8ce12a7805343c6da82873d193a1b21d~GridBase.ColumnPropertyKey: 1
+                    4cef5dfc3193475f47aa365d1ed92b9d~GridBase.RowPropertyKey: 1
+                    c010b1e21b6f1cbbd6afea2dd11a1051~GridBase.ColumnSpanPropertyKey: 1
+                    db1f62f66409dba3b04da2a3d194f98c~GridBase.RowSpanPropertyKey: 2
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: ShieldListSelection
+                Children: {}
+        -   UIElement: !TextBlock
+                Id: b0c36ba4-dc62-4818-abab-069f8a00f329
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Create
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
                 Id: b205f6b9-609b-46a0-a626-f5cb04024a6c
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
@@ -233,6 +447,23 @@ Hierarchy:
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
                 OutlineColor: {R: 0, G: 0, B: 0, A: 255}
                 OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: bc5afea3-ef2a-4279-a501-a9198e27a2b1
+                DependencyProperties:
+                    3b2e48689fa5d73881dd083bf4eb061a~GridBase.ColumnPropertyKey: 0
+                    90265c3f31929b65706ddf7d755c96a1~GridBase.ColumnSpanPropertyKey: 3
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Create Armor
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 80.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
         -   UIElement: !Button
                 Id: c0bac2e6-84b0-4096-bb3c-7098a0d3b65b
                 DependencyProperties: {}
@@ -264,6 +495,8 @@ Hierarchy:
                 Children:
                     0a77c5b7fb02367498507617f74a0e22: !TextBlock ref!! d48b6fed-58ad-4f50-831d-0a94580c5e0a
                     9598f0082a947c301d1b8deda97f34e9: !Button ref!! a5888d16-b254-47f7-8969-0f7efcd1c4a9
+                    98f256310e60a4ef9595457fce3db8fd: !StackPanel ref!! cf26d70c-25f8-4c14-9e54-a84287921946
+                    0c0265910f3578401082a6c861beb191: !Button ref!! 53e2611d-8076-4ff8-9d43-2ea902e43be1
                 RowDefinitions:
                     5c658c27eb0d21f2070b7ef58eb964af: {}
                     5a0209c38e06c3866a7c9b434aa630b0: {}
@@ -292,6 +525,20 @@ Hierarchy:
                     CurrentFrame: 1
                 MouseOverImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+        -   UIElement: !StackPanel
+                Id: cf26d70c-25f8-4c14-9e54-a84287921946
+                DependencyProperties:
+                    8ce12a7805343c6da82873d193a1b21d~GridBase.ColumnPropertyKey: 1
+                    4cef5dfc3193475f47aa365d1ed92b9d~GridBase.RowPropertyKey: 1
+                    c010b1e21b6f1cbbd6afea2dd11a1051~GridBase.ColumnSpanPropertyKey: 1
+                    db1f62f66409dba3b04da2a3d194f98c~GridBase.RowSpanPropertyKey: 2
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: ArmorListSelection
+                Children: {}
         -   UIElement: !TextBlock
                 Id: d48b6fed-58ad-4f50-831d-0a94580c5e0a
                 DependencyProperties:
@@ -338,6 +585,39 @@ Hierarchy:
                 OutlineColor: {R: 0, G: 0, B: 0, A: 255}
                 OutlineThickness: 0.0
                 TextAlignment: Center
+        -   UIElement: !TextBlock
+                Id: ebf6d277-7747-4e84-966e-57e93abc7b1d
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Create
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: ef62754b-be81-434a-9760-ca06561e0c06
+                DependencyProperties:
+                    3b2e48689fa5d73881dd083bf4eb061a~GridBase.ColumnPropertyKey: 0
+                    90265c3f31929b65706ddf7d755c96a1~GridBase.ColumnSpanPropertyKey: 3
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Create Shield
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 80.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
         -   UIElement: !Grid
                 Id: f2cef446-5f76-473c-a716-89c137255ccd
                 DependencyProperties: {}
@@ -350,6 +630,8 @@ Hierarchy:
                 Children:
                     0a77c5b7fb02367498507617f74a0e22: !TextBlock ref!! e939f8e8-6264-4b79-9abd-cf740d7a816b
                     a13abf8e397ee99ae51e7da333a67fa0: !Button ref!! 5adf0e06-d742-4c34-ba2f-2dbbd8195f82
+                    6a5172948c529924b586a455760eebf2: !StackPanel ref!! 5c07fb3f-78c8-40f5-99e7-8f1862cc10aa
+                    b12214ca319750bfbb0ae66a70a77872: !Button ref!! 8385194d-8003-48a7-b3da-ec56e30bee96
                 RowDefinitions:
                     33bd2d5aff78bcdce689e16457152b31: {}
                     209b76951210814ae6ea7c30ee1bbe7e: {}
