@@ -1,0 +1,120 @@
+!UILibraryAsset
+Id: 13321f82-b1a4-431a-84b2-28b2daa116b3
+SerializedVersion: {Stride: 2.1.0.1}
+Tags: []
+Design:
+    Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+PublicUIElements:
+    27538e0c-facf-45ff-ac53-aa609aacbf55: ItemSelection
+    f2cef446-5f76-473c-a716-89c137255ccd: Weapons
+Hierarchy:
+    RootParts:
+        - !Grid ref!! 27538e0c-facf-45ff-ac53-aa609aacbf55
+        - !Grid ref!! f2cef446-5f76-473c-a716-89c137255ccd
+    Parts:
+        -   UIElement: !Grid
+                Id: 27538e0c-facf-45ff-ac53-aa609aacbf55
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: ItemSelection
+                Children:
+                    d112166020102a2f2979f2019fbf2de8: !TextBlock ref!! 7d4f10af-09be-4c30-86ba-7e41c041bd68
+                    0ee3dd43b01ed420bab851bfb9eeb565: !StackPanel ref!! 9bd3d46d-1323-4c62-a034-53ec4a78bc8a
+                RowDefinitions:
+                    747c7395bc71b97a4d22a04a804a1d0a: {}
+                    4c96c1950bb660f8fdc90a329dc03654: {}
+                    aa531f820d7d605989635605c8c85c46: {}
+                    ce0dd740e9fd358a501d48da670acac4: {}
+                ColumnDefinitions: {}
+                LayerDefinitions: {}
+        -   UIElement: !Button
+                Id: 6d9904fe-ffba-4710-9b1f-d56ab58d851b
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: WeaponListButton
+                Content: !TextBlock ref!! f59aa5d4-6aa0-48eb-a8cf-0635d70e58ec
+                PressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+        -   UIElement: !TextBlock
+                Id: 7d4f10af-09be-4c30-86ba-7e41c041bd68
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Select Item List
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 80.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !StackPanel
+                Id: 9bd3d46d-1323-4c62-a034-53ec4a78bc8a
+                DependencyProperties:
+                    d39852a4afad83b02f795f4dfcc5cdc2~GridBase.RowPropertyKey: 1
+                    7f47935e030430f6aa9fcbed130d13d1~GridBase.RowSpanPropertyKey: 3
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: ItemListSelection
+                Children:
+                    da1b87c5973a2fe20f494c4716ddf190: !Button ref!! 6d9904fe-ffba-4710-9b1f-d56ab58d851b
+        -   UIElement: !TextBlock
+                Id: e939f8e8-6264-4b79-9abd-cf740d7a816b
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Select Weapon
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 80.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
+        -   UIElement: !Grid
+                Id: f2cef446-5f76-473c-a716-89c137255ccd
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                Name: Weapons
+                Children:
+                    0a77c5b7fb02367498507617f74a0e22: !TextBlock ref!! e939f8e8-6264-4b79-9abd-cf740d7a816b
+                RowDefinitions: {}
+                ColumnDefinitions: {}
+                LayerDefinitions: {}
+        -   UIElement: !TextBlock
+                Id: f59aa5d4-6aa0-48eb-a8cf-0635d70e58ec
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                Text: Weapon List
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0

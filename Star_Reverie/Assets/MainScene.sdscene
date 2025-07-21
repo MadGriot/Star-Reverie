@@ -26,6 +26,7 @@ Hierarchy:
         - ref!! 1d7a1fdc-3b27-4ca2-9786-b9d8d86e6bd4
         - ref!! 2dca26d4-e353-45a6-9ba2-c4a421fbc153
         - ref!! eeb59629-54c3-49e7-a3dd-73570e869fd6
+        - ref!! 908895fa-1608-4048-8368-e131973836db
     Parts:
         -   Folder: Code
             Entity:
@@ -461,6 +462,21 @@ Hierarchy:
                 BasePartAsset: 8f2d8933-0f22-4c65-abe7-99ab7c2b797b:Actor(Enemy)
                 BasePartId: e53cac7b-8366-4c34-97a7-62979490f621
                 InstanceId: c5ccf178-b876-43cd-9ad2-c9861c136bb3
+        -   Folder: Code
+            Entity:
+                Id: 908895fa-1608-4048-8368-e131973836db
+                Name: ItemCreation
+                Components:
+                    24e1f5576a0a58764f20ed830e880f63: !TransformComponent
+                        Id: 50002d5a-ec6b-4657-b1ce-148483074a7d
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    de357adfb1e1ae3f59a48efe06d3c1a3: !Star_Reverie.ItemCreation,Star_Reverie
+                        Id: 365a3916-c666-4760-895e-0e0da26a57fc
+                        ItemCreationLibrary: 13321f82-b1a4-431a-84b2-28b2daa116b3:UI/ItemCreation
+                        ItemUIPage: e1dcc3f9-a66d-43e8-b2b3-1ac786e83cdf:UI/ItemUIPage
         -   Entity:
                 Id: 97bbbe79-6025-49f5-9c04-50ddd0c3346c
                 Name: CameraTarget
