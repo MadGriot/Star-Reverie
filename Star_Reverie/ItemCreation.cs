@@ -5,6 +5,7 @@ using Stride.UI;
 using Star_Reverie.Globals;
 using Stride.UI.Controls;
 using Stride.UI.Events;
+using StarReverieCore.Models;
 
 namespace Star_Reverie
 {
@@ -71,7 +72,7 @@ namespace Star_Reverie
             Button createButton = gridUI.FindVisualChildOfType<Button>("Create");
             backButton.Click += (object sender, RoutedEventArgs e) => ChangeUI(creationUI);
             createButton.Click += (object sender, RoutedEventArgs e) => ChangeUI(creationUI);
-            createButton.Click += (object sender, RoutedEventArgs e) => SaveItem();
+            createButton.Click += (object sender, RoutedEventArgs e) => SaveItem(creationUI.Name);
         }
         private void BindButtons(Grid gridUI, Grid creationUI, Grid backUI)
         {
@@ -83,9 +84,32 @@ namespace Star_Reverie
         private void ChangeUI(Grid UI) =>
                 ItemUIPage.RootElement = UI;
 
-        private void SaveItem()
+        private void SaveItem(string creation)
         {
-
+            switch (creation)
+            {
+                case "CreateWeapon":
+                    WeaponModel weapon = new WeaponModel()
+                    {
+                        Name = CreateWeapon.FindVisualChildOfType<TextBlock>("WeaponName").Text,
+                        WeaponType = 0,
+                        DamageType = 0,
+                        Accuracy = int.Parse(CreateWeapon.FindVisualChildOfType<TextBlock>("Accuracy").Text),
+                        Range = int.Parse(CreateWeapon.FindVisualChildOfType<TextBlock>("Range").Text),
+                        WeaponWeight = decimal.Parse(CreateWeapon.FindVisualChildOfType<TextBlock>("WeaponWeight").Text),
+                        AmmoWeight = decimal.Parse(CreateWeapon.FindVisualChildOfType<TextBlock>("AmmoWeight").Text),
+                        RoF = int.Parse(CreateWeapon.FindVisualChildOfType<TextBlock>("RoF").Text),
+                        MaxAmmo = int.Parse(CreateWeapon.FindVisualChildOfType<TextBlock>("MaxAmmo").Text),
+                        CurrentAmmo = int.Parse(CreateWeapon.FindVisualChildOfType<TextBlock>("MaxAmmo").Text),
+                        STRRequirement = int.Parse(CreateWeapon.FindVisualChildOfType<TextBlock>("STR").Text),
+                        Bulk = int.Parse(CreateWeapon.FindVisualChildOfType<TextBlock>("Bulk").Text),
+                        Cost = int.Parse(CreateWeapon.FindVisualChildOfType<TextBlock>("Cost").Text),
+                    };
+                    Database.StarReverieDbContext.Weapons.Add(weapon);
+                    Database.StarReverieDbContext.SaveChanges();
+                    ChangeUI(Weapons);
+                    break;
+            }
         }
     }
 }
