@@ -1,11 +1,13 @@
-﻿using Stride.Input;
+﻿using Star_Reverie.Globals;
+using StarReverieCore;
+using StarReverieCore.Equipment;
+using StarReverieCore.Models;
 using Stride.Engine;
-using Stride.UI.Panels;
+using Stride.Input;
 using Stride.UI;
-using Star_Reverie.Globals;
 using Stride.UI.Controls;
 using Stride.UI.Events;
-using StarReverieCore.Models;
+using Stride.UI.Panels;
 
 namespace Star_Reverie
 {
@@ -41,6 +43,7 @@ namespace Star_Reverie
             BindButtons(CreateWeapon, Weapons, ItemSelection);
             BindCreateItemButtons(CreateArmor, Armor);
             BindCreateItemButtons(CreateShield, Shields);
+            BindCreateItemButtons(CreateWeapon, Weapons);
 
             //Adding UI page
             Entity uiEntity = [new UIComponent { Page = ItemUIPage }];
@@ -71,7 +74,6 @@ namespace Star_Reverie
             Button backButton = gridUI.FindVisualChildOfType<Button>("BackButton");
             Button createButton = gridUI.FindVisualChildOfType<Button>("Create");
             backButton.Click += (object sender, RoutedEventArgs e) => ChangeUI(creationUI);
-            createButton.Click += (object sender, RoutedEventArgs e) => ChangeUI(creationUI);
             createButton.Click += (object sender, RoutedEventArgs e) => SaveItem(creationUI.Name);
         }
         private void BindButtons(Grid gridUI, Grid creationUI, Grid backUI)
@@ -86,24 +88,25 @@ namespace Star_Reverie
 
         private void SaveItem(string creation)
         {
+            
             switch (creation)
             {
-                case "CreateWeapon":
+                case "Weapons":
                     WeaponModel weapon = new WeaponModel()
                     {
-                        Name = CreateWeapon.FindVisualChildOfType<TextBlock>("WeaponName").Text,
-                        WeaponType = 0,
-                        DamageType = 0,
-                        Accuracy = int.Parse(CreateWeapon.FindVisualChildOfType<TextBlock>("Accuracy").Text),
-                        Range = int.Parse(CreateWeapon.FindVisualChildOfType<TextBlock>("Range").Text),
-                        WeaponWeight = decimal.Parse(CreateWeapon.FindVisualChildOfType<TextBlock>("WeaponWeight").Text),
-                        AmmoWeight = decimal.Parse(CreateWeapon.FindVisualChildOfType<TextBlock>("AmmoWeight").Text),
-                        RoF = int.Parse(CreateWeapon.FindVisualChildOfType<TextBlock>("RoF").Text),
-                        MaxAmmo = int.Parse(CreateWeapon.FindVisualChildOfType<TextBlock>("MaxAmmo").Text),
-                        CurrentAmmo = int.Parse(CreateWeapon.FindVisualChildOfType<TextBlock>("MaxAmmo").Text),
-                        STRRequirement = int.Parse(CreateWeapon.FindVisualChildOfType<TextBlock>("STR").Text),
-                        Bulk = int.Parse(CreateWeapon.FindVisualChildOfType<TextBlock>("Bulk").Text),
-                        Cost = int.Parse(CreateWeapon.FindVisualChildOfType<TextBlock>("Cost").Text),
+                        Name = CreateWeapon.FindVisualChildOfType<EditText>("WeaponName").Text,
+                        WeaponType = WeaponType.RangedPhysical,
+                        DamageType = DamageType.Piercing,
+                        Accuracy = int.Parse(CreateWeapon.FindVisualChildOfType<EditText>("Accuracy").Text),
+                        Range = int.Parse(CreateWeapon.FindVisualChildOfType<EditText>("Range").Text),
+                        WeaponWeight = decimal.Parse(CreateWeapon.FindVisualChildOfType<EditText>("WeaponWeight").Text),
+                        AmmoWeight = decimal.Parse(CreateWeapon.FindVisualChildOfType<EditText>("AmmoWeight").Text),
+                        RoF = int.Parse(CreateWeapon.FindVisualChildOfType<EditText>("RoF").Text),
+                        MaxAmmo = int.Parse(CreateWeapon.FindVisualChildOfType<EditText>("MaxAmmo").Text),
+                        CurrentAmmo = int.Parse(CreateWeapon.FindVisualChildOfType<EditText>("MaxAmmo").Text),
+                        STRRequirement = int.Parse(CreateWeapon.FindVisualChildOfType<EditText>("STR").Text),
+                        Bulk = int.Parse(CreateWeapon.FindVisualChildOfType<EditText>("Bulk").Text),
+                        Cost = int.Parse(CreateWeapon.FindVisualChildOfType<EditText>("Cost").Text),
                     };
                     Database.StarReverieDbContext.Weapons.Add(weapon);
                     Database.StarReverieDbContext.SaveChanges();

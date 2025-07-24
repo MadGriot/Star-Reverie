@@ -35,7 +35,7 @@ namespace Star_Reverie
 
         public override void Update()
         {
-            if (Input.IsKeyPressed(Keys.D0))
+            if (Input.IsKeyPressed(Keys.NumPad0))
             {
                 ShowDialogueList();
             }
