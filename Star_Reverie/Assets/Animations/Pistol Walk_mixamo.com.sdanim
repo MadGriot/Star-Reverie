@@ -1,8 +1,8 @@
 !Animation
-Id: ce5d506b-7afa-4e08-a3a6-ce27fec1f1b8
+Id: 1cfa7f20-383c-4c6e-8e1e-9884f3545e1f
 SerializedVersion: {Stride: 2.0.0.0}
 Tags: []
-Source: !file ../../Resources/Animations/reloading.fbx
+Source: !file ../../Resources/Animations/Pistol Walk.fbx
 AnimationStack: 0
 ClipDuration:
     Enabled: false
@@ -15,6 +15,6 @@ Skeleton: a0d324bd-326a-4fd8-88a9-fc5e4dcc62e5:Models/mannequinModel Skeleton
 RootMotion: false
 PreviewModel: f68ea240-695a-4de5-9884-60d77544fcd6:Models/mannequinModel
 AnimationTimeMinimum: 0:00:00:00.0000000
-AnimationTimeMaximum: 0:00:00:03.2999900
+AnimationTimeMaximum: 0:00:00:00.8000000
 ~SourceHashes:
-    0e3f5286f2e74659e5928369e1005848~../../Resources/Animations/reloading.fbx: 724a642cfc234d7802ea0ae903e3257b
+    8a1512abf06f2b62397a43eebbee61ff~../../Resources/Animations/Pistol Walk.fbx: 3e6db93652ee3418f8027506b5c3b847

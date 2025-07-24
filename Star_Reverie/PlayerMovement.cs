@@ -15,7 +15,8 @@ namespace Star_Reverie
     public class PlayerMovement : SyncScript
     {
         public float DeadZone = 0.25f;
-        public float MoveSpeed = 1.0f;
+        public float MoveSpeedMultiplier = 1.0f;
+        private float MoveSpeed;
         private Entity cameraEntity;
         private AnimationController AnimationController;
         public override void Start()
@@ -62,7 +63,7 @@ namespace Star_Reverie
                     // Shift = run, otherwise walk
                     bool isRunning = Input.IsKeyDown(Keys.LeftShift) || Input.IsKeyDown(Keys.RightShift);
                     AnimationController.animationMovementState = isRunning ? AnimationState.Running : AnimationState.Walking;
-                    MoveSpeed = isRunning ? 5f : 1.0f;
+                    MoveSpeed = isRunning ? 3f * MoveSpeedMultiplier : MoveSpeedMultiplier;
 
                     Move(moveInput);
                 }

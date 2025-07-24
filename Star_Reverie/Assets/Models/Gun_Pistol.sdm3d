@@ -1,0 +1,15 @@
+!Model
+Id: 10e0e2ea-6ac5-4c52-b5e4-90a9fc573fa5
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Models/Gun_Pistol.fbx
+Skeleton: null
+PivotPosition: {X: 0.0, Y: 0.0, Z: 0.0}
+Materials:
+    5a01861bf94bef36e2f6e76d62d07b71:
+        Name: MI_Guns_Batch1
+        MaterialInstance:
+            Material: 0599ed70-2034-4599-a428-790adcce801b:Materials/GunPistolMaterial
+Modifiers: {}
+~SourceHashes:
+    ef667c76ed21cbef79632dd1adb75215~../../Resources/Models/Gun_Pistol.fbx: 0370b8389a8be2554473a12a22ab2e65

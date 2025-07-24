@@ -1,8 +1,8 @@
 !Animation
-Id: f89561f4-1912-4532-a902-fdc004886fdf
+Id: 43d76ec3-c85c-419f-a4a0-045b41d57143
 SerializedVersion: {Stride: 2.0.0.0}
 Tags: []
-Source: !file ../../Resources/Animations/firing rifle.fbx
+Source: !file ../../Resources/Animations/Pistol Idle.fbx
 AnimationStack: 0
 ClipDuration:
     Enabled: false
@@ -15,6 +15,6 @@ Skeleton: a0d324bd-326a-4fd8-88a9-fc5e4dcc62e5:Models/mannequinModel Skeleton
 RootMotion: false
 PreviewModel: f68ea240-695a-4de5-9884-60d77544fcd6:Models/mannequinModel
 AnimationTimeMinimum: 0:00:00:00.0000000
-AnimationTimeMaximum: 0:00:00:00.2666600
+AnimationTimeMaximum: 0:00:00:01.3333300
 ~SourceHashes:
-    83e49d5731d5640bfede3899d484a955~../../Resources/Animations/firing rifle.fbx: 5bd882b396cf57c69c3f3e0c7daa022c
+    0effa87c0a02f937121936142bfd4272~../../Resources/Animations/Pistol Idle.fbx: 32444fe59061c3c23793e6baec0ff5c4

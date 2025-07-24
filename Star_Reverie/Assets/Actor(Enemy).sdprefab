@@ -112,7 +112,7 @@ Hierarchy:
                     bb6849e1c16322b09ef000798d27f876: !Star_Reverie.PlayerMovement,Star_Reverie
                         Id: 565015fb-63c2-4723-911f-83a10ca27107
                         DeadZone: 0.25
-                        MoveSpeed: 1.0
+                        MoveSpeedMultiplier: 1.0
                     9c85d4a5e587f74907ebd59985a0cbeb: !Star_Reverie.Actor,Star_Reverie
                         Id: 18a78497-ce65-4b28-87b3-94b836f4bf10
                         Priority: 1

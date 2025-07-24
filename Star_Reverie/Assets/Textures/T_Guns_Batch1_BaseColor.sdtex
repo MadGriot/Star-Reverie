@@ -1,0 +1,7 @@
+!Texture
+Id: 5529e3b7-6fe3-4455-a6fa-ba30970c794f
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Textures/T_Guns_Batch1_BaseColor.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}

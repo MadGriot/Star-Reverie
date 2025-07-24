@@ -1,0 +1,6 @@
+!Texture
+Id: 041bf0a2-8665-4f2e-a8a1-8f89b45baf91
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Textures/T_Guns_Batch1_Normal.png
+Type: !NormalMapTextureType {}

@@ -1,8 +1,8 @@
 !Animation
-Id: 78b48e6e-28c4-4f27-95bb-d13b4c979e2a
+Id: fecc233e-4f8a-4d48-91d5-0e63670d75a0
 SerializedVersion: {Stride: 2.0.0.0}
 Tags: []
-Source: !file ../../Resources/Animations/rifle run.fbx
+Source: !file ../../Resources/Animations/Pistol Run.fbx
 AnimationStack: 0
 ClipDuration:
     Enabled: false
@@ -15,6 +15,6 @@ Skeleton: a0d324bd-326a-4fd8-88a9-fc5e4dcc62e5:Models/mannequinModel Skeleton
 RootMotion: false
 PreviewModel: f68ea240-695a-4de5-9884-60d77544fcd6:Models/mannequinModel
 AnimationTimeMinimum: 0:00:00:00.0000000
-AnimationTimeMaximum: 0:00:00:00.7333300
+AnimationTimeMaximum: 0:00:00:00.5000000
 ~SourceHashes:
-    960e54a4549c0544ef9e08a2e848e3be~../../Resources/Animations/rifle run.fbx: 1fa3cc01a392ae9511f0548bae3ff02b
+    3aba8820630edf6a36a62bed5b1e5824~../../Resources/Animations/Pistol Run.fbx: 882f26bda7e920fa3a9dc282710dcb9c

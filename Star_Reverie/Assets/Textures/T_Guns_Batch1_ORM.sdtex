@@ -1,0 +1,8 @@
+!Texture
+Id: d07d2faa-4895-4461-afec-6f0bc5d9b742
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Textures/T_Guns_Batch1_ORM.png
+Type: !ColorTextureType
+    UseSRgbSampling: false
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
