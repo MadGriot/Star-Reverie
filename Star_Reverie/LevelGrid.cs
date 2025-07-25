@@ -8,7 +8,7 @@ namespace Star_Reverie
     {
         public Entity GridDebugObject;
 
-        internal GridSystem GridSystem;
+        public GridSystem GridSystem { get; set; }
 
         public override void Start()
         {
