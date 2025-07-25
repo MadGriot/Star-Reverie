@@ -627,6 +627,7 @@ Hierarchy:
                     c68212e5e561d1299d2954679a6b9953: !Star_Reverie.LevelGrid,Star_Reverie
                         Id: 5520f15b-3e7f-497c-b13b-c639cd8bdf07
                         GridDebugObject: ref!! 15480917-6088-4fda-8c29-25ab878c88d8
+                        GridSystem: null
         -   Entity:
                 Id: bc2a7ee7-a61b-468a-acef-436b4718de2b
                 Name: Ground
