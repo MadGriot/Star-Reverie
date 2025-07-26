@@ -26,7 +26,6 @@ Hierarchy:
                 Id: 04865f80-0af6-4a01-884f-4a736d5076c4
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                Visibility: Hidden
                 Margin: {}
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
@@ -36,12 +35,59 @@ Hierarchy:
                     bbfa92605de96f705ecfd80d7acdd317: !StackPanel ref!! 7d97a6c3-7366-41a0-ba39-99f2787deccd
                     238d20168eb094b70f08d291f2220c40: !Button ref!! 3e6e9e6b-43e7-4c15-9120-730be5acb5b6
                     6d01fae5a4af4b41ea007933a37d29e0: !StackPanel ref!! f326d054-0e2c-421d-abad-a29c3cd323d8
+                    229f1df9be795e7265f0e521b12b3619: !Grid ref!! e0b50c65-3ee6-4c63-a68f-41ae688a14be
+                    d37f1bcde4c79e2cd165308b6cc578d4: !Grid ref!! a1fff354-6ea8-415c-abde-72d4b0e258e0
                 RowDefinitions:
                     16bdb589ebfc16fa3aa4ea1ff56f148d: {}
                     ab48f4e3110022a986743e5e51697415: {}
                     81b46cde6107f874fb24f2cadf5130d0: {}
-                ColumnDefinitions: {}
+                ColumnDefinitions:
+                    aa65c8fbdd97a8a1cbca04722f714a19: {}
+                    d42c3121d472e07fa36a89ee233e98c4: {}
+                    c7ac8905bf4c1dfe7fd70de0e8ab511f: {}
+                    43cdddbd42c7f4c94f507e1855e6bfcc: {}
+                    e7abf5438f549ad46ddbd08bcfa4bcca: {}
                 LayerDefinitions: {}
+        -   UIElement: !ImageElement
+                Id: 05c960e3-ec74-48ec-bb50-1c7f07db8293
+                DependencyProperties:
+                    8af145e29c0ba96f4f73e9fced5aa1f4~GridBase.ColumnPropertyKey: 2
+                BackgroundColor: {R: 34, G: 52, B: 211, A: 0}
+                VerticalAlignment: Top
+                Margin: {Top: 10.0}
+                MinimumWidth: 48.0
+                MinimumHeight: 64.0
+                MaximumWidth: 48.0
+                MaximumHeight: 64.0
+                MaximumDepth: 3.4028235E+38
+                DefaultWidth: 48.0
+                DefaultHeight: 64.0
+                Name: PlayerSlot2
+                Source: !SpriteFromTexture
+                    Texture: 8cbb7593-893a-4dcd-816b-286c91748b5d:gold_gls
+                    Center: {X: 0.0, Y: 0.0}
+                Color: {R: 255, G: 255, B: 255, A: 255}
+                StretchType: Fill
+        -   UIElement: !ImageElement
+                Id: 11162374-a83f-4e46-be2e-e0c84507d18b
+                DependencyProperties:
+                    8af145e29c0ba96f4f73e9fced5aa1f4~GridBase.ColumnPropertyKey: 2
+                BackgroundColor: {R: 34, G: 52, B: 211, A: 0}
+                VerticalAlignment: Top
+                Margin: {Top: 10.0}
+                MinimumWidth: 48.0
+                MinimumHeight: 64.0
+                MaximumWidth: 48.0
+                MaximumHeight: 64.0
+                MaximumDepth: 3.4028235E+38
+                DefaultWidth: 48.0
+                DefaultHeight: 64.0
+                Name: EnemySlot3
+                Source: !SpriteFromTexture
+                    Texture: 8cbb7593-893a-4dcd-816b-286c91748b5d:gold_gls
+                    Center: {X: 0.0, Y: 0.0}
+                Color: {R: 255, G: 255, B: 255, A: 255}
+                StretchType: Fill
         -   UIElement: !TextBlock
                 Id: 1383d96c-547f-4e5d-b07b-f7e581320c3a
                 DependencyProperties:
@@ -76,10 +122,12 @@ Hierarchy:
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
                 OutlineColor: {R: 0, G: 0, B: 0, A: 255}
                 OutlineThickness: 0.0
+                TextAlignment: Center
         -   UIElement: !Button
                 Id: 3e6e9e6b-43e7-4c15-9120-730be5acb5b6
                 DependencyProperties:
                     8d009a2d686d19b92caef592663c3e26~GridBase.RowPropertyKey: 1
+                    aa53654ec6725c2f7aef55f6d973b47b~GridBase.ColumnPropertyKey: 2
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 DrawLayerNumber: 2
                 HorizontalAlignment: Center
@@ -115,11 +163,51 @@ Hierarchy:
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
                 OutlineColor: {R: 0, G: 0, B: 0, A: 255}
                 OutlineThickness: 0.0
+        -   UIElement: !ImageElement
+                Id: 499692a9-1ec9-494e-af95-3d86dce35d3b
+                DependencyProperties:
+                    8af145e29c0ba96f4f73e9fced5aa1f4~GridBase.ColumnPropertyKey: 3
+                BackgroundColor: {R: 34, G: 52, B: 211, A: 0}
+                VerticalAlignment: Top
+                Margin: {Top: 10.0}
+                MinimumWidth: 48.0
+                MinimumHeight: 64.0
+                MaximumWidth: 48.0
+                MaximumHeight: 64.0
+                MaximumDepth: 3.4028235E+38
+                DefaultWidth: 48.0
+                DefaultHeight: 64.0
+                Name: EnemySlot4
+                Source: !SpriteFromTexture
+                    Texture: 8cbb7593-893a-4dcd-816b-286c91748b5d:gold_gls
+                    Center: {X: 0.0, Y: 0.0}
+                Color: {R: 255, G: 255, B: 255, A: 255}
+                StretchType: Fill
+        -   UIElement: !ImageElement
+                Id: 5ad2b8ab-6c1f-4c21-9717-98f64ead90b9
+                DependencyProperties: {}
+                BackgroundColor: {R: 34, G: 52, B: 211, A: 0}
+                VerticalAlignment: Top
+                Margin: {Top: 10.0}
+                MinimumWidth: 48.0
+                MinimumHeight: 64.0
+                MaximumWidth: 48.0
+                MaximumHeight: 64.0
+                MaximumDepth: 3.4028235E+38
+                DefaultWidth: 48.0
+                DefaultHeight: 64.0
+                Name: PlayerSlot4
+                Source: !SpriteFromTexture
+                    Texture: 8cbb7593-893a-4dcd-816b-286c91748b5d:gold_gls
+                    Center: {X: 0.0, Y: 0.0}
+                Color: {R: 255, G: 255, B: 255, A: 255}
+                StretchType: Fill
         -   UIElement: !StackPanel
                 Id: 7d97a6c3-7366-41a0-ba39-99f2787deccd
                 DependencyProperties:
                     0caaea5496a11e9e85860d90d2c6612e~GridBase.RowSpanPropertyKey: 1
                     07d0ac3ed14d9e7300a4051558ed12fa~GridBase.RowPropertyKey: 3
+                    fbfab60780000caaee523a252d6622bb~GridBase.ColumnPropertyKey: 2
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 HorizontalAlignment: Center
                 Margin: {}
@@ -145,6 +233,48 @@ Hierarchy:
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
                 OutlineColor: {R: 0, G: 0, B: 0, A: 255}
                 OutlineThickness: 0.0
+        -   UIElement: !Grid
+                Id: a1fff354-6ea8-415c-abde-72d4b0e258e0
+                DependencyProperties:
+                    fdae3d0f2a5a683daae4c4da11c6f02c~GridBase.ColumnPropertyKey: 3
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: EnemyTurn
+                Children:
+                    6a3f977654da83d48c81b692bf954dbc: !ImageElement ref!! e8317b6a-781d-4ff1-8e4b-d2da32852c8a
+                    71fa9f0fd7f67c57eb2c8fdfc529b61a: !ImageElement ref!! b9400ab9-df8e-4e01-8b03-28a2a76ca49c
+                    4c66aa3c40e5d2d78547611d0a6723d8: !ImageElement ref!! 11162374-a83f-4e46-be2e-e0c84507d18b
+                    42c9ac623f5666ea0231a630b80e9440: !ImageElement ref!! 499692a9-1ec9-494e-af95-3d86dce35d3b
+                RowDefinitions: {}
+                ColumnDefinitions:
+                    0dcfa5ab90d04339a2f39e882c95f59b: {}
+                    41d4818a578e358ace9a8fe0765229b3: {}
+                    e19a02132eeb8d427b52c45e8d047ec7: {}
+                    b33d181bb12bb4637ada7053ff586622: {}
+                LayerDefinitions: {}
+        -   UIElement: !ImageElement
+                Id: b9400ab9-df8e-4e01-8b03-28a2a76ca49c
+                DependencyProperties:
+                    5169eae6bb96691d9975947efeb0a472~GridBase.ColumnPropertyKey: 1
+                BackgroundColor: {R: 34, G: 52, B: 211, A: 0}
+                VerticalAlignment: Top
+                Margin: {Top: 10.0}
+                MinimumWidth: 48.0
+                MinimumHeight: 64.0
+                MaximumWidth: 48.0
+                MaximumHeight: 64.0
+                MaximumDepth: 3.4028235E+38
+                DefaultWidth: 48.0
+                DefaultHeight: 64.0
+                Name: EnemySlot2
+                Source: !SpriteFromTexture
+                    Texture: 8cbb7593-893a-4dcd-816b-286c91748b5d:gold_gls
+                    Center: {X: 0.0, Y: 0.0}
+                Color: {R: 255, G: 255, B: 255, A: 255}
+                StretchType: Fill
         -   UIElement: !TextBlock
                 Id: c43af995-718d-46dd-af2f-0534dd64ceeb
                 DependencyProperties: {}
@@ -160,9 +290,92 @@ Hierarchy:
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
                 OutlineColor: {R: 0, G: 0, B: 0, A: 255}
                 OutlineThickness: 0.0
+        -   UIElement: !Grid
+                Id: e0b50c65-3ee6-4c63-a68f-41ae688a14be
+                DependencyProperties:
+                    fdae3d0f2a5a683daae4c4da11c6f02c~GridBase.ColumnPropertyKey: 1
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: PlayerTurn
+                Children:
+                    42c9ac623f5666ea0231a630b80e9440: !ImageElement ref!! e59dbc36-4101-4184-a30a-92f7965b5fe0
+                    4d1cbbd654ec7aeeaf18bcc8d4be95fe: !ImageElement ref!! 05c960e3-ec74-48ec-bb50-1c7f07db8293
+                    c6de0858088905f280d97b68a6365128: !ImageElement ref!! f141dab8-ac37-4e40-a0c5-fd1673558c40
+                    c26c0204f48424bdf9d6f8add628cbe7: !ImageElement ref!! 5ad2b8ab-6c1f-4c21-9717-98f64ead90b9
+                RowDefinitions: {}
+                ColumnDefinitions:
+                    0dcfa5ab90d04339a2f39e882c95f59b: {}
+                    41d4818a578e358ace9a8fe0765229b3: {}
+                    e19a02132eeb8d427b52c45e8d047ec7: {}
+                    b33d181bb12bb4637ada7053ff586622: {}
+                LayerDefinitions: {}
+        -   UIElement: !ImageElement
+                Id: e59dbc36-4101-4184-a30a-92f7965b5fe0
+                DependencyProperties:
+                    8af145e29c0ba96f4f73e9fced5aa1f4~GridBase.ColumnPropertyKey: 3
+                BackgroundColor: {R: 34, G: 52, B: 211, A: 0}
+                VerticalAlignment: Top
+                Margin: {Top: 10.0}
+                MinimumWidth: 48.0
+                MinimumHeight: 64.0
+                MaximumWidth: 48.0
+                MaximumHeight: 64.0
+                MaximumDepth: 3.4028235E+38
+                DefaultWidth: 48.0
+                DefaultHeight: 64.0
+                Name: PlayerSlot1
+                Source: !SpriteFromTexture
+                    Texture: 8cbb7593-893a-4dcd-816b-286c91748b5d:gold_gls
+                    Center: {X: 0.0, Y: 0.0}
+                Color: {R: 255, G: 255, B: 255, A: 255}
+                StretchType: Fill
+        -   UIElement: !ImageElement
+                Id: e8317b6a-781d-4ff1-8e4b-d2da32852c8a
+                DependencyProperties: {}
+                BackgroundColor: {R: 34, G: 52, B: 211, A: 0}
+                VerticalAlignment: Top
+                Margin: {Top: 10.0}
+                MinimumWidth: 48.0
+                MinimumHeight: 64.0
+                MaximumWidth: 48.0
+                MaximumHeight: 64.0
+                MaximumDepth: 3.4028235E+38
+                DefaultWidth: 48.0
+                DefaultHeight: 64.0
+                Name: EnemySlot1
+                Source: !SpriteFromTexture
+                    Texture: 8cbb7593-893a-4dcd-816b-286c91748b5d:gold_gls
+                    Center: {X: 0.0, Y: 0.0}
+                Color: {R: 255, G: 255, B: 255, A: 255}
+                StretchType: Fill
+        -   UIElement: !ImageElement
+                Id: f141dab8-ac37-4e40-a0c5-fd1673558c40
+                DependencyProperties:
+                    5169eae6bb96691d9975947efeb0a472~GridBase.ColumnPropertyKey: 1
+                BackgroundColor: {R: 34, G: 52, B: 211, A: 0}
+                VerticalAlignment: Top
+                Margin: {Top: 10.0}
+                MinimumWidth: 48.0
+                MinimumHeight: 64.0
+                MaximumWidth: 48.0
+                MaximumHeight: 64.0
+                MaximumDepth: 3.4028235E+38
+                DefaultWidth: 48.0
+                DefaultHeight: 64.0
+                Name: PlayerSlot3
+                Source: !SpriteFromTexture
+                    Texture: 8cbb7593-893a-4dcd-816b-286c91748b5d:gold_gls
+                    Center: {X: 0.0, Y: 0.0}
+                Color: {R: 255, G: 255, B: 255, A: 255}
+                StretchType: Fill
         -   UIElement: !StackPanel
                 Id: f326d054-0e2c-421d-abad-a29c3cd323d8
-                DependencyProperties: {}
+                DependencyProperties:
+                    8c06ad7cbec3f5fc7194fc81b5ec8461~GridBase.ColumnSpanPropertyKey: 1
+                    e006c209ce85bf3e231197144e6c9d5d~GridBase.ColumnPropertyKey: 2
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 HorizontalAlignment: Center
                 VerticalAlignment: Top

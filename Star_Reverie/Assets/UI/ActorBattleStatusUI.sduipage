@@ -1,0 +1,121 @@
+!UIPageAsset
+Id: 51810329-1546-4deb-90ab-e2f6e8619ecf
+SerializedVersion: {Stride: 2.1.0.1}
+Tags: []
+Design:
+    Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+Hierarchy:
+    RootParts:
+        - !StackPanel ref!! f0176cf8-299a-4164-b786-43bc753fb15a
+    Parts:
+        -   UIElement: !StackPanel
+                Id: 2d0badc7-09a9-4aa0-9a38-3f97ac3962bc
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Children:
+                    3e873c826d8d15c6308c878b656e7791: !TextBlock ref!! e066d591-ac37-4e04-a02b-83862ee80e74
+                    8eee4b038d9570c619a32e99780a8740: !TextBlock ref!! 92139661-3a84-4b60-80db-b859381b0f36
+                    7717bffc1e67f43ad2fa01fa71e989f1: !TextBlock ref!! 6cfc56aa-5a50-4e62-9bf9-b440ad3ff6c2
+                    ea720ea17ac56520085b630bb5177ab6: !TextBlock ref!! 9b4a66d7-5ac2-4de5-bc19-5967262317b8
+        -   UIElement: !TextBlock
+                Id: 6cfc56aa-5a50-4e62-9bf9-b440ad3ff6c2
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: StaminaStatus
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !TextBlock
+                Id: 92139661-3a84-4b60-80db-b859381b0f36
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: HealthStatus
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !ImageElement
+                Id: 98c4fab8-3c19-4398-a6e3-120d004d0489
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Color: {R: 255, G: 255, B: 255, A: 255}
+        -   UIElement: !TextBlock
+                Id: 9b4a66d7-5ac2-4de5-bc19-5967262317b8
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: ActorName
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !ImageElement
+                Id: bc599501-8556-45c5-9a72-44c8f7e3fe8e
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MinimumWidth: 32.0
+                MinimumHeight: 32.0
+                MaximumWidth: 32.0
+                MaximumHeight: 32.0
+                MaximumDepth: 3.4028235E+38
+                Name: WeaponSprite
+                Source: !SpriteFromTexture
+                    Texture: 8cbb7593-893a-4dcd-816b-286c91748b5d:gold_gls
+                    Center: {X: 0.0, Y: 0.0}
+                Color: {R: 255, G: 255, B: 255, A: 255}
+        -   UIElement: !TextBlock
+                Id: e066d591-ac37-4e04-a02b-83862ee80e74
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: ShieldStatus
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+        -   UIElement: !StackPanel
+                Id: f0176cf8-299a-4164-b786-43bc753fb15a
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: ActorStatus
+                Children:
+                    d50f49e46685f6120e878b847658150f: !ImageElement ref!! 98c4fab8-3c19-4398-a6e3-120d004d0489
+                    6c9c8c8483aa15ba8bee375e507ad391: !StackPanel ref!! 2d0badc7-09a9-4aa0-9a38-3f97ac3962bc
+                    2cd019f21617e6652b60f8d8ceaf174e: !ImageElement ref!! bc599501-8556-45c5-9a72-44c8f7e3fe8e
+                Orientation: Horizontal

@@ -1,0 +1,23 @@
+!PrefabAsset
+Id: fc765051-9a02-4490-8ea6-ae2bc32282c7
+SerializedVersion: {Stride: 3.1.0.1}
+Tags: []
+Hierarchy:
+    RootParts:
+        - ref!! bb56054e-29ab-4ab4-90f6-2c9b83165339
+    Parts:
+        -   Entity:
+                Id: bb56054e-29ab-4ab4-90f6-2c9b83165339
+                Name: ActorBattleStatusUI
+                Components:
+                    73a8d7157a2cc1bbea23a49fbee2ad74: !TransformComponent
+                        Id: 1c726fb8-3fb5-42e9-a220-9b3591071cd1
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    56b0147cc5906d1bc348f748dd99cc3a: !UIComponent
+                        Id: 9002cf49-eb02-441a-81bd-8a4e3c79664e
+                        Page: 51810329-1546-4deb-90ab-e2f6e8619ecf:UI/ActorBattleStatusUI
+                        Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+                        Size: {X: 1.28, Y: 0.72, Z: 1.0}
